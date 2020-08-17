@@ -10,7 +10,7 @@ int main()
 {
     auto x = new app;
     x->~app();
-    Formulas energies(0);
-    // std::cout << energies.BTerm(1, 2, 0, 0, 0, 1, 1);
-    std::cout << Formulas::ValidNumbers(6969);
+    Formulas energies(1);
+    // std::cout << energies.BTerm(2, 3, 3, 4, 5, 6, 7);
+    std::cout << energies.CTerm(2, 3, 3, 4, 5, 6, 7);
 }
