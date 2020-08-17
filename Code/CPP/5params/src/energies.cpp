@@ -104,3 +104,20 @@ double Formulas::CTerm(double spin, double oddSpin, double i1, double i2, double
     }
     return C;
 }
+
+double Formulas::Hmin(double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma)
+{
+    auto A1 = InertiaFactor(i1);
+    auto A2 = InertiaFactor(i2);
+    auto A3 = InertiaFactor(i3);
+    if (!ValidNumbers(A1) || !ValidNumbers(A2) || !ValidNumbers(A3))
+        return error_number;
+    auto j = oddSpin;
+    auto I = spin;
+    //Transform gamma into radians (from degrees)
+    auto gm = gamma * PI / 180.0;
+    auto H = (A2 + A3) * 0.5 * (I + j) + A1 * pow(I - j, 2) - V * (2.0 * j - 1.0) / (j + 1.0) * sin(gm + PI / 6.0);
+    if (!ValidNumbers(H))
+        return error_number;
+    return H;
+}

@@ -12,5 +12,5 @@ int main()
     x->~app();
     Formulas energies(1);
     // std::cout << energies.BTerm(2, 3, 3, 4, 5, 6, 7);
-    std::cout << energies.CTerm(2, 3, 3, 4, 5, 6, 7);
+    std::cout << energies.Hmin(2, 3, 3, 4, 5, 6, 7);
 }
