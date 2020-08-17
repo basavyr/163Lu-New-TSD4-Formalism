@@ -3,8 +3,16 @@
 #include <utility>
 
 #include "./include/app.h"
+#include "./include/expdata.h"
 
 int main()
 {
-    auto x = std::make_unique<app>();
+    auto x = new app;
+    x->~app();
+    expdata Lu163;
+    for (auto &&n : Lu163.tsd1)
+    {
+        std::cout << n << " ";
+    }
+    std::cout << "\n";
 }
