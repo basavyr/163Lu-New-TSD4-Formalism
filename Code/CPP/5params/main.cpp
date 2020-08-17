@@ -4,15 +4,12 @@
 
 #include "./include/app.h"
 #include "./include/expdata.h"
+#include "./include/energies.h"
 
 int main()
 {
     auto x = new app;
     x->~app();
-    expdata Lu163;
-    for (auto &&n : Lu163.tsd1)
-    {
-        std::cout << n << " ";
-    }
+    std::cout << Formulas::Omega1(1, 1, 1, 1, 1, 1, 1);
     std::cout << "\n";
 }

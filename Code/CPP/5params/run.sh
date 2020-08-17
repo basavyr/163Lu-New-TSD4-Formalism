@@ -1,2 +1,2 @@
-g++ -std=c++17 ./src/app.cpp main.cpp
+g++ -std=c++17 ./src/app.cpp ./src/energies.cpp main.cpp
 ./a.out
