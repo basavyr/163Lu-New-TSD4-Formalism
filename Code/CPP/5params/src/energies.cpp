@@ -29,16 +29,6 @@ double Formulas::InertiaFactor(double I)
     return 1.0 / (2.0 * I);
 }
 
-double Formulas::Omega1(double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma)
-{
-    return 0;
-}
-
-double Formulas::Omega2(double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma)
-{
-    return 0;
-}
-
 double Formulas::BTerm(double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma)
 {
     auto A1 = InertiaFactor(i1);
@@ -120,4 +110,36 @@ double Formulas::Hmin(double spin, double oddSpin, double i1, double i2, double 
     if (!ValidNumbers(H))
         return error_number;
     return H;
+}
+
+double Formulas::Omega1(double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma)
+{
+    auto B = BTerm(spin, oddSpin, i1, i2, i3, V, gamma);
+    auto C = CTerm(spin, oddSpin, i1, i2, i3, V, gamma);
+    if (!ValidNumbers(B) || !ValidNumbers(B))
+        return error_number;
+    auto Delta = sqrt(pow(B, 2) - 4.0 * C);
+    if (!ValidNumbers(Delta))
+        return error_number;
+    //The first wobbling frequency has a MINUS sign
+    auto Omega = sqrt(0.5 * (-B - Delta));
+    if (!ValidNumbers(Omega))
+        return error_number;
+    return Omega;
+}
+
+double Formulas::Omega2(double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma)
+{
+    auto B = BTerm(spin, oddSpin, i1, i2, i3, V, gamma);
+    auto C = CTerm(spin, oddSpin, i1, i2, i3, V, gamma);
+    if (!ValidNumbers(B) || !ValidNumbers(B))
+        return error_number;
+    auto Delta = sqrt(pow(B, 2) - 4.0 * C);
+    if (!ValidNumbers(Delta))
+        return error_number;
+    //The second wobbling frequency has a PLUS sign
+    auto Omega = sqrt(0.5 * (-B + Delta));
+    if (!ValidNumbers(Omega))
+        return error_number;
+    return Omega;
 }
