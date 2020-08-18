@@ -143,3 +143,17 @@ double Formulas::Omega2(double spin, double oddSpin, double i1, double i2, doubl
         return error_number;
     return Omega;
 }
+
+double Formulas::E_Wobbling(int n1, int n2, double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma)
+{
+    auto om1 = Omega1(spin, oddSpin, i1, i2, i3, V, gamma);
+    auto om2 = Omega2(spin, oddSpin, i1, i2, i3, V, gamma);
+    auto H = Hmin(spin, oddSpin, i1, i2, i3, V, gamma);
+    if (!ValidNumbers(om1) || !ValidNumbers(om2) || !ValidNumbers(H))
+        return error_number;
+    //the formula for the excitation energy, in terms of Omega1,Omega2 and the minimum energy H_min
+    auto E = om1 * (n1 + 0.5) + om2 * (n2 + 0.5) + H;
+    if (!ValidNumbers(E))
+        return error_number;
+    return E;
+}
