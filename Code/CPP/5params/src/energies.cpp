@@ -1,5 +1,5 @@
 #include "../include/energies.h"
-
+#include "../include/expdata.h"
 Formulas::Formulas(bool ok)
 {
     debug = ok;
@@ -156,4 +156,39 @@ double Formulas::E_Wobbling(int n1, int n2, double spin, double oddSpin, double 
     if (!ValidNumbers(E))
         return error_number;
     return E;
+}
+
+double Formulas::E_TSD1(double spin, double i1, double i2, double i3, double V, double gamma)
+{
+    auto E0 = E_Wobbling(0, 0, expdata::yrastSpin, expdata::oddSpin_1, i1, i2, i3, V, gamma);
+    auto E1 = E_Wobbling(0, 0, spin, expdata::oddSpin_1, i1, i2, i3, V, gamma);
+    if (!ValidNumbers(E0) || !ValidNumbers(E1))
+        return error_number;
+    return static_cast<double>(E1 - E0);
+}
+
+double Formulas::E_TSD2(double spin, double i1, double i2, double i3, double V, double gamma)
+{
+    auto E0 = E_Wobbling(0, 0, expdata::yrastSpin, expdata::oddSpin_1, i1, i2, i3, V, gamma);
+    return 2;
+    // auto E1 = E_Wobbling(0, 0, spin, expdata::oddSpin_1, i1, i2, i3, V, gamma);
+    // if (!ValidNumbers(E0) || !ValidNumbers(E1))
+    //     return error_number;
+    // return static_cast<double>(E1 - E0);
+}
+
+double Formulas::E_TSD3(double spin, double i1, double i2, double i3, double V, double gamma)
+{
+    auto E0 = E_Wobbling(0, 0, expdata::yrastSpin, expdata::oddSpin_1, i1, i2, i3, V, gamma);
+    return 3;
+    // auto E1 = E_Wobbling(0, 0, spin, expdata::oddSpin_1, i1, i2, i3, V, gamma);
+    // if (!ValidNumbers(E0) || !ValidNumbers(E1))
+    //     return error_number;
+    // return static_cast<double>(E1 - E0);
+}
+
+double Formulas::E_TSD4(double spin, double i1, double i2, double i3, double V, double gamma)
+{
+    auto E0 = E_Wobbling(0, 0, expdata::yrastSpin, expdata::oddSpin_1, i1, i2, i3, V, gamma);
+    return 4;
 }
