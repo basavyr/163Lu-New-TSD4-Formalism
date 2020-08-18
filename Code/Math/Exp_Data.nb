@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     21689,        583]
-NotebookOptionsPosition[     18185,        516]
-NotebookOutlinePosition[     18698,        533]
-CellTagsIndexPosition[     18655,        530]
+NotebookDataLength[     22629,        610]
+NotebookOptionsPosition[     18902,        539]
+NotebookOutlinePosition[     19416,        556]
+CellTagsIndexPosition[     19373,        553]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -511,11 +511,34 @@ Cell[BoxData["10"], "Output",
  CellChangeTimes->{{3.806639119499278*^9, 3.806639165699957*^9}, 
    3.8066392208089848`*^9, 3.8066392609237747`*^9, 3.806639307515766*^9},
  CellLabel->"Out[49]=",ExpressionUUID->"3ed06884-7faa-4dd1-a45a-ce3f91f41f0c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{"i", ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "23.5", ",", "41.5", ",", "2"}], "}"}]}], "]"}], "-", 
+  "9.5"}]], "Input",
+ CellChangeTimes->{{3.806735745462448*^9, 3.806735747298005*^9}},
+ CellLabel->
+  "In[121]:=",ExpressionUUID->"66ae72e4-e41d-4564-ae04-f0f53862468a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "14.`", ",", "16.`", ",", "18.`", ",", "20.`", ",", "22.`", ",", "24.`", 
+   ",", "26.`", ",", "28.`", ",", "30.`", ",", "32.`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.806735743697756*^9, 3.8067357475864697`*^9}},
+ CellLabel->
+  "Out[121]=",ExpressionUUID->"61b3d971-2da6-4b0e-9064-3b02510187af"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{808, 911},
-WindowMargins->{{85, Automatic}, {Automatic, 55}},
+WindowSize->{896, 1075},
+WindowMargins->{{0, Automatic}, {Automatic, -40}},
 FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
 StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Applications", 
    "Mathematica.app", "Contents", "SystemFiles", "FrontEnd", "StyleSheets"}, 
@@ -544,7 +567,7 @@ Cell[CellGroupData[{
 Cell[2045, 64, 153, 3, 59, "Section",ExpressionUUID->"b524dc4e-6ce2-41d4-bdc9-8a5bb1ec7a91"],
 Cell[CellGroupData[{
 Cell[2223, 71, 601, 15, 50, "Input",ExpressionUUID->"b5321a7c-38f5-4d07-865d-c809622ecd61"],
-Cell[2827, 88, 478, 9, 67, "Output",ExpressionUUID->"14ffeb00-46b6-4224-8092-65cbaf654bef"],
+Cell[2827, 88, 478, 9, 39, "Output",ExpressionUUID->"14ffeb00-46b6-4224-8092-65cbaf654bef"],
 Cell[3308, 99, 199, 3, 39, "Output",ExpressionUUID->"14b01043-67ef-40a7-8cb1-8cda6fd91c81"]
 }, Open  ]]
 }, Open  ]],
@@ -563,10 +586,10 @@ Cell[5195, 158, 599, 15, 50, "Input",ExpressionUUID->"dbba5fd9-24d2-4a41-8826-60
 Cell[5797, 175, 396, 8, 39, "Output",ExpressionUUID->"5c2549b0-e8ed-4c7d-9683-7d37bd0cfb5d"],
 Cell[6196, 185, 222, 3, 39, "Output",ExpressionUUID->"a33cd9a4-5f7e-458c-a2e4-09308e73fd14"]
 }, Open  ]],
-Cell[6433, 191, 4841, 141, 250, "Input",ExpressionUUID->"3c2ef8c3-c9cf-46dc-8c50-1f5c91ff860d"],
+Cell[6433, 191, 4841, 141, 210, "Input",ExpressionUUID->"3c2ef8c3-c9cf-46dc-8c50-1f5c91ff860d"],
 Cell[CellGroupData[{
 Cell[11299, 336, 919, 24, 50, "Input",ExpressionUUID->"f8ea1dd2-43d2-4e26-b0b6-79408c25ac4c"],
-Cell[12221, 362, 558, 9, 94, "Output",ExpressionUUID->"3b32f275-647d-43e0-845d-637d92a46d06"],
+Cell[12221, 362, 558, 9, 67, "Output",ExpressionUUID->"3b32f275-647d-43e0-845d-637d92a46d06"],
 Cell[12782, 373, 174, 2, 39, "Output",ExpressionUUID->"30a16d1e-fd22-4ea1-8819-2ddf7f7bfca8"]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -583,11 +606,13 @@ Cell[CellGroupData[{
 Cell[16445, 472, 1014, 25, 50, "Input",ExpressionUUID->"62bdc9b1-2c00-44e0-af6e-a77a2fc9f641"],
 Cell[17462, 499, 444, 8, 39, "Output",ExpressionUUID->"3252d6ca-529d-4c09-a542-9b66ec42c9d6"],
 Cell[17909, 509, 248, 3, 39, "Output",ExpressionUUID->"3ed06884-7faa-4dd1-a45a-ce3f91f41f0c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18194, 517, 336, 9, 29, "Input",ExpressionUUID->"66ae72e4-e41d-4564-ae04-f0f53862468a"],
+Cell[18533, 528, 341, 7, 74, "Output",ExpressionUUID->"61b3d971-2da6-4b0e-9064-3b02510187af"]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 

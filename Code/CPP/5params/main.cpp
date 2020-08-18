@@ -13,4 +13,12 @@ int main()
     Formulas energies(0);
     std::cout << energies.E_Wobbling(1, 1, 2, 3, 3, 4, 5, 6, 7);
     std::cout << "\n";
+    std::cout << energies.E_TSD1(2, 3, 4, 5, 6, 7);
+    std::cout << "\n";
+    std::cout << energies.E_TSD2(2, 3, 4, 5, 6, 7);
+    std::cout << "\n";
+    std::cout << energies.E_TSD3(2, 3, 4, 5, 6, 7);
+    std::cout << "\n";
+    std::cout << energies.E_TSD4(2, 3, 4, 5, 6, 7);
+    std::cout << "\n";
 }
