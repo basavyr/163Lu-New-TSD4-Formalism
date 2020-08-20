@@ -24,7 +24,12 @@ public:
     double E_TSD1(double spin, double i1, double i2, double i3, double V, double gamma);
     double E_TSD2(double spin, double i1, double i2, double i3, double V, double gamma);
     double E_TSD3(double spin, double i1, double i2, double i3, double V, double gamma);
-    double E_TSD4(double spin, double i1, double i2, double i3, double V, double gamma);
+
+    // Calculation of the fourth wobbling band using the new formalism, where the TSD4 band is considered as the g.s.b. for a different sequence of spins
+    double E_TSD4_00(double spin, double i1, double i2, double i3, double V, double gamma);
+
+    // Calculation of the fourth wobbling band using the standard and well-known formalism, where TSD4 is considered the third excited wobbling-phonon band
+    double E_TSD4_30(double spin, double i1, double i2, double i3, double V, double gamma);
 
 public:
     Formulas(bool);

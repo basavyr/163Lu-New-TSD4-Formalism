@@ -185,8 +185,18 @@ double Formulas::E_TSD3(double spin, double i1, double i2, double i3, double V, 
     return static_cast<double>(E1 - E0);
 }
 
-double Formulas::E_TSD4(double spin, double i1, double i2, double i3, double V, double gamma)
+double Formulas::E_TSD4_00(double spin, double i1, double i2, double i3, double V, double gamma)
 {
     auto E0 = E_Wobbling(0, 0, expdata::yrastSpin, expdata::oddSpin_1, i1, i2, i3, V, gamma);
-    return 4;
+    //use the same intruder in the I=R+j coupling scheme
+    auto j = expdata::oddSpin_1;
+    return 0;
+}
+
+double Formulas::E_TSD4_30(double spin, double i1, double i2, double i3, double V, double gamma)
+{
+    auto E0 = E_Wobbling(0, 0, expdata::yrastSpin, expdata::oddSpin_1, i1, i2, i3, V, gamma);
+    //use the same intruder in the I=R+j coupling scheme
+    auto j = expdata::oddSpin_1;
+    return 3;
 }
