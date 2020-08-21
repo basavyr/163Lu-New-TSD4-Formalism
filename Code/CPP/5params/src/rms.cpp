@@ -44,3 +44,4 @@ double rms::RMS(std::vector<double> &exp_data, std::vector<double> &th_data)
         return RMS;
     return Formulas::error_number;
 }
+
