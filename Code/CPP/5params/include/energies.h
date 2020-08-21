@@ -42,13 +42,46 @@ public:
     //     //?TSD1
     //     return th_data;
     // }
-    static std::vector<double> GenerateTheoreticalData(expdata &obj, double oddSpin, double I1, double I2, double I3, double V, double gamma)
+    static std::vector<double> GenerateTheoreticalData(expdata &data, Formulas &energies, double I1, double I2, double I3, double V, double gamma)
     {
         std::vector<double> th_data;
-        double size;
-        th_data.emplace_back(1.0);
+        double size = data.spin1.size();
         //generating the first band
         //?TSD1
+        for (auto id = 0; id < size; ++id)
+        {
+            auto th = energies.E_TSD1(data.spin1.at(id), I1, I2, I3, V, gamma);
+            if (ValidNumbers(th))
+                th_data.emplace_back(th);
+        }
+
+        size = data.spin2.size();
+        //?TSD2
+        for (auto id = 0; id < size; ++id)
+        {
+            auto th = energies.E_TSD2(data.spin2.at(id), I1, I2, I3, V, gamma);
+            if (ValidNumbers(th))
+                th_data.emplace_back(th);
+        }
+
+        size = data.spin3.size();
+        //?TSD3
+        for (auto id = 0; id < size; ++id)
+        {
+            auto th = energies.E_TSD3(data.spin3.at(id), I1, I2, I3, V, gamma);
+            if (ValidNumbers(th))
+                th_data.emplace_back(th);
+        }
+
+        size = data.spin4.size();
+        //?TSD4
+        for (auto id = 0; id < size; ++id)
+        {
+            auto th = energies.E_TSD4_00(data.spin4.at(id), I1, I2, I3, V, gamma);
+            if (ValidNumbers(th))
+                th_data.emplace_back(th);
+        }
+
         return th_data;
     }
 

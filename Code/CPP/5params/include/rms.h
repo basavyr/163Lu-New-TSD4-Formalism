@@ -3,6 +3,7 @@
 #include <fstream>
 
 // #include "expdata.h"
+#include "app.h"
 #include "energies.h"
 class rms
 {
@@ -16,16 +17,16 @@ public:
         const double I_step = 10.0;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
-        const double gamma_step = 1.0;
+        const double gamma_step = 10.0;
         double I1, I2, I3, theta, V;
         const double V_min = 0.01;
         const double V_max = 10.0;
-        const double V_step = 1.0;
+        const double V_step = 5.0;
     };
 
 public:
     static double RMS(std::vector<double> &exp_data, std::vector<double> &th_data);
-    void SearchMIN_RMS(expdata &obj)
+    void SearchMIN_RMS(expdata &data, Formulas &energies)
     {
         {
             ParamSet params;
@@ -42,7 +43,7 @@ public:
                             {
                                 // std::cout << I1 << " " << I2 << " " << I3 << " " << V << " " << gamma << "\n";
                                 gout << I1 << " " << I2 << " " << I3 << " " << V << " " << gamma << "\n";
-                                auto x = Formulas::GenerateTheoreticalData(obj, 1, 1, 1, 1, 1, 1);
+                                auto x = Formulas::GenerateTheoreticalData(data, energies, 1, 1, 1, 1, 1);
                             }
                         }
                     }
