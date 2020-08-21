@@ -17,11 +17,11 @@ public:
         const double I_step = 10.0;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
-        const double gamma_step = 1.0;
+        const double gamma_step = 10.0;
         double I1, I2, I3, gamma, V;
         const double V_min = 0.01;
         const double V_max = 10.0;
-        const double V_step = 1.0;
+        const double V_step = 10.0;
     };
 
 public:
@@ -31,6 +31,7 @@ public:
         ParamSet params;
         std::ofstream gout("params.dat");
         double best_RMS = 987654321.0;
+        std::vector<double> best_th_set;
         for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
         {
             for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)
@@ -52,6 +53,7 @@ public:
                                 params.I3 = I3;
                                 params.V = V;
                                 params.gamma = gamma;
+                                best_th_set = th_Data;
                                 // gout<< I1 << " " << I2 << " " << I3 << " " << V << " " << gamma << " " << rms << "\n";
                             }
                         }
@@ -83,5 +85,14 @@ public:
         gout << "\n";
         gout << "E_RMS= " << best_RMS;
         gout << "\n";
+        for (auto &&n : best_th_set)
+        {
+            gout << n << ",";
+        }
+        gout << "\n";
+        for (auto &&n : data.exp_Data)
+        {
+            gout << n << ",";
+        }
     }
 };
