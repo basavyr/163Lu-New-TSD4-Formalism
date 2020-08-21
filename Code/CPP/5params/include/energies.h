@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 
+#include "expdata.h"
 class Formulas
 {
 private:
@@ -30,6 +31,26 @@ public:
 
     // Calculation of the fourth wobbling band using the standard and well-known formalism, where TSD4 is considered the third excited wobbling-phonon band
     double E_TSD4_30(double spin, double i1, double i2, double i3, double V, double gamma);
+
+    // template <typename T>
+    // static std::vector<double> GenerateTheoreticalData(T &obj, double oddSpin, double I1, double I2, double I3, double V, double gamma)
+    // {
+    //     std::vector<double> th_data;
+    //     double size;
+    //     th_data.emplace_back(1.0);
+    //     //generating the first band
+    //     //?TSD1
+    //     return th_data;
+    // }
+    static std::vector<double> GenerateTheoreticalData(expdata &obj, double oddSpin, double I1, double I2, double I3, double V, double gamma)
+    {
+        std::vector<double> th_data;
+        double size;
+        th_data.emplace_back(1.0);
+        //generating the first band
+        //?TSD1
+        return th_data;
+    }
 
 public:
     Formulas(bool);
