@@ -81,7 +81,6 @@ public:
             if (ValidNumbers(th))
                 th_data.emplace_back(th);
         }
-
         return th_data;
     }
 
