@@ -18,3 +18,10 @@ Main goals of the present project are:
 - [ ] Compute the RMS of the excitation energies of all the bands w.r.t. to a parameter set $P$.
 - [ ] Find the parameter set $P_m$ which provides the best RMS value.
 
+## Initial test run
+
+August 2020:
+
+![](2020-08-21-17-10-10.png)
+
+The algorithm is using large parameter steps, so accuracy is lost.

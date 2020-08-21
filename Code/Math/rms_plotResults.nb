@@ -1,0 +1,112 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3414,        102]
+NotebookOptionsPosition[      2690,         81]
+NotebookOutlinePosition[      3208,         98]
+CellTagsIndexPosition[      3165,         95]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Plotting the ", "Section",
+ CellChangeTimes->{{3.807007766152986*^9, 
+  3.807007767686205*^9}},ExpressionUUID->"48689aab-0aa5-4867-b66f-\
+3aa02c6ed20d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Graphics", "[", 
+       RowBox[{"Rectangle", "[", "]"}], "]"}], ",", " ", 
+      RowBox[{"Graphics", "[", 
+       RowBox[{"Disk", "[", "]"}], "]"}]}], "}"}], ",", " ", "\n", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Graphics", "[", 
+       RowBox[{"Disk", "[", "]"}], "]"}], ",", 
+      RowBox[{"Graphics", "[", 
+       RowBox[{"Rectangle", "[", "]"}], "]"}]}], "}"}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.807007731035211*^9, 3.807007757745816*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"ac46af67-b494-452b-88a4-45f524fea6ed"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{InsetBox[
+      GraphicsBox[RectangleBox[{0, 0}],
+       DisplayFunction->Identity,
+       ImagePadding->{{2.842170943040401*^-14, 1.}, {1., 
+        5.684341886080802*^-14}}], {192., -192.}, 
+      ImageScaled[{0.5, 0.5}], {360., 360.}], InsetBox[
+      GraphicsBox[DiskBox[{0, 0}],
+       DisplayFunction->Identity,
+       ImagePadding->{{2.842170943040401*^-14, 1.}, {1., 
+        5.684341886080802*^-14}}], {576., -192.}, 
+      ImageScaled[{0.5, 0.5}], {360., 360.}]}, {InsetBox[
+      GraphicsBox[DiskBox[{0, 0}],
+       DisplayFunction->Identity,
+       ImagePadding->{{2.842170943040401*^-14, 1.}, {1., 
+        5.684341886080802*^-14}}], {192., -576.}, 
+      ImageScaled[{0.5, 0.5}], {360., 360.}], InsetBox[
+      GraphicsBox[RectangleBox[{0, 0}],
+       DisplayFunction->Identity,
+       ImagePadding->{{2.842170943040401*^-14, 1.}, {1., 
+        5.684341886080802*^-14}}], {576., -576.}, 
+      ImageScaled[{0.5, 0.5}], {360., 360.}]}}, {}},
+  ContentSelectable->True,
+  ImageSize->{
+    UpTo[600], 
+    UpTo[700]},
+  PlotRangePadding->{6, 5}]], "Output",
+ CellChangeTimes->{3.807007760476037*^9},
+ CellLabel->"Out[34]=",ExpressionUUID->"bef4f726-916b-4200-bf2d-f57cd7755d70"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{960, 1035},
+WindowMargins->{{Automatic, -40}, {Automatic, -1080}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Applications", 
+   "Mathematica.app", "Contents", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "Times_Basavyr_Unique.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 158, 3, 59, "Section",ExpressionUUID->"48689aab-0aa5-4867-b66f-3aa02c6ed20d"],
+Cell[CellGroupData[{
+Cell[763, 29, 673, 18, 50, "Input",ExpressionUUID->"ac46af67-b494-452b-88a4-45f524fea6ed"],
+Cell[1439, 49, 1223, 28, 617, "Output",ExpressionUUID->"bef4f726-916b-4200-bf2d-f57cd7755d70"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

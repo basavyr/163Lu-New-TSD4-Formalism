@@ -71,5 +71,17 @@ public:
         std::cout << "\n";
         std::cout << "E_RMS= " << best_RMS;
         std::cout << "\n";
+        gout << "I1= " << params.I1;
+        gout << "\n";
+        gout << "I2= " << params.I2;
+        gout << "\n";
+        gout << "I3= " << params.I3;
+        gout << "\n";
+        gout << "V= " << params.V;
+        gout << "\n";
+        gout << "gm= " << params.gamma;
+        gout << "\n";
+        gout << "E_RMS= " << best_RMS;
+        gout << "\n";
     }
 };

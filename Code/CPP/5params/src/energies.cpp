@@ -9,12 +9,6 @@ Formulas::Formulas(bool ok)
 
 Formulas::~Formulas()
 {
-    // if (debug)
-    //     std::cout << debug_ON;
-    // else
-    // {
-    //     std::cout << debug_OFF;
-    // }
 }
 
 int Formulas::ValidNumbers(double number)

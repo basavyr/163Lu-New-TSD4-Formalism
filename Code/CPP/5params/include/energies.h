@@ -38,7 +38,7 @@ public:
     //     std::vector<double> th_data;
     //     double size;
     //     th_data.emplace_back(1.0);
-    //     //generating the first band
+        // generating the first band
     //     //?TSD1
     //     return th_data;
     // }
@@ -81,6 +81,13 @@ public:
             if (ValidNumbers(th))
                 th_data.emplace_back(th);
         }
+
+        // for (auto &&n : th_data)
+        // {
+        //     std::cout << n << " ";
+        // }
+        // std::cout << "\n";
+
         return th_data;
     }
 
