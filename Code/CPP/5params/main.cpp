@@ -29,4 +29,6 @@ void TestEnergyFormulas()
 int main()
 {
     TestEnergyFormulas();
+    rms rms;
+    rms.SearchMIN_RMS();
 }

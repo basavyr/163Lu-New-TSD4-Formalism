@@ -45,3 +45,23 @@ double rms::RMS(std::vector<double> &exp_data, std::vector<double> &th_data)
     return Formulas::error_number;
 }
 
+void rms::SearchMIN_RMS()
+{
+    ParamSet params;
+    for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
+    {
+        for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)
+        {
+            for (auto I3 = params.I_min; I3 < params.I_max; I3 += params.I_step)
+            {
+                for (auto V = params.V_min; V < params.V_max; V += params.V_step)
+                {
+                    for (auto gamma = params.gamma_min; gamma < params.gamma_max; gamma += params.gamma_step)
+                    {
+                        std::cout << I1 << " " << I2 << " " << I3 << " " << V << " " << gamma << "\n";
+                    }
+                }
+            }
+        }
+    }
+}
