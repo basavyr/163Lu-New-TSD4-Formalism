@@ -25,3 +25,7 @@ August 2020:
 ![](2020-08-21-17-10-10.png)
 
 The algorithm is using large parameter steps, so accuracy is lost.
+
+Update on the algorithm with optimized computations.
+
+![](2020-08-22-13-07-58.png)
