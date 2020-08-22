@@ -29,3 +29,7 @@ The algorithm is using large parameter steps, so accuracy is lost.
 Update on the algorithm with optimized computations.
 
 ![](2020-08-22-13-07-58.png)
+
+Simulation implying the triaxiality conditions.
+
+![](2020-08-22-13-25-53.png)

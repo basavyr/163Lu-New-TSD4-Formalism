@@ -42,19 +42,23 @@ public:
                     {
                         for (auto gamma = params.gamma_min; gamma < params.gamma_max; gamma += params.gamma_step)
                         {
-                            // std::cout << I1 << " " << I2 << " " << I3 << " " << V << " " << gamma << "\n";
-                            auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
-                            auto rms = RMS(data.exp_Data, th_Data);
-                            if (rms <= best_RMS)
+                            if (Formulas::Triaxiality(I1, I2, I3))
                             {
-                                best_RMS = rms;
-                                params.I1 = I1;
-                                params.I2 = I2;
-                                params.I3 = I3;
-                                params.V = V;
-                                params.gamma = gamma;
-                                best_th_set = th_Data;
-                                // gout<< I1 << " " << I2 << " " << I3 << " " << V << " " << gamma << " " << rms << "\n";
+
+                                // std::cout << I1 << " " << I2 << " " << I3 << " " << V << " " << gamma << "\n";
+                                auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
+                                auto rms = RMS(data.exp_Data, th_Data);
+                                if (rms <= best_RMS)
+                                {
+                                    best_RMS = rms;
+                                    params.I1 = I1;
+                                    params.I2 = I2;
+                                    params.I3 = I3;
+                                    params.V = V;
+                                    params.gamma = gamma;
+                                    best_th_set = th_Data;
+                                    // gout<< I1 << " " << I2 << " " << I3 << " " << V << " " << gamma << " " << rms << "\n";
+                                }
                             }
                         }
                     }

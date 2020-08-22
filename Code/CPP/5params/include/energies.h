@@ -20,6 +20,7 @@ public:
     double CTerm(double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma);
     double Hmin(double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma);
     static int ValidNumbers(double);
+    static int Triaxiality(double, double, double);
     //The general formula for the excitation energy of a triaxial band defined by the two wobbling phonon numbers n1 and n2, respectively
     double E_Wobbling(int n1, int n2, double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma);
     double E_TSD1(double spin, double i1, double i2, double i3, double V, double gamma);
@@ -38,7 +39,7 @@ public:
     //     std::vector<double> th_data;
     //     double size;
     //     th_data.emplace_back(1.0);
-        // generating the first band
+    // generating the first band
     //     //?TSD1
     //     return th_data;
     // }

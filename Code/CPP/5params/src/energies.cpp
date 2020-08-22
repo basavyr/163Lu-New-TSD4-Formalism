@@ -18,6 +18,16 @@ int Formulas::ValidNumbers(double number)
     return 1;
 }
 
+int Formulas::Triaxiality(double I1, double I2, double I3)
+{
+    int ok = 0;
+    if (I1 != I2 && I1 != I3 && I2 != I3)
+        ok = 1;
+    if (ok)
+        return 1;
+    return 0;
+}
+
 double Formulas::InertiaFactor(double I)
 {
     if (I == 0)
