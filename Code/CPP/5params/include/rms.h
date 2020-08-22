@@ -17,11 +17,11 @@ public:
         const double I_step = 10.0;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
-        const double gamma_step = 10.0;
+        const double gamma_step = 1.0;
         double I1, I2, I3, gamma, V;
         const double V_min = 0.01;
         const double V_max = 10.0;
-        const double V_step = 10.0;
+        const double V_step = 1.0;
     };
 
 public:
@@ -92,7 +92,7 @@ public:
         gout << "\n";
         for (auto &&n : data.exp_Data)
         {
-            gout << n << ",";
+            // gout << n << ",";
         }
     }
 };
