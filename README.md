@@ -22,21 +22,21 @@ Main goals of the present project are:
 
 August 2020:
 
-![](2020-08-21-17-10-10.png)
+![](./reports/2020-08-21-17-10-10.png)
 
 The algorithm is using large parameter steps, so accuracy is lost.
 
 Update on the algorithm with optimized computations.
 
-![](2020-08-22-13-07-58.png)
+![](./reports/2020-08-22-13-07-58.png)
 
 Simulation implying the triaxiality conditions.
 
-![](2020-08-22-13-25-53.png)
+![](./reports/2020-08-22-13-25-53.png)
 
 Optimized search with steps of size `5,5,0.5`, respectively.
 
-![](2020-08-23-11-20-38.png)
+![](./reports/2020-08-23-11-20-38.png)
 
 Results in `params.dat`
 
