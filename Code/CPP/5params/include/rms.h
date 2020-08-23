@@ -17,11 +17,11 @@ public:
         const double I_step = 5.0;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
-        const double gamma_step = 5.0;
+        const double gamma_step =1;
         double I1, I2, I3, gamma, V;
         const double V_min = 0.01;
         const double V_max = 10.0;
-        const double V_step = 0.5;
+        const double V_step = 0.25;
     };
 
 public:
@@ -46,7 +46,7 @@ public:
                     {
                         for (auto gamma = params.gamma_min; gamma < params.gamma_max; gamma += params.gamma_step)
                         {
-                            if (Formulas::Triaxiality(I1, I2, I3))
+                            if (Formulas::Triaxiality(I1, I2, I3) && Formulas::TransverseWobbling(I1, I2, I3))
                             {
                                 auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
 

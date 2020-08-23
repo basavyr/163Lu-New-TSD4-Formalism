@@ -28,6 +28,15 @@ int Formulas::Triaxiality(double I1, double I2, double I3)
     return 0;
 }
 
+int Formulas::TransverseWobbling(double I1, double I2, double I3)
+{
+    auto max_12 = (I1 < I2) ? I2 : I1;
+    auto max_max = ((max_12 < I3) ? I3 : max_12);
+    if (max_max == I2)
+        return 1;
+    return 0;
+}
+
 double Formulas::InertiaFactor(double I)
 {
     if (I == 0)
