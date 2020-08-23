@@ -52,3 +52,22 @@ E_RMS= 0.22564
 Finished computations after 777 valid parameter evaluations...
 Total evaluations: 1861111
 ```
+
+### Computation ran on VM@elk
+
+This calculations were done using the following sizes for the steps:
+sI=2.5
+gms=1
+vs=0.25
+
+```
+Initializing rms class...
+Starting to search for the minimum RMS...
+I1= 66
+I2= 71
+I3= 3.5
+V= 9.76
+gm= 28
+E_RMS= 0.238275
+Finished computations. Process took: 3315.19 s
+```
