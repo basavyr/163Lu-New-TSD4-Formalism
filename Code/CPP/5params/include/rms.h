@@ -14,14 +14,14 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 120;
-        const double I_step = 10.0;
+        const double I_step = 50.0;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1.0;
         double I1, I2, I3, gamma, V;
         const double V_min = 0.01;
         const double V_max = 10.0;
-        const double V_step = 1.0;
+        const double V_step = 0.1;
     };
 
 public:
@@ -30,6 +30,8 @@ public:
     {
         ParamSet params;
         std::ofstream gout("params.dat");
+        gout << "Starting to search for the minimum RMS...";
+        gout << "\n";
         double best_RMS = 987654321.0;
         std::vector<double> best_th_set;
         for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
@@ -44,10 +46,10 @@ public:
                         {
                             if (Formulas::Triaxiality(I1, I2, I3))
                             {
-
-                                // std::cout << I1 << " " << I2 << " " << I3 << " " << V << " " << gamma << "\n";
                                 auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
+
                                 auto rms = RMS(data.exp_Data, th_Data);
+
                                 if (rms <= best_RMS)
                                 {
                                     best_RMS = rms;
@@ -57,7 +59,6 @@ public:
                                     params.V = V;
                                     params.gamma = gamma;
                                     best_th_set = th_Data;
-                                    // gout<< I1 << " " << I2 << " " << I3 << " " << V << " " << gamma << " " << rms << "\n";
                                 }
                             }
                         }
@@ -94,9 +95,7 @@ public:
             gout << n << ",";
         }
         gout << "\n";
-        for (auto &&n : data.exp_Data)
-        {
-            // gout << n << ",";
-        }
+        gout << "Finished computations...";
+        gout << "\n";
     }
 };
