@@ -13,15 +13,15 @@ public:
     struct ParamSet
     {
         const double I_min = 1.0;
-        const double I_max = 120;
-        const double I_step = 50.0;
+        const double I_max = 100;
+        const double I_step = 5.0;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
-        const double gamma_step = 1.0;
+        const double gamma_step = 5.0;
         double I1, I2, I3, gamma, V;
         const double V_min = 0.01;
         const double V_max = 10.0;
-        const double V_step = 0.1;
+        const double V_step = 0.5;
     };
 
 public:
@@ -33,6 +33,8 @@ public:
         gout << "Starting to search for the minimum RMS...";
         gout << "\n";
         double best_RMS = 987654321.0;
+        int OK_iterations = 0;
+        const int n_total_evals = pow((params.I_max - params.I_min) / params.I_step, 3) * ((params.V_max - params.V_min) / params.V_step) * ((params.gamma_max - params.gamma_min) / params.gamma_step);
         std::vector<double> best_th_set;
         for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
         {
@@ -59,6 +61,7 @@ public:
                                     params.V = V;
                                     params.gamma = gamma;
                                     best_th_set = th_Data;
+                                    OK_iterations++;
                                 }
                             }
                         }
@@ -95,7 +98,9 @@ public:
             gout << n << ",";
         }
         gout << "\n";
-        gout << "Finished computations...";
+        gout << "Finished computations after " << OK_iterations << " valid parameter evaluations...";
+        gout << "\n";
+        gout << "Total evaluations: " << n_total_evals;
         gout << "\n";
     }
 };
