@@ -17,7 +17,13 @@ int main()
     rms rms;
     std::cout << "Starting to search for the minimum RMS...";
     std::cout << "\n";
-    rms.SearchMIN_RMS(Lu163, energies);
+
+    //Determine the best parameter set using NO prior conditions with regards to the MOI's ordering
+    // rms.SearchMIN_RMS(Lu163, energies);
+  
+    //Determine the best parameter set using TRANSVERSE wobbling regime. I2-Maximal MOI
+    rms.SearchRMS_Transverse(Lu163, energies);
+
     auto endTime = std::chrono::system_clock::now();
     auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count();
     std::cout << "Finished computations. Process took: " << duration_ms / 1000.0 << " s";
