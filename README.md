@@ -71,3 +71,19 @@ gm= 28
 E_RMS= 0.238275
 Finished computations. Process took: 3315.19 s
 ```
+
+### Compilation using triaxiality and transverse regime.
+
+The step size for I=5
+
+```
+Initializing rms class...
+Starting to search for the minimum RMS...
+I1= 56
+I2= 61
+I3= 6
+V= 9.76
+gm= 50
+E_RMS= 0.475362
+Finished computations. Process took: 498.02 s
+```
