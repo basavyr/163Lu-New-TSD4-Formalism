@@ -27,13 +27,14 @@ int main()
     {
         for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)
         {
-            for (auto I3 = params.I_min; I3 < params.I_max && (I2 > I1) && (I3 != I1); I3 += params.I_step)
-            {
-                std::cout << I1 << " " << I2 << " " << I3;
-                std::cout << "\n";
-                count++;
-                storage.emplace_back(count);
-            }
+            for (auto I3 = params.I_min; I3 < params.I_max && (I2 > I1) && (I2 > I3); I3 += params.I_step)
+                if (I1 != I3)
+                {
+                    std::cout << I1 << " " << I2 << " " << I3;
+                    std::cout << "\n";
+                    count++;
+                    storage.emplace_back(count);
+                }
         }
     }
     auto stop = std::chrono::system_clock::now();

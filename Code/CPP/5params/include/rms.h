@@ -14,7 +14,7 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 100;
-        const double I_step = 2.5;
+        const double I_step = 10;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
@@ -127,9 +127,26 @@ public:
                 {
                     for (auto V = params.V_min; V < params.V_max && (I2 > I3); V += params.V_step)
                     {
-                        for (auto gamma = params.gamma_min; gamma < params.gamma_max; gamma += params.gamma_step)
+                        for (auto gamma = params.gamma_min; gamma < params.gamma_max && I1 != I3; gamma += params.gamma_step)
                         {
                             //operations for RMS
+                            // std::cout << I1 << " " << I2 << " " << I3;
+                            // std::cout << "\n";
+                            auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
+
+                            auto rms = RMS(data.exp_Data, th_Data);
+
+                            if (rms <= best_RMS)
+                            {
+                                best_RMS = rms;
+                                params.I1 = I1;
+                                params.I2 = I2;
+                                params.I3 = I3;
+                                params.V = V;
+                                params.gamma = gamma;
+                                best_th_set = th_Data;
+                                OK_iterations++;
+                            }
                         }
                     }
                 }
