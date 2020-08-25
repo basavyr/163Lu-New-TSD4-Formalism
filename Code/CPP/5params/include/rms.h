@@ -138,7 +138,7 @@ public:
                             // auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
 
                             //!change the implementation to support a fixed size array instead of re-allocation
-                            double rms = RMS(data.exp_Data, std::move(energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma)));
+                            // double rms = RMS(data.exp_Data, std::move(energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma)));
 
                             //Use direction in-scope computations for the rms value
                             //no further  external methods called
@@ -148,63 +148,125 @@ public:
                             //RMS
                             //----------------------------
                             //----------------------------
-
-                            
-
-                            //----------------------------
-                            //----------------------------
-                            //RMS
-                            //----------------------------
-                            //----------------------------
-
-                            if (rms <= best_RMS)
+                            double sum = 0.0;
+                            int ok = 1;
+                            for (auto id = 0; id < data.STATES && ok; ++id)
                             {
-                                best_RMS = rms;
-                                params.I1 = I1;
-                                params.I2 = I2;
-                                params.I3 = I3;
-                                params.V = V;
-                                params.gamma = gamma;
-                                // best_th_set = th_Data;
-                                OK_iterations++;
+
+                                if (id < 21)
+                                {
+                                    auto d = pow((data.exp_Data[id] - energies.E_TSD1(data.spins[id], I1, I2, I3, V, gamma)), 2);
+                                    if (!Formulas::ValidNumbers(d))
+                                    {
+                                        ok = 0;
+                                        sum = Formulas::error_number;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        sum += d;
+                                    }
+                                }
+                                if (id >= 21 && id < 38)
+                                {
+                                    auto d = pow((data.exp_Data[id] - energies.E_TSD2(data.spins[id], I1, I2, I3, V, gamma)), 2);
+                                    if (!Formulas::ValidNumbers(d))
+                                    {
+                                        ok = 0;
+                                        sum = Formulas::error_number;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        sum += d;
+                                    }
+                                }
+                                if (id >= 38 && id < 52)
+                                {
+                                    auto d = pow((data.exp_Data[id] - energies.E_TSD3(data.spins[id], I1, I2, I3, V, gamma)), 2);
+                                    if (!Formulas::ValidNumbers(d))
+                                    {
+                                        ok = 0;
+                                        sum = Formulas::error_number;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        sum += d;
+                                    }
+                                }
+                                if (id >= 52 && id < 62)
+                                {
+                                    auto d = pow((data.exp_Data[id] - energies.E_TSD4_00(data.spins[id], I1, I2, I3, V, gamma)), 2);
+                                    if (!Formulas::ValidNumbers(d))
+                                    {
+                                        ok = 0;
+                                        sum = Formulas::error_number;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        sum += d;
+                                    }
+                                }
                             }
+                        }
+
+                        //----------------------------
+                        //----------------------------
+                        //RMS
+                        //----------------------------
+                        //----------------------------
+
+                        if (rms <= best_RMS)
+                        {
+                            best_RMS = rms;
+                            params.I1 = I1;
+                            params.I2 = I2;
+                            params.I3 = I3;
+                            params.V = V;
+                            params.gamma = gamma;
+                            // best_th_set = th_Data;
+                            OK_iterations++;
                         }
                     }
                 }
             }
         }
-        std::cout << "I1= " << params.I1;
-        std::cout << "\n";
-        std::cout << "I2= " << params.I2;
-        std::cout << "\n";
-        std::cout << "I3= " << params.I3;
-        std::cout << "\n";
-        std::cout << "V= " << params.V;
-        std::cout << "\n";
-        std::cout << "gm= " << params.gamma;
-        std::cout << "\n";
-        std::cout << "E_RMS= " << best_RMS;
-        std::cout << "\n";
-        gout << "I1= " << params.I1;
-        gout << "\n";
-        gout << "I2= " << params.I2;
-        gout << "\n";
-        gout << "I3= " << params.I3;
-        gout << "\n";
-        gout << "V= " << params.V;
-        gout << "\n";
-        gout << "gm= " << params.gamma;
-        gout << "\n";
-        gout << "E_RMS= " << best_RMS;
-        gout << "\n";
-        for (auto &&n : best_th_set)
-        {
-            gout << n << ",";
-        }
-        gout << "\n";
-        gout << "Finished computations after " << OK_iterations << " valid parameter evaluations...";
-        gout << "\n";
-        gout << "Total evaluations: " << n_total_evals;
-        gout << "\n";
     }
-};
+    std::cout << "I1= " << params.I1;
+    std::cout << "\n";
+    std::cout << "I2= " << params.I2;
+    std::cout << "\n";
+    std::cout << "I3= " << params.I3;
+    std::cout << "\n";
+    std::cout << "V= " << params.V;
+    std::cout << "\n";
+    std::cout << "gm= " << params.gamma;
+    std::cout << "\n";
+    std::cout << "E_RMS= " << best_RMS;
+    std::cout << "\n";
+    gout << "I1= " << params.I1;
+    gout << "\n";
+    gout << "I2= " << params.I2;
+    gout << "\n";
+    gout << "I3= " << params.I3;
+    gout << "\n";
+    gout << "V= " << params.V;
+    gout << "\n";
+    gout << "gm= " << params.gamma;
+    gout << "\n";
+    gout << "E_RMS= " << best_RMS;
+    gout << "\n";
+    for (auto &&n : best_th_set)
+    {
+        gout << n << ",";
+    }
+    gout << "\n";
+    gout << "Finished computations after " << OK_iterations << " valid parameter evaluations...";
+    gout << "\n";
+    gout << "Total evaluations: " << n_total_evals;
+    gout << "\n";
+}
+}
+;
