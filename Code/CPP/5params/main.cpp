@@ -23,7 +23,11 @@ int main()
 
     //Determine the best parameter set using TRANSVERSE wobbling regime. I2-Maximal MOI
     rms.SearchRMS_Transverse(Lu163, energies);
-
+    for (auto &&n : energies.TH_DATA)
+    {
+        std::cout << n << " ";
+    }
+    std::cout << "\n";
     auto endTime = std::chrono::system_clock::now();
     auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count();
     std::cout << "Finished computations. Process took: " << duration_ms / 1000.0 << " s";

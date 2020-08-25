@@ -1,5 +1,6 @@
 #include <vector>
 #include <cmath>
+#include <array>
 #include <fstream>
 
 // #include "expdata.h"
@@ -14,7 +15,7 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 100;
-        const double I_step = 5;
+        const double I_step = 20;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
@@ -25,7 +26,7 @@ public:
     };
 
 public:
-    static double RMS(std::vector<double> &exp_data, std::vector<double> &th_data);
+    static double RMS(const std::vector<double> &exp_data, std::array<double, expdata::STATES> &th_data);
 
     void SearchMIN_RMS(expdata &data, Formulas &energies)
     {
@@ -51,7 +52,7 @@ public:
                             {
                                 auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
 
-                                auto rms = RMS(data.exp_Data, th_Data);
+                                auto rms =1;
 
                                 if (rms <= best_RMS)
                                 {
@@ -118,7 +119,10 @@ public:
         double best_RMS = 987654321.0;
         int OK_iterations = 0;
         const int n_total_evals = pow((params.I_max - params.I_min) / params.I_step, 3) * ((params.V_max - params.V_min) / params.V_step) * ((params.gamma_max - params.gamma_min) / params.gamma_step);
-        std::vector<double> best_th_set;
+
+        std::array<double, expdata::STATES> best_th_set;
+        std::array<double, expdata::STATES> th_data;
+
         for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
         {
             for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)
@@ -134,7 +138,9 @@ public:
                             // std::cout << "\n";
                             // auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
 
-                            auto rms = 1;
+                            //!change the implementation to support a fixed size array instead of re-allocation
+                            th_data = Formulas::GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma);
+                            auto rms = RMS(data.exp_Data, th_data);
 
                             if (rms <= best_RMS)
                             {

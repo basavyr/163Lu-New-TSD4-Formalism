@@ -1,12 +1,12 @@
 The TRANSVERSE regime for $^{163}$Lu...
 I2-maximal MOI...
 Starting to search for the minimum RMS...
-I1= 91
-I2= 96
-I3= 86
+I1= 61
+I2= 81
+I3= 41
 V= 9.76
 gm= 59
-E_RMS= 1
-
-Finished computations after 5472000 valid parameter evaluations...
-Total evaluations: 18611111
+E_RMS= 6.32869
+2.64619e-260,0,0,1.38524e-309,0,0,0,0,0,0,0,-1.46467e-114,9.46151e-272,1.23067e-209,8.76223e-189,-7.34685e+130,-3.62047e-120,8.11647e+110,1.11688e+302,6.50602e-67,-2.10191e+58,6.91026e+177,2.41729e+290,-1.12488e+207,-2.64314e-163,-4.19574e-126,2.8334e-63,2.66706e-223,-2.2445e+143,-2.61466e-196,5.88672e+29,0,0,0,0,0,0,0,0,0,0,0,0,1.4822e-323,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+Finished computations after 48000 valid parameter evaluations...
+Total evaluations: 290798

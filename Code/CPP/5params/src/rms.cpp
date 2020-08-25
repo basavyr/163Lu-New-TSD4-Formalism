@@ -2,7 +2,7 @@
 
 // #include "../include/energies.h"
 
-double rms::RMS(std::vector<double> &exp_data, std::vector<double> &th_data)
+double rms::RMS(const std::vector<double> &exp_data, std::array<double, expdata::STATES> &th_data)
 {
     size_t s1 = exp_data.size();
     size_t s2 = th_data.size();
