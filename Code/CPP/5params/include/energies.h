@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <vector>
 #include <iostream>
+#include <array>
 
 #include "expdata.h"
 class Formulas
@@ -35,19 +36,9 @@ public:
     // Calculation of the fourth wobbling band using the new formalism, where the TSD4 band is considered as the g.s.b. for a different sequence of spins
     double E_TSD4_00(double spin, double i1, double i2, double i3, double V, double gamma);
 
-    // Calculation of the fourth wobbling band using the standard and well-known formalism, where TSD4 is considered the third excited wobbling-phonon band
-    double E_TSD4_30(double spin, double i1, double i2, double i3, double V, double gamma);
+    // Calculation of the fourth wobbling band using the standard and well-known formalism, where TSD4 is considered the first excited wobbling-phonon band built on top of TSD1
+    double E_TSD4_10(double spin, double i1, double i2, double i3, double V, double gamma);
 
-    // template <typename T>
-    // static std::vector<double> GenerateTheoreticalData(T &obj, double oddSpin, double I1, double I2, double I3, double V, double gamma)
-    // {
-    //     std::vector<double> th_data;
-    //     double size;
-    //     th_data.emplace_back(1.0);
-    // generating the first band
-    //     //?TSD1
-    //     return th_data;
-    // }
     static std::vector<double> GenerateTheoreticalData(expdata &data, Formulas &energies, double I1, double I2, double I3, double V, double gamma)
     {
         std::vector<double> th_data;
@@ -87,13 +78,25 @@ public:
             if (ValidNumbers(th))
                 th_data.emplace_back(th);
         }
+        return th_data;
+    }
 
-        // for (auto &&n : th_data)
-        // {
-        //     std::cout << n << " ";
-        // }
-        // std::cout << "\n";
+    //declaring the fixed-size array in which the values for the theoretical energies are stored
+    std::array<double, expdata::STATES> TH_DATA;
 
+    static std::array<double, expdata::STATES> GenerateData_Static(std::array<double, expdata::STATES> &th_data, expdata &data, Formulas &energies, double I1, double I2, double I3, double V, double gamma)
+    {
+        for (auto id = 0; id < expdata::STATES; ++id)
+        {
+            if (id < 21)
+                th_data[id] = energies.E_TSD1(data.spins[id], I1, I2, I3, V, gamma);
+            if (id >= 21 && id < 38)
+                th_data[id] = energies.E_TSD2(data.spins[id], I1, I2, I3, V, gamma);
+            if (id >= 38 && id < 52)
+                th_data[id] = energies.E_TSD3(data.spins[id], I1, I2, I3, V, gamma);
+            if (id >= 52 && id < 62)
+                th_data[id] = energies.E_TSD4_00(data.spins[id], I1, I2, I3, V, gamma);
+        }
         return th_data;
     }
 
