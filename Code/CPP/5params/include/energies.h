@@ -36,8 +36,8 @@ public:
     // Calculation of the fourth wobbling band using the new formalism, where the TSD4 band is considered as the g.s.b. for a different sequence of spins
     double E_TSD4_00(double spin, double i1, double i2, double i3, double V, double gamma);
 
-    // Calculation of the fourth wobbling band using the standard and well-known formalism, where TSD4 is considered the third excited wobbling-phonon band
-    double E_TSD4_30(double spin, double i1, double i2, double i3, double V, double gamma);
+    // Calculation of the fourth wobbling band using the standard and well-known formalism, where TSD4 is considered the first excited wobbling-phonon band built on top of TSD1
+    double E_TSD4_10(double spin, double i1, double i2, double i3, double V, double gamma);
 
     static std::vector<double> GenerateTheoreticalData(expdata &data, Formulas &energies, double I1, double I2, double I3, double V, double gamma)
     {
@@ -89,13 +89,13 @@ public:
         for (auto id = 0; id < expdata::STATES; ++id)
         {
             if (id < 21)
-                th_data[id] = 1;
+                th_data[id] = energies.E_TSD1(data.spins[id], I1, I2, I3, V, gamma);
             if (id >= 21 && id < 38)
-                th_data[id] = 2;
+                th_data[id] = energies.E_TSD2(data.spins[id], I1, I2, I3, V, gamma);
             if (id >= 38 && id < 52)
-                th_data[id] = 3;
+                th_data[id] = energies.E_TSD3(data.spins[id], I1, I2, I3, V, gamma);
             if (id >= 52 && id < 62)
-                th_data[id] = 4;
+                th_data[id] = energies.E_TSD4_00(data.spins[id], I1, I2, I3, V, gamma);
         }
         return th_data;
     }
