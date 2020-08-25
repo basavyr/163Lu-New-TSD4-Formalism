@@ -15,7 +15,7 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 100;
-        const double I_step = 5;
+        const double I_step = 25;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
@@ -116,8 +116,11 @@ public:
         gout << "\n";
         gout << "Starting to search for the minimum RMS...";
         gout << "\n";
+
         double best_RMS = 987654321.0;
+
         int OK_iterations = 0;
+
         const int n_total_evals = pow((params.I_max - params.I_min) / params.I_step, 3) * ((params.V_max - params.V_min) / params.V_step) * ((params.gamma_max - params.gamma_min) / params.gamma_step);
 
         std::array<double, expdata::STATES> best_th_set;
@@ -132,97 +135,103 @@ public:
                     {
                         for (auto gamma = params.gamma_min; gamma < params.gamma_max; gamma += params.gamma_step)
                         {
-                            //operations for RMS
-                            // std::cout << I1 << " " << I2 << " " << I3;
-                            // std::cout << "\n";
-                            // auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
-
-                            //!change the implementation to support a fixed size array instead of re-allocation
-                            // double rms = RMS(data.exp_Data, std::move(energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma)));
-
-                            //Use direction in-scope computations for the rms value
-                            //no further  external methods called
-
-                            //----------------------------
-                            //----------------------------
-                            //RMS
-                            //----------------------------
-                            //----------------------------
-
+                            int direct = 0;
                             double sum = 0.0;
-                            int ok = 1;
-                            for (auto id = 0; id < data.STATES && ok; ++id)
+                            if (direct)
                             {
-                                if (id < 21)
-                                {
-                                    auto d = pow((data.exp_Data[id] - energies.E_TSD1(data.spins[id], I1, I2, I3, V, gamma)), 2);
-                                    if (!Formulas::ValidNumbers(d))
-                                    {
-                                        ok = 0;
-                                        sum = Formulas::error_number;
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        sum += d;
-                                    }
-                                }
-                                if (id >= 21 && id < 38)
-                                {
-                                    auto d = pow((data.exp_Data[id] - energies.E_TSD2(data.spins[id], I1, I2, I3, V, gamma)), 2);
-                                    if (!Formulas::ValidNumbers(d))
-                                    {
-                                        ok = 0;
-                                        sum = Formulas::error_number;
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        sum += d;
-                                    }
-                                }
-                                if (id >= 38 && id < 52)
-                                {
-                                    auto d = pow((data.exp_Data[id] - energies.E_TSD3(data.spins[id], I1, I2, I3, V, gamma)), 2);
-                                    if (!Formulas::ValidNumbers(d))
-                                    {
-                                        ok = 0;
-                                        sum = Formulas::error_number;
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        sum += d;
-                                    }
-                                }
-                                if (id >= 52 && id < 62)
-                                {
-                                    auto d = pow((data.exp_Data[id] - energies.E_TSD4_00(data.spins[id], I1, I2, I3, V, gamma)), 2);
-                                    if (!Formulas::ValidNumbers(d))
-                                    {
-                                        ok = 0;
-                                        sum = Formulas::error_number;
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        sum += d;
-                                    }
-                                }
-                            }
 
+                                //operations for RMS
+                                // std::cout << I1 << " " << I2 << " " << I3;
+                                // std::cout << "\n";
+                                // auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
+
+                                //!change the implementation to support a fixed size array instead of re-allocation
+                                sum = RMS(data.exp_Data, std::move(energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma)));
+
+                                //Use direction in-scope computations for the rms value
+                                //no further  external methods called
+                            }
                             //----------------------------
                             //----------------------------
                             //RMS
                             //----------------------------
                             //----------------------------
-                            if (sum == Formulas::error_number)
-                                break;
                             else
                             {
-                                sum = sqrt(sum / (expdata::STATES + 1));
-                            }
+                                int ok = 1;
+                                for (auto id = 0; id < data.STATES && ok; ++id)
+                                {
+                                    if (id < 21)
+                                    {
+                                        auto d = pow((data.exp_Data[id] - energies.E_TSD1(data.spins[id], I1, I2, I3, V, gamma)), 2);
+                                        if (!Formulas::ValidNumbers(d))
+                                        {
+                                            ok = 0;
+                                            sum = Formulas::error_number;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            sum += d;
+                                        }
+                                    }
+                                    if (id >= 21 && id < 38)
+                                    {
+                                        auto d = pow((data.exp_Data[id] - energies.E_TSD2(data.spins[id], I1, I2, I3, V, gamma)), 2);
+                                        if (!Formulas::ValidNumbers(d))
+                                        {
+                                            ok = 0;
+                                            sum = Formulas::error_number;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            sum += d;
+                                        }
+                                    }
+                                    if (id >= 38 && id < 52)
+                                    {
+                                        auto d = pow((data.exp_Data[id] - energies.E_TSD3(data.spins[id], I1, I2, I3, V, gamma)), 2);
+                                        if (!Formulas::ValidNumbers(d))
+                                        {
+                                            ok = 0;
+                                            sum = Formulas::error_number;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            sum += d;
+                                        }
+                                    }
+                                    if (id >= 52 && id < 62)
+                                    {
+                                        auto d = pow((data.exp_Data[id] - energies.E_TSD4_00(data.spins[id], I1, I2, I3, V, gamma)), 2);
+                                        if (!Formulas::ValidNumbers(d))
+                                        {
+                                            ok = 0;
+                                            sum = Formulas::error_number;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            sum += d;
+                                        }
+                                    }
+                                }
 
+                                //----------------------------
+                                //----------------------------
+                                //RMS
+                                //----------------------------
+                                //----------------------------
+
+                                if (sum == Formulas::error_number)
+                                    break;
+                                else
+                                {
+                                    sum = sqrt(sum / (expdata::STATES + 1));
+                                }
+                            }
                             if (sum <= best_RMS)
                             {
                                 best_RMS = sum;
