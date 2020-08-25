@@ -14,7 +14,7 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 100;
-        const double I_step = 2.5;
+        const double I_step = 5;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
@@ -30,7 +30,7 @@ public:
     void SearchMIN_RMS(expdata &data, Formulas &energies)
     {
         ParamSet params;
-        std::ofstream gout("params.dat");
+        std::ofstream gout("./out/params.dat");
         gout << "Starting to search for the minimum RMS...";
         gout << "\n";
         double best_RMS = 987654321.0;
@@ -108,7 +108,7 @@ public:
     void SearchRMS_Transverse(expdata &data, Formulas &energies)
     {
         ParamSet params;
-        std::ofstream gout("paramsTransverse.dat");
+        std::ofstream gout("./out/paramsTransverse.dat");
         gout << "The TRANSVERSE regime for $^{163}$Lu...";
         gout << "\n";
         gout << "I2-maximal MOI...";
@@ -125,16 +125,16 @@ public:
             {
                 for (auto I3 = params.I_min; I3 < params.I_max && (I2 > I1); I3 += params.I_step)
                 {
-                    for (auto V = params.V_min; V < params.V_max && (I2 > I3); V += params.V_step)
+                    for (auto V = params.V_min; V < params.V_max && (I2 > I3) && (I1 != I3); V += params.V_step)
                     {
-                        for (auto gamma = params.gamma_min; gamma < params.gamma_max && I1 != I3; gamma += params.gamma_step)
+                        for (auto gamma = params.gamma_min; gamma < params.gamma_max; gamma += params.gamma_step)
                         {
                             //operations for RMS
                             // std::cout << I1 << " " << I2 << " " << I3;
                             // std::cout << "\n";
-                            auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
+                            // auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
 
-                            auto rms = RMS(data.exp_Data, th_Data);
+                            auto rms = 1;
 
                             if (rms <= best_RMS)
                             {
@@ -144,7 +144,7 @@ public:
                                 params.I3 = I3;
                                 params.V = V;
                                 params.gamma = gamma;
-                                best_th_set = th_Data;
+                                // best_th_set = th_Data;
                                 OK_iterations++;
                             }
                         }
