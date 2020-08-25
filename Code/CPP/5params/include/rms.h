@@ -140,6 +140,23 @@ public:
                             //!change the implementation to support a fixed size array instead of re-allocation
                             double rms = RMS(data.exp_Data, std::move(energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma)));
 
+                            //Use direction in-scope computations for the rms value
+                            //no further  external methods called
+
+                            //----------------------------
+                            //----------------------------
+                            //RMS
+                            //----------------------------
+                            //----------------------------
+
+                            
+
+                            //----------------------------
+                            //----------------------------
+                            //RMS
+                            //----------------------------
+                            //----------------------------
+
                             if (rms <= best_RMS)
                             {
                                 best_RMS = rms;
