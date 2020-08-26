@@ -7,10 +7,14 @@
 // #include "./include/energies.h"
 #include "./include/rms.h"
 
-int main()
+//Declaring the experimental data set for Lu163
+expdata Lu163;
+
+//Class with the analytic formulas used into RMS computations
+Formulas energies(0);
+
+void RunApp_FixedArray()
 {
-    expdata Lu163;
-    Formulas energies(0);
     std::cout << "Initializing rms class...";
     std::cout << "\n";
     auto startTime = std::chrono::system_clock::now();
@@ -18,18 +22,47 @@ int main()
     std::cout << "Starting to search for the minimum RMS...";
     std::cout << "\n";
 
-    //Determine the best parameter set using NO prior conditions with regards to the MOI's ordering
-    // rms.SearchMIN_RMS(Lu163, energies);
-
     //Determine the best parameter set using TRANSVERSE wobbling regime. I2-Maximal MOI
-    rms.SearchRMS_Transverse(Lu163, energies);
-    // for (auto &&n : energies.TH_DATA)
-    // {
-    //     std::cout << n << " ";
-    // }
-    std::cout << "\n";
-    auto endTime = std::chrono::system_clock::now();
-    auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count();
+    rms.SearchRMS_FixedArray(Lu163, energies);
+
+    auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - startTime).count();
     std::cout << "Finished computations. Process took: " << duration_ms / 1000.0 << " s";
     std::cout << "\n";
+}
+
+void RunApp_DirectComputation()
+{
+    // std::cout << "Initializing rms class...";
+    // std::cout << "\n";
+    auto startTime = std::chrono::system_clock::now();
+    rms rms;
+    std::cout << "Starting to search for the minimum RMS...";
+    std::cout << "\n";
+
+    //Determine the best parameter set using TRANSVERSE wobbling regime. I2-Maximal MOI
+    rms.SearchRMS_DirectComputation(Lu163, energies);
+
+    auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - startTime).count();
+    std::cout << "Finished computations. Process took: " << duration_ms / 1000.0 << " s";
+    std::cout << "\n";
+}
+
+int main()
+{
+    std::cout << "Searching for the minimal RMS value using the fixed array procedure.";
+    std::cout << "\n";
+
+    RunApp_FixedArray();
+
+    std::cout << "\n";
+    std::cout << "#############################"
+              << "\n";
+    std::cout << "#############################"
+              << "\n";
+    std::cout << "\n";
+
+    std::cout << "Searching for the minimal RMS value using the direct computation method.";
+    std::cout << "\n";
+
+    RunApp_DirectComputation();
 }
