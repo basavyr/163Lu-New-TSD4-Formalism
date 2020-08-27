@@ -23,7 +23,7 @@ void RunApp_FixedArray(double &exec_time)
     std::cout << "\n";
 
     //Determine the best parameter set using TRANSVERSE wobbling regime. I2-Maximal MOI
-    rms.SearchRMS_FixedArray(Lu163, energies);
+    rms.SearchRMS_FA_Delta(Lu163, energies);
 
     auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - startTime).count();
     std::cout << "Finished computations. Process took: " << duration_ms / 1000.0 << " s";
@@ -64,14 +64,14 @@ int main()
               << "\n";
     std::cout << "\n";
 
-    std::cout << "Searching for the minimal RMS value using the direct computation method.";
-    std::cout << "\n";
+    // std::cout << "Searching for the minimal RMS value using the direct computation method.";
+    // std::cout << "\n";
 
-    double exec_proc2 = 0;
-    RunApp_DirectComputation(exec_proc2);
+    // double exec_proc2 = 0;
+    // RunApp_DirectComputation(exec_proc2);
 
-    // auto improvement = (std::max(exec_proc1, exec_proc2) == exec_proc2) ? (static_cast<double>(exec_proc1 / exec_proc2)) : (static_cast<double>(exec_proc2 / exec_proc1));
-    auto improvement = (static_cast<double>(exec_proc2 / exec_proc1));
-    std::cout << "Time improvement: " << improvement;
-    std::cout << "\n";
+    // // auto improvement = (std::max(exec_proc1, exec_proc2) == exec_proc2) ? (static_cast<double>(exec_proc1 / exec_proc2)) : (static_cast<double>(exec_proc2 / exec_proc1));
+    // auto improvement = (static_cast<double>(exec_proc2 / exec_proc1));
+    // std::cout << "Time improvement: " << improvement;
+    // std::cout << "\n";
 }

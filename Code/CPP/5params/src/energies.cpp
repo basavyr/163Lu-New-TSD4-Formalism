@@ -37,6 +37,16 @@ int Formulas::TransverseWobbling(double I1, double I2, double I3)
     return 0;
 }
 
+int Formulas::Delta_MOI(double delta, double I1, double I2, double I3)
+{
+    auto d12 = abs(I1 - I2);
+    auto d13 = abs(I1 - I3);
+    auto d23 = abs(I2 - I3);
+    if (d12 >= delta && d13 >= delta && d23 >= delta)
+        return 1;
+    return 0;
+}
+
 double Formulas::InertiaFactor(double I)
 {
     if (I == 0)

@@ -27,6 +27,8 @@ public:
     //Considering only I2-maximal moment of inertia
     static int TransverseWobbling(double I1, double I2, double I3);
 
+    static int Delta_MOI(double delta, double I1, double I2, double I3);
+
     //The general formula for the excitation energy of a triaxial band defined by the two wobbling phonon numbers n1 and n2, respectively
     double E_Wobbling(int n1, int n2, double spin, double oddSpin, double i1, double i2, double i3, double V, double gamma);
     double E_TSD1(double spin, double i1, double i2, double i3, double V, double gamma);

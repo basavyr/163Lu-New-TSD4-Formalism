@@ -15,7 +15,7 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 100;
-        const double I_step = 1.5;
+        const double I_step = 5;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
@@ -313,6 +313,94 @@ public:
                                 OK_iterations++;
                             }
                         }
+                    }
+                }
+            }
+        }
+        std::cout << "Parameter set determination using the fixed size arrays, with no memory re-allocation...";
+        std::cout << "\n";
+        std::cout << "I1= " << params.I1;
+        std::cout << "\n";
+        std::cout << "I2= " << params.I2;
+        std::cout << "\n";
+        std::cout << "I3= " << params.I3;
+        std::cout << "\n";
+        std::cout << "V= " << params.V;
+        std::cout << "\n";
+        std::cout << "gm= " << params.gamma;
+        std::cout << "\n";
+        std::cout << "E_RMS= " << best_RMS;
+        std::cout << "\n";
+
+        gout << "Parameter set determination using the fixed size arrays, with no memory re-allocation...";
+        gout << "\n";
+        gout << "I1= " << params.I1;
+        gout << "\n";
+        gout << "I2= " << params.I2;
+        gout << "\n";
+        gout << "I3= " << params.I3;
+        gout << "\n";
+        gout << "V= " << params.V;
+        gout << "\n";
+        gout << "gm= " << params.gamma;
+        gout << "\n";
+        gout << "E_RMS= " << best_RMS;
+        gout << "\n";
+        for (auto &&n : best_th_set)
+        {
+            gout << n << ",";
+        }
+        gout << "\n";
+        gout << "Finished computations after " << OK_iterations << " valid parameter evaluations...";
+        gout << "\n";
+        gout << "Total evaluations: " << n_total_evals;
+        gout << "\n";
+    }
+
+    //Function for searching the minimum RMS using the fixed-array method (no re-allocation)
+    //The moments of inertia are triaxial, within the transverse wobbling regime and they have a general difference of 10% in the absolute values with respect to each other.
+    void SearchRMS_FA_Delta(expdata &data, Formulas &energies)
+    {
+        ParamSet params;
+        std::ofstream gout("./out/DeltaParams.dat");
+        gout << "The TRANSVERSE regime for $^{163}$Lu...";
+        gout << "\n";
+        gout << "I2-maximal MOI...";
+        gout << "\n";
+        gout << "Starting to search for the minimum RMS...";
+        gout << "\n";
+
+        double best_RMS = 987654321.0;
+
+        int OK_iterations = 0;
+
+        const int n_total_evals = pow((params.I_max - params.I_min) / params.I_step, 3) * ((params.V_max - params.V_min) / params.V_step) * ((params.gamma_max - params.gamma_min) / params.gamma_step);
+
+        std::array<double, expdata::STATES> best_th_set;
+        auto gamma = 20;
+        auto V = 9.1;
+        for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
+        {
+            for (auto I2 = params.I_min; I1 < params.I_max; I1 += params.I_step)
+            {
+                for (auto I3 = params.I_min; I1 < params.I_max; I1 += params.I_step)
+                {
+                    //!change the implementation to support a fixed size array instead of re-allocation with every loop iteration
+                    auto thdata = energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma);
+                    auto sum = RMS(data.exp_Data, thdata);
+
+                    if (sum <= best_RMS)
+                    {
+                        best_RMS = sum;
+                        params.I1 = I1;
+                        params.I2 = I2;
+                        params.I3 = I3;
+                        params.V = V;
+                        params.gamma = gamma;
+                        //Store the array with the evaluated excitation energies, given by the current "best" parameter set
+                        // best_th_set = thdata;
+                        //? might be more optimal to evaluate the energy set after the parameters are determined from the iteration procedure
+                        OK_iterations++;
                     }
                 }
             }
