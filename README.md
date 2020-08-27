@@ -139,4 +139,4 @@ Finished computations. Process took: 51392.6 s
 
 (small step - fixed array computation)
 
-![](2020-08-27-06-29-11.png)
+![](./Reports/2020-08-27-06-29-11.png)
