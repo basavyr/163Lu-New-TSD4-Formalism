@@ -103,3 +103,40 @@ gm= 28
 E_RMS= 0.238275
 Finished computations. Process took: 4546.12 s
 ```
+
+### Compilation using fixed size array and small step
+
+```
+Parameter set determination using the fixed size arrays, with no memory re-allocation...
+I1= 76
+I2= 77.5
+I3= 2.5
+V= 3.01
+gm= 59
+E_RMS= 0.2066
+Finished computations. Process took: 16662.5 s
+```
+
+Using the VM@elk
+
+`I_step=1`
+
+```
+Initializing rms class...
+Starting to search for the minimum RMS...
+
+I1= 71
+I2= 72
+I3= 3
+V= 5.01
+gm= 19
+E_RMS= 0.209134
+
+Finished computations. Process took: 51392.6 s
+```
+
+## Preliminary results
+
+(small step - fixed array computation)
+
+![](2020-08-27-06-29-11.png)
