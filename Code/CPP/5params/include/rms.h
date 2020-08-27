@@ -15,7 +15,7 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 100;
-        const double I_step = 5;
+        const double I_step = 1;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
@@ -363,6 +363,7 @@ public:
     {
         ParamSet params;
         std::ofstream gout("./out/DeltaParams.dat");
+        std::ofstream paramFile("./out/ParamValues.dat");
         gout << "The TRANSVERSE regime for $^{163}$Lu...";
         gout << "\n";
         gout << "I2-maximal MOI...";
@@ -373,39 +374,55 @@ public:
         double best_RMS = 987654321.0;
 
         int OK_iterations = 0;
+        double MOI_AcceptedDifference = 5;
 
         const int n_total_evals = pow((params.I_max - params.I_min) / params.I_step, 3) * ((params.V_max - params.V_min) / params.V_step) * ((params.gamma_max - params.gamma_min) / params.gamma_step);
 
         std::array<double, expdata::STATES> best_th_set;
-        auto gamma = 20;
+        auto gamma = 17;
         auto V = 9.1;
         for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
         {
-            for (auto I2 = params.I_min; I1 < params.I_max; I1 += params.I_step)
+            for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)
             {
-                for (auto I3 = params.I_min; I1 < params.I_max; I1 += params.I_step)
+                for (auto I3 = params.I_min; I3 < params.I_max && (I2 > I1) && (I2 > I3); I3 += params.I_step)
                 {
-                    //!change the implementation to support a fixed size array instead of re-allocation with every loop iteration
-                    auto thdata = energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma);
-                    auto sum = RMS(data.exp_Data, thdata);
-
-                    if (sum <= best_RMS)
+                    //Accept only MOIs which belong to the transverse wobbling regime
+                    //Only the moments of inertia with more than 15% of their absolute difference between each other are accepted
+                    if (Formulas::Triaxiality(I1, I2, I3) && Formulas::Delta_MOI(MOI_AcceptedDifference, I1, I2, I3))
                     {
-                        best_RMS = sum;
-                        params.I1 = I1;
-                        params.I2 = I2;
-                        params.I3 = I3;
-                        params.V = V;
-                        params.gamma = gamma;
-                        //Store the array with the evaluated excitation energies, given by the current "best" parameter set
-                        // best_th_set = thdata;
-                        //? might be more optimal to evaluate the energy set after the parameters are determined from the iteration procedure
-                        OK_iterations++;
+                        // for (auto V = params.V_min; V < params.V_max; V += params.V_step)
+                        // {
+                        //     for (auto gamma = params.gamma_min; gamma < params.gamma_max; gamma += params.gamma_step)
+                        //     {
+
+                        //!change the implementation to support a fixed size array instead of re-allocation with every loop iteration
+                        auto thdata = energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma);
+                        auto sum = RMS(data.exp_Data, thdata);
+
+                        if (sum <= best_RMS)
+                        {
+                            best_RMS = sum;
+                            params.I1 = I1;
+                            params.I2 = I2;
+                            params.I3 = I3;
+                            params.V = V;
+                            params.gamma = gamma;
+                            //Store the array with the evaluated excitation energies, given by the current "best" parameter set
+                            best_th_set = thdata;
+                            //? might be more optimal to evaluate the energy set after the parameters are determined from the iteration procedure
+                            OK_iterations++;
+                        }
+                        paramFile << I1 << " " << I2 << " " << I3 << "\n";
+                        //     }
+                        // }
                     }
                 }
             }
         }
         std::cout << "Parameter set determination using the fixed size arrays, with no memory re-allocation...";
+        std::cout << "\n";
+        std::cout << "Using a fixed Delta between the three MOIs: delta= " << MOI_AcceptedDifference;
         std::cout << "\n";
         std::cout << "I1= " << params.I1;
         std::cout << "\n";
@@ -421,6 +438,8 @@ public:
         std::cout << "\n";
 
         gout << "Parameter set determination using the fixed size arrays, with no memory re-allocation...";
+        gout << "\n";
+        gout << "Using a fixed Delta between the three MOIs: delta= " << MOI_AcceptedDifference;
         gout << "\n";
         gout << "I1= " << params.I1;
         gout << "\n";

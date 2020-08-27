@@ -140,3 +140,21 @@ Finished computations. Process took: 51392.6 s
 (small step - fixed array computation)
 
 ![](./Reports/2020-08-27-06-29-11.png)
+
+## Using a fixed ($delta) least-difference between the three moments of inertia
+
+This method only choses the moments of inertia that have a relative absolute difference between each other, bigger than a fixed quantity (e.g. `double MOI_AcceptedDifference = 5;` in code).
+
+```
+Searching for the minimal RMS value using the fixed array procedure.
+Initializing rms class...
+Starting to search for the minimum RMS...
+Parameter set determination using the fixed size arrays, with no memory re-allocation...
+I1= 83
+I2= 93
+I3= 2
+V= 9.1
+gm= 17
+E_RMS= 0.325772
+Finished computations. Process took: 13.866 s
+```
