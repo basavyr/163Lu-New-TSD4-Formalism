@@ -374,7 +374,9 @@ public:
         double best_RMS = 987654321.0;
 
         int OK_iterations = 0;
-        double MOI_AcceptedDifference = 5;
+
+        //change this quantity for accepting a certain difference between the three moments of inertia in the min_rms search loop
+        double MOI_AcceptedDifference = 10;
 
         const int n_total_evals = pow((params.I_max - params.I_min) / params.I_step, 3) * ((params.V_max - params.V_min) / params.V_step) * ((params.gamma_max - params.gamma_min) / params.gamma_step);
 
