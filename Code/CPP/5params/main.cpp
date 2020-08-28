@@ -60,6 +60,7 @@ int main()
 
     double exec_proc1 = 0;
     RunApp_FixedArray(exec_proc1, 0, 17);
+    RunApp_FixedArray(exec_proc1, 1, 17);
 
     // std::cout << "\n";
     // std::cout << "#############################"

@@ -51,14 +51,20 @@ double rms::RMS(const std::vector<double> &exp_data, const std::array<double, ex
 void rms::SearchRMS_FixedGamma(expdata &data, Formulas &energies, int Phonon_Selector, int Max_MOI_Axis, double gamma)
 {
     ParamSet params;
-    std::ofstream gout("./out/1AxisParams.dat");
+    auto filename = "./out/1AxisParams-" + std::to_string(Phonon_Selector) + ".dat";
+    std::cout<<filename;
+    std::ofstream gout(filename);
 
     const double gamma0 = 17;
     const double gamma1 = 21;
     for (auto gamma_id = gamma0; gamma_id <= gamma1; ++gamma_id)
     {
+        //store the best rms from the iterative procedure
         auto best_rms = 987654321.0;
+
+        //container to store the theoretical data set
         std::array<double, expdata::STATES> best_th_data;
+
         for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
         {
             for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)
