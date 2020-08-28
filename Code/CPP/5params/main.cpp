@@ -15,17 +15,19 @@ Formulas energies(0);
 
 void RunApp_FixedArray(double &exec_time, int Phonon_Selector, double gamma)
 {
-    std::cout << "Initializing rms class...";
-    std::cout << "\n";
+    // std::cout << "Initializing rms class...";
+    // std::cout << "\n";
+    std::cout << "Searching for the minimal RMS value using the fixed array procedure."
+              << "\n";
+    std::cout << "TSD4: (" << Phonon_Selector << ",0)'\n";
+    
     auto startTime = std::chrono::system_clock::now();
     rms rms;
-    std::cout << "Starting to search for the minimum RMS...";
-    std::cout << "\n";
-
-    // int Phonon_Selector = 1;
 
     //look for 1-moi ordering only
+    //change this value if the maximal moi should be along the other two axes
     int max_moi = 1;
+
     //Determine the best parameter set using TRANSVERSE wobbling regime. max_moi = Maximal MOI
     rms.SearchRMS_FixedGamma(Lu163, energies, Phonon_Selector, max_moi, gamma);
 
@@ -55,10 +57,6 @@ void RunApp_DirectComputation(double &exec_time)
 
 int main()
 {
-    std::cout << "Searching for the minimal RMS value using the fixed array procedure.";
-    std::cout << "\n";
-    std::cout << "TSD4:  (0,0)";
-    std::cout << "\n";
 
     double exec_proc1 = 0;
     RunApp_FixedArray(exec_proc1, 0, 17);
