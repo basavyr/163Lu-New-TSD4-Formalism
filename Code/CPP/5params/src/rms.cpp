@@ -44,3 +44,14 @@ double rms::RMS(const std::vector<double> &exp_data, const std::array<double, ex
         return RMS;
     return Formulas::error_number;
 }
+
+//search the minimum rms value while keeping the Lund convention (where the maximal moi is along the 1-axis)
+//The Phonon selector allows for both formalisms to the applied in the analytic computations
+//The triaxiality parameter $gamma$ is fixed while the iterative process searches for results
+void rms::SearchRMS_FixedGamma(expdata &data, Formulas &energies, int Phonon_Selector, int Max_MOI_Axis, double gamma)
+{
+    std::ofstream gout("./out/1AxisParams.dat");
+    gout << "Test";
+    gout << "Test";
+    gout << "Test";
+}

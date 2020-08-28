@@ -13,7 +13,7 @@ expdata Lu163;
 //Class with the analytic formulas used into RMS computations
 Formulas energies(0);
 
-void RunApp_FixedArray(double &exec_time)
+void RunApp_FixedArray(double &exec_time, int Phonon_Selector, double gamma)
 {
     std::cout << "Initializing rms class...";
     std::cout << "\n";
@@ -22,8 +22,12 @@ void RunApp_FixedArray(double &exec_time)
     std::cout << "Starting to search for the minimum RMS...";
     std::cout << "\n";
 
-    //Determine the best parameter set using TRANSVERSE wobbling regime. I2-Maximal MOI
-    rms.SearchRMS_FA_Delta(Lu163, energies);
+    // int Phonon_Selector = 1;
+
+    //look for 1-moi ordering only
+    int max_moi = 1;
+    //Determine the best parameter set using TRANSVERSE wobbling regime. max_moi = Maximal MOI
+    rms.SearchRMS_FixedGamma(Lu163, energies, Phonon_Selector, max_moi, gamma);
 
     auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - startTime).count();
     std::cout << "Finished computations. Process took: " << duration_ms / 1000.0 << " s";
@@ -53,16 +57,25 @@ int main()
 {
     std::cout << "Searching for the minimal RMS value using the fixed array procedure.";
     std::cout << "\n";
+    std::cout << "TSD4:  (0,0)";
+    std::cout << "\n";
 
     double exec_proc1 = 0;
-    RunApp_FixedArray(exec_proc1);
+    RunApp_FixedArray(exec_proc1, 0, 17);
 
-    std::cout << "\n";
-    std::cout << "#############################"
-              << "\n";
-    std::cout << "#############################"
-              << "\n";
-    std::cout << "\n";
+    // std::cout << "\n";
+    // std::cout << "#############################"
+    //           << "\n";
+    // std::cout << "#############################"
+    //           << "\n";
+    // std::cout << "\n";
+
+    // std::cout << "Searching for the minimal RMS value using the fixed array procedure.";
+    // std::cout << "\n";
+    // std::cout << "TSD4:  (1,0)";
+    // std::cout << "\n";
+
+    // RunApp_FixedArray(exec_proc1, 1);
 
     // std::cout << "Searching for the minimal RMS value using the direct computation method.";
     // std::cout << "\n";

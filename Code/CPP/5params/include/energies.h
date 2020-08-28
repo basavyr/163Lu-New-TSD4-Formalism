@@ -86,7 +86,7 @@ public:
     //declaring the fixed-size array in which the values for the theoretical energies are stored
     std::array<double, expdata::STATES> TH_DATA;
 
-    static std::array<double, expdata::STATES> GenerateData_Static(std::array<double, expdata::STATES> &th_data, expdata &data, Formulas &energies, double I1, double I2, double I3, double V, double gamma)
+    static std::array<double, expdata::STATES> GenerateData_Static(std::array<double, expdata::STATES> &th_data, expdata &data, Formulas &energies, double I1, double I2, double I3, double V, double gamma, int Phonon_Selector)
     {
         for (auto id = 0; id < expdata::STATES; ++id)
         {
@@ -97,7 +97,12 @@ public:
             if (id >= 38 && id < 52)
                 th_data[id] = energies.E_TSD3(data.spins[id], I1, I2, I3, V, gamma);
             if (id >= 52 && id < 62)
-                th_data[id] = energies.E_TSD4_00(data.spins[id], I1, I2, I3, V, gamma);
+            {
+                if (Phonon_Selector == 0)
+                    th_data[id] = energies.E_TSD4_00(data.spins[id], I1, I2, I3, V, gamma);
+                if (Phonon_Selector == 1)
+                    th_data[id] = energies.E_TSD4_10(data.spins[id], I1, I2, I3, V, gamma);
+            }
         }
         return th_data;
     }

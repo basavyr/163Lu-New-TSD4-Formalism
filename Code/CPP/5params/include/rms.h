@@ -15,7 +15,7 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 100;
-        const double I_step = 1;
+        const double I_step = 5;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
@@ -35,10 +35,16 @@ public:
         std::ofstream gout("./out/params.dat");
         gout << "Starting to search for the minimum RMS...";
         gout << "\n";
+
         double best_RMS = 987654321.0;
         int OK_iterations = 0;
+
+        int Phonon_Selector = 1;
+
         const int n_total_evals = pow((params.I_max - params.I_min) / params.I_step, 3) * ((params.V_max - params.V_min) / params.V_step) * ((params.gamma_max - params.gamma_min) / params.gamma_step);
-        std::vector<double> best_th_set;
+
+        std::array<double, expdata::STATES> best_th_set;
+
         for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
         {
             for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)
@@ -51,7 +57,7 @@ public:
                         {
                             if (Formulas::Triaxiality(I1, I2, I3))
                             {
-                                auto th_Data = Formulas::GenerateTheoreticalData(data, energies, I1, I2, I3, V, gamma);
+                                auto th_Data = Formulas::GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma, Phonon_Selector);
 
                                 auto rms = 1;
 
@@ -264,6 +270,7 @@ public:
     }
 
     //?Transverse regime implemented by default
+    //The phonon selector for this method is set to default value 0
     void
     SearchRMS_FixedArray(expdata &data, Formulas &energies)
     {
@@ -279,6 +286,8 @@ public:
         double best_RMS = 987654321.0;
 
         int OK_iterations = 0;
+
+        int Phonon_Selector = 0;
 
         const int n_total_evals = pow((params.I_max - params.I_min) / params.I_step, 3) * ((params.V_max - params.V_min) / params.V_step) * ((params.gamma_max - params.gamma_min) / params.gamma_step);
 
@@ -296,7 +305,7 @@ public:
                         {
 
                             //!change the implementation to support a fixed size array instead of re-allocation with every loop iteration
-                            auto thdata = energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma);
+                            auto thdata = energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma, Phonon_Selector);
                             auto sum = RMS(data.exp_Data, thdata);
 
                             if (sum <= best_RMS)
@@ -359,7 +368,8 @@ public:
 
     //Function for searching the minimum RMS using the fixed-array method (no re-allocation)
     //The moments of inertia are triaxial, within the transverse wobbling regime and they have a general difference of 10% in the absolute values with respect to each other.
-    void SearchRMS_FA_Delta(expdata &data, Formulas &energies)
+    //The Phonon_Selector is used for selecting which of the two methods for computing the excitation energies of TSD4 should be applied.
+    void SearchRMS_FA_Delta(expdata &data, Formulas &energies, int Phonon_Selector)
     {
         ParamSet params;
         std::ofstream gout("./out/DeltaParams.dat");
@@ -381,7 +391,7 @@ public:
         const int n_total_evals = pow((params.I_max - params.I_min) / params.I_step, 3) * ((params.V_max - params.V_min) / params.V_step) * ((params.gamma_max - params.gamma_min) / params.gamma_step);
 
         std::array<double, expdata::STATES> best_th_set;
-        auto gamma = 17;
+        // auto gamma = 17;
         auto V = 9.1;
         for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
         {
@@ -389,33 +399,37 @@ public:
             {
                 for (auto I3 = params.I_min; I3 < params.I_max && (I2 > I1) && (I2 > I3); I3 += params.I_step)
                 {
-                    //Accept only MOIs which belong to the transverse wobbling regime
-                    //Only the moments of inertia with more than 15% of their absolute difference between each other are accepted
-                    if (Formulas::Triaxiality(I1, I2, I3) && Formulas::Delta_MOI(MOI_AcceptedDifference, I1, I2, I3))
+                    for (auto gamma = 17; gamma <= 21; gamma++)
                     {
-                        // for (auto V = params.V_min; V < params.V_max; V += params.V_step)
-                        // {
-                        //     for (auto gamma = params.gamma_min; gamma < params.gamma_max; gamma += params.gamma_step)
-                        //     {
 
-                        //!change the implementation to support a fixed size array instead of re-allocation with every loop iteration
-                        auto thdata = energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma);
-                        auto sum = RMS(data.exp_Data, thdata);
-
-                        if (sum <= best_RMS)
+                        //Accept only MOIs which belong to the transverse wobbling regime
+                        //Only the moments of inertia with more than 15% of their absolute difference between each other are accepted
+                        if (Formulas::Triaxiality(I1, I2, I3) && Formulas::Delta_MOI(MOI_AcceptedDifference, I1, I2, I3))
                         {
-                            best_RMS = sum;
-                            params.I1 = I1;
-                            params.I2 = I2;
-                            params.I3 = I3;
-                            params.V = V;
-                            params.gamma = gamma;
-                            //Store the array with the evaluated excitation energies, given by the current "best" parameter set
-                            best_th_set = thdata;
-                            //? might be more optimal to evaluate the energy set after the parameters are determined from the iteration procedure
-                            OK_iterations++;
+                            // for (auto V = params.V_min; V < params.V_max; V += params.V_step)
+                            // {
+                            //     for (auto gamma = params.gamma_min; gamma < params.gamma_max; gamma += params.gamma_step)
+                            //     {
+
+                            //!change the implementation to support a fixed size array instead of re-allocation with every loop iteration
+                            auto thdata = energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma, Phonon_Selector);
+                            auto sum = RMS(data.exp_Data, thdata);
+
+                            if (sum <= best_RMS)
+                            {
+                                best_RMS = sum;
+                                params.I1 = I1;
+                                params.I2 = I2;
+                                params.I3 = I3;
+                                params.V = V;
+                                params.gamma = gamma;
+                                //Store the array with the evaluated excitation energies, given by the current "best" parameter set
+                                best_th_set = thdata;
+                                //? might be more optimal to evaluate the energy set after the parameters are determined from the iteration procedure
+                                OK_iterations++;
+                            }
+                            paramFile << I1 << " " << I2 << " " << I3 << "\n";
                         }
-                        paramFile << I1 << " " << I2 << " " << I3 << "\n";
                         //     }
                         // }
                     }
@@ -465,4 +479,6 @@ public:
         gout << "Total evaluations: " << n_total_evals;
         gout << "\n";
     }
+
+    void SearchRMS_FixedGamma(expdata &data, Formulas &energies, int Phonon_Selector, int Max_MOI_Axis, double gamma);
 };
