@@ -50,8 +50,30 @@ double rms::RMS(const std::vector<double> &exp_data, const std::array<double, ex
 //The triaxiality parameter $gamma$ is fixed while the iterative process searches for results
 void rms::SearchRMS_FixedGamma(expdata &data, Formulas &energies, int Phonon_Selector, int Max_MOI_Axis, double gamma)
 {
+    ParamSet params;
     std::ofstream gout("./out/1AxisParams.dat");
-    gout << "Test";
-    gout << "Test";
-    gout << "Test";
+
+    int state_counter = 0;
+    auto best_rms = 987654321.0;
+    for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
+    {
+        for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)
+        {
+            for (auto I3 = params.I_min; I3 < params.I_max && (I1 > I2) && (I1 > I3); I3 += params.I_step)
+            {
+                for (auto V = params.V_min; V < params.V_max; V += params.V_step)
+                {
+                    state_counter++;
+                    auto th_Data = energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma, Phonon_Selector);
+                    auto rms = rms::RMS(data.exp_Data, th_Data);
+                    if (rms <= best_rms)
+                    {
+                        best_rms = rms;
+                        gout << I1 << " " << I2 << " " << I3 << " " << V << " " << rms << "\n";
+                    }
+                }
+            }
+        }
+    }
+    // gout << state_counter;
 }

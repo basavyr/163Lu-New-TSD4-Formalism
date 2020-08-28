@@ -23,6 +23,9 @@ public:
 
     static int ValidNumbers(double);
     static int Triaxiality(double, double, double);
+    
+    //the maximal MOI is around 1-axis
+    static int LundConvention(double, double, double);
 
     //Considering only I2-maximal moment of inertia
     static int TransverseWobbling(double I1, double I2, double I3);
