@@ -2,7 +2,7 @@
 
 // #include "../include/energies.h"
 
-double rms::RMS(const std::vector<double> &exp_data, const std::array<double, expdata::STATES> &th_data)
+double rms::RMS(const std::vector<double> &exp_data, std::array<double, expdata::STATES> &th_data)
 {
     size_t s1 = exp_data.size();
     size_t s2 = th_data.size();
@@ -52,18 +52,19 @@ void rms::SearchRMS_FixedGamma(expdata &data, Formulas &energies, int Phonon_Sel
 {
     ParamSet params;
     auto filename = "./out/1AxisParams-" + std::to_string(Phonon_Selector) + ".dat";
-    std::cout<<filename;
+    std::cout << filename;
     std::ofstream gout(filename);
 
     const double gamma0 = 17;
     const double gamma1 = 21;
+
+    //container to store the theoretical data set
+    std::array<double, expdata::STATES> best_th_data;
+
     for (auto gamma_id = gamma0; gamma_id <= gamma1; ++gamma_id)
     {
         //store the best rms from the iterative procedure
         auto best_rms = 987654321.0;
-
-        //container to store the theoretical data set
-        std::array<double, expdata::STATES> best_th_data;
 
         for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
         {

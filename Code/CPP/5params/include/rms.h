@@ -26,7 +26,7 @@ public:
     };
 
 public:
-    static double RMS(const std::vector<double> &exp_data, const std::array<double, expdata::STATES> &th_data);
+    static double RMS(const std::vector<double> &exp_data, std::array<double, expdata::STATES> &th_data);
 
     //!No transverse regime considered into the search procedure
     void SearchMIN_RMS(expdata &data, Formulas &energies)

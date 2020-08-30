@@ -103,8 +103,10 @@ public:
             {
                 if (Phonon_Selector == 0)
                     th_data[id] = energies.E_TSD4_00(data.spins[id], I1, I2, I3, V, gamma);
-                if (Phonon_Selector == 1)
+                else
+                {
                     th_data[id] = energies.E_TSD4_10(data.spins[id], I1, I2, I3, V, gamma);
+                }
             }
         }
         return th_data;
