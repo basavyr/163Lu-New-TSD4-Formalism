@@ -18,143 +18,36 @@ Main goals of the present project are:
 - [ ] Compute the RMS of the excitation energies of all the bands w.r.t. to a parameter set $P$.
 - [ ] Find the parameter set $P_m$ which provides the best RMS value.
 
-## Initial test run
-
-August 2020:
-
-![](./reports/2020-08-21-17-10-10.png)
-
-The algorithm is using large parameter steps, so accuracy is lost.
-
-Update on the algorithm with optimized computations.
-
-![](./reports/2020-08-22-13-07-58.png)
-
-Simulation implying the triaxiality conditions.
-
-![](./reports/2020-08-22-13-25-53.png)
-
-Optimized search with steps of size `5,5,0.5`, respectively.
-
-![](./reports/2020-08-23-11-20-38.png)
-
-Results in `params.dat`
-
-```
-Starting to search for the minimum RMS...
-I1= 71
-I2= 6
-I3= 16
-V= 1.01
-gm= 30
-E_RMS= 0.22564
-0.241195,0.539159,0.89377,1.30494,1.77262,2.29675,2.87732,3.51429,4.20766,4.95741,5.76353,6.62601,7.54485,8.52005,9.55159,10.6395,11.7837,12.9843,14.2412,15.5545,16.9241,1.17339,1.62007,2.12254,2.68084,3.29503,3.96515,4.69124,5.47334,6.31148,7.20569,8.156,9.16242,10.225,11.3437,12.5186,13.7497,15.037,1.9352,2.47246,3.06494,3.71275,4.41601,5.17482,5.98927,6.85943,7.78537,8.76714,9.8048,10.8984,12.0479,13.2535,3.85393,4.57549,5.35342,6.18772,7.07839,8.0254,9.02877,10.0885,11.2046,12.377,
-Finished computations after 777 valid parameter evaluations...
-Total evaluations: 1861111
-```
-
-### Computation ran on VM@elk
-
-This calculations were done using the following sizes for the steps:
-sI=2.5
-gms=1
-vs=0.25
-
-```
-Initializing rms class...
-Starting to search for the minimum RMS...
-I1= 66
-I2= 71
-I3= 3.5
-V= 9.76
-gm= 28
-E_RMS= 0.238275
-Finished computations. Process took: 3315.19 s
-```
-
-### Compilation using triaxiality and transverse regime.
-
-The step size for I=5
-
-```
-Initializing rms class...
-Starting to search for the minimum RMS...
-I1= 56
-I2= 61
-I3= 6
-V= 9.76
-gm= 50
-E_RMS= 0.475362
-Finished computations. Process took: 498.02 s
-```
-
-### Compilation using triaxiality and transverse regime.
-
-The step size for I=2.5
-
-```
-Initializing rms class...
-Starting to search for the minimum RMS...
-I1= 66
-I2= 71
-I3= 3.5
-V= 9.76
-gm= 28
-E_RMS= 0.238275
-Finished computations. Process took: 4546.12 s
-```
-
-### Compilation using fixed size array and small step
-
-```
-Parameter set determination using the fixed size arrays, with no memory re-allocation...
-I1= 76
-I2= 77.5
-I3= 2.5
-V= 3.01
-gm= 59
-E_RMS= 0.2066
-Finished computations. Process took: 16662.5 s
-```
-
-Using the VM@elk
-
-`I_step=1`
-
-```
-Initializing rms class...
-Starting to search for the minimum RMS...
-
-I1= 71
-I2= 72
-I3= 3
-V= 5.01
-gm= 19
-E_RMS= 0.209134
-
-Finished computations. Process took: 51392.6 s
-```
-
 ## Preliminary results
 
-(small step - fixed array computation)
+Key features of the current implementation:
 
-![](./Reports/2020-08-27-06-29-11.png)
+* uses a global array as the container to store the values of the theoretical energies.
+  * In this way, re-allocation of the list with each iteration in the rms-search-loop is avoided
+  * The time execution of the entire process(as well as the memory pressure on the actual machine) is much more optimal rather than the previous version, where a new array was initialized within each main iteration.
+* uses small steps for the fit parameters (`I_step=1`)
+* uses fixed $\gamma$: only four values (close to the experimental value $\gamma_{exp}=17$) are considered in the 
+* the rms implementation has proper stopping procedures in case the theoretical values are non-physical numbers.
+* priority for $\mathcal{I}_1$ maximal MOI is introduced into the fit. 
+* special condition for triaxial MOIs
+* two formalisms for TSD4 are considered into the fit procedure:
+  * TSD4: $(n_{w_1},n_{w_2})=(0,0)$
+  * TSD4: $(n_{w_1},n_{w_2})=(1,0)$
+* other fixed parameters: $j=13/2$
 
-## Using a fixed ($delta) least-difference between the three moments of inertia
+## Fit results
 
-This method only choses the moments of inertia that have a relative absolute difference between each other, bigger than a fixed quantity (e.g. `double MOI_AcceptedDifference = 5;` in code).
+### TSD4: $(n_{w_1},n_{w_2})=(1,0)$
 
 ```
-Searching for the minimal RMS value using the fixed array procedure.
-Initializing rms class...
-Starting to search for the minimum RMS...
-Parameter set determination using the fixed size arrays, with no memory re-allocation...
-I1= 83
-I2= 93
-I3= 2
-V= 9.1
-gm= 17
-E_RMS= 0.325772
-Finished computations. Process took: 13.866 s
+##########################
+I1= 73
+I2= 3
+I3= 67
+V= 6.01
+gamma= 21
+E_RMS= 0.143092
+##########################
 ```
+
+![](2020-08-30-11-34-28.png)
