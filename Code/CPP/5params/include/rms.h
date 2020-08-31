@@ -6,6 +6,7 @@
 // #include "expdata.h"
 #include "app.h"
 #include "energies.h"
+#include "omp.h"
 class rms
 {
     // private:
@@ -15,14 +16,14 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 100;
-        const double I_step = 1;
+        const double I_step = 5;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
         double I1, I2, I3, gamma, V;
         const double V_min = 0.01;
         const double V_max = 10.0;
-        const double V_step = 0.25;
+        const double V_step = 0.1;
     };
 
 public:

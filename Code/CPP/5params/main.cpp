@@ -19,7 +19,7 @@ void RunApp_FixedArray(double &exec_time, int Phonon_Selector, double gamma)
     // std::cout << "\n";
     std::cout << "Searching for the minimal RMS value using the fixed array procedure."
               << "\n";
-    std::cout << "TSD4: (" << Phonon_Selector << ",0)'\n";
+    std::cout << "TSD4: (" << Phonon_Selector << ",0)\n";
     
     auto startTime = std::chrono::system_clock::now();
     rms rms;
