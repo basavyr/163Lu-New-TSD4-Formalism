@@ -50,4 +50,22 @@ E_RMS= 0.143092
 ##########################
 ```
 
-![](2020-08-30-11-34-28.png)
+![](./Reports/2020-08-30-11-34-28.png)
+
+## Analysis of the potential strength parameter $V$
+
+In this plot, the *single particle potential strength* ($V$) is graphically represented with respect to the triaxiality parameter $\gamma$.
+
+The fourth band has two possible formalisms in the analytic calculations (namely, a ground state band given by the phonon numbers $(0,0)$ and a 1-phonon excited band built on top of the yrast band $(1,0)$).
+
+![](./Reports/V_evolution.jpeg)
+
+## Analysis of the MOI evolution with triaxiality parameter
+
+The moments of inertia for $^{163}$Lu are represented for each value of $\gamma$ that was included in the fitting procedure.
+
+The evolution of the MOI's are considered for both analytic formalisms regarding the expression of TSD4.
+
+![](Reports/MOI_evolution_00.jpeg)
+
+![](Reports/MOI_evolution_10.jpeg)
