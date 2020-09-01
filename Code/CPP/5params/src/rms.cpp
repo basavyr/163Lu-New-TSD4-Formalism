@@ -45,31 +45,49 @@ double rms::RMS(const std::vector<double> &exp_data, std::array<double, expdata:
     return Formulas::error_number;
 }
 
-void Procedure(int &rep_id, double &result)
+void Procedure(expdata &data, Formulas &energies, int &rep_id, double Max_MOI_Axis, int Phonon_Selector, rms::ParamSet &params, double &rms_copy)
 {
-    double count = 0.0;
-    const int n_loops = 500;
-    for (auto i1 = 0; i1 < n_loops; ++i1)
+    // store the best rms from the iterative procedure
+    double best_rms = 987654321.0;
+
+    for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
     {
-        for (auto i2 = 0; i2 < n_loops; ++i2)
+        for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)
         {
-            for (auto i3 = 0; i3 < n_loops; ++i3)
+            for (auto I3 = params.I_min; I3 < params.I_max; I3 += params.I_step)
             {
-                count += 0.1;
+                if (Formulas::LundConvention(I1, I2, I3, Max_MOI_Axis) && Formulas::Triaxiality(I1, I2, I3))
+                {
+                    for (auto V = params.V_min; V < params.V_max; V += params.V_step)
+                    {
+                        auto th_Data = energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, rep_id, Phonon_Selector);
+                        auto rms = rms::RMS(data.exp_Data, th_Data);
+                        if (rms <= best_rms)
+                        {
+                            best_rms = rms;
+                            params.I1 = I1;
+                            params.I2 = I2;
+                            params.I3 = I3;
+                            params.V = V;
+                            // best_th_data = th_Data;
+                            // gout << I1 << " " << I2 << " " << I3 << " " << V << " " << rms << "\n";
+                        }
+                    }
+                }
             }
         }
     }
-    result = sqrt(count * rep_id);
+    rms_copy = best_rms;
+    std::cout << rep_id << " " << rms_copy << "\n";
 }
-
 //search the minimum rms value while keeping the Lund convention (where the maximal moi is along the 1-axis)
 //The Phonon selector allows for both formalisms to the applied in the analytic computations
 //The triaxiality parameter $gamma$ is fixed while the iterative process searches for results
-void rms::SearchRMS_FixedGamma(expdata &data, Formulas &energies, int Phonon_Selector, int Max_MOI_Axis, double gamma)
+//A fixed interval is established for \gamma at runtime
+//The search function has a parallel for implemented through openMP
+void rms::SearchRMS_OMP(expdata &data, Formulas &energies, int Phonon_Selector, int Max_MOI_Axis)
 {
-    ParamSet params;
     auto filename = "./out/1AxisParams-" + std::to_string(Phonon_Selector) + ".dat";
-    // std::cout << filename;
     std::ofstream gout(filename);
 
     const double gamma0 = 15;
@@ -77,17 +95,17 @@ void rms::SearchRMS_FixedGamma(expdata &data, Formulas &energies, int Phonon_Sel
 
     //container to store the theoretical data set
     std::array<double, expdata::STATES> best_th_data;
-#pragma omp parallel for
+
+    ParamSet params;
+    // #pragma omp parallel for
     {
         for (int gamma_id = gamma0; gamma_id <= gamma1; ++gamma_id)
         {
-            // store the best rms from the iterative procedure
-            auto best_rms = 987654321.0;
+            double best_rms = 0;
+            Procedure(data, energies, gamma_id, Max_MOI_Axis, Phonon_Selector, params, best_rms);
+            // #pragma omp ordered
+            //             std::cout << "Gamma_id - " << gamma_id << " " << best_rms << "\n";
 
-            double result = 0.0;
-            Procedure(gamma_id, result);
-            std::cout << "Gamma_id - " << gamma_id << " " << result << "\n";
-            
             // for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
             // {
             //     for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)

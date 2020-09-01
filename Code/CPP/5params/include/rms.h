@@ -16,7 +16,7 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 100;
-        const double I_step = 5;
+        const double I_step = 10;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
@@ -481,5 +481,8 @@ public:
         gout << "\n";
     }
 
-    void SearchRMS_FixedGamma(expdata &data, Formulas &energies, int Phonon_Selector, int Max_MOI_Axis, double gamma);
+    //Search for the minimum RMS value through a parallel for and store the best RMS
+    //Keeps the moment of inertia across a preferential axis as a maximum.
+    //Phonon selector allows to compute the RMS with any of the two possible band definitions for TSD4
+    void SearchRMS_OMP(expdata &data, Formulas &energies, int Phonon_Selector, int Max_MOI_Axis);
 };

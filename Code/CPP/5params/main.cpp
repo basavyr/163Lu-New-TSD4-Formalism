@@ -20,7 +20,7 @@ void RunApp_FixedArray(double &exec_time, int Phonon_Selector, double gamma)
     std::cout << "Searching for the minimal RMS value using the fixed array procedure."
               << "\n";
     std::cout << "TSD4: (" << Phonon_Selector << ",0)\n";
-    
+
     auto startTime = std::chrono::system_clock::now();
     rms rms;
 
@@ -29,7 +29,7 @@ void RunApp_FixedArray(double &exec_time, int Phonon_Selector, double gamma)
     int max_moi = 1;
 
     //Determine the best parameter set using TRANSVERSE wobbling regime. max_moi = Maximal MOI
-    rms.SearchRMS_FixedGamma(Lu163, energies, Phonon_Selector, max_moi, gamma);
+    rms.SearchRMS_OMP(Lu163, energies, Phonon_Selector, max_moi);
 
     auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - startTime).count();
     std::cout << "Finished computations. Process took: " << duration_ms / 1000.0 << " s";
@@ -60,7 +60,7 @@ int main()
 
     double exec_proc1 = 0;
     RunApp_FixedArray(exec_proc1, 0, 17);
-    RunApp_FixedArray(exec_proc1, 1, 17);
+    // RunApp_FixedArray(exec_proc1, 1, 17);
 
     // std::cout << "\n";
     // std::cout << "#############################"
