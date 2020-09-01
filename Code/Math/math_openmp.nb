@@ -1,0 +1,132 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4037,        124]
+NotebookOptionsPosition[      3224,        102]
+NotebookOutlinePosition[      3736,        119]
+CellTagsIndexPosition[      3693,        116]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Values of the steps for \[ScriptCapitalI] taken in the evaluation of the ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "RMS"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8a672785-4fdc-4268-966d-8565572ad7fe"]
+}], "Subsection",
+ CellChangeTimes->{{3.80794843565405*^9, 
+  3.80794846025319*^9}},ExpressionUUID->"0443754e-9cb1-4e29-aea3-\
+e6337fc32543"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"istep", "=", 
+   RowBox[{"{", 
+    RowBox[{"20", ",", "10", ",", "5", ",", "2.5", ",", "1"}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8079481997548933`*^9, 3.807948210496892*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"afc2eabd-c0f9-4684-a6b6-bf98f2fa4948"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Execution time (in seconds ",
+ StyleBox["i",
+  FontSlant->"Italic"],
+ ") for each full RMS computation for both TSD4 formalisms (namely [0,0] and \
+[1,0], respectively)"
+}], "Section",
+ CellChangeTimes->{{3.807948559577018*^9, 
+  3.807948623762113*^9}},ExpressionUUID->"d6485cf5-11a1-4245-92c0-\
+7cb46e0e080f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    SubscriptBox["T", "00"], ",", 
+    SubscriptBox["T", "10"]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"durationParallel", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0.243", ",", "0.28"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2.589", ",", "2.643"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"26.875", ",", "27.989"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"263.387", ",", "291.802"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"durationSerial", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1.792", ",", "1.936"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"23.557", ",", "23.784"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"212.835", ",", "201.771"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.807948227370347*^9, 3.8079482838930597`*^9}, {
+  3.8079483292395067`*^9, 3.8079484288056297`*^9}, {3.80794863068297*^9, 
+  3.8079486690452967`*^9}, {3.807949038410671*^9, 3.807949041236855*^9}, {
+  3.807949076550892*^9, 3.8079490880088263`*^9}, {3.8079491283955793`*^9, 
+  3.80794916399772*^9}, {3.807950895894156*^9, 
+  3.807950903670795*^9}},ExpressionUUID->"67110834-46c0-4465-9c4e-\
+1a193b66dc49"]
+}, Open  ]]
+},
+WindowSize->{896, 1075},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Applications", 
+   "Mathematica.app", "Contents", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "Times_Basavyr_Unique.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 400, 10, 48, "Subsection",ExpressionUUID->"0443754e-9cb1-4e29-aea3-e6337fc32543"],
+Cell[983, 34, 303, 7, 29, "Input",ExpressionUUID->"afc2eabd-c0f9-4684-a6b6-bf98f2fa4948"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1323, 46, 328, 9, 89, "Section",ExpressionUUID->"d6485cf5-11a1-4245-92c0-7cb46e0e080f"],
+Cell[1654, 57, 1554, 42, 70, "Input",ExpressionUUID->"67110834-46c0-4465-9c4e-1a193b66dc49"]
+}, Open  ]]
+}
+]
+*)
+

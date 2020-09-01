@@ -82,6 +82,7 @@ void Procedure(int &rep_id, double Max_MOI_Axis, int Phonon_Selector, rms::Param
                             params.I2 = I2;
                             params.I3 = I3;
                             params.V = V;
+                            params.best_dataset = th_Data;
                         }
                     }
                 }
@@ -94,6 +95,7 @@ void Procedure(int &rep_id, double Max_MOI_Axis, int Phonon_Selector, rms::Param
     result.V = params.V;
     result.gamma = rep_id;
     result.best_rms = best_rms;
+    result.best_dataset = params.best_dataset;
     // std::cout << rep_id << " " << best_rms << "\n";
 }
 //search the minimum rms value while keeping the Lund convention (where the maximal moi is along the 1-axis)
@@ -118,59 +120,33 @@ void rms::SearchRMS_OMP(int Phonon_Selector, int Max_MOI_Axis)
         {
             rms::ParamSet best_rms;
             Procedure(gamma_id, Max_MOI_Axis, Phonon_Selector, best_rms);
-            {
 #pragma omp ordered
-                std::cout << gamma_id << " " << best_rms.best_rms << "\n";
+            {
+                gout << "################ Iteration:" << gamma_id - gamma0 + 1 << "##################";
+                gout << "\n";
+                // std::cout << "I1= " << best_rms.I1 << "\n";
+                // std::cout << "I2= " << best_rms.I2 << "\n";
+                // std::cout << "I3= " << best_rms.I3 << "\n";
+                // std::cout << "V= " << best_rms.V << "\n";
+                // std::cout << "gamma= " << best_rms.gamma << "\n";
+                // std::cout << "E_RMS= " << best_rms.best_rms << "\n";
+                gout << "I1= " << best_rms.I1 << "\n";
+                gout << "I2= " << best_rms.I2 << "\n";
+                gout << "I3= " << best_rms.I3 << "\n";
+                gout << "V= " << best_rms.V << "\n";
+                gout << "gamma= " << best_rms.gamma << "\n";
+                gout << "E_RMS= " << best_rms.best_rms << "\n";
+                gout << "Theoretical dataset:"
+                     << "\n";
+                for (auto &&n : best_rms.best_dataset)
+                {
+                    gout << n << " , ";
+                }
+                gout << "\n";
             }
 
-            // for (auto I1 = params.I_min; I1 < params.I_max; I1 += params.I_step)
-            // {
-            //     for (auto I2 = params.I_min; I2 < params.I_max; I2 += params.I_step)
-            //     {
-            //         for (auto I3 = params.I_min; I3 < params.I_max; I3 += params.I_step)
-            //         {
-            //             if (Formulas::LundConvention(I1, I2, I3, Max_MOI_Axis) && Formulas::Triaxiality(I1, I2, I3))
-            //             {
-            //                 for (auto V = params.V_min; V < params.V_max; V += params.V_step)
-            //                 {
-
-            //                     auto th_Data = energies.GenerateData_Static(energies.TH_DATA, data, energies, I1, I2, I3, V, gamma_id, Phonon_Selector);
-            //                     auto rms = rms::RMS(data.exp_Data, th_Data);
-            //                     if (rms <= best_rms)
-            //                     {
-            //                         best_rms = rms;
-            //                         params.I1 = I1;
-            //                         params.I2 = I2;
-            //                         params.I3 = I3;
-            //                         params.V = V;
-            //                         best_th_data = th_Data;
-            //                         // gout << I1 << " " << I2 << " " << I3 << " " << V << " " << rms << "\n";
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
-            // gout << "I1= " << params.I1 << "\n";
-            // gout << "I2= " << params.I2 << "\n";
-            // gout << "I3= " << params.I3 << "\n";
-            // gout << "V= " << params.V << "\n";
-            // gout << "gamma= " << gamma_id << "\n";
-            // gout << "E_RMS= " << best_rms << "\n";
-            // gout << "Theoretical dataset:"
-            //      << "\n";
-            // for (auto &&n : best_th_data)
-            // {
-            //     gout << n << ",";
-            // }
-            // gout << "\n";
             // gout << "##########################";
             // gout << "\n";
         }
     }
-    // for (auto &&n : best_rms_array)
-    // {
-    //     std::cout << n.gamma << " " << n.rms << "\n";
-    // }
-    // std::cout << "\n";
 }

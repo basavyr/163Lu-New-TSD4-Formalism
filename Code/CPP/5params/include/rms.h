@@ -16,11 +16,12 @@ public:
     {
         const double I_min = 1.0;
         const double I_max = 100;
-        const double I_step = 10;
+        const double I_step = 2.5;
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
         double I1, I2, I3, gamma, V, best_rms;
+        std::array<double, expdata::STATES> best_dataset;
         const double V_min = 0.01;
         const double V_max = 10.0;
         const double V_step = 0.1;
