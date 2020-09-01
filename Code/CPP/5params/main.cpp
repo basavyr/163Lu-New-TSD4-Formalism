@@ -13,7 +13,7 @@ expdata Lu163;
 //Class with the analytic formulas used into RMS computations
 Formulas energies(0);
 
-void RunApp_FixedArray(double &exec_time, int Phonon_Selector, double gamma)
+void RunApp_OMP(double &exec_time, int Phonon_Selector, double gamma)
 {
     // std::cout << "Initializing rms class...";
     // std::cout << "\n";
@@ -29,7 +29,7 @@ void RunApp_FixedArray(double &exec_time, int Phonon_Selector, double gamma)
     int max_moi = 1;
 
     //Determine the best parameter set using TRANSVERSE wobbling regime. max_moi = Maximal MOI
-    rms.SearchRMS_OMP(Lu163, energies, Phonon_Selector, max_moi);
+    rms.SearchRMS_OMP(Phonon_Selector, max_moi);
 
     auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - startTime).count();
     std::cout << "Finished computations. Process took: " << duration_ms / 1000.0 << " s";
@@ -59,7 +59,7 @@ int main()
 {
 
     double exec_proc1 = 0;
-    RunApp_FixedArray(exec_proc1, 0, 17);
+    RunApp_OMP(exec_proc1, 0, 17);
     // RunApp_FixedArray(exec_proc1, 1, 17);
 
     // std::cout << "\n";

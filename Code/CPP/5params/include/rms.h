@@ -20,7 +20,7 @@ public:
         const double gamma_min = 0.0;
         const double gamma_max = 60.0;
         const double gamma_step = 1;
-        double I1, I2, I3, gamma, V;
+        double I1, I2, I3, gamma, V, best_rms;
         const double V_min = 0.01;
         const double V_max = 10.0;
         const double V_step = 0.1;
@@ -484,5 +484,5 @@ public:
     //Search for the minimum RMS value through a parallel for and store the best RMS
     //Keeps the moment of inertia across a preferential axis as a maximum.
     //Phonon selector allows to compute the RMS with any of the two possible band definitions for TSD4
-    void SearchRMS_OMP(expdata &data, Formulas &energies, int Phonon_Selector, int Max_MOI_Axis);
+    void SearchRMS_OMP(int Phonon_Selector, int Max_MOI_Axis);
 };
