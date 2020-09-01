@@ -122,7 +122,8 @@ void rms::SearchRMS_OMP(int Phonon_Selector, int Max_MOI_Axis)
             Procedure(gamma_id, Max_MOI_Axis, Phonon_Selector, best_rms);
 #pragma omp ordered
             {
-                gout << "################ Iteration:" << gamma_id - gamma0 + 1 << "##################";
+                gout << "################ Iteration:" << gamma_id - gamma0 + 1 << " (Step=" << best_rms.I_step << ") "
+                     << "##################";
                 gout << "\n";
                 // std::cout << "I1= " << best_rms.I1 << "\n";
                 // std::cout << "I2= " << best_rms.I2 << "\n";
