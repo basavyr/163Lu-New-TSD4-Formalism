@@ -69,3 +69,11 @@ The evolution of the MOI's are considered for both analytic formalisms regarding
 ![](Reports/MOI_evolution_00.jpeg)
 
 ![](Reports/MOI_evolution_10.jpeg)
+
+## Serial vs. Parallel implementation
+
+In the latest project update [](), the search function for the energy's root mean square error is computed in a multi-threaded approach, using the `openMP` standard for computing the RMS value for different values of the triaxiality parameter $\gamma$ at the same time. This considerably reduces the computational runtime (check image below), where the execution time increases with the decrease in the step for the moment of inertia $\mathcal{I}$.
+
+(In the figure below, the step sizes are as follow: 20, 10, 5,respectively.)
+
+![](./Reports/executionTimeOpenMP.jpeg)
