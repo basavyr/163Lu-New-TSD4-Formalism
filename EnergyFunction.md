@@ -12,3 +12,9 @@ This energy function is computed by replacing in the original structure of $\mat
 
 *Original expression of the energy function (given in [this article](/Reports/Towards%20a%20new%20semi-classical%20interpretation%20of%20the%20wobbling%20motion%20in%20163Lu.pdf)).*
 ![](./Reports/2020-09-12-10-10-43.png)
+
+## Contour Plot
+
+The contour plot for $^{163}$Lu has been calculated within the Mathematica document `EnergyFunction.nb` (dedicated to solve the main problem). For a fixed value of spin, and arbitrary test parameters, the output file can be seen in the graphical representation shown below.
+
+![](./Reports/ContourPlot.jpeg)
