@@ -98,3 +98,11 @@ Now, the second approach which aims at giving a good description for the wobblin
 * TSD4 is the 0( or 1)-phonon mode built on TSD1, being the **chiral partner** of TSD1.
 
 (More details on this [Roam document](https://roamresearch.com/#/app/basavyr/page/xf-zGkA_-))
+
+The diagram below describes the two fitting approaches that are present in this project: **V1** and **V2**.
+
+* V1: The first part of this project, which has already obtained an `RMS` value, with fit parameters.
+* V2: The newly proposed project, in which the definition of the TSD2 and TSD3 will be adjusted accordingly.
+
+*See the diagram in full quality [here](Reports/TSD4_novelApproach_description.pdf).*
+![](Reports/TSD4_novelApproach_description_page.jpg)
