@@ -85,3 +85,16 @@ The nucleus is analyzed in terms of its critical points, or the regions where th
 More information with regards to this part of the project can be seen [here](EnergyFunction.md).
 
 This project is introduced in the following [issue](https://github.com/basavyr/163Lu-New-TSD4-Formalism/issues/5).
+
+## The signature partner approach
+
+In [a different project](https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.014302), the wobbling energies for $^{163}$Lu were calculated using the TSD2 as a non-phonon excitation, but rather the **signature partnter** of the yrast band TSD1.
+Also, the fourth band TSD4 was considered a ground state band for the same nucleus, but built on a different coupling (with different intruder particle).
+
+Now, the second approach which aims at giving a good description for the wobbling motion inside this nucleus will be the combination of the already published work (mentioned above) and the current fit procedure which had the results described in the previous sections. more precisely:
+
+* The TSD2 is a signature partner for TSD1, and it is a zero-phonon-mode wobbling band for $^{163}$Lu.
+* TSD3 is the 1-phonon mode built on top of TSD2.
+* TSD4 is the 0( or 1)-phonon mode built on TSD1, being the **chiral partner** of TSD1.
+
+(More details on this [Roam document](https://roamresearch.com/#/app/basavyr/page/xf-zGkA_-))
