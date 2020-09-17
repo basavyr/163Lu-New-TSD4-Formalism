@@ -1,0 +1,131 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3736,        123]
+NotebookOptionsPosition[      3015,        102]
+NotebookOutlinePosition[      3528,        119]
+CellTagsIndexPosition[      3485,        116]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "The Energy Function of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["", "163"], "Lu"}], TraditionalForm]],ExpressionUUID->
+  "566cfccc-3276-4e03-b27f-c7dab05c0436"]
+}], "Title",
+ CellChangeTimes->{{3.8088244903298197`*^9, 
+  3.80882450810802*^9}},ExpressionUUID->"39153257-1ea1-4b91-961a-\
+bd2a2f8f31c8"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A quantitative study on the evolution of numerical values of \
+\[ScriptCapitalH] w.r.t. the spherical coordinates and \
+\[OpenCurlyDoubleQuote]free\[CloseCurlyDoubleQuote] terms\
+\>", "Chapter",
+ CellChangeTimes->{{3.8088245131942987`*^9, 3.808824542303763*^9}, {
+  3.809309727649873*^9, 
+  3.8093097638752117`*^9}},ExpressionUUID->"698f63e4-f1f2-496a-b5ce-\
+fc121ee04c7b"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[ScriptCapitalH]", "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["I", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["A", "1"], "+", 
+        SubscriptBox["A", "2"]}], ")"}]}], "+", 
+     RowBox[{
+      SubscriptBox["A", "3"], 
+      SuperscriptBox["I", "2"]}], "+", 
+     RowBox[{
+      RowBox[{"I", "(", 
+       RowBox[{"I", "-", 
+        FractionBox["1", "2"]}], ")"}], 
+      SuperscriptBox["sin", "2"], 
+      RowBox[{"\[Theta]", "(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["A", "1"], 
+         SuperscriptBox["cos", "2"], "\[CurlyPhi]"}], "+", 
+        RowBox[{
+         SubscriptBox["A", "2"], 
+         SuperscriptBox["sin", "2"], "\[CurlyPhi]"}], "-", 
+        SubscriptBox["A", "3"]}], ")"}]}], "+", 
+     RowBox[{
+      FractionBox["j", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["A", "2"], "+", 
+        SubscriptBox["A", "3"]}], ")"}]}], "+", 
+     RowBox[{
+      SubscriptBox["A", "1"], 
+      SuperscriptBox["j", "2"]}], "-", 
+     RowBox[{"2", 
+      SubscriptBox["A", "1"], "Ij", " ", "sin\[Theta]"}], "-", 
+     RowBox[{"V", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"2", "j"}], "-", "1"}], 
+       RowBox[{"j", "+", "1"}]], 
+      RowBox[{"sin", "(", 
+       RowBox[{"\[Gamma]", "+", 
+        FractionBox["\[Pi]", "6"]}], ")"}]}]}]}], ";"}], 
+  TraditionalForm]],ExpressionUUID->"b1d039c4-ab81-489c-901d-9384f8eaf46c"]], \
+"Section",
+ CellChangeTimes->{{3.808883969714838*^9, 3.8088841216493*^9}, {
+  3.8091303474964046`*^9, 
+  3.809130348369754*^9}},ExpressionUUID->"e77c75df-0e44-435c-b566-\
+9d4b70c9098a"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 1395},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Applications", 
+   "Mathematica.app", "Contents", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "Times_Basavyr_Unique.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 337, 10, 91, "Title",ExpressionUUID->"39153257-1ea1-4b91-961a-bd2a2f8f31c8"],
+Cell[CellGroupData[{
+Cell[942, 36, 383, 8, 101, "Chapter",ExpressionUUID->"698f63e4-f1f2-496a-b5ce-fc121ee04c7b"],
+Cell[1328, 46, 1659, 52, 121, "Section",ExpressionUUID->"e77c75df-0e44-435c-b566-9d4b70c9098a"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
