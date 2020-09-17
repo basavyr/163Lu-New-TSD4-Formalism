@@ -48,4 +48,4 @@ The inertial parameters are fixed, together with $V$. These values are obtained 
 
 The inertial parameters are fixed, together with $\gamma$. These values are obtained from the fitting procedure part. In this study, $V$ varies inside: $[0,10]$.
 
-![evolution with gamma](Reports/T0_v.jpeg)
+![evolution with gamma](Reports/T0_V.jpeg)
