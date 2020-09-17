@@ -26,3 +26,26 @@ The contour plot for $^{163}$Lu has been calculated within the Mathematica docum
 * Evolution with a change in *free terms* indicate the minimum value of $\mathcal{H}$.
 * Understanding the smallness of the mixed terms could indicate if the function has stable points (or trajectories) around global minima (m) or maxima (M).
 
+### Evolution of the free term $T_0$
+
+The free term has the following expression:
+
+```
+t0[I_, j_, a1_, a2_, a3_, V_, \[Gamma]_] := 
+  I/2 (a1 + a2) + a3*I^2 + j/2 (a2 + a3) + a1*j^2 - 
+   V (2 j - 1)/(j + 1) Sin[\[Gamma] + \[Pi]/6];
+```
+
+The triaxiality parameter $\gamma$ and the single-particle potential strength $V$ enter in the expression of $T_0$. Due to this, two separate evolutions of $T_0$ should be done, at fixed moments of inertia: one w.r.t. $\gamma$ and one w.r.t. $V$.
+
+#### Free term - evolution with $\gamma$
+
+The inertial parameters are fixed, together with $V$. These values are obtained from the fitting procedure part. In this study, $\gamma$ varies inside: $[0,\frac{\pi}{6}]$.
+
+![evolution with gamma](Reports/T0_gm.jpeg)
+
+#### Free term - evolution with $V$
+
+The inertial parameters are fixed, together with $\gamma$. These values are obtained from the fitting procedure part. In this study, $V$ varies inside: $[0,10]$.
+
+![evolution with gamma](Reports/T0_v.jpeg)
