@@ -1,0 +1,223 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6940,        215]
+NotebookOptionsPosition[      5678,        186]
+NotebookOutlinePosition[      6222,        204]
+CellTagsIndexPosition[      6179,        201]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "The Energy Function of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["", "163"], "Lu"}], TraditionalForm]],ExpressionUUID->
+  "566cfccc-3276-4e03-b27f-c7dab05c0436"]
+}], "Title",
+ CellChangeTimes->{{3.8088244903298197`*^9, 
+  3.80882450810802*^9}},ExpressionUUID->"39153257-1ea1-4b91-961a-\
+bd2a2f8f31c8"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A quantitative study on the evolution of numerical values of \
+\[ScriptCapitalH] w.r.t. the spherical coordinates and \
+\[OpenCurlyDoubleQuote]free\[CloseCurlyDoubleQuote] terms\
+\>", "Chapter",
+ CellChangeTimes->{{3.8088245131942987`*^9, 3.808824542303763*^9}, {
+  3.809309727649873*^9, 
+  3.8093097638752117`*^9}},ExpressionUUID->"698f63e4-f1f2-496a-b5ce-\
+fc121ee04c7b"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[ScriptCapitalH]", "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["I", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["A", "1"], "+", 
+        SubscriptBox["A", "2"]}], ")"}]}], "+", 
+     RowBox[{
+      SubscriptBox["A", "3"], 
+      SuperscriptBox["I", "2"]}], "+", 
+     RowBox[{
+      RowBox[{"I", "(", 
+       RowBox[{"I", "-", 
+        FractionBox["1", "2"]}], ")"}], 
+      SuperscriptBox["sin", "2"], 
+      RowBox[{"\[Theta]", "(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["A", "1"], 
+         SuperscriptBox["cos", "2"], "\[CurlyPhi]"}], "+", 
+        RowBox[{
+         SubscriptBox["A", "2"], 
+         SuperscriptBox["sin", "2"], "\[CurlyPhi]"}], "-", 
+        SubscriptBox["A", "3"]}], ")"}]}], "+", 
+     RowBox[{
+      FractionBox["j", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["A", "2"], "+", 
+        SubscriptBox["A", "3"]}], ")"}]}], "+", 
+     RowBox[{
+      SubscriptBox["A", "1"], 
+      SuperscriptBox["j", "2"]}], "-", 
+     RowBox[{"2", 
+      SubscriptBox["A", "1"], "Ij", " ", "sin\[Theta]"}], "-", 
+     RowBox[{"V", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"2", "j"}], "-", "1"}], 
+       RowBox[{"j", "+", "1"}]], 
+      RowBox[{"sin", "(", 
+       RowBox[{"\[Gamma]", "+", 
+        FractionBox["\[Pi]", "6"]}], ")"}]}]}]}], ";"}], 
+  TraditionalForm]],ExpressionUUID->"b1d039c4-ab81-489c-901d-9384f8eaf46c"]], \
+"Section",
+ CellChangeTimes->{{3.808883969714838*^9, 3.8088841216493*^9}, {
+  3.8091303474964046`*^9, 
+  3.809130348369754*^9}},ExpressionUUID->"e77c75df-0e44-435c-b566-\
+9d4b70c9098a"],
+
+Cell["T0=free term", "Section",
+ CellChangeTimes->{{3.809310537924904*^9, 
+  3.809310551870771*^9}},ExpressionUUID->"b88b16b1-d5d2-4973-9761-\
+a8d68a4d603c"],
+
+Cell["T1=mixed term f(\[Theta],\[CurlyPhi])", "Section",
+ CellChangeTimes->{{3.809310547674622*^9, 
+  3.809310569781986*^9}},ExpressionUUID->"375450c9-56dc-4a2f-9cd8-\
+3f3a9ef95436"],
+
+Cell[CellGroupData[{
+
+Cell["T2=theta term g(\[Theta])", "Section",
+ CellChangeTimes->{{3.809310572549775*^9, 
+  3.809310579783091*^9}},ExpressionUUID->"b8c82ba0-3bea-4419-bf36-\
+06e20e28df4d"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"t0", "[", 
+    RowBox[{
+    "I_", ",", "j_", ",", "a1_", ",", "a2_", ",", "a3_", ",", "V_", ",", 
+     "\[Gamma]_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["I", "2"], 
+     RowBox[{"(", 
+      RowBox[{"a1", "+", "a2"}], ")"}]}], "+", 
+    RowBox[{"a3", "*", 
+     SuperscriptBox["I", "2"]}], "+", 
+    RowBox[{
+     FractionBox["j", "2"], 
+     RowBox[{"(", 
+      RowBox[{"a2", "+", "a3"}], ")"}]}], "+", 
+    RowBox[{"a1", "*", 
+     SuperscriptBox["j", "2"]}], "-", 
+    RowBox[{"V", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"2", "j"}], "-", "1"}], 
+      RowBox[{"j", "+", "1"}]], 
+     RowBox[{"Sin", "[", 
+      RowBox[{"\[Gamma]", "+", 
+       FractionBox["\[Pi]", "6"]}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"t1", "[", 
+    RowBox[{
+    "I_", ",", "a1_", ",", "a2_", ",", "a3_", ",", "\[Theta]_", ",", 
+     "\[CurlyPhi]_"}], "]"}], ":=", 
+   RowBox[{"I", 
+    RowBox[{"(", 
+     RowBox[{"I", "-", 
+      FractionBox["1", "2"]}], ")"}], 
+    SuperscriptBox[
+     RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"a1", "*", 
+       SuperscriptBox[
+        RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}], "2"]}], "+", 
+      RowBox[{"a2", "*", 
+       SuperscriptBox[
+        RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}], "2"]}], "-", "a3"}], 
+     ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"t2", "[", 
+    RowBox[{"I_", ",", "j_", ",", "a1_", ",", "\[Theta]_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"-", "2"}], "*", "a1", "*", "I", "*", "j", "*", 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.809310583645565*^9, 3.809310598819591*^9}, {
+  3.809310632344532*^9, 3.809310716057762*^9}, {3.809310765918895*^9, 
+  3.809310941209342*^9}},
+ CellLabel->"In[94]:=",ExpressionUUID->"b267b840-741e-4788-a052-c2e7868b6a2e"]
+}, Open  ]],
+
+Cell["Study each term", "Section",
+ CellChangeTimes->{{3.8093109502325687`*^9, 
+  3.809310953606035*^9}},ExpressionUUID->"f4792f21-f2bf-4272-8c9f-\
+e9ba611704ee"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 1395},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Applications", 
+   "Mathematica.app", "Contents", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "Times_Basavyr_Unique.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 337, 10, 115, "Title",ExpressionUUID->"39153257-1ea1-4b91-961a-bd2a2f8f31c8"],
+Cell[CellGroupData[{
+Cell[942, 36, 383, 8, 129, "Chapter",ExpressionUUID->"698f63e4-f1f2-496a-b5ce-fc121ee04c7b"],
+Cell[1328, 46, 1659, 52, 149, "Section",ExpressionUUID->"e77c75df-0e44-435c-b566-9d4b70c9098a"],
+Cell[2990, 100, 157, 3, 56, "Section",ExpressionUUID->"b88b16b1-d5d2-4973-9761-a8d68a4d603c"],
+Cell[3150, 105, 182, 3, 56, "Section",ExpressionUUID->"375450c9-56dc-4a2f-9cd8-3f3a9ef95436"],
+Cell[CellGroupData[{
+Cell[3357, 112, 170, 3, 56, "Section",ExpressionUUID->"b8c82ba0-3bea-4419-bf36-06e20e28df4d"],
+Cell[3530, 117, 1943, 59, 135, "Input",ExpressionUUID->"b267b840-741e-4788-a052-c2e7868b6a2e"]
+}, Open  ]],
+Cell[5488, 179, 162, 3, 75, "Section",ExpressionUUID->"f4792f21-f2bf-4272-8c9f-e9ba611704ee"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

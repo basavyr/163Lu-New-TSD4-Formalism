@@ -105,4 +105,4 @@ The diagram below describes the two fitting approaches that are present in this 
 * V2: The newly proposed project, in which the definition of the TSD2 and TSD3 will be adjusted accordingly.
 
 *See the diagram in full quality [here](Reports/TSD4_novelApproach_description.pdf).*
-![](Reports/TSD4_novelApproach_description_page.jpg)
+![Description of the algorithm](Reports/TSD4_novelApproach_description_page.jpg)

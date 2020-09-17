@@ -18,3 +18,11 @@ This energy function is computed by replacing in the original structure of $\mat
 The contour plot for $^{163}$Lu has been calculated within the Mathematica document `EnergyFunction.nb` (dedicated to solve the main problem). For a fixed value of spin, and arbitrary test parameters, the output file can be seen in the graphical representation shown below.
 
 ![](./Reports/ContourPlot.jpeg)
+
+## Study of the energy function with respect to the spherical variables
+
+* The energy $\mathcal{H}$ is evaluated at changes in both the coordinates $(\theta,\varphi)$, but also the fit parameters (deformation parameters).
+* This function has free terms and coordinate-dependent terms.
+* Evolution with a change in *free terms* indicate the minimum value of $\mathcal{H}$.
+* Understanding the smallness of the mixed terms could indicate if the function has stable points (or trajectories) around global minima (m) or maxima (M).
+
