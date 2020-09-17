@@ -49,3 +49,23 @@ The inertial parameters are fixed, together with $V$. These values are obtained 
 The inertial parameters are fixed, together with $\gamma$. These values are obtained from the fitting procedure part. In this study, $V$ varies inside: $[0,10]$.
 
 ![evolution with gamma](Reports/T0_V.jpeg)
+
+### Evolution of $T_1$
+
+This is a mixed term. Depends on both coordinates.
+
+#### $T_1$ as a function of $\theta$
+
+![](Reports/T1_th.jpeg)
+
+#### $T_1$ as a function of $\varphi$
+
+![](Reports/T1_fi.jpeg)
+
+### Evolution of $T_2$
+
+This term only contains the $\theta$ coordinate.
+
+#### $T_2$ evolution with $\theta$
+
+![](Reports/T2_th.jpeg)
