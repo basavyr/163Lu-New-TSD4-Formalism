@@ -78,7 +78,7 @@ In the latest project update [](), the search function for the energy's root mea
 
 ![](./Reports/executionTimeOpenMP.jpeg)
 
-## Further analysis with regards to the nuclear stability of $^{163}Lu
+## Further analysis with regards to the nuclear stability of $^{163}$Lu
 
 The nucleus is analyzed in terms of its critical points, or the regions where the deformed shapes exhibit certain properties (e.g. different wobbling regimes, axial symmetry, forbidden states).
 ___
