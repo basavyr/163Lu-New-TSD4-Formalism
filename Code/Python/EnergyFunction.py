@@ -26,6 +26,18 @@ gamma=21*np.pi/180.0
 V=6.01
 
 
-print(H_En(22.5,I1,I2,I3,V,gamma,1,1))
+thetas=np.arange(0,180.1,1.0)
+fis=np.arange(0,360.1,1.0)
 
+thetas=thetas*np.pi/180
+fis=fis*np.pi/180
 
+thetaX,fiX=np.meshgrid(thetas,fis)
+
+z=H_En(10.5,I1,I2,I3,V,gamma,thetaX,fiX)
+
+plt.contourf(thetas,fis,z)
+plt.colorbar()
+plt.xlabel(f'theta [rad]')
+plt.ylabel(f'fi [rad]')
+plt.savefig('cp_hen.pdf',bbox_inches='tight')
