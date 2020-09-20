@@ -100,11 +100,20 @@ def SaveEnergyData(spins,constants,filename):
     thetas=(np.arange(0,180.1,20))*np.pi/180
     fis=(np.arange(0,360.1,20))*np.pi/180
 
+    I1 = constants[0]
+    I2 = constants[1]
+    I3 = constants[2]
+    V = constants[3]
+    gamma = constants[4]
+
     f.write('################\n')
     f.write(f'I={10}\n')
+
     for x in thetas:
         for y in fis:
-            stringer='H('+str(x)+','+str(y)+ ') = '+'z'+'\n'
+            # H_En(I, I1, I2, I3, V, gamma, theta, fi):
+            z=str(H_En(12.5,I1,I2,I3,V,gamma,x,y))
+            stringer='H('+str(round(x*180.0/np.pi,0))+','+str(round(y*180.0/np.pi,0))+ ') = '+z+'\n'
             f.write(stringer)
     f.write('################\n')
     f.close()
