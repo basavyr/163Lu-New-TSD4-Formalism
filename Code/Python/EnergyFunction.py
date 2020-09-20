@@ -49,20 +49,27 @@ def CreateContourPlot(plotname, constants, spin):
     # Constructing the contour plot from the meshgrid with the coordinates
     # The CP variable will be a matrix which contains at each [x,y]==[theta,varphi] the actual value of the energy function
     CP = H_En(spin, I1, I2, I3, V, gamma, THETAS, FIS)
-
-    plt.contourf(thetas, fis, CP)
-    # plt.set_aspect('equal')
-    plt.colorbar()
+    
+    # initialize the plot with the option of setting the aspect ratio
+    #the aspect ratio is used for proper scaling of the trajectories inside the contour plot, with respect to the two coordinates 
+    fig, axs=plt.subplots()
+    axs.contourf(thetas, fis, CP)
+    
+    # axs.colorbar()
+    
     plt.xlabel(f'$\\theta$ [rad]')
     plt.ylabel(f'$\\varphi$ [rad]')
     plt.title(r'The Energy Function $\mathcal{H}(\theta,\varphi)$' +
               f'\n @ $I$={spin} MOIs={I1}:{I2}:{I3} V={V} $\gamma$={round(gamma*180.0/np.pi,0)}')
 
-    # save the file in both pdf and jpeg
+    # save the file in both pdf and png
     pdf = plotname+'.pdf'
-    jpeg = plotname+'.jpeg'
+    png = plotname+'.png'
+
+    #set aspect ratio to properly render the plot
+    axs.set_aspect('equal')
     plt.savefig(pdf, bbox_inches='tight')
-    plt.savefig(jpeg, bbox_inches='tight')
+    plt.savefig(png, bbox_inches='tight')
     plt.close()
 
 
@@ -72,7 +79,7 @@ def CreateContourPlot(plotname, constants, spin):
 # gamma = round(21*np.pi/180.0, 3)
 # V = 6.01
 # spinvalue = 12.5
-CONSTANTS = [73, 3, 67, 6.01, 21.0*np.pi/180.0]
+CONSTANTS = [73, 3, 67, 6.01, 60.0*np.pi/180.0]
 PLOTNAME = '../../Reports/py3_contours/CP-'
 SPINS = [25.0/2.0, 31.0/2.0, 37.0/2.0, 51.0/2.0]
 
