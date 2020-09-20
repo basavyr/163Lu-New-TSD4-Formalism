@@ -96,9 +96,10 @@ count = 1
 def SaveEnergyData(spins,constants,filename):
     f=open(filename,'w')
     
+    step=50
     #declare the x-y values (spherical coordinates)
-    thetas=(np.arange(0,180.1,20))*np.pi/180
-    fis=(np.arange(0,360.1,20))*np.pi/180
+    thetas=(np.arange(0,180.1,step))*np.pi/180
+    fis=(np.arange(0,360.1,step))*np.pi/180
 
     I1 = constants[0]
     I2 = constants[1]
@@ -106,16 +107,20 @@ def SaveEnergyData(spins,constants,filename):
     V = constants[3]
     gamma = constants[4]
 
-    f.write('################\n')
-    f.write(f'I={10}\n')
+    # evaluate the function H at all the spins and save it into the tabular file
 
-    for x in thetas:
-        for y in fis:
-            # H_En(I, I1, I2, I3, V, gamma, theta, fi):
-            z=str(H_En(12.5,I1,I2,I3,V,gamma,x,y))
-            stringer='H('+str(round(x*180.0/np.pi,0))+','+str(round(y*180.0/np.pi,0))+ ') = '+z+'\n'
-            f.write(stringer)
-    f.write('################\n')
+    for spin in SPINS:
+        f.write('################\n')
+        f.write(f'I={spin}\n')
+        f.write('################\n')
+        for x in thetas:
+            for y in fis:
+                # H_En(I, I1, I2, I3, V, gamma, theta, fi):
+                z=str(H_En(spin,I1,I2,I3,V,gamma,x,y))
+                stringer='H('+str(round(x*180.0/np.pi,0))+','+str(round(y*180.0/np.pi,0))+ ') = '+z+'\n'
+                f.write(stringer)
+        # f.write('################\n')
+
     f.close()
 
 datafile='../../Reports/python_data_out.dat'
