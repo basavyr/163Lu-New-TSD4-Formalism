@@ -84,10 +84,31 @@ PLOTNAME = '../../Reports/py3_contours/CP-'
 SPINS = [25.0/2.0, 31.0/2.0, 37.0/2.0, 51.0/2.0]
 
 count = 1
-for spin in SPINS:
-    print(f'Started plotting CP-{count}...')
-    # Adjust the name of the plot accordingly
-    plotname = PLOTNAME+str(count)
-    CreateContourPlot(plotname, CONSTANTS, spin)
-    print(f'Finished plotting CP-{count}...\n')
-    count = count+1
+# for spin in SPINS:
+#     print(f'Started plotting CP-{count}...')
+#     # Adjust the name of the plot accordingly
+#     plotname = PLOTNAME+str(count)
+#     CreateContourPlot(plotname, CONSTANTS, spin)
+#     print(f'Finished plotting CP-{count}...\n')
+#     count = count+1
+
+
+def SaveEnergyData(spins,constants,filename):
+    f=open(filename,'w')
+    
+    #declare the x-y values (spherical coordinates)
+    thetas=(np.arange(0,180.1,20))*np.pi/180
+    fis=(np.arange(0,360.1,20))*np.pi/180
+
+    f.write('################\n')
+    f.write(f'I={10}\n')
+    for x in thetas:
+        for y in fis:
+            stringer='H('+str(x)+','+str(y)+ ') = '+'z'+'\n'
+            f.write(stringer)
+    f.write('################\n')
+    f.close()
+
+datafile='../../Reports/python_data_out.dat'
+
+SaveEnergyData(SPINS,CONSTANTS,datafile)
