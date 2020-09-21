@@ -79,7 +79,7 @@ def CreateContourPlot(plotname, constants, spin):
 # gamma = round(21*np.pi/180.0, 3)
 # V = 6.01
 # spinvalue = 12.5
-CONSTANTS = [73, 3, 67, 6.01, 60.0*np.pi/180.0]
+CONSTANTS = [73, 3, 67, 6.01, 21.0*np.pi/180.0]
 PLOTNAME = '../../Reports/py3_contours/CP-'
 SPINS = [25.0/2.0, 31.0/2.0, 37.0/2.0, 51.0/2.0]
 
@@ -125,4 +125,9 @@ def SaveEnergyData(spins,constants,filename):
 
 datafile='../../Reports/python_data_out.dat'
 
-SaveEnergyData(SPINS,CONSTANTS,datafile)
+# SaveEnergyData(SPINS,CONSTANTS,datafile)
+
+# a simple test for a direct comparison with mathematica (evaluating the numerical values of H)
+phi_test_values=[0,np.pi/4.0,np.pi/2.0,np.pi]
+for fi in phi_test_values:
+    print(H_En(SPINS[0],CONSTANTS[0],CONSTANTS[1],CONSTANTS[2],CONSTANTS[3],CONSTANTS[4],np.pi/2,fi))

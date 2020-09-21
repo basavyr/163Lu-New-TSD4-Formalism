@@ -69,3 +69,29 @@ This term only contains the $\theta$ coordinate.
 #### $T_2$ evolution with $\theta$
 
 ![](Reports/T2_th.jpeg)
+
+## Python vs. Mathematica
+
+There is a consistency between both implementations.
+
+```
+Do[Print[th, " ", 
+  Hen[spinTSD1, \[Pi]/2, th, A1, A2, A3, 
+   V, \[Gamma]]], {th, {0, \[Pi]/4, \[Pi]/2, \[Pi]}}]
+
+0 -5.57223
+
+\[Pi]/4 6.41407
+
+\[Pi]/2 18.4004
+
+\[Pi] -5.57223
+```
+
+These values correspond to the numerical results printed via python within this segment of [py3-impl](Code/Python/EnergyFunction.py).
+
+```
+phi_test_values=[0,np.pi/4.0,np.pi/2.0,np.pi]
+for fi in phi_test_values:
+    print(H_En(SPINS[0],CONSTANTS[0],CONSTANTS[1],CONSTANTS[2],CONSTANTS[3],CONSTANTS[4],np.pi/2,fi))
+```
