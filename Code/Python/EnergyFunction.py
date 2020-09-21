@@ -130,6 +130,8 @@ datafile = '../../Reports/python_data_out.dat'
 # SaveEnergyData(SPINS,CONSTANTS,datafile)
 
 # a simple test for a direct comparison with mathematica (evaluating the numerical values of H)
+
+
 def ConsistencyTest():
     phi_test_values = [0, np.pi/4.0, np.pi/2.0, np.pi]
     for fi in phi_test_values:
