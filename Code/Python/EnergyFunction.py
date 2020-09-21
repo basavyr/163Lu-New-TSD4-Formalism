@@ -49,14 +49,14 @@ def CreateContourPlot(plotname, constants, spin):
     # Constructing the contour plot from the meshgrid with the coordinates
     # The CP variable will be a matrix which contains at each [x,y]==[theta,varphi] the actual value of the energy function
     CP = H_En(spin, I1, I2, I3, V, gamma, THETAS, FIS)
-    
+
     # initialize the plot with the option of setting the aspect ratio
-    #the aspect ratio is used for proper scaling of the trajectories inside the contour plot, with respect to the two coordinates 
-    fig, axs=plt.subplots()
+    # the aspect ratio is used for proper scaling of the trajectories inside the contour plot, with respect to the two coordinates
+    fig, axs = plt.subplots()
     axs.contourf(thetas, fis, CP)
-    
+
     # axs.colorbar()
-    
+
     plt.xlabel(f'$\\theta$ [rad]')
     plt.ylabel(f'$\\varphi$ [rad]')
     plt.title(r'The Energy Function $\mathcal{H}(\theta,\varphi)$' +
@@ -66,7 +66,7 @@ def CreateContourPlot(plotname, constants, spin):
     pdf = plotname+'.pdf'
     png = plotname+'.png'
 
-    #set aspect ratio to properly render the plot
+    # set aspect ratio to properly render the plot
     axs.set_aspect('equal')
     plt.savefig(pdf, bbox_inches='tight')
     plt.savefig(png, bbox_inches='tight')
@@ -93,13 +93,13 @@ count = 1
 #     count = count+1
 
 
-def SaveEnergyData(spins,constants,filename):
-    f=open(filename,'w')
-    
-    step=50
-    #declare the x-y values (spherical coordinates)
-    thetas=(np.arange(0,180.1,step))*np.pi/180
-    fis=(np.arange(0,360.1,step))*np.pi/180
+def SaveEnergyData(spins, constants, filename):
+    f = open(filename, 'w')
+
+    step = 50
+    # declare the x-y values (spherical coordinates)
+    thetas = (np.arange(0, 180.1, step))*np.pi/180
+    fis = (np.arange(0, 360.1, step))*np.pi/180
 
     I1 = constants[0]
     I2 = constants[1]
@@ -116,18 +116,22 @@ def SaveEnergyData(spins,constants,filename):
         for x in thetas:
             for y in fis:
                 # H_En(I, I1, I2, I3, V, gamma, theta, fi):
-                z=str(H_En(spin,I1,I2,I3,V,gamma,x,y))
-                stringer='H('+str(round(x*180.0/np.pi,0))+','+str(round(y*180.0/np.pi,0))+ ') = '+z+'\n'
+                z = str(H_En(spin, I1, I2, I3, V, gamma, x, y))
+                stringer = 'H('+str(round(x*180.0/np.pi, 0)) + \
+                    ','+str(round(y*180.0/np.pi, 0)) + ') = '+z+'\n'
                 f.write(stringer)
         # f.write('################\n')
 
     f.close()
 
-datafile='../../Reports/python_data_out.dat'
+
+datafile = '../../Reports/python_data_out.dat'
 
 # SaveEnergyData(SPINS,CONSTANTS,datafile)
 
 # a simple test for a direct comparison with mathematica (evaluating the numerical values of H)
-phi_test_values=[0,np.pi/4.0,np.pi/2.0,np.pi]
-for fi in phi_test_values:
-    print(H_En(SPINS[0],CONSTANTS[0],CONSTANTS[1],CONSTANTS[2],CONSTANTS[3],CONSTANTS[4],np.pi/2,fi))
+def ConsistencyTest():
+    phi_test_values = [0, np.pi/4.0, np.pi/2.0, np.pi]
+    for fi in phi_test_values:
+        print(
+            f'fi={fi} H={H_En(SPINS[0], CONSTANTS[0], CONSTANTS[1],CONSTANTS[2], CONSTANTS[3], CONSTANTS[4], np.pi/2, fi)}')
