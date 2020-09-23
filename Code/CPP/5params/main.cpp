@@ -65,13 +65,15 @@ int main()
     auto I3 = 67.0;
     auto V = 6.01;
     auto gm = 21.0;
-    for (auto &&n : spins)
-    {
-        auto e1 = energies.E_TSD1(n, I1, I2, I3, V, gm);
-        auto e2 = energies.E_TSD2(n, I1, I2, I3, V, gm);
-        auto e3 = energies.E_TSD3(n, I1, I2, I3, V, gm);
-        std::cout << n << " " << e1 << " " << e2 << " " << e3 << "\n";
-    }
+    std::cout << energies.BTerm(8.5, 6.5, I1, I2, I3, V, gm) << "\n";
+    std::cout << energies.CTerm(8.5, 6.5, I1, I2, I3, V, gm);
+    // for (auto &&n : spins)
+    // {
+    //     auto e1 = energies.E_TSD1(n, I1, I2, I3, V, gm);
+    //     auto e2 = energies.E_TSD2(n, I1, I2, I3, V, gm);
+    //     auto e3 = energies.E_TSD3(n, I1, I2, I3, V, gm);
+    //     std::cout << n << " " << e1 << " " << e2 << " " << e3 << "\n";
+    // }
     // RunApp_OMP(exec_proc1, 0, 17);
     // RunApp_OMP(exec_proc1, 1, 17);
 
