@@ -59,8 +59,21 @@ int main()
 {
 
     double exec_proc1 = 0;
-    RunApp_OMP(exec_proc1, 0, 17);
-    RunApp_OMP(exec_proc1, 1, 17);
+    std::vector<double> spins = {8.5, 10.5, 12.5, 14.5, 16.5, 18.5, 20.5, 22.5, 24.5, 26.5, 28.5, 30.5, 32.5, 34.5, 36.5, 38.5, 40.5, 42.5, 44.5, 46.5, 48.5};
+    auto I1 = 73.0;
+    auto I2 = 3.0;
+    auto I3 = 67.0;
+    auto V = 6.01;
+    auto gm = 21.0;
+    for (auto &&n : spins)
+    {
+        auto e1 = energies.E_TSD1(n, I1, I2, I3, V, gm);
+        auto e2 = energies.E_TSD2(n, I1, I2, I3, V, gm);
+        auto e3 = energies.E_TSD3(n, I1, I2, I3, V, gm);
+        std::cout << n << " " << e1 << " " << e2 << " " << e3 << "\n";
+    }
+    // RunApp_OMP(exec_proc1, 0, 17);
+    // RunApp_OMP(exec_proc1, 1, 17);
 
     // std::cout << "\n";
     // std::cout << "#############################"
