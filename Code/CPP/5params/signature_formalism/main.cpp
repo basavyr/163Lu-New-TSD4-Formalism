@@ -2,6 +2,11 @@
 #include "energies_0011.hh"
 #include "energies_1230.hh"
 
+double IF(double I)
+{
+    return 1.0 / (2.0 * I);
+}
+
 const std::vector<double> spin1 = {8.5, 10.5, 12.5, 14.5, 16.5, 18.5, 20.5, 22.5, 24.5, 26.5, 28.5, 30.5, 32.5, 34.5, 36.5, 38.5, 40.5, 42.5, 44.5, 46.5, 48.5};
 const std::vector<double> spin2 = {13.5, 15.5, 17.5, 19.5, 21.5, 23.5, 25.5, 27.5, 29.5, 31.5, 33.5, 35.5, 37.5, 39.5, 41.5, 43.5, 45.5};
 const std::vector<double> spin3 = {16.5, 18.5, 20.5, 22.5, 24.5, 26.5, 28.5, 30.5, 32.5, 34.5, 36.5, 38.5, 40.5, 42.5};
@@ -13,29 +18,25 @@ const std::vector<double> tsd4 = {4.58, 5.2251, 5.9273, 6.6819, 7.4919, 8.3573, 
 const std::vector<int> gm = {15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
 
 template <typename T>
-double rms(T &nucleus, double a1, double a2, double a3, double v)
+double rms(T &nucleus, double a1, double a2, double a3, double v, double gamma)
 {
     double best_rms = 9876543210.0;
     double E;
-    double sum;
-    int count;
-    bool ok;
-    for (auto gamma = gm.begin(); gamma < gm.end(); ++gamma)
-    {
-        ok = 1;
-        count = 0;
-        sum = 0.0;
+    double sum = 0.0;
+    int count = 0;
+    bool ok = 1;
 
-        std::cout << "Started TSD1...";
-        std::cout << "\n";
+    {
+        // std::cout << "Started TSD1...";
+        // std::cout << "\n";
         for (auto id = 0; id < spin1.size() && ok; ++id)
         {
-            E = nucleus.TSD1(spin1.at(id), a1, a2, a3, v, *gamma * nucleus.PI / 180.0);
+            E = nucleus.TSD1(spin1.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
-                ok = 0;
-                std::cout << "Failed inside TSD1 at I=" << spin1.at(id);
+                std::cout << "Failed inside TSD1 at I=" << spin1.at(id) << " | Params: " << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
                 std::cout << "\n";
+                ok = 0;
                 break;
             }
             else
@@ -44,13 +45,16 @@ double rms(T &nucleus, double a1, double a2, double a3, double v)
                 count++;
             }
         }
-        std::cout << "Started TSD2...";
-        std::cout << "\n";
+
+        // std::cout << "Started TSD2...";
+        // std::cout << "\n";
         for (auto id = 0; id < spin2.size() && ok; ++id)
         {
-            E = nucleus.TSD2(spin2.at(id), a1, a2, a3, v, *gamma * nucleus.PI / 180.0);
+            E = nucleus.TSD2(spin2.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
+                std::cout << "Failed inside TSD2 at I=" << spin2.at(id) << "and params:" << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
+                std::cout << "\n";
                 ok = 0;
                 break;
             }
@@ -60,13 +64,16 @@ double rms(T &nucleus, double a1, double a2, double a3, double v)
                 count++;
             }
         }
-        std::cout << "Started TSD3...";
-        std::cout << "\n";
+
+        // std::cout << "Started TSD3...";
+        // std::cout << "\n";
         for (auto id = 0; id < spin3.size() && ok; ++id)
         {
-            E = nucleus.TSD3(spin3.at(id), a1, a2, a3, v, *gamma * nucleus.PI / 180.0);
+            E = nucleus.TSD3(spin3.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
+                std::cout << "Failed inside TSD3 at I=" << spin3.at(id) << "and params:" << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
+                std::cout << "\n";
                 ok = 0;
                 break;
             }
@@ -76,13 +83,16 @@ double rms(T &nucleus, double a1, double a2, double a3, double v)
                 count++;
             }
         }
-        std::cout << "Started TSD4...";
-        std::cout << "\n";
+
+        // std::cout << "Started TSD4...";
+        // std::cout << "\n";
         for (auto id = 0; id < spin4.size() && ok; ++id)
         {
-            E = nucleus.TSD4(spin4.at(id), a1, a2, a3, v, *gamma * nucleus.PI / 180.0);
+            E = nucleus.TSD4(spin4.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
+                std::cout << "Failed inside TSD4 at I=" << spin4.at(id) << "and params:" << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
+                std::cout << "\n";
                 ok = 0;
                 break;
             }
@@ -92,11 +102,15 @@ double rms(T &nucleus, double a1, double a2, double a3, double v)
                 count++;
             }
         }
-        if (count == 62)
-            sum = sqrt(sum / 63.0);
+    }
+
+    if (count == 62)
+    {
+        sum = sqrt(sum / 63.0);
         if (sum < best_rms)
             best_rms = sum;
     }
+
     return best_rms;
 }
 
@@ -112,7 +126,7 @@ void ShowEnergies()
     // }
 }
 
-int main()
+void TestRMS()
 {
     //The bands initialization procedure
     Bands_0010 bands_0010;
@@ -120,13 +134,51 @@ int main()
 
     //The constants used in computations (testing purposes only)
     auto a1 = 1.0 / (2.0 * 73.0);
-    auto a2 = 1.0 / (2.0 * 3.0);
+    auto a2 = 1.0 / (2.0 * 3);
     auto a3 = 1.0 / (2.0 * 67.0);
     auto v = 6.01;
     // auto gm = 21.0 * bands_0010.PI / 180.0;
 
-    std::cout << rms<Bands_0010>(bands_0010, a1, a2, a3, v);
+    std::cout << "TSD4: (0,0)";
     std::cout << "\n";
-    std::cout << rms<Bands_0011>(bands_0011, a1, a2, a3, v);
+    std::cout << rms<Bands_0010>(bands_0010, a1, a2, a3, v, 21);
     std::cout << "\n";
+    std::cout << "TSD4: (1,0)";
+    std::cout << "\n";
+    std::cout << rms<Bands_0011>(bands_0011, a1, a2, a3, v, 21);
+    std::cout << "\n";
+}
+
+void FindMinimumRMS(int Formalism)
+{
+    double best_rms = 9876543210.0;
+
+    //The bands initialization procedure
+    Bands_0010 bands_0010;
+    Bands_0011 bands_0011;
+    for (auto i1 = 1; i1 < 100; i1 += 10)
+    {
+        for (auto i2 = 1; i2 < 100; i2 +=10)
+        {
+            for (auto i3 = 1; i3 < 100; i3 += 10)
+            {
+                for (auto v = 0.1; v <= 10.0; v += 0.5)
+                    for (auto &&gamma : gm)
+                    {
+                        auto current_rms = rms<Bands_0010>(bands_0010, IF(i1), IF(i2), IF(i3), v, gamma);
+                        if (current_rms < best_rms)
+                        {
+                            best_rms = current_rms;
+                        }
+                    }
+            }
+        }
+    }
+    std::cout << best_rms << "\n";
+}
+
+int main()
+{
+    // TestRMS();
+    FindMinimumRMS(1);
 }
