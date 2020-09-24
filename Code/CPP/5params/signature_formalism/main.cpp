@@ -1,4 +1,5 @@
 #include "energies_0010.hh"
+#include "energies_0011.hh"
 #include "energies_1230.hh"
 
 const std::vector<double> spin1 = {8.5, 10.5, 12.5, 14.5, 16.5, 18.5, 20.5, 22.5, 24.5, 26.5, 28.5, 30.5, 32.5, 34.5, 36.5, 38.5, 40.5, 42.5, 44.5, 46.5, 48.5};
@@ -11,21 +12,25 @@ const std::vector<double> tsd3 = {2.1237, 2.6293, 3.1973, 3.8243, 4.5094, 5.2506
 const std::vector<double> tsd4 = {4.58, 5.2251, 5.9273, 6.6819, 7.4919, 8.3573, 9.2778, 10.2535, 11.2851, 12.3701};
 const std::vector<int> gm = {15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
 
-double rms(Bands_0010 &nucleus, double a1, double a2, double a3, double v)
+template <typename T>
+double rms(T &nucleus, double a1, double a2, double a3, double v)
 {
-
     double best_rms = 9876543210.0;
     double E;
-    double sum = 0.0;
-    double gamma = gm.at(6);
-    bool ok = 1;
-    int count = 0;
+    double sum;
+    int count;
+    bool ok;
+    for (auto gamma = gm.begin(); gamma < gm.end(); ++gamma)
     {
+        ok = 1;
+        count = 0;
+        sum = 0.0;
+
         std::cout << "Started TSD1...";
         std::cout << "\n";
         for (auto id = 0; id < spin1.size() && ok; ++id)
         {
-            E = nucleus.TSD1(spin1.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
+            E = nucleus.TSD1(spin1.at(id), a1, a2, a3, v, *gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
                 ok = 0;
@@ -43,7 +48,7 @@ double rms(Bands_0010 &nucleus, double a1, double a2, double a3, double v)
         std::cout << "\n";
         for (auto id = 0; id < spin2.size() && ok; ++id)
         {
-            E = nucleus.TSD2(spin2.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
+            E = nucleus.TSD2(spin2.at(id), a1, a2, a3, v, *gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
                 ok = 0;
@@ -59,7 +64,7 @@ double rms(Bands_0010 &nucleus, double a1, double a2, double a3, double v)
         std::cout << "\n";
         for (auto id = 0; id < spin3.size() && ok; ++id)
         {
-            E = nucleus.TSD3(spin3.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
+            E = nucleus.TSD3(spin3.at(id), a1, a2, a3, v, *gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
                 ok = 0;
@@ -75,7 +80,7 @@ double rms(Bands_0010 &nucleus, double a1, double a2, double a3, double v)
         std::cout << "\n";
         for (auto id = 0; id < spin4.size() && ok; ++id)
         {
-            E = nucleus.TSD4(spin4.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
+            E = nucleus.TSD4(spin4.at(id), a1, a2, a3, v, *gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
                 ok = 0;
@@ -87,25 +92,16 @@ double rms(Bands_0010 &nucleus, double a1, double a2, double a3, double v)
                 count++;
             }
         }
+        if (count == 62)
+            sum = sqrt(sum / 63.0);
+        if (sum < best_rms)
+            best_rms = sum;
     }
-    if (count == 62)
-        std::cout << sqrt(sum / 63.0) << "\n";
-    return count;
+    return best_rms;
 }
 
-int main()
+void ShowEnergies()
 {
-    //The bands initialization procedure
-    Bands_0010 bands_0010;
-
-    //The constants used in computations (testing purposes only)
-    auto a1 = 1.0 / (2.0 * 73.0);
-    auto a2 = 1.0 / (2.0 * 3.0);
-    auto a3 = 1.0 / (2.0 * 67.0);
-    auto v = 6.01;
-    // auto gm = 21.0 * bands_0010.PI / 180.0;
-
-    std::cout << rms(bands_0010, a1, a2, a3, v);
     // for (auto &&n : spin1)
     // {
     //     std::cout << n << " " << bands_0010.TSD1(n, a1, a2, a3, v, gm) << " " << bands_0010.TSD2(n, a1, a2, a3, v, gm) << " " << bands_0010.TSD3(n, a1, a2, a3, v, gm) << " " << bands_0010.TSD4(n, a1, a2, a3, v, gm) << "\n";
@@ -114,5 +110,23 @@ int main()
     // {
     //     std::cout << n << " " << bands_1230.TSD1(n, a1, a2, a3, v, gm) << " " << bands_1230.TSD2(n, a1, a2, a3, v, gm) << " " << bands_1230.TSD3(n, a1, a2, a3, v, gm) << " " << bands_1230.TSD4(n, a1, a2, a3, v, gm) << "\n";
     // }
+}
+
+int main()
+{
+    //The bands initialization procedure
+    Bands_0010 bands_0010;
+    Bands_0011 bands_0011;
+
+    //The constants used in computations (testing purposes only)
+    auto a1 = 1.0 / (2.0 * 73.0);
+    auto a2 = 1.0 / (2.0 * 3.0);
+    auto a3 = 1.0 / (2.0 * 67.0);
+    auto v = 6.01;
+    // auto gm = 21.0 * bands_0010.PI / 180.0;
+
+    std::cout << rms<Bands_0010>(bands_0010, a1, a2, a3, v);
+    std::cout << "\n";
+    std::cout << rms<Bands_0011>(bands_0011, a1, a2, a3, v);
     std::cout << "\n";
 }

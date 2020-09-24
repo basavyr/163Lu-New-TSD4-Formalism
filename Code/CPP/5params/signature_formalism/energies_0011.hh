@@ -3,7 +3,7 @@
 #include <cmath>
 #include <algorithm>
 
-class Bands_0010
+class Bands_0011
 {
 public:
     struct OmegaTuple
@@ -124,13 +124,25 @@ public:
         return E - E_0;
     }
 
-    double TSD4(double I, double a1, double a2, double a3, double v, double gm)
+    double TSD4_00(double I, double a1, double a2, double a3, double v, double gm)
     {
         const double j_2 = 6.5;
         double E_0 = Energy(0, 0, spin0, j_0, a1, a2, a3, v, gm);
         if (!valid(E_0))
             return error_checker;
         double E = Energy(0, 0, I, j_2, a1, a2, a3, v, gm);
+        if (!valid(E))
+            return error_checker;
+        return E - E_0;
+    }
+
+    double TSD4(double I, double a1, double a2, double a3, double v, double gm)
+    {
+        const double j_2 = 6.5;
+        double E_0 = Energy(0, 0, spin0, j_0, a1, a2, a3, v, gm);
+        if (!valid(E_0))
+            return error_checker;
+        double E = Energy(1, 0, I - 1.0, j_2, a1, a2, a3, v, gm);
         if (!valid(E))
             return error_checker;
         return E - E_0;
