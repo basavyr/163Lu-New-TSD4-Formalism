@@ -225,6 +225,39 @@ void FindMinimumRMS(int Formalism, Parameters &params)
     ShowFitParameters(params);
 }
 
+void TestConsistencyMath(Parameters &params)
+{
+    Bands_0010 band_0010;
+    Bands_0011 band_0011;
+    //TSD1
+    for (auto &&I : spin1)
+    {
+        std::cout << std::setprecision(4) << I << " " << band_0010.TSD1(I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gamma * band_0011.PI / 180.0) << "\n";
+    }
+    //TSD2
+    for (auto &&I : spin2)
+    {
+        std::cout << std::setprecision(4) << I << " " << band_0010.TSD2(I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gamma * band_0011.PI / 180.0) << "\n";
+    }
+
+    //TSD3
+    for (auto &&I : spin2)
+    {
+        std::cout << std::setprecision(4) << I << " " << band_0010.TSD3(I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gamma * band_0011.PI / 180.0) << "\n";
+    }
+
+    //TSD4(0,0)
+    for (auto &&I : spin4)
+    {
+        std::cout << std::setprecision(4) << I << " " << band_0010.TSD4(I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gamma * band_0011.PI / 180.0) << "\n";
+    }
+
+    //TSD4(1,0)
+    for (auto &&I : spin4)
+    {
+        std::cout << std::setprecision(4) << I << " " << band_0011.TSD4(I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gamma * band_0011.PI / 180.0) << "\n";
+    }
+}
 int main()
 {
     Parameters FIT_PARAMETERS;
@@ -235,10 +268,11 @@ int main()
     auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count();
     std::cout << "Fit procedure lasted: " << duration_ms / 1000.0 << " s"
               << "\n";
+    TestConsistencyMath(FIT_PARAMETERS);
 
-    start = std::chrono::system_clock::now();
-    FindMinimumRMS(1, FIT_PARAMETERS);
-    duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count();
-    std::cout << "Fit procedure lasted: " << duration_ms / 1000.0 << " s"
-              << "\n";
+    // start = std::chrono::system_clock::now();
+    // FindMinimumRMS(1, FIT_PARAMETERS);
+    // duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count();
+    // std::cout << "Fit procedure lasted: " << duration_ms / 1000.0 << " s"
+    //           << "\n";
 }
