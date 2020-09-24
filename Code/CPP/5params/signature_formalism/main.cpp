@@ -1,6 +1,7 @@
 #include "energies_0010.hh"
 #include "energies_0011.hh"
 #include "energies_1230.hh"
+#include <iomanip>
 
 double IF(double I)
 {
@@ -34,8 +35,8 @@ double rms(T &nucleus, double a1, double a2, double a3, double v, double gamma)
             E = nucleus.TSD1(spin1.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
-                std::cout << "Failed inside TSD1 at I=" << spin1.at(id) << " | Params: " << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
-                std::cout << "\n";
+                // std::cout << "Failed inside TSD1 at I=" << spin1.at(id) << " | Params: " << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
+                // std::cout << "\n";
                 ok = 0;
                 break;
             }
@@ -53,8 +54,8 @@ double rms(T &nucleus, double a1, double a2, double a3, double v, double gamma)
             E = nucleus.TSD2(spin2.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
-                std::cout << "Failed inside TSD2 at I=" << spin2.at(id) << "and params:" << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
-                std::cout << "\n";
+                // std::cout << "Failed inside TSD2 at I=" << spin2.at(id) << "and params:" << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
+                // std::cout << "\n";
                 ok = 0;
                 break;
             }
@@ -72,8 +73,8 @@ double rms(T &nucleus, double a1, double a2, double a3, double v, double gamma)
             E = nucleus.TSD3(spin3.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
-                std::cout << "Failed inside TSD3 at I=" << spin3.at(id) << "and params:" << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
-                std::cout << "\n";
+                // std::cout << "Failed inside TSD3 at I=" << spin3.at(id) << "and params:" << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
+                // std::cout << "\n";
                 ok = 0;
                 break;
             }
@@ -91,8 +92,8 @@ double rms(T &nucleus, double a1, double a2, double a3, double v, double gamma)
             E = nucleus.TSD4(spin4.at(id), a1, a2, a3, v, gamma * nucleus.PI / 180.0);
             if (!nucleus.valid(E))
             {
-                std::cout << "Failed inside TSD4 at I=" << spin4.at(id) << "and params:" << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
-                std::cout << "\n";
+                // std::cout << "Failed inside TSD4 at I=" << spin4.at(id) << "and params:" << IF(a1) << " " << IF(a2) << " " << IF(a3) << " " << v << " " << gamma;
+                // std::cout << "\n";
                 ok = 0;
                 break;
             }
@@ -149,36 +150,86 @@ void TestRMS()
     std::cout << "\n";
 }
 
-void FindMinimumRMS(int Formalism)
+struct Parameters
 {
+    double V;
+    double gamma;
+    double I1;
+    double I2;
+    double I3;
+    double rms;
+};
+
+void FindMinimumRMS(int Formalism, Parameters &params)
+{
+    if (Formalism == 0)
+        std::cout << "TSD4: (0,0)"
+                  << "\n";
+    else
+    {
+        std::cout << "TSD4: (1,0)"
+                  << "\n";
+    }
+
     double best_rms = 9876543210.0;
 
     //The bands initialization procedure
     Bands_0010 bands_0010;
     Bands_0011 bands_0011;
-    for (auto i1 = 1; i1 < 100; i1 += 10)
+
+    double current_rms;
+
+    double istep = 5;
+
+    for (auto i1 = 1; i1 < 100; i1 += istep)
     {
-        for (auto i2 = 1; i2 < 100; i2 +=10)
+        for (auto i2 = 1; i2 < 100; i2 += istep)
         {
-            for (auto i3 = 1; i3 < 100; i3 += 10)
+            for (auto i3 = 1; i3 < 100; i3 += istep)
             {
-                for (auto v = 0.1; v <= 10.0; v += 0.5)
+                for (auto v = 0.1; v <= 10.0; v += 5)
+                {
                     for (auto &&gamma : gm)
                     {
-                        auto current_rms = rms<Bands_0010>(bands_0010, IF(i1), IF(i2), IF(i3), v, gamma);
+                        if (Formalism == 1)
+                            current_rms = rms<Bands_0011>(bands_0011, IF(i1), IF(i2), IF(i3), v, gamma);
+                        else
+                        {
+                            current_rms = rms<Bands_0010>(bands_0010, IF(i1), IF(i2), IF(i3), v, gamma);
+                        }
                         if (current_rms < best_rms)
                         {
                             best_rms = current_rms;
+                            params.I1 = i1;
+                            params.I2 = i2;
+                            params.I3 = i3;
+                            params.V = v;
+                            params.gamma = gamma;
+                            params.rms = best_rms;
                         }
                     }
+                }
             }
         }
     }
-    std::cout << best_rms << "\n";
+}
+
+void ShowFitParameters(Parameters &params)
+{
+    std::cout << "RMS=" << params.rms << " keV\n";
+    std::cout << "ℐ₁:ℐ₂:ℐ₃ -> " << std::setprecision(2) << params.I1 << ":" << std::setprecision(2) << params.I2 << ":" << std::setprecision(2) << params.I3 << "\n";
+    std::cout << "V=" << params.V << "\n";
+    std::cout << "𝛾=" << params.gamma << "\n";
 }
 
 int main()
 {
-    // TestRMS();
-    FindMinimumRMS(1);
+    Parameters FIT_PARAMETERS;
+    const int TSD4_Formalism = 1;
+
+    //actual implementation which finds the minimum rms
+    FindMinimumRMS(TSD4_Formalism, FIT_PARAMETERS);
+
+    //outputs the parameters
+    ShowFitParameters(FIT_PARAMETERS);
 }
