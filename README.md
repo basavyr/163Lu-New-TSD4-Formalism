@@ -106,3 +106,10 @@ The diagram below describes the two fitting approaches that are present in this 
 
 *See the diagram in full quality [here](Reports/TSD4_novelApproach_description.pdf).*
 ![Description of the algorithm](Reports/TSD4_novelApproach_description_page.jpg)
+
+
+## Signature approach fit
+
+> **Update: 24 September 2020**
+
+![](2020-09-24-17-01-22.png)
