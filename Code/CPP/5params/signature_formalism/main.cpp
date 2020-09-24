@@ -4,6 +4,9 @@
 #include <iomanip>
 #include <chrono>
 #include <ctime>
+#include <fstream>
+
+std::ofstream gout("../../../../Reports/signature_params.dat");
 
 double IF(double I)
 {
@@ -168,6 +171,10 @@ void ShowFitParameters(Parameters &params)
     std::cout << "ℐ₁:ℐ₂:ℐ₃ -> " << std::setprecision(2) << params.I1 << ":" << std::setprecision(2) << params.I2 << ":" << std::setprecision(2) << params.I3 << "\n";
     std::cout << "V=" << params.V << "\n";
     std::cout << "𝛾=" << params.gamma << "\n";
+    gout << "RMS=" << params.rms << " keV\n";
+    gout << "ℐ₁:ℐ₂:ℐ₃ -> " << std::setprecision(2) << params.I1 << ":" << std::setprecision(2) << params.I2 << ":" << std::setprecision(2) << params.I3 << "\n";
+    gout << "V=" << params.V << "\n";
+    gout << "𝛾=" << params.gamma << "\n";
 }
 
 void FindMinimumRMS(int Formalism, Parameters &params)
@@ -258,6 +265,7 @@ void TestConsistencyMath(Parameters &params)
     //     std::cout << std::setprecision(5) << I << " " << band_0011.TSD4(I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gamma * band_0011.PI / 180.0) << "\n";
     // }
 }
+
 int main()
 {
     Parameters FIT_PARAMETERS;
