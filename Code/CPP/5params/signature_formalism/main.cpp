@@ -241,7 +241,7 @@ void TestConsistencyMath(Parameters &params)
     }
 
     //TSD3
-    for (auto &&I : spin2)
+    for (auto &&I : spin3)
     {
         std::cout << std::setprecision(4) << I << " " << band_0010.TSD3(I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gamma * band_0011.PI / 180.0) << "\n";
     }
@@ -253,10 +253,10 @@ void TestConsistencyMath(Parameters &params)
     }
 
     //TSD4(1,0)
-    for (auto &&I : spin4)
-    {
-        std::cout << std::setprecision(4) << I << " " << band_0011.TSD4(I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gamma * band_0011.PI / 180.0) << "\n";
-    }
+    // for (auto &&I : spin4)
+    // {
+    //     std::cout << std::setprecision(5) << I << " " << band_0011.TSD4(I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gamma * band_0011.PI / 180.0) << "\n";
+    // }
 }
 int main()
 {
@@ -268,7 +268,7 @@ int main()
     auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count();
     std::cout << "Fit procedure lasted: " << duration_ms / 1000.0 << " s"
               << "\n";
-    TestConsistencyMath(FIT_PARAMETERS);
+    // TestConsistencyMath(FIT_PARAMETERS);
 
     // start = std::chrono::system_clock::now();
     // FindMinimumRMS(1, FIT_PARAMETERS);
