@@ -196,7 +196,7 @@ void FindMinimumRMS(int Formalism, Parameters &params)
 
     double current_rms;
 
-    double istep = 5;
+    double istep = 2;
 
     for (auto i1 = 1; i1 < 100; i1 += istep)
     {
@@ -204,7 +204,7 @@ void FindMinimumRMS(int Formalism, Parameters &params)
         {
             for (auto i3 = 1; i3 < 100; i3 += istep)
             {
-                for (auto v = 0.1; v <= 10.0; v += 5)
+                for (auto v = 0.1; v <= 10.0; v += 1)
                 {
                     for (auto &&gamma : gm)
                     {
@@ -274,7 +274,7 @@ int main()
     auto start = std::chrono::system_clock::now();
     FindMinimumRMS(0, FIT_PARAMETERS);
     auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count();
-    std::cout << "Fit procedure lasted: " << duration_ms / 1000.0 << " s"
+    std::cout << "Fit procedure lasted: " << std::setprecision(7) << duration_ms / 1000.0 << " s"
               << "\n";
     // TestConsistencyMath(FIT_PARAMETERS);
 
