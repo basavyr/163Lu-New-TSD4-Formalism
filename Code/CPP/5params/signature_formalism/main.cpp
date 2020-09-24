@@ -2,6 +2,8 @@
 #include "energies_0011.hh"
 #include "energies_1230.hh"
 #include <iomanip>
+#include <chrono>
+#include <ctime>
 
 double IF(double I)
 {
@@ -160,6 +162,14 @@ struct Parameters
     double rms;
 };
 
+void ShowFitParameters(Parameters &params)
+{
+    std::cout << "RMS=" << params.rms << " keV\n";
+    std::cout << "ℐ₁:ℐ₂:ℐ₃ -> " << std::setprecision(2) << params.I1 << ":" << std::setprecision(2) << params.I2 << ":" << std::setprecision(2) << params.I3 << "\n";
+    std::cout << "V=" << params.V << "\n";
+    std::cout << "𝛾=" << params.gamma << "\n";
+}
+
 void FindMinimumRMS(int Formalism, Parameters &params)
 {
     if (Formalism == 0)
@@ -212,24 +222,23 @@ void FindMinimumRMS(int Formalism, Parameters &params)
             }
         }
     }
-}
-
-void ShowFitParameters(Parameters &params)
-{
-    std::cout << "RMS=" << params.rms << " keV\n";
-    std::cout << "ℐ₁:ℐ₂:ℐ₃ -> " << std::setprecision(2) << params.I1 << ":" << std::setprecision(2) << params.I2 << ":" << std::setprecision(2) << params.I3 << "\n";
-    std::cout << "V=" << params.V << "\n";
-    std::cout << "𝛾=" << params.gamma << "\n";
+    ShowFitParameters(params);
 }
 
 int main()
 {
     Parameters FIT_PARAMETERS;
-    const int TSD4_Formalism = 1;
 
     //actual implementation which finds the minimum rms
-    FindMinimumRMS(TSD4_Formalism, FIT_PARAMETERS);
+    auto start = std::chrono::system_clock::now();
+    FindMinimumRMS(0, FIT_PARAMETERS);
+    auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count();
+    std::cout << "Fit procedure lasted: " << duration_ms / 1000.0 << " s"
+              << "\n";
 
-    //outputs the parameters
-    ShowFitParameters(FIT_PARAMETERS);
+    start = std::chrono::system_clock::now();
+    FindMinimumRMS(1, FIT_PARAMETERS);
+    duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count();
+    std::cout << "Fit procedure lasted: " << duration_ms / 1000.0 << " s"
+              << "\n";
 }
