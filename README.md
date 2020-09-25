@@ -112,4 +112,4 @@ The diagram below describes the two fitting approaches that are present in this 
 
 > **Update: 24 September 2020**
 
-![](2020-09-24-17-01-22.png)
+![](./Reports/2020-09-24-17-01-22.png)

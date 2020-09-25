@@ -168,11 +168,11 @@ struct Parameters
 void ShowFitParameters(Parameters &params)
 {
     std::cout << "RMS=" << params.rms << " keV\n";
-    std::cout << "ℐ₁:ℐ₂:ℐ₃ -> " << std::setprecision(2) << params.I1 << ":" << std::setprecision(2) << params.I2 << ":" << std::setprecision(2) << params.I3 << "\n";
+    std::cout << "ℐ₁:ℐ₂:ℐ₃ -> " << std::setprecision(3) << params.I1 << ":" << std::setprecision(3) << params.I2 << ":" << std::setprecision(3) << params.I3 << "\n";
     std::cout << "V=" << params.V << "\n";
     std::cout << "𝛾=" << params.gamma << "\n";
     gout << "RMS=" << params.rms << " keV\n";
-    gout << "ℐ₁:ℐ₂:ℐ₃ -> " << std::setprecision(2) << params.I1 << ":" << std::setprecision(2) << params.I2 << ":" << std::setprecision(2) << params.I3 << "\n";
+    gout << "ℐ₁:ℐ₂:ℐ₃ -> " << std::setprecision(3) << params.I1 << ":" << std::setprecision(3) << params.I2 << ":" << std::setprecision(3) << params.I3 << "\n";
     gout << "V=" << params.V << "\n";
     gout << "𝛾=" << params.gamma << "\n";
 }
@@ -196,7 +196,7 @@ void FindMinimumRMS(int Formalism, Parameters &params)
 
     double current_rms;
 
-    double istep = 2;
+    double istep = 1;
 
     for (auto i1 = 1; i1 < 100; i1 += istep)
     {
@@ -204,7 +204,7 @@ void FindMinimumRMS(int Formalism, Parameters &params)
         {
             for (auto i3 = 1; i3 < 100; i3 += istep)
             {
-                for (auto v = 0.1; v <= 10.0; v += 1)
+                for (auto v = 0.1; v <= 10.0; v += 0.5)
                 {
                     for (auto &&gamma : gm)
                     {
