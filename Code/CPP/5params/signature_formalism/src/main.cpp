@@ -6,7 +6,6 @@
 #include <ctime>
 #include <fstream>
 
-
 //uses the system path copied from machine tree
 //better to use relative path (to the current directory)
 std::ofstream gout("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Reports/SIGNATURE_FORMALISM/signature_params.dat");
@@ -199,33 +198,40 @@ void FindMinimumRMS(int Formalism, Parameters &params)
 
     double current_rms;
 
-    double istep = 20;
+    double istep = 1;
 
     for (auto i1 = 1; i1 < 100; i1 += istep)
     {
-        for (auto i2 = 1; i2 < 100; i2 += istep)
+        // for (auto i2 = 1; i2 < 100; i2 += istep)
+        auto i2 = 32;
         {
-            for (auto i3 = 1; i3 < 100; i3 += istep)
+            // if (i1 > i2)
             {
-                for (auto v = 0.1; v <= 10.0; v += 0.5)
+                for (auto i3 = 1; i3 < 100; i3 += istep)
                 {
-                    for (auto &&gamma : gm)
+                    if (i3 > i2 + 10)
                     {
-                        if (Formalism == 1)
-                            current_rms = rms<Bands_0011>(bands_0011, IF(i1), IF(i2), IF(i3), v, gamma);
-                        else
+                        for (auto v = 0.1; v <= 100.0; v += 1)
                         {
-                            current_rms = rms<Bands_0010>(bands_0010, IF(i1), IF(i2), IF(i3), v, gamma);
-                        }
-                        if (current_rms < best_rms)
-                        {
-                            best_rms = current_rms;
-                            params.I1 = i1;
-                            params.I2 = i2;
-                            params.I3 = i3;
-                            params.V = v;
-                            params.gamma = gamma;
-                            params.rms = best_rms;
+                            for (auto &&gamma : gm)
+                            {
+                                if (Formalism == 1)
+                                    current_rms = rms<Bands_0011>(bands_0011, IF(i1), IF(i2), IF(i3), v, gamma);
+                                else
+                                {
+                                    current_rms = rms<Bands_0010>(bands_0010, IF(i1), IF(i2), IF(i3), v, gamma);
+                                }
+                                if (current_rms < best_rms)
+                                {
+                                    best_rms = current_rms;
+                                    params.I1 = i1;
+                                    params.I2 = i2;
+                                    params.I3 = i3;
+                                    params.V = v;
+                                    params.gamma = gamma;
+                                    params.rms = best_rms;
+                                }
+                            }
                         }
                     }
                 }
