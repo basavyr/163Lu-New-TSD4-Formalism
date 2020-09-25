@@ -1,12 +1,15 @@
-#include "energies_0010.hh"
-#include "energies_0011.hh"
-#include "energies_1230.hh"
+#include "../include/energies_0010.hh"
+#include "../include/energies_0011.hh"
+#include "../include/energies_1230.hh"
 #include <iomanip>
 #include <chrono>
 #include <ctime>
 #include <fstream>
 
-std::ofstream gout("../../../../Reports/signature_params.dat");
+
+//uses the system path copied from machine tree
+//better to use relative path (to the current directory)
+std::ofstream gout("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Reports/SIGNATURE_FORMALISM/signature_params.dat");
 
 double IF(double I)
 {
@@ -196,7 +199,7 @@ void FindMinimumRMS(int Formalism, Parameters &params)
 
     double current_rms;
 
-    double istep = 1;
+    double istep = 20;
 
     for (auto i1 = 1; i1 < 100; i1 += istep)
     {
