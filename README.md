@@ -82,7 +82,7 @@ In the latest project update [](), the search function for the energy's root mea
 
 The nucleus is analyzed in terms of its critical points, or the regions where the deformed shapes exhibit certain properties (e.g. different wobbling regimes, axial symmetry, forbidden states).
 ___
-> **More information with regards to this part of the project can be seen [here](EnergyFunction.md).**
+> **More information with regards to this part of the project can be seen [here](./Reports/EnergyFunction.md).**
 ___
 This project is introduced in the following [issue](https://github.com/basavyr/163Lu-New-TSD4-Formalism/issues/5).
 
@@ -108,8 +108,19 @@ The diagram below describes the two fitting approaches that are present in this 
 ![Description of the algorithm](Reports/TSD4_novelApproach_description_page.jpg)
 
 
-## Signature approach fit
+### Progress on the signature approach fit
+
+The fitting of excitation energies for $^{163}$Lu were realized with the following configuration:
+
+- TSD1=$(n_{w1},n_{w2})=(0,0)$
+- TSD2=$(n_{w1},n_{w2})=(0,0)$
+- TSD3=$(n_{w1},n_{w2})=(1,0)$
+- TSD4=$(n_{w1},n_{w2})=(0,0)$
+
+The TSD4 band is built on the same configuration as the other two bands.
 
 > **Update: 24 September 2020**
 
-![](./Reports/2020-09-24-17-01-22.png)
+[ ] - Implement a (1,0) configuration on TSD4, within the same signature procedure.
+
+![Step size is 2.](./Reports/2020-09-24-17-01-22.png)
