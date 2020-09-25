@@ -205,7 +205,7 @@ void FindMinimumRMS(int Formalism, Parameters &params)
 
     double current_rms;
 
-    double istep = 2;
+    double istep = 1;
 
     for (auto i1 = 1; i1 < 100; i1 += istep)
     {
