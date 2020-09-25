@@ -182,12 +182,19 @@ void ShowFitParameters(Parameters &params)
 void FindMinimumRMS(int Formalism, Parameters &params)
 {
     if (Formalism == 0)
+    {
+
         std::cout << "TSD4: (0,0)"
                   << "\n";
+        gout << "TSD4: (0,0)"
+             << "\n";
+    }
     else
     {
         std::cout << "TSD4: (1,0)"
                   << "\n";
+        gout << "TSD4: (1,0)"
+             << "\n";
     }
 
     double best_rms = 9876543210.0;
