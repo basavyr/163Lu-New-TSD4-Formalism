@@ -1,0 +1,117 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3437,        109]
+NotebookOptionsPosition[      2364,         81]
+NotebookOutlinePosition[      2883,         98]
+CellTagsIndexPosition[      2840,         95]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "The fit results for the wobbling spectrum of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["", "163"], "Lu"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "90030406-2918-4cbc-a2e9-145a1a444c84"]
+}], "Chapter",
+ CellChangeTimes->{{3.810018996878479*^9, 
+  3.810019025914222*^9}},ExpressionUUID->"f0bf9e22-3c2f-486f-8a80-\
+4f60df2e4b46"],
+
+Cell[CellGroupData[{
+
+Cell["Results obtained from C++ implementation", "Section",
+ CellChangeTimes->{{3.810019027736259*^9, 
+  3.810019039177898*^9}},ExpressionUUID->"4093ab61-31d8-4214-9f40-\
+510f504d6ee4"],
+
+Cell[TextData[{
+ "TSD1: (0,0) - YRAST BAND\nTSD2: (0,0) - G.S. BAND (",
+ StyleBox["SIGNATURE PARTNER)\n",
+  FontWeight->"Bold"],
+ StyleBox["TSD3: (1,0) - 1-Phonon band (built on top of TSD2)",
+  FontWeight->"Plain"]
+}], "Subsection",
+ CellChangeTimes->{{3.810019042384104*^9, 
+  3.810019112653798*^9}},ExpressionUUID->"cd435578-b3dd-4a2b-929a-\
+e0fefffa8934"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The fourth band",
+ FontWeight->"Bold"]], "Subsection",
+ CellChangeTimes->{{3.810019115522287*^9, 
+  3.810019121046393*^9}},ExpressionUUID->"e23dee23-c54f-4d02-a508-\
+f30dee0f90f5"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["TSD4: (0,0) - Ground state band (same config) built \
+on top of TSD1",
+ FontWeight->"Plain"]], "Item",
+ CellChangeTimes->{{3.8100191282591457`*^9, 
+  3.810019152054031*^9}},ExpressionUUID->"f0818ab7-8d5e-4687-9efd-\
+0dde23376278"],
+
+Cell[TextData[StyleBox["TSD4: (1,0) - 1-Phonon state band (same config) built \
+on top of TSD1",
+ FontWeight->"Plain"]], "Item",
+ CellChangeTimes->{{3.8100191282591457`*^9, 
+  3.810019161930498*^9}},ExpressionUUID->"6dc0faa8-3832-42b1-9baa-\
+dcb87235b111"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1720, 1395},
+WindowMargins->{{Automatic, -1720}, {Automatic, 132}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Applications", 
+   "Mathematica.app", "Contents", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "Times_Basavyr_Unique.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 393, 11, 66, "Chapter",ExpressionUUID->"f0bf9e22-3c2f-486f-8a80-4f60df2e4b46"],
+Cell[CellGroupData[{
+Cell[998, 37, 185, 3, 59, "Section",ExpressionUUID->"4093ab61-31d8-4214-9f40-510f504d6ee4"],
+Cell[1186, 42, 359, 9, 90, "Subsection",ExpressionUUID->"cd435578-b3dd-4a2b-929a-e0fefffa8934"],
+Cell[CellGroupData[{
+Cell[1570, 55, 204, 4, 32, "Subsection",ExpressionUUID->"e23dee23-c54f-4d02-a508-f30dee0f90f5"],
+Cell[CellGroupData[{
+Cell[1799, 63, 254, 5, 32, "Item",ExpressionUUID->"f0818ab7-8d5e-4687-9efd-0dde23376278"],
+Cell[2056, 70, 256, 5, 32, "Item",ExpressionUUID->"6dc0faa8-3832-42b1-9baa-dcb87235b111"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
