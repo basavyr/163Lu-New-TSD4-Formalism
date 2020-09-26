@@ -1,7 +1,12 @@
 # $^{163}$Lu - Excitation energies
+
 ## New approach for TSD4 structure
 
 Project which aims at computing the excitation energies for the wobbling spectrum of $^{163}$Lu using a novel approach for the TSD4 band.
+
+___
+> Find an in-depth analysis of the project [here](/Reports/SIGNATURE_FORMALISM/Lu163_newFormalism.pdf).
+___
 
 The nucleus $^{163}$Lu has four wobbling bands (including the yrast TSD1) and the excitation spectrum has a rich structure. Each band (denoted by TSD1,2,3, and 4, respectively) has a certain number of *spin states*, with a definite energy for each state.
 
