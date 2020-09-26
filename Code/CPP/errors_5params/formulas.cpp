@@ -95,11 +95,11 @@ int main()
 
     std::cout << "test the energies";
     std::cout << "\n";
-    auto a1 = 1.0 / (2.0 * 73);
-    auto a2 = 1.0 / (2.0 * 3);
-    auto a3 = 1.0 / (2.0 * 67);
-    auto v = 6.01;
-    auto gm = 21 * PI / 180.0;
+    auto a1 = 1.0 / (2.0 * 77);
+    auto a2 = 1.0 / (2.0 * 47);
+    auto a3 = 1.0 / (2.0 * 3);
+    auto v = 2.1;
+    auto gm = 16 * PI / 180.0;
     std::vector<double> spins = {8.5, 10.5, 12.5, 14.5, 16.5, 18.5, 20.5, 22.5, 24.5, 26.5, 28.5, 30.5, 32.5, 34.5, 36.5, 38.5, 40.5, 42.5, 44.5, 46.5, 48.5};
     for (auto &&n : spins)
     {
