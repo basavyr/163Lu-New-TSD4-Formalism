@@ -142,7 +142,7 @@ public:
         return E - E_0;
     }
 
-    //approach A2
+    //approach B2
     //TSD4 is a 1-phonon excitation built on top of TSD1
     double TSD4_10(double I, double a1, double a2, double a3, double v, double gm)
     {
