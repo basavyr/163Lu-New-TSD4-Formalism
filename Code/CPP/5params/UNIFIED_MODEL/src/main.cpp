@@ -3,6 +3,11 @@
 #include "../include/approachA.h"
 #include "../include/approachB.h"
 
+double IF(double x)
+{
+    return (1.0) / (2.0 * x);
+}
+
 //compute all four values of the rms (A1,A2,B1 and B2) in a single function and store the results
 struct RMS_tuple
 {
@@ -47,13 +52,103 @@ void print_array(std::string arr_name, const std::vector<double> &arr)
               << "\n";
 }
 
-RMS_tuple RMS(double i1, double i2, double i3, double v, double gm)
+RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, double v, double gm)
 {
     RMS_tuple rms_results;
-    rms_results.A1 = 1;
-    rms_results.A2 = 2;
-    rms_results.B1 = 3;
-    rms_results.B2 = 4;
+    rms_results.A1 = 0.0;
+    rms_results.A2 = 0.0;
+    rms_results.B1 = 0.0;
+    rms_results.B2 = 0.0;
+
+    auto a1 = IF(i1);
+    auto a2 = IF(i2);
+    auto a3 = IF(i3);
+
+    bool ok = 1;
+    int count = 0;
+    {
+
+        //TSD1
+        for (auto id = 0; id < tsd1.size() && ok; ++id)
+        {
+            if (!A.valid(A.TSD1(spin1.at(id), a1, a2, a3, v, gm)) || !A.valid(B.TSD1(spin1.at(id), a1, a2, a3, v, gm)))
+            {
+                ok = 0;
+                rms_results.A1 = A.error_checker;
+                rms_results.A2 = A.error_checker;
+                rms_results.B1 = A.error_checker;
+                rms_results.B2 = A.error_checker;
+                break;
+            }
+            rms_results.A1 += pow(tsd1.at(id) - A.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.A2 += pow(tsd1.at(id) - A.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.B1 += pow(tsd1.at(id) - B.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.B2 += pow(tsd1.at(id) - B.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
+            count++;
+        }
+        //TSD1
+        for (auto id = 0; id < tsd2.size() && ok; ++id)
+        {
+            if (!A.valid(A.TSD2(spin2.at(id), a1, a2, a3, v, gm)) || !A.valid(B.TSD2(spin2.at(id), a1, a2, a3, v, gm)))
+            {
+                ok = 0;
+                rms_results.A1 = A.error_checker;
+                rms_results.A2 = A.error_checker;
+                rms_results.B1 = A.error_checker;
+                rms_results.B2 = A.error_checker;
+                break;
+            }
+            rms_results.A1 += pow(tsd2.at(id) - A.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.A2 += pow(tsd2.at(id) - A.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.B1 += pow(tsd2.at(id) - B.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.B2 += pow(tsd2.at(id) - B.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
+            count++;
+        }
+        for (auto id = 0; id < tsd3.size() && ok; ++id)
+        {
+            if (!A.valid(A.TSD3(spin3.at(id), a1, a2, a3, v, gm)) || !A.valid(B.TSD3(spin3.at(id), a1, a2, a3, v, gm)))
+            {
+                ok = 0;
+                rms_results.A1 = A.error_checker;
+                rms_results.A2 = A.error_checker;
+                rms_results.B1 = A.error_checker;
+                rms_results.B2 = A.error_checker;
+                break;
+            }
+            rms_results.A1 += pow(tsd3.at(id) - A.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.A2 += pow(tsd3.at(id) - A.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.B1 += pow(tsd3.at(id) - B.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.B2 += pow(tsd3.at(id) - B.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
+            count++;
+        }
+        for (auto id = 0; id < tsd4.size() && ok; ++id)
+        {
+            if (!A.valid(A.TSD4_00(spin4.at(id), a1, a2, a3, v, gm)) || !A.valid(B.TSD4_00(spin4.at(id), a1, a2, a3, v, gm)) || !A.valid(A.TSD4_10(spin4.at(id), a1, a2, a3, v, gm)) || !A.valid(B.TSD4_10(spin4.at(id), a1, a2, a3, v, gm)))
+            {
+                ok = 0;
+                rms_results.A1 = A.error_checker;
+                rms_results.A2 = A.error_checker;
+                rms_results.B1 = A.error_checker;
+                rms_results.B2 = A.error_checker;
+                break;
+            }
+            rms_results.A1 += pow(tsd4.at(id) - A.TSD4_00(spin4.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.A2 += pow(tsd4.at(id) - A.TSD4_10(spin4.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.B1 += pow(tsd4.at(id) - B.TSD4_00(spin4.at(id), a1, a2, a3, v, gm), 2);
+            rms_results.B2 += pow(tsd4.at(id) - B.TSD4_10(spin4.at(id), a1, a2, a3, v, gm), 2);
+            count++;
+        }
+    }
+    rms_results.A1 = sqrt(rms_results.A1 / 63.0);
+    rms_results.A2 = sqrt(rms_results.A2 / 63.0);
+    rms_results.B1 = sqrt(rms_results.B1 / 63.0);
+    rms_results.B2 = sqrt(rms_results.B2 / 63.0);
+    if (count + 1 == 63)
+        return rms_results;
+    rms_results.A1 = A.error_checker;
+    rms_results.A2 = A.error_checker;
+    rms_results.B1 = A.error_checker;
+    rms_results.B2 = A.error_checker;
     return rms_results;
 }
 
@@ -69,6 +164,6 @@ int main()
 {
     Approach_A A;
     Approach_B B;
-    auto best_rms = RMS(1, 1, 1, 1, 1);
+    auto best_rms = RMS(A, B, 73, 3, 67, 6.01, 21 * A.PI / 180.0);
     show_rms_values(best_rms);
 }

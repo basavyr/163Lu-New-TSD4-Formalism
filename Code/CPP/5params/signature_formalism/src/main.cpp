@@ -139,6 +139,7 @@ void TestRMS()
     //The bands initialization procedure
     Bands_0010 bands_0010;
     Bands_0011 bands_0011;
+    Bands_1230 bands_1230;
 
     //The constants used in computations (testing purposes only)
     auto a1 = 1.0 / (2.0 * 73.0);
@@ -155,6 +156,9 @@ void TestRMS()
     std::cout << "\n";
     std::cout << rms<Bands_0011>(bands_0011, a1, a2, a3, v, 21);
     std::cout << "\n";
+    std::cout << "12-Phonon";
+    std::cout << "\n";
+    std::cout << rms<Bands_1230>(bands_1230, a1, a2, a3, v, 21);
 }
 
 struct Parameters
@@ -286,13 +290,15 @@ int main()
 {
     Parameters FIT_PARAMETERS;
 
+    TestRMS();
+
     //actual implementation which finds the minimum rms
-    auto start = std::chrono::system_clock::now();
-    FindMinimumRMS(0, FIT_PARAMETERS);
-    FindMinimumRMS(1, FIT_PARAMETERS);
-    auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count();
-    std::cout << "Fit procedure lasted: " << std::setprecision(7) << duration_ms / 1000.0 << " s"
-              << "\n";
+    // auto start = std::chrono::system_clock::now();
+    // FindMinimumRMS(0, FIT_PARAMETERS);
+    // FindMinimumRMS(1, FIT_PARAMETERS);
+    // auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count();
+    // std::cout << "Fit procedure lasted: " << std::setprecision(7) << duration_ms / 1000.0 << " s"
+    //           << "\n";
     // TestConsistencyMath(FIT_PARAMETERS);
 
     // start = std::chrono::system_clock::now();

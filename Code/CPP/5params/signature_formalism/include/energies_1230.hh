@@ -9,7 +9,14 @@ public:
     const double PI = 3.141592654;
     const double spin0 = 6.5;
     const double j_0 = 6.5;
+    const double error_checker = 6969;
 
+    int valid(double number)
+    {
+        if (!isnan(number) && number != error_checker)
+            return 1;
+        return 0;
+    }
     struct OmegaTuple
     {
         double omega1, omega2;
@@ -80,6 +87,13 @@ public:
         // const double j_2 = 4.5;
         double E_0 = Energy(0, 0, spin0, j_0, a1, a2, a3, v, gm);
         double E = Energy(0, 0, I, j_0, a1, a2, a3, v, gm);
+        return E - E_0;
+    }
+    double TSD4_10(double I, double a1, double a2, double a3, double v, double gm)
+    {
+        // const double j_2 = 4.5;
+        double E_0 = Energy(0, 0, spin0, j_0, a1, a2, a3, v, gm);
+        double E = Energy(1, 0, I - 1.0, j_0, a1, a2, a3, v, gm);
         return E - E_0;
     }
 };
