@@ -8,11 +8,54 @@ double IF(double x)
     return (1.0) / (2.0 * x);
 }
 
+void print(double var)
+{
+    std::cout << var << "\n";
+}
+
 //compute all four values of the rms (A1,A2,B1 and B2) in a single function and store the results
 struct RMS_tuple
 {
     double A1, A2;
     double B1, B2;
+    RMS_tuple()
+    {
+        A1 = 0.0;
+        A2 = 0.0;
+        B1 = 0.0;
+        B2 = 0.0;
+    }
+    RMS_tuple(double init_val)
+    {
+        A1 = init_val;
+        A2 = init_val;
+        B1 = init_val;
+        B2 = init_val;
+    }
+};
+
+struct Params_tuple
+{
+    double I1;
+    double I2;
+    double I3;
+    double V;
+    double gm;
+    double rms_A1;
+    double rms_A2;
+    double rms_B1;
+    double rms_B2;
+    Params_tuple()
+    {
+    }
+    Params_tuple(double moi1, double moi2, double moi3, double V_init, double gm_init)
+    {
+        I1 = moi1;
+        I2 = moi2;
+        I3 = moi3;
+        V = V_init;
+        gm = gm_init;
+    }
 };
 
 //The containers for storing the experimental data for spins
@@ -31,11 +74,6 @@ const std::vector<double> tsd4 = {4.58, 5.2251, 5.9273, 6.6819, 7.4919, 8.3573, 
 //store the values of the triaxial parameter which will be used within the `min_rms` searching function
 const std::vector<int> gm = {15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
 
-void print(double var)
-{
-    std::cout << var << "\n";
-}
-
 void print_array(std::string arr_name, const std::vector<double> &arr)
 {
     std::cout << arr_name << " = {";
@@ -52,13 +90,110 @@ void print_array(std::string arr_name, const std::vector<double> &arr)
               << "\n";
 }
 
+void show_energies(Approach_A &A, Approach_B &B, Params_tuple &params)
+{
+    //Formalism A
+    std::cout << "############# FORMALISM A #############"
+              << "\n";
+    std::cout << "TSD1"
+              << "\n";
+    std::cout << "I   "
+              << "E(EXP)  "
+              << "E(TH)   "
+              << "\n";
+    for (auto id = 0; id < spin1.size(); ++id)
+    {
+        std::cout << spin1.at(id) << " " << tsd1.at(id) << " " << A.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+    }
+    std::cout << "TSD2"
+              << "\n";
+    std::cout << "I   "
+              << "E(EXP)  "
+              << "E(TH)   "
+              << "\n";
+    for (auto id = 0; id < spin2.size(); ++id)
+    {
+        std::cout << spin2.at(id) << " " << tsd2.at(id) << " " << A.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+    }
+    std::cout << "TSD3"
+              << "\n";
+    std::cout << "I   "
+              << "E(EXP)  "
+              << "E(TH)   "
+              << "\n";
+    for (auto id = 0; id < spin3.size(); ++id)
+    {
+        std::cout << spin3.at(id) << " " << tsd3.at(id) << " " << A.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+    }
+    std::cout << "TSD4 A1 & A2"
+              << "\n";
+    std::cout << "I   "
+              << "E(EXP) "
+              << "TSD4_(0,0)  "
+              << "TSD4_(1,0)  "
+              << "\n";
+    for (auto id = 0; id < spin4.size(); ++id)
+    {
+        std::cout << spin4.at(id) << " " << tsd4.at(id) << " " << A.TSD4_00(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << " " << A.TSD4_10(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+    }
+    std::cout << "\n";
+    //Formalism B
+    std::cout << "############# FORMALISM B #############"
+              << "\n";
+    std::cout << "TSD1"
+              << "\n";
+    std::cout << "I   "
+              << "E(EXP)  "
+              << "E(TH)   "
+              << "\n";
+    for (auto id = 0; id < spin1.size(); ++id)
+    {
+        std::cout << spin1.at(id) << " " << tsd1.at(id) << " " << B.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+    }
+    std::cout << "TSD2"
+              << "\n";
+    std::cout << "I   "
+              << "E(EXP)  "
+              << "E(TH)   "
+              << "\n";
+    for (auto id = 0; id < spin2.size(); ++id)
+    {
+        std::cout << spin2.at(id) << " " << tsd2.at(id) << " " << B.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+    }
+    std::cout << "TSD3"
+              << "\n";
+    std::cout << "I   "
+              << "E(EXP)  "
+              << "E(TH)   "
+              << "\n";
+    for (auto id = 0; id < spin3.size(); ++id)
+    {
+        std::cout << spin3.at(id) << " " << tsd3.at(id) << " " << B.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+    }
+    std::cout << "TSD4 B1 & B2"
+              << "\n";
+    std::cout << "I   "
+              << "E(EXP) "
+              << "TSD4_(0,0)  "
+              << "TSD4_(1,0)  "
+              << "\n";
+    for (auto id = 0; id < spin4.size(); ++id)
+    {
+        std::cout << spin4.at(id) << " " << tsd4.at(id) << " " << B.TSD4_00(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << " " << B.TSD4_10(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+    }
+}
+
 RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, double v, double gm)
 {
+    //the variable to store the rms results
     RMS_tuple rms_results;
-    rms_results.A1 = 0.0;
-    rms_results.A2 = 0.0;
-    rms_results.B1 = 0.0;
-    rms_results.B2 = 0.0;
+
+    //init the variables with 0.0 (since the squared differences will be summed up in the same variable)
+    //this initializing process is now moved into the actual struct implementation(definition)
+    // rms_results.A1 = 0.0;
+    // rms_results.A2 = 0.0;
+    // rms_results.B1 = 0.0;
+    // rms_results.B2 = 0.0;
 
     auto a1 = IF(i1);
     auto a2 = IF(i2);
@@ -67,17 +202,12 @@ RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, dou
     bool ok = 1;
     int count = 0;
     {
-
         //TSD1
         for (auto id = 0; id < tsd1.size() && ok; ++id)
         {
             if (!A.valid(A.TSD1(spin1.at(id), a1, a2, a3, v, gm)) || !A.valid(B.TSD1(spin1.at(id), a1, a2, a3, v, gm)))
             {
                 ok = 0;
-                rms_results.A1 = A.error_checker;
-                rms_results.A2 = A.error_checker;
-                rms_results.B1 = A.error_checker;
-                rms_results.B2 = A.error_checker;
                 break;
             }
             rms_results.A1 += pow(tsd1.at(id) - A.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
@@ -86,16 +216,12 @@ RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, dou
             rms_results.B2 += pow(tsd1.at(id) - B.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
             count++;
         }
-        //TSD1
+        //TSD2
         for (auto id = 0; id < tsd2.size() && ok; ++id)
         {
             if (!A.valid(A.TSD2(spin2.at(id), a1, a2, a3, v, gm)) || !A.valid(B.TSD2(spin2.at(id), a1, a2, a3, v, gm)))
             {
                 ok = 0;
-                rms_results.A1 = A.error_checker;
-                rms_results.A2 = A.error_checker;
-                rms_results.B1 = A.error_checker;
-                rms_results.B2 = A.error_checker;
                 break;
             }
             rms_results.A1 += pow(tsd2.at(id) - A.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
@@ -104,15 +230,12 @@ RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, dou
             rms_results.B2 += pow(tsd2.at(id) - B.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
             count++;
         }
+        //TSD3
         for (auto id = 0; id < tsd3.size() && ok; ++id)
         {
             if (!A.valid(A.TSD3(spin3.at(id), a1, a2, a3, v, gm)) || !A.valid(B.TSD3(spin3.at(id), a1, a2, a3, v, gm)))
             {
                 ok = 0;
-                rms_results.A1 = A.error_checker;
-                rms_results.A2 = A.error_checker;
-                rms_results.B1 = A.error_checker;
-                rms_results.B2 = A.error_checker;
                 break;
             }
             rms_results.A1 += pow(tsd3.at(id) - A.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
@@ -121,15 +244,12 @@ RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, dou
             rms_results.B2 += pow(tsd3.at(id) - B.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
             count++;
         }
+        //TSD4
         for (auto id = 0; id < tsd4.size() && ok; ++id)
         {
             if (!A.valid(A.TSD4_00(spin4.at(id), a1, a2, a3, v, gm)) || !A.valid(B.TSD4_00(spin4.at(id), a1, a2, a3, v, gm)) || !A.valid(A.TSD4_10(spin4.at(id), a1, a2, a3, v, gm)) || !A.valid(B.TSD4_10(spin4.at(id), a1, a2, a3, v, gm)))
             {
                 ok = 0;
-                rms_results.A1 = A.error_checker;
-                rms_results.A2 = A.error_checker;
-                rms_results.B1 = A.error_checker;
-                rms_results.B2 = A.error_checker;
                 break;
             }
             rms_results.A1 += pow(tsd4.at(id) - A.TSD4_00(spin4.at(id), a1, a2, a3, v, gm), 2);
@@ -139,16 +259,20 @@ RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, dou
             count++;
         }
     }
+
+    //final step in computing the root mean square values for the excitation energies
+    //current computations consider N=n+1
     rms_results.A1 = sqrt(rms_results.A1 / 63.0);
     rms_results.A2 = sqrt(rms_results.A2 / 63.0);
     rms_results.B1 = sqrt(rms_results.B1 / 63.0);
     rms_results.B2 = sqrt(rms_results.B2 / 63.0);
+
     if (count + 1 == 63)
         return rms_results;
-    rms_results.A1 = A.error_checker;
-    rms_results.A2 = A.error_checker;
-    rms_results.B1 = A.error_checker;
-    rms_results.B2 = A.error_checker;
+    else
+    {
+        rms_results = RMS_tuple(A.error_checker);
+    }
     return rms_results;
 }
 
@@ -165,5 +289,8 @@ int main()
     Approach_A A;
     Approach_B B;
     auto best_rms = RMS(A, B, 73, 3, 67, 6.01, 21 * A.PI / 180.0);
+
+    Params_tuple params(73, 3, 67, 6.01, 21 * A.PI / 180.0);
+    // show_energies(A, B, params);
     show_rms_values(best_rms);
 }
