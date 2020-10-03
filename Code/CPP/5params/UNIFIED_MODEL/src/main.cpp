@@ -210,11 +210,15 @@ RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, dou
                 ok = 0;
                 break;
             }
-            rms_results.A1 += pow(tsd1.at(id) - A.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.A2 += pow(tsd1.at(id) - A.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.B1 += pow(tsd1.at(id) - B.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.B2 += pow(tsd1.at(id) - B.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
-            count++;
+            else
+            {
+                /* code */
+                rms_results.A1 += pow(tsd1.at(id) - A.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.A2 += pow(tsd1.at(id) - A.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.B1 += pow(tsd1.at(id) - B.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.B2 += pow(tsd1.at(id) - B.TSD1(spin1.at(id), a1, a2, a3, v, gm), 2);
+                count++;
+            }
         }
         //TSD2
         for (auto id = 0; id < tsd2.size() && ok; ++id)
@@ -224,11 +228,15 @@ RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, dou
                 ok = 0;
                 break;
             }
-            rms_results.A1 += pow(tsd2.at(id) - A.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.A2 += pow(tsd2.at(id) - A.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.B1 += pow(tsd2.at(id) - B.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.B2 += pow(tsd2.at(id) - B.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
-            count++;
+            else
+            {
+                /* code */
+                rms_results.A1 += pow(tsd2.at(id) - A.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.A2 += pow(tsd2.at(id) - A.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.B1 += pow(tsd2.at(id) - B.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.B2 += pow(tsd2.at(id) - B.TSD2(spin2.at(id), a1, a2, a3, v, gm), 2);
+                count++;
+            }
         }
         //TSD3
         for (auto id = 0; id < tsd3.size() && ok; ++id)
@@ -238,11 +246,15 @@ RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, dou
                 ok = 0;
                 break;
             }
-            rms_results.A1 += pow(tsd3.at(id) - A.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.A2 += pow(tsd3.at(id) - A.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.B1 += pow(tsd3.at(id) - B.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.B2 += pow(tsd3.at(id) - B.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
-            count++;
+            else
+            {
+                /* code */
+                rms_results.A1 += pow(tsd3.at(id) - A.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.A2 += pow(tsd3.at(id) - A.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.B1 += pow(tsd3.at(id) - B.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.B2 += pow(tsd3.at(id) - B.TSD3(spin3.at(id), a1, a2, a3, v, gm), 2);
+                count++;
+            }
         }
         //TSD4
         for (auto id = 0; id < tsd4.size() && ok; ++id)
@@ -252,28 +264,33 @@ RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, dou
                 ok = 0;
                 break;
             }
-            rms_results.A1 += pow(tsd4.at(id) - A.TSD4_00(spin4.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.A2 += pow(tsd4.at(id) - A.TSD4_10(spin4.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.B1 += pow(tsd4.at(id) - B.TSD4_00(spin4.at(id), a1, a2, a3, v, gm), 2);
-            rms_results.B2 += pow(tsd4.at(id) - B.TSD4_10(spin4.at(id), a1, a2, a3, v, gm), 2);
-            count++;
+            else
+            {
+                /* code */
+                rms_results.A1 += pow(tsd4.at(id) - A.TSD4_00(spin4.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.A2 += pow(tsd4.at(id) - A.TSD4_10(spin4.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.B1 += pow(tsd4.at(id) - B.TSD4_00(spin4.at(id), a1, a2, a3, v, gm), 2);
+                rms_results.B2 += pow(tsd4.at(id) - B.TSD4_10(spin4.at(id), a1, a2, a3, v, gm), 2);
+                count++;
+            }
         }
     }
 
     //final step in computing the root mean square values for the excitation energies
     //current computations consider N=n+1
-    rms_results.A1 = sqrt(rms_results.A1 / 63.0);
-    rms_results.A2 = sqrt(rms_results.A2 / 63.0);
-    rms_results.B1 = sqrt(rms_results.B1 / 63.0);
-    rms_results.B2 = sqrt(rms_results.B2 / 63.0);
-
+    //only computes the actual rms values of all the iterations were valid
     if (count + 1 == 63)
-        return rms_results;
-    else
     {
-        rms_results = RMS_tuple(A.error_checker);
+        rms_results.A1 = sqrt(rms_results.A1 / 63.0);
+        rms_results.A2 = sqrt(rms_results.A2 / 63.0);
+        rms_results.B1 = sqrt(rms_results.B1 / 63.0);
+        rms_results.B2 = sqrt(rms_results.B2 / 63.0);
+        return rms_results;
     }
-    return rms_results;
+
+    //if the program returns this, then the rms procedure for the current set of parameters is invalid
+    return RMS_tuple(A.error_checker);
+    
 }
 
 void show_rms_values(RMS_tuple &rms)
