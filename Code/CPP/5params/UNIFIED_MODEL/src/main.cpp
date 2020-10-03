@@ -3,6 +3,8 @@
 #include "../include/approachA.h"
 #include "../include/approachB.h"
 
+std::ofstream gout("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Reports/CPP_FIT_RESULTS.dat");
+
 double IF(double x)
 {
     return (1.0) / (2.0 * x);
@@ -511,9 +513,27 @@ void ShowResults_00(Formalism &F, Params_tuple &params)
               << "E(EXP)  "
               << "E(TH)   "
               << "\n";
+    gout << "_________________________________"
+         << "\n";
+    gout << "ℐ₁ : ℐ₂ : ℐ₃ | " << params.I1 << ":" << params.I2 << ":" << params.I3 << "\n";
+    gout
+        << "V=" << params.V << "\n";
+    gout << "𝛾=" << params.gm * 180.0 / F.PI << "\n";
+    gout << "_________________________________"
+         << "\n";
+    gout << "### RMS=" << params.rms << " [keV] ###\n";
+    gout << "_________________________________"
+         << "\n";
+    gout << "TSD1"
+         << "\n";
+    gout << "I   "
+         << "E(EXP)  "
+         << "E(TH)   "
+         << "\n";
     for (auto id = 0; id < spin1.size(); ++id)
     {
         std::cout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        gout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
     std::cout << "TSD2"
               << "\n";
@@ -521,9 +541,16 @@ void ShowResults_00(Formalism &F, Params_tuple &params)
               << "E(EXP)  "
               << "E(TH)   "
               << "\n";
+    gout << "TSD2"
+         << "\n";
+    gout << "I   "
+         << "E(EXP)  "
+         << "E(TH)   "
+         << "\n";
     for (auto id = 0; id < spin2.size(); ++id)
     {
         std::cout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        gout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
     std::cout << "TSD3"
               << "\n";
@@ -531,9 +558,16 @@ void ShowResults_00(Formalism &F, Params_tuple &params)
               << "E(EXP)  "
               << "E(TH)   "
               << "\n";
+    gout << "TSD3"
+         << "\n";
+    gout << "I   "
+         << "E(EXP)  "
+         << "E(TH)   "
+         << "\n";
     for (auto id = 0; id < spin3.size(); ++id)
     {
         std::cout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        gout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
     std::cout << "TSD4"
               << "\n";
@@ -541,9 +575,16 @@ void ShowResults_00(Formalism &F, Params_tuple &params)
               << "E(EXP) |"
               << " E(TH) [0,0] "
               << "\n";
+    gout << "TSD4"
+         << "\n";
+    gout << "I  "
+         << "E(EXP) |"
+         << " E(TH) [0,0] "
+         << "\n";
     for (auto id = 0; id < spin4.size(); ++id)
     {
         std::cout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_00(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        gout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_00(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
 }
 
@@ -551,56 +592,84 @@ template <typename Formalism>
 void ShowResults_10(Formalism &F, Params_tuple &params)
 {
     params.gm = params.gm * F.PI / 180.0;
-    std::cout << "_________________________________"
-              << "\n";
+
+    std::cout << "_________________________________\n";
     std::cout << "ℐ₁ : ℐ₂ : ℐ₃ | " << params.I1 << ":" << params.I2 << ":" << params.I3 << "\n";
     std::cout
         << "V=" << params.V << "\n";
     std::cout << "𝛾=" << params.gm * 180.0 / F.PI << "\n";
-    std::cout << "_________________________________"
-              << "\n";
+    std::cout << "_________________________________\n";
     std::cout << "### RMS=" << params.rms << " [keV] ###\n";
-    std::cout << "_________________________________"
-              << "\n";
-    std::cout << "TSD1"
-              << "\n";
+    std::cout << "_________________________________\n";
+    std::cout << "TSD1\n";
     std::cout << "I   "
               << "E(EXP)  "
-              << "E(TH)   "
-              << "\n";
+              << "E(TH)\n";
+
+    gout << "_________________________________\n";
+    gout << "ℐ₁ : ℐ₂ : ℐ₃ | " << params.I1 << ":" << params.I2 << ":" << params.I3 << "\n";
+    gout
+        << "V=" << params.V << "\n";
+    gout << "𝛾=" << params.gm * 180.0 / F.PI << "\n";
+    gout << "_________________________________\n";
+    gout << "### RMS=" << params.rms << " [keV] ###\n";
+    gout << "_________________________________\n";
+    gout << "TSD1\n";
+    gout << "I   "
+         << "E(EXP)  "
+         << "E(TH)\n";
+
     for (auto id = 0; id < spin1.size(); ++id)
     {
         std::cout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        gout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
-    std::cout << "TSD2"
-              << "\n";
+
+    std::cout << "TSD2\n";
     std::cout << "I   "
               << "E(EXP)  "
-              << "E(TH)   "
-              << "\n";
+              << "E(TH)\n";
+
+    gout << "TSD2\n";
+    gout << "I   "
+         << "E(EXP)  "
+         << "E(TH)\n";
+
     for (auto id = 0; id < spin2.size(); ++id)
     {
         std::cout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        gout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
-    std::cout << "TSD3"
-              << "\n";
+
+    std::cout << "TSD3\n";
     std::cout << "I   "
               << "E(EXP)  "
-              << "E(TH)   "
-              << "\n";
+              << "E(TH)\n";
+
+    gout << "TSD3\n";
+    gout << "I   "
+         << "E(EXP)  "
+         << "E(TH)\n";
+
     for (auto id = 0; id < spin3.size(); ++id)
     {
         std::cout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        gout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
-    std::cout << "TSD4"
-              << "\n";
+
+    std::cout << "TSD4\n";
     std::cout << "I  "
               << "E(EXP) |"
-              << " E(TH) [1,0] "
-              << "\n";
+              << " E(TH) [1,0]\n";
+
+    gout << "TSD4\n";
+    gout << "I  "
+         << "E(EXP) |"
+         << " E(TH) [1,0]\n";
     for (auto id = 0; id < spin4.size(); ++id)
     {
         std::cout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_10(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        gout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_10(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
 }
 
@@ -621,22 +690,48 @@ int main()
         Search_Minimum_RMS<Approach_B>(B, 2, params_B2);
         // show_params(params_B2);
     }
+
     std::cout << "FORMALISM A \n";
     std::cout << "_________________________________\n";
     std::cout << "APPROACH A1 \n";
+
+    gout << "FORMALISM A \n";
+    gout << "_________________________________\n";
+    gout << "APPROACH A1 \n";
+
     ShowResults_00(A, params_A1);
+
     std::cout << "\n";
     std::cout << "_________________________________\n";
     std::cout << "APPROACH A2 \n";
+
+    gout << "\n";
+    gout << "_________________________________\n";
+    gout << "APPROACH A2 \n";
+
     ShowResults_10(A, params_A2);
 
     std::cout << "\n";
+
+    gout << "\n";
+
     std::cout << "FORMALISM B \n";
     std::cout << "_________________________________\n";
     std::cout << "APPROACH B1 \n";
+
+    gout << "FORMALISM B \n";
+    gout << "_________________________________\n";
+    gout << "APPROACH B1 \n";
+
     ShowResults_00(B, params_B1);
+
     std::cout << "\n";
     std::cout << "_________________________________\n";
     std::cout << "APPROACH B2 \n";
+
+    gout << "\n";
+    gout << "_________________________________\n";
+    gout << "APPROACH B2 \n";
+
     ShowResults_10(B, params_B2);
 }
