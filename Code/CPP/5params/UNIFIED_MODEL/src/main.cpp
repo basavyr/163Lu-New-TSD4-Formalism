@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include <chrono>
+
 #include "../include/approachA.h"
 #include "../include/approachB.h"
 
@@ -459,8 +461,17 @@ double Custom_RMS(Formalism &F, int Approach_Selector, double i1, double i2, dou
 template <typename Formalism>
 void Search_Minimum_RMS(Formalism &F, int Approach_Selector, Params_tuple &results)
 {
-    const double I_step = 10.0;
-    const double V_step = 2;
+
+    //! change the steps for improving the accuracy of the results
+
+    //! #######################
+    const double I_step = 5.0;
+    //! #######################
+
+    //! #######################
+    const double V_step = 1.0;
+    //! #######################
+
     double min_rms = 987654321.0;
     double current_rms;
 
@@ -496,23 +507,25 @@ template <typename Formalism>
 void ShowResults_00(Formalism &F, Params_tuple &params)
 {
     params.gm = params.gm * F.PI / 180.0;
-    std::cout << "_________________________________"
-              << "\n";
-    std::cout << "ℐ₁ : ℐ₂ : ℐ₃ | " << params.I1 << ":" << params.I2 << ":" << params.I3 << "\n";
-    std::cout
-        << "V=" << params.V << "\n";
-    std::cout << "𝛾=" << params.gm * 180.0 / F.PI << "\n";
-    std::cout << "_________________________________"
-              << "\n";
-    std::cout << "### RMS=" << params.rms << " [keV] ###\n";
-    std::cout << "_________________________________"
-              << "\n";
-    std::cout << "TSD1"
-              << "\n";
-    std::cout << "I   "
-              << "E(EXP)  "
-              << "E(TH)   "
-              << "\n";
+
+    // std::cout << "_________________________________"
+    //           << "\n";
+    // std::cout << "ℐ₁ : ℐ₂ : ℐ₃ | " << params.I1 << ":" << params.I2 << ":" << params.I3 << "\n";
+    // std::cout
+    //     << "V=" << params.V << "\n";
+    // std::cout << "𝛾=" << params.gm * 180.0 / F.PI << "\n";
+    // std::cout << "_________________________________"
+    //           << "\n";
+    // std::cout << "### RMS=" << params.rms << " [keV] ###\n";
+    // std::cout << "_________________________________"
+    //           << "\n";
+    // std::cout << "TSD1"
+    //           << "\n";
+    // std::cout << "I   "
+    //           << "E(EXP)  "
+    //           << "E(TH)   "
+    //           << "\n";
+
     gout << "_________________________________"
          << "\n";
     gout << "ℐ₁ : ℐ₂ : ℐ₃ | " << params.I1 << ":" << params.I2 << ":" << params.I3 << "\n";
@@ -530,60 +543,70 @@ void ShowResults_00(Formalism &F, Params_tuple &params)
          << "E(EXP)  "
          << "E(TH)   "
          << "\n";
+
     for (auto id = 0; id < spin1.size(); ++id)
     {
-        std::cout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        // std::cout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
         gout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
-    std::cout << "TSD2"
-              << "\n";
-    std::cout << "I   "
-              << "E(EXP)  "
-              << "E(TH)   "
-              << "\n";
+
+    // std::cout << "TSD2"
+    //           << "\n";
+    // std::cout << "I   "
+    //           << "E(EXP)  "
+    //           << "E(TH)   "
+    //           << "\n";
+
     gout << "TSD2"
          << "\n";
     gout << "I   "
          << "E(EXP)  "
          << "E(TH)   "
          << "\n";
+
     for (auto id = 0; id < spin2.size(); ++id)
     {
-        std::cout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        // std::cout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
         gout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
-    std::cout << "TSD3"
-              << "\n";
-    std::cout << "I   "
-              << "E(EXP)  "
-              << "E(TH)   "
-              << "\n";
+
+    // std::cout << "TSD3"
+    //           << "\n";
+    // std::cout << "I   "
+    //           << "E(EXP)  "
+    //           << "E(TH)   "
+    //           << "\n";
+
     gout << "TSD3"
          << "\n";
     gout << "I   "
          << "E(EXP)  "
          << "E(TH)   "
          << "\n";
+
     for (auto id = 0; id < spin3.size(); ++id)
     {
-        std::cout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        // std::cout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
         gout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
-    std::cout << "TSD4"
-              << "\n";
-    std::cout << "I  "
-              << "E(EXP) |"
-              << " E(TH) [0,0] "
-              << "\n";
+
+    // std::cout << "TSD4"
+    //           << "\n";
+    // std::cout << "I  "
+    //           << "E(EXP) |"
+    //           << " E(TH) [0,0] "
+    //           << "\n";
+
     gout << "TSD4"
          << "\n";
     gout << "I  "
          << "E(EXP) |"
          << " E(TH) [0,0] "
          << "\n";
+
     for (auto id = 0; id < spin4.size(); ++id)
     {
-        std::cout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_00(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        // std::cout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_00(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
         gout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_00(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
 }
@@ -593,18 +616,18 @@ void ShowResults_10(Formalism &F, Params_tuple &params)
 {
     params.gm = params.gm * F.PI / 180.0;
 
-    std::cout << "_________________________________\n";
-    std::cout << "ℐ₁ : ℐ₂ : ℐ₃ | " << params.I1 << ":" << params.I2 << ":" << params.I3 << "\n";
-    std::cout
-        << "V=" << params.V << "\n";
-    std::cout << "𝛾=" << params.gm * 180.0 / F.PI << "\n";
-    std::cout << "_________________________________\n";
-    std::cout << "### RMS=" << params.rms << " [keV] ###\n";
-    std::cout << "_________________________________\n";
-    std::cout << "TSD1\n";
-    std::cout << "I   "
-              << "E(EXP)  "
-              << "E(TH)\n";
+    // std::cout << "_________________________________\n";
+    // std::cout << "ℐ₁ : ℐ₂ : ℐ₃ | " << params.I1 << ":" << params.I2 << ":" << params.I3 << "\n";
+    // std::cout
+    //     << "V=" << params.V << "\n";
+    // std::cout << "𝛾=" << params.gm * 180.0 / F.PI << "\n";
+    // std::cout << "_________________________________\n";
+    // std::cout << "### RMS=" << params.rms << " [keV] ###\n";
+    // std::cout << "_________________________________\n";
+    // std::cout << "TSD1\n";
+    // std::cout << "I   "
+    //           << "E(EXP)  "
+    //           << "E(TH)\n";
 
     gout << "_________________________________\n";
     gout << "ℐ₁ : ℐ₂ : ℐ₃ | " << params.I1 << ":" << params.I2 << ":" << params.I3 << "\n";
@@ -621,14 +644,14 @@ void ShowResults_10(Formalism &F, Params_tuple &params)
 
     for (auto id = 0; id < spin1.size(); ++id)
     {
-        std::cout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        // std::cout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
         gout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
 
-    std::cout << "TSD2\n";
-    std::cout << "I   "
-              << "E(EXP)  "
-              << "E(TH)\n";
+    // std::cout << "TSD2\n";
+    // std::cout << "I   "
+    //           << "E(EXP)  "
+    //           << "E(TH)\n";
 
     gout << "TSD2\n";
     gout << "I   "
@@ -637,14 +660,14 @@ void ShowResults_10(Formalism &F, Params_tuple &params)
 
     for (auto id = 0; id < spin2.size(); ++id)
     {
-        std::cout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        // std::cout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
         gout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
 
-    std::cout << "TSD3\n";
-    std::cout << "I   "
-              << "E(EXP)  "
-              << "E(TH)\n";
+    // std::cout << "TSD3\n";
+    // std::cout << "I   "
+    //           << "E(EXP)  "
+    //           << "E(TH)\n";
 
     gout << "TSD3\n";
     gout << "I   "
@@ -653,22 +676,23 @@ void ShowResults_10(Formalism &F, Params_tuple &params)
 
     for (auto id = 0; id < spin3.size(); ++id)
     {
-        std::cout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        // std::cout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
         gout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
 
-    std::cout << "TSD4\n";
-    std::cout << "I  "
-              << "E(EXP) |"
-              << " E(TH) [1,0]\n";
+    // std::cout << "TSD4\n";
+    // std::cout << "I  "
+    //           << "E(EXP) |"
+    //           << " E(TH) [1,0]\n";
 
     gout << "TSD4\n";
     gout << "I  "
          << "E(EXP) |"
          << " E(TH) [1,0]\n";
+
     for (auto id = 0; id < spin4.size(); ++id)
     {
-        std::cout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_10(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+        // std::cout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_10(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
         gout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_10(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
     }
 }
@@ -681,19 +705,30 @@ int main()
     //Store the values of the parameter set
     Params_tuple params_A1, params_A2, params_B1, params_B2;
     {
+        auto start = std::chrono::system_clock::now();
         Search_Minimum_RMS<Approach_A>(A, 1, params_A1);
-        // show_params(params_A1);
+        std::cout << "Finished searching for params of A1..."
+                  << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
+
+        start = std::chrono::system_clock::now();
         Search_Minimum_RMS<Approach_A>(A, 2, params_A2);
-        // show_params(params_A2);
+        std::cout << "Finished searching for params of A2..."
+                  << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
+
+        start = std::chrono::system_clock::now();
         Search_Minimum_RMS<Approach_B>(B, 1, params_B1);
-        // show_params(params_B1);
+        std::cout << "Finished searching for params of B1..."
+                  << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
+
+        start = std::chrono::system_clock::now();
         Search_Minimum_RMS<Approach_B>(B, 2, params_B2);
-        // show_params(params_B2);
+        std::cout << "Finished searching for params of B2..."
+                  << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
     }
 
-    std::cout << "FORMALISM A \n";
-    std::cout << "_________________________________\n";
-    std::cout << "APPROACH A1 \n";
+    // std::cout << "FORMALISM A \n";
+    // std::cout << "_________________________________\n";
+    // std::cout << "APPROACH A1 \n";
 
     gout << "FORMALISM A \n";
     gout << "_________________________________\n";
@@ -701,9 +736,9 @@ int main()
 
     ShowResults_00(A, params_A1);
 
-    std::cout << "\n";
-    std::cout << "_________________________________\n";
-    std::cout << "APPROACH A2 \n";
+    // std::cout << "\n";
+    // std::cout << "_________________________________\n";
+    // std::cout << "APPROACH A2 \n";
 
     gout << "\n";
     gout << "_________________________________\n";
@@ -711,13 +746,13 @@ int main()
 
     ShowResults_10(A, params_A2);
 
-    std::cout << "\n";
+    // std::cout << "\n";
 
     gout << "\n";
 
-    std::cout << "FORMALISM B \n";
-    std::cout << "_________________________________\n";
-    std::cout << "APPROACH B1 \n";
+    // std::cout << "FORMALISM B \n";
+    // std::cout << "_________________________________\n";
+    // std::cout << "APPROACH B1 \n";
 
     gout << "FORMALISM B \n";
     gout << "_________________________________\n";
@@ -725,9 +760,9 @@ int main()
 
     ShowResults_00(B, params_B1);
 
-    std::cout << "\n";
-    std::cout << "_________________________________\n";
-    std::cout << "APPROACH B2 \n";
+    // std::cout << "\n";
+    // std::cout << "_________________________________\n";
+    // std::cout << "APPROACH B2 \n";
 
     gout << "\n";
     gout << "_________________________________\n";
