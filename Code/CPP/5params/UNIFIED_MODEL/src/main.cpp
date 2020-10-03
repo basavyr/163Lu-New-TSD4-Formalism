@@ -41,10 +41,7 @@ struct Params_tuple
     double I3;
     double V;
     double gm;
-    double rms_A1;
-    double rms_A2;
-    double rms_B1;
-    double rms_B2;
+    double rms;
     Params_tuple()
     {
     }
@@ -55,6 +52,7 @@ struct Params_tuple
         I3 = moi3;
         V = V_init;
         gm = gm_init;
+        rms = 9876543210.1;
     }
 };
 
@@ -71,8 +69,12 @@ const std::vector<double> tsd2 = {1.3394, 1.7467, 2.2184, 2.7527, 3.3484, 4.003,
 const std::vector<double> tsd3 = {2.1237, 2.6293, 3.1973, 3.8243, 4.5094, 5.2506, 6.0465, 6.8963, 7.7988, 8.7546, 9.7638, 10.8268, 11.9392, 13.0861};
 const std::vector<double> tsd4 = {4.58, 5.2251, 5.9273, 6.6819, 7.4919, 8.3573, 9.2778, 10.2535, 11.2851, 12.3701};
 
+//N+1 data points (subtract the band head level of TSD1)
+const double DATA_SIZE = 62 + 1;
+
 //store the values of the triaxial parameter which will be used within the `min_rms` searching function
-const std::vector<int> gm = {15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
+const std::vector<int>
+    gm = {15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
 
 void print_array(std::string arr_name, const std::vector<double> &arr)
 {
@@ -290,7 +292,6 @@ RMS_tuple RMS(Approach_A &A, Approach_B &B, double i1, double i2, double i3, dou
 
     //if the program returns this, then the rms procedure for the current set of parameters is invalid
     return RMS_tuple(A.error_checker);
-    
 }
 
 void show_rms_values(RMS_tuple &rms)
@@ -301,13 +302,207 @@ void show_rms_values(RMS_tuple &rms)
     std::cout << "B2: " << rms.B2 << "\n";
 }
 
+void show_params(Params_tuple &params)
+{
+    std::cout << params.I1 << " " << params.I2 << " " << params.I3 << " " << params.V << " " << params.gm << " " << params.rms;
+    std::cout << "\n";
+}
+
+template <typename Formalism>
+double Custom_RMS(Formalism &F, int Approach_Selector, double i1, double i2, double i3, double v, double gm)
+{
+    double rms_value = 0.0;
+    int count = 0;
+    gm = gm * F.PI / 180.0;
+    bool ok = 1;
+    if (Approach_Selector == 1)
+    {
+        //TSD1 - part
+        for (auto id = 0; id < spin1.size() && ok; ++id)
+        {
+            auto E = F.TSD1(spin1.at(id), IF(i1), IF(i2), IF(i3), v, gm);
+            if (!F.valid(E))
+            {
+                ok = 0;
+                break;
+            }
+            else
+            {
+                rms_value += pow(tsd1.at(id) - E, 2);
+                count++;
+            }
+        }
+        //TSD2 - part
+        for (auto id = 0; id < spin2.size() && ok; ++id)
+        {
+            auto E = F.TSD2(spin2.at(id), IF(i1), IF(i2), IF(i3), v, gm);
+            if (!F.valid(E))
+            {
+                ok = 0;
+                break;
+            }
+            else
+            {
+                rms_value += pow(tsd2.at(id) - E, 2);
+                count++;
+            }
+        }
+        //TSD3 - part
+        for (auto id = 0; id < spin3.size() && ok; ++id)
+        {
+            auto E = F.TSD3(spin3.at(id), IF(i1), IF(i2), IF(i3), v, gm);
+            if (!F.valid(E))
+            {
+                ok = 0;
+                break;
+            }
+            else
+            {
+                rms_value += pow(tsd3.at(id) - E, 2);
+                count++;
+            }
+        }
+        //TSD4 - part
+        for (auto id = 0; id < spin4.size() && ok; ++id)
+        {
+            auto E = F.TSD4_00(spin4.at(id), IF(i1), IF(i2), IF(i3), v, gm);
+            if (!F.valid(E))
+            {
+                ok = 0;
+                break;
+            }
+            else
+            {
+                rms_value += pow(tsd4.at(id) - E, 2);
+                count++;
+            }
+        }
+    }
+    else
+    {
+        //TSD1 - part
+        for (auto id = 0; id < spin1.size() && ok; ++id)
+        {
+            auto E = F.TSD1(spin1.at(id), IF(i1), IF(i2), IF(i3), v, gm);
+            if (!F.valid(E))
+            {
+                ok = 0;
+                break;
+            }
+            else
+            {
+                rms_value += pow(tsd1.at(id) - E, 2);
+                count++;
+            }
+        }
+        //TSD2 - part
+        for (auto id = 0; id < spin2.size() && ok; ++id)
+        {
+            auto E = F.TSD2(spin2.at(id), IF(i1), IF(i2), IF(i3), v, gm);
+            if (!F.valid(E))
+            {
+                ok = 0;
+                break;
+            }
+            else
+            {
+                rms_value += pow(tsd2.at(id) - E, 2);
+                count++;
+            }
+        }
+        //TSD3 - part
+        for (auto id = 0; id < spin3.size() && ok; ++id)
+        {
+            auto E = F.TSD3(spin3.at(id), IF(i1), IF(i2), IF(i3), v, gm);
+            if (!F.valid(E))
+            {
+                ok = 0;
+                break;
+            }
+            else
+            {
+                rms_value += pow(tsd3.at(id) - E, 2);
+                count++;
+            }
+        }
+        //TSD4 - part
+        for (auto id = 0; id < spin4.size() && ok; ++id)
+        {
+            auto E = F.TSD4_10(spin4.at(id), IF(i1), IF(i2), IF(i3), v, gm);
+            if (!F.valid(E))
+            {
+                ok = 0;
+                break;
+            }
+            else
+            {
+                rms_value += pow(tsd4.at(id) - E, 2);
+                count++;
+            }
+        }
+    }
+    if (count + 1 == DATA_SIZE)
+    {
+        rms_value = sqrt(rms_value / DATA_SIZE);
+    }
+    else
+    {
+        /* code */
+        rms_value = F.error_checker;
+    }
+
+    return rms_value;
+}
+
+template <typename Formalism>
+void Search_Minimum_RMS(Formalism &F, int Approach_Selector, Params_tuple &results)
+{
+    const double I_step = 30.0;
+    const double V_step = 1;
+    double min_rms = 987654321.0;
+    double current_rms;
+
+    for (auto I1 = 1; I1 <= 100; I1 += I_step)
+    {
+        for (auto I2 = 1; I2 <= 100; I2 += I_step)
+        {
+            for (auto I3 = 1; I3 <= 100; I3 += I_step)
+            {
+                for (auto V = 1; V <= 100; V += V_step)
+                {
+                    current_rms = Custom_RMS(F, Approach_Selector, I1, I2, I3, V, 21);
+                    if (current_rms <= min_rms)
+                    {
+                        min_rms = current_rms;
+                        results.rms = min_rms;
+                        results.I1 = I1;
+                        results.I2 = I2;
+                        results.I3 = I3;
+                        results.V = V;
+                        results.gm = 21;
+                    }
+                }
+            }
+        }
+    }
+}
+
 int main()
 {
     Approach_A A;
     Approach_B B;
-    auto best_rms = RMS(A, B, 73, 3, 67, 6.01, 21 * A.PI / 180.0);
 
-    Params_tuple params(73, 3, 67, 6.01, 21 * A.PI / 180.0);
-    // show_energies(A, B, params);
-    show_rms_values(best_rms);
+    //Store the values of the parameter set
+    Params_tuple params_A1, params_A2, params_B1, params_B2;
+
+    {
+        Search_Minimum_RMS<Approach_A>(A, 1, params_A1);
+        show_params(params_A1);
+        Search_Minimum_RMS<Approach_A>(A, 2, params_A2);
+        show_params(params_A2);
+        Search_Minimum_RMS<Approach_B>(B, 1, params_B1);
+        show_params(params_B1);
+        Search_Minimum_RMS<Approach_B>(B, 2, params_B2);
+        show_params(params_B2);
+    }
 }
