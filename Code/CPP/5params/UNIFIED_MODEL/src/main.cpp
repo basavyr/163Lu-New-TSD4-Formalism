@@ -465,40 +465,41 @@ void Search_Minimum_RMS(Formalism &F, int Approach_Selector, Params_tuple &resul
     //! change the steps for improving the accuracy of the results
 
     //! #######################
-    const double I_step = 5.0;
+    const double I_step = 1.0;
     //! #######################
 
     //! #######################
-    const double V_step = 1.0;
+    const double V_step = 0.1;
     //! #######################
 
     double min_rms = 987654321.0;
     double current_rms;
 
-    for (auto I1 = 1; I1 <= 100; I1 += I_step)
+    for (auto I1 = 1; I1 <= 99; I1 += I_step)
     {
-        for (auto I2 = 1; I2 <= 100; I2 += I_step)
+        for (auto I2 = 1; I2 <= 99; I2 += I_step)
         {
-            for (auto I3 = 1; I3 <= 100; I3 += I_step)
-            {
-                for (auto V = 1; V <= 10; V += V_step)
+            if (I1 > I2)
+                for (auto I3 = 1; I3 <= 99; I3 += I_step)
                 {
-                    for (auto gamma = 15; gamma <= 25; gamma++)
+                    for (auto V = 0.1; V <= 10.1; V += V_step)
                     {
-                        current_rms = Custom_RMS(F, Approach_Selector, I1, I2, I3, V, gamma);
-                        if (current_rms <= min_rms)
+                        for (auto gamma = 15.0; gamma <= 25.0; gamma++)
                         {
-                            min_rms = current_rms;
-                            results.rms = min_rms;
-                            results.I1 = I1;
-                            results.I2 = I2;
-                            results.I3 = I3;
-                            results.V = V;
-                            results.gm = gamma;
+                            current_rms = Custom_RMS(F, Approach_Selector, I1, I2, I3, V, gamma);
+                            if (current_rms <= min_rms)
+                            {
+                                min_rms = current_rms;
+                                results.rms = min_rms;
+                                results.I1 = I1;
+                                results.I2 = I2;
+                                results.I3 = I3;
+                                results.V = V;
+                                results.gm = gamma;
+                            }
                         }
                     }
                 }
-            }
         }
     }
 }
