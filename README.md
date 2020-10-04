@@ -87,6 +87,11 @@ In short, **B Formalism** considers the TSD4 the chiral partner of TSD1 (same as
 
 *Diagram which attempts at giving an overall scheme of the A formalism can be found below.*
 
+As an alternate nomenclature, the two major formalisms are considered as follows:
+
+* **A Formalism: 1,2-Phonon Formalism**
+* **B Formalism: Signature Formalism**
+
 ## Preliminary results
 
 ### `5-params V.1` Implementation
@@ -144,6 +149,7 @@ This approach seems to be the most efficient, as each analytical formula is cons
   * Compute the RMS for all approaches based on any parameter set and show these quantities properly.
 * A `least-squares-fit` procedure, in which the parameter set is found per each approach, such that the `RMS` between the theoretical and experimental data sets is minimal.
 
+The unified implementation stores the results in a single output file, which proves to be useful for visualizing the results and comparing the experimental and theoretical data sets. The output results can be seen [here](Reports/CPP_FIT_RESULTS.dat). 
 
 ## Analysis of the potential strength parameter $V$ - `V.1`
 
