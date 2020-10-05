@@ -52,9 +52,7 @@ However, one cannot know for sure if indeed this is the actual configuration for
 
 > This project provides an unique description of the wobbling spectra in $^{163}$Lu, which has not been previously discussed, analyzed or even speculated. The developed description, which completely changes the way on how one considers the band structure to look like, while providing an overall agreement with the experimental results and a consistent physical model as framework.
 
-### Novel Formalisms
-
-#### A Formalism
+### A-Formalism
 
 This formalism is based on mostly the same agreement with the existent knowledge with regards to the band structure of $^{163}$Lu, the key difference being on how one regards the fourth excited band in the wobbling spectrum. In a previous work (i.e. [this](https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.014302) and [this](https://iopscience.iop.org/article/10.1088/1361-6471/ab5ae4/meta)), we considered the possibility that the fourth band could be the ground state which is built on a difference coupling scheme, with a different sequence of states for the core $R$. This argument is backed up by the fact that in the model, one regards the strong polarization effects induced by the core-$\vec{j}$ coupling different from the other three bands, which could lead to a completely different *wobbling picture*. As a result, within those calculations, the least squares fit method was applied separately for the first three bands and then TSD4. Different set of parameters were obtained with a good agreement between the theoretical results and the experimental data.
 
@@ -70,7 +68,9 @@ In conclusion, **Formalism A** is just a slight modification of the well known b
 
 *Diagram which attempts at giving an overall scheme of the A formalism can be found below.*
 
-#### B Formalism
+![A-FORMALISM](./Reports/SIGNATURE_FORMALISM/AB_formalism_descriptionA.svg)
+
+### B-Formalism
 
 In a previous work (i.e. [this](https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.014302) and [this](https://iopscience.iop.org/article/10.1088/1361-6471/ab5ae4/meta)), the team adopted a different view for the wobbling picture: in comparison with the classical band structure of $^{163}$Lu, this new approach uses the following formalism (extracted from the abstract of one of the papers):
 
@@ -85,18 +85,32 @@ In the same manner as the A Formalism, there are actually two approaches that ne
 
 In short, **B Formalism** considers the TSD4 the chiral partner of TSD1 (same as in **A**), but also changes the other two excited bands in a signature partner band and a 1-phonon band (referring to TSD2 and TSD3, respectively).
 
-*Diagram which attempts at giving an overall scheme of the A formalism can be found below.*
+*Diagram which attempts at giving an overall scheme of the B.*
+
+![B-FORMALISM](./Reports/SIGNATURE_FORMALISM/AB_formalism_descriptionB.svg)
 
 As an alternate nomenclature, the two major formalisms are considered as follows:
 
 * **A Formalism: 1,2-Phonon Formalism**
 * **B Formalism: Signature Formalism**
 
+### Understanding the coupling scheme of both formalisms
+
+When compared to the literature, where there exist two intruders (i.e. two valence protons, one for TSD1,2,3-$=13/2$ and one for TSD4-$j=9/2$) that create an alignment with the angular momentum of a triaxially deformed even-even core, in these new formalisms (novel approaches) it is speculated the fact that TSD4 keeps the same alignment particle but the core's angular momentum ($R$). As a result, in these calculations and the overall framework, the proton $\pi_{i;j=13/2}$ is considered to be the single-particle $\vec{j}$ vector that aligns with the core $R$ (keep in mind that there are two core state sequences, namely one which corresponds to the bands TSD1&3: $R_{TSD1;3}$ and one that corresponds to the bands TSD2&4: $R_{TSD2;4}$).
+
+Diagrams for the coupling schemes adopted in this project can be seen below.
+
+![diagram13](Reports/SIGNATURE_FORMALISM/coupling_bands13.svg)
+
+![diagram24](Reports/SIGNATURE_FORMALISM/coupling_bands24.svg)
+
+> Some hand-written notes with the concepts of wobbling rotor and coupling can be found [here](Reports/Wobbling_motion_general_concepts_regarding_coupling.pdf).
+
 ## Preliminary results
 
 ### `5-params V.1` Implementation
 
-This implementation (written in `C++`) is developed before the adoption of (A,B)-Formalism nomenclature. 
+This implementation (written in `C++`) is developed before the adoption of (A,B)-Formalism nomenclature.
 
 >For the current approach in solving the problem, see `5-params unified` implementation described below.
 
