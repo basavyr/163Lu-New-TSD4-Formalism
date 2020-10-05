@@ -40,6 +40,14 @@ with $E_\text{th}$ being a numerical function (which should be implemented) that
   * The single particle potential strength: $V$.
   * The core-$\vec{j}$ coupling (valence particle + triaxially deformed even-even core) is consistent across all four bands: the valence proton (intruder) $\pi_{i;j=13/2}$ is the particle with couples to the deformed even-even core, driving the entire system up to large deformations, stable in their nature.
 
+**Additional objectives**
+
+- [ ] Calculation of the *Energy Function* $\mathcal{H}(\theta,\varphi)$ in terms of the spherical coordinates.
+- [ ] The spherical coordinates are obtained from the components of the angular momentum vector $(I_1,I_2,I_3)$ expressed in polar coordinates with a fixed magnitude $I$; $r$.
+- [ ] Create contour plots with the energy function $\mathcal{H}$, evaluated at a fixed spin value $I$, single particle a.m. $|\vec{j}|=13/2$ and deformation parameters which are obtained from the least-squares fit implementation for each approach.
+
+*A separate section is dedicated to the study of the energy function, the numerical implementations (done with the help of Mathematica) and graphical representations which are obtained.*
+
 ## Novel Formalism in Obtaining the Wobbling Spectrum
 
 ### Understanding the nature of the band structure in $^{163}Lu
@@ -164,6 +172,24 @@ This approach seems to be the most efficient, as each analytical formula is cons
 * A `least-squares-fit` procedure, in which the parameter set is found per each approach, such that the `RMS` between the theoretical and experimental data sets is minimal.
 
 The unified implementation stores the results in a single output file, which proves to be useful for visualizing the results and comparing the experimental and theoretical data sets. The output results can be seen [here](Reports/CPP_FIT_RESULTS.dat). 
+
+#### Preliminary Fit Results for the B Formalism Using `5-params-unified` Implementation
+
+```text
+//B1
+i1 = 77; i2 = 47; i3 = 3; v = 2.1; \[Gamma] = 16;
+Subscript[E, RMS;TSD400]=0.197384
+```
+
+![formalismb_b1](Reports/SIGNATURE_FORMALISM/tsd4_00_gridplot.png)
+
+```text
+//B2
+i1 = 73; i2 = 68; i3 = 3; v = 8.1; \[Gamma] = 15;
+Subscript[E, RMS;TSD410]=0.138381
+```
+
+![formalismb_b2](Reports/SIGNATURE_FORMALISM/tsd4_10_gridplot.png)
 
 ## Analysis of the potential strength parameter $V$ - `V.1`
 

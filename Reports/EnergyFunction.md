@@ -15,16 +15,18 @@ This energy function is computed by replacing in the original structure of $\mat
 
 ## Contour Plot
 
-The contour plot for $^{163}$Lu has been calculated within the Mathematica document `EnergyFunction.nb` (dedicated to solve the main problem). For a fixed value of spin, and arbitrary test parameters, the output file can be seen in the graphical representation shown below.
+The contour plot for $^{163}$Lu has been calculated within the Mathematica document `EnergyFunction.nb` (dedicated to solve the main problem). For a fixed value of spin, and arbitrary test parameters, the output file can be seen in the graphical representation shown below. This is how every contour plot representation should look like for every approach there is, namely A1, A2, B1 and B2.
 
-![](ContourPlot.jpeg)
+![full_contours](SIGNATURE_FORMALISM/full_contours.png)
 
 ## Study of the energy function with respect to the spherical variables
 
 * The energy $\mathcal{H}$ is evaluated at changes in both the coordinates $(\theta,\varphi)$, but also the fit parameters (deformation parameters).
 * This function has free terms and coordinate-dependent terms.
-* Evolution with a change in *free terms* indicate the minimum value of $\mathcal{H}$.
+* Evolution of the energy function with a change in the *free terms* magnitude might indicate the minimum value of $\mathcal{H}$.
 * Understanding the smallness of the mixed terms could indicate if the function has stable points (or trajectories) around global minima (m) or maxima (M).
+
+![evolution_study](SIGNATURE_FORMALISM/energy_function_free_terms.svg)
 
 ### Evolution of the free term $T_0$
 
