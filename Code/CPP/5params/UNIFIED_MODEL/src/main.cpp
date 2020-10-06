@@ -5,7 +5,7 @@
 #include "../include/approachA.h"
 #include "../include/approachB.h"
 
-std::ofstream gout("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Reports/CPP_FIT_RESULTS.dat");
+std::ofstream gout("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/CPP_FIT_RESULTS.dat");
 
 double IF(double x)
 {
@@ -465,7 +465,7 @@ void Search_Minimum_RMS(Formalism &F, int Approach_Selector, Params_tuple &resul
     //! change the steps for improving the accuracy of the results
 
     //! #######################
-    const double I_step = 2.5;
+    const double I_step = 5;
     //! #######################
 
     //! #######################
@@ -698,6 +698,59 @@ void ShowResults_10(Formalism &F, Params_tuple &params)
     }
 }
 
+// Method which outputs the parameters and the corresponding excitation energies in a dedicated file, for later mathematica importing/plotting
+template <typename Formalism>
+void MathematicaOutput(Formalism F, Params_tuple &params, std::ofstream &gout, int Approach_Selector)
+{
+    // gout << params.rms << "\n";
+    gout << params.I1 << " " << params.I2 << " " << params.I3 << " " << params.V << " " << params.gm * 180.0 / F.PI << "\n";
+    switch (Approach_Selector)
+    {
+    case 1:
+        /* code */
+        {
+            for (auto id = 0; id < spin1.size(); ++id)
+            {
+                gout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+            }
+            for (auto id = 0; id < spin2.size(); ++id)
+            {
+                gout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+            }
+            for (auto id = 0; id < spin3.size(); ++id)
+            {
+                gout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+            }
+            for (auto id = 0; id < spin4.size(); ++id)
+            {
+                gout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_00(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+            }
+        }
+        break;
+    case 2:
+        /* code */
+        {
+            for (auto id = 0; id < spin1.size(); ++id)
+            {
+                gout << spin1.at(id) << " " << tsd1.at(id) << " " << F.TSD1(spin1.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+            }
+            for (auto id = 0; id < spin2.size(); ++id)
+            {
+                gout << spin2.at(id) << " " << tsd2.at(id) << " " << F.TSD2(spin2.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+            }
+            for (auto id = 0; id < spin3.size(); ++id)
+            {
+                gout << spin3.at(id) << " " << tsd3.at(id) << " " << F.TSD3(spin3.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+            }
+            for (auto id = 0; id < spin4.size(); ++id)
+            {
+                gout << spin4.at(id) << " " << tsd4.at(id) << " " << F.TSD4_10(spin4.at(id), IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.gm) << "\n";
+            }
+        }
+        break;
+    }
+}
+
 int main()
 {
     Approach_A A;
@@ -770,4 +823,19 @@ int main()
     gout << "APPROACH B2 \n";
 
     ShowResults_10(B, params_B2);
+
+    //* TO-DO
+    //* Implement proper output for mathematica taking in consideration for format described below
+    //LINE0: I1,I2,I3,V,gamma -> the fit parameters
+    //LINE1+: I | E_exp | E_th
+
+    std::ofstream math_file_A1("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitA1_cxx.dat");
+    std::ofstream math_file_A2("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitA2_cxx.dat");
+    std::ofstream math_file_B1("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitB1_cxx.dat");
+    std::ofstream math_file_B2("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitB2_cxx.dat");
+
+    MathematicaOutput(A, params_A1, math_file_A1, 1);
+    MathematicaOutput(A, params_A2, math_file_A2, 2);
+    MathematicaOutput(B, params_B1, math_file_B1, 1);
+    MathematicaOutput(B, params_B2, math_file_B2, 2);
 }

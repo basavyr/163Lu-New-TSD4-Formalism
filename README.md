@@ -76,7 +76,7 @@ In conclusion, **Formalism A** is just a slight modification of the well known b
 
 *Diagram which attempts at giving an overall scheme of the A formalism can be found below.*
 
-![A-FORMALISM](./Reports/SIGNATURE_FORMALISM/AB_formalism_descriptionA.svg)
+![A-FORMALISM](./Reports/UNIFIED_FORMALISM/AB_formalism_descriptionA.svg)
 
 ### B-Formalism
 
@@ -95,7 +95,7 @@ In short, **B Formalism** considers the TSD4 the chiral partner of TSD1 (same as
 
 *Diagram which attempts at giving an overall scheme of the B.*
 
-![B-FORMALISM](./Reports/SIGNATURE_FORMALISM/AB_formalism_descriptionB.svg)
+![B-FORMALISM](./Reports/UNIFIED_FORMALISM/AB_formalism_descriptionB.svg)
 
 As an alternate nomenclature, the two major formalisms are considered as follows:
 
@@ -108,9 +108,9 @@ When compared to the literature, where there exist two intruders (i.e. two valen
 
 Diagrams for the coupling schemes adopted in this project can be seen below.
 
-![diagram13](Reports/SIGNATURE_FORMALISM/coupling_bands13.svg)
+![diagram13](Reports/UNIFIED_FORMALISM/coupling_bands13.svg)
 
-![diagram24](Reports/SIGNATURE_FORMALISM/coupling_bands24.svg)
+![diagram24](Reports/UNIFIED_FORMALISM/coupling_bands24.svg)
 
 > Some hand-written notes with the concepts of wobbling rotor and coupling can be found [here](Reports/Wobbling_motion_general_concepts_regarding_coupling.pdf).
 
