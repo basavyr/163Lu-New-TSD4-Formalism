@@ -858,11 +858,11 @@ int main()
     //* initialize the parameters with fixed values
 
     //A1-Approach
-    params_A1.I1 = 77;
-    params_A1.I2 = 49;
+    params_A1.I1 = 76;
+    params_A1.I2 = 52;
     params_A1.I3 = 3;
     params_A1.V = 1.8;
-    params_A1.gm = 15;
+    params_A1.gm = 18;
 
     //A2-Approach
     params_A2.I1 = 73;
@@ -880,9 +880,9 @@ int main()
 
     //B2-Approach
     params_B2.I1 = 73;
-    params_B2.I2 = 67;
+    params_B2.I2 = 68;
     params_B2.I3 = 3;
-    params_B2.V = 7.3;
+    params_B2.V = 8.5;
     params_B2.gm = 15;
 
     std::ofstream math_file_A1("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitA1_cxx.dat");
