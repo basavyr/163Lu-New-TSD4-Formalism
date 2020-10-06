@@ -465,7 +465,7 @@ void Search_Minimum_RMS(Formalism &F, int Approach_Selector, Params_tuple &resul
     //! change the steps for improving the accuracy of the results
 
     //! #######################
-    const double I_step = 1.0;
+    const double I_step = 2.5;
     //! #######################
 
     //! #######################
@@ -475,12 +475,12 @@ void Search_Minimum_RMS(Formalism &F, int Approach_Selector, Params_tuple &resul
     double min_rms = 987654321.0;
     double current_rms;
 
-    for (auto I1 = 1; I1 <= 99; I1 += I_step)
+    for (auto I1 = 1; I1 <= 100; I1 += I_step)
     {
-        for (auto I2 = 1; I2 <= 99; I2 += I_step)
+        for (auto I2 = 1; I2 <= 100; I2 += I_step)
         {
             if (I1 > I2)
-                for (auto I3 = 1; I3 <= 99; I3 += I_step)
+                for (auto I3 = 1; I3 <= 100; I3 += I_step)
                 {
                     for (auto V = 0.1; V <= 10.1; V += V_step)
                     {
