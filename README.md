@@ -8,9 +8,9 @@ Being a unique fingerprint for identifying triaxial nuclei with strong deformati
 
 The present project aims at developing *a new approach in describing the nuclear properties of $^{163}$Lu* isotope (considered to be one of the best *wobblers* know so far). The features of wobbling motion (phenomenon strictly related to stability of highly deformed nuclear shapes) that are present in the nucleus under study have a strong experimental foundation, with excitation energies, transition probabilities, quadrupole moments and so on, determined within high degrees of accuracy. Based on an increasing number of contributions from the nuclear structure community, the concept of wobbling motion (with its main characteristics, features and physical significance) is an established phenomena from a theoretical standpoint, especially in the nuclear region $A\approx160$.
 
-> Find an in-depth analysis of the project [here](/Reports/SIGNATURE_FORMALISM/Lu163_newFormalism.pdf).
+> Find an in-depth analysis of the project [here](Resources/Reports/Lu163_newFormalism.pdf)
 
-The wobbling spectrum of $^{163}$Lu has four known wobbling bands (w.b.) which were confirmed experimentally, with well defined spins, energies and quadrupole moments. The available data for this nucleus can be accessed [here](Reports/experimental_data_ensdf.pdf).
+The wobbling spectrum of $^{163}$Lu has four known wobbling bands (w.b.) which were confirmed experimentally, with well defined spins, energies and quadrupole moments. The available data for this nucleus can be accessed [here](Resources/Documentation/experimental_data_ensdf.pdf).
 So far, the spectrum was regarded as having a standard *harmonic-like* structure, with a ground state band (a zero phonon mode of the nucleus) and three additional bands built on top of it (one, two and three-phonon modes of excitation). The nomenclature of this nucleus's wobbling structure is as follows:
 
 * TSD1 is the yrast band, ground state for the wobbling spectrum, with the phonon wobbling numbers: $(n_{w_1},n_{w_2})=(0,0)$
@@ -76,7 +76,7 @@ In conclusion, **Formalism A** is just a slight modification of the well known b
 
 *Diagram which attempts at giving an overall scheme of the A formalism can be found below.*
 
-![A-FORMALISM](./Reports/UNIFIED_FORMALISM/AB_formalism_descriptionA.svg)
+![A-FORMALISM](Resources/Diagrams/AB_formalism_descriptionA.svg)
 
 ### B-Formalism
 
@@ -95,7 +95,7 @@ In short, **B Formalism** considers the TSD4 the chiral partner of TSD1 (same as
 
 *Diagram which attempts at giving an overall scheme of the B.*
 
-![B-FORMALISM](./Reports/UNIFIED_FORMALISM/AB_formalism_descriptionB.svg)
+![B-FORMALISM](Resources/Diagrams/AB_formalism_descriptionB.svg)
 
 As an alternate nomenclature, the two major formalisms are considered as follows:
 
@@ -108,11 +108,15 @@ When compared to the literature, where there exist two intruders (i.e. two valen
 
 Diagrams for the coupling schemes adopted in this project can be seen below.
 
-![diagram13](Reports/UNIFIED_FORMALISM/coupling_bands13.svg)
+The coupling scheme for the bands TSD1 and TSD3
 
-![diagram24](Reports/UNIFIED_FORMALISM/coupling_bands24.svg)
+![diagram13](Resources/Diagrams/coupling_bands13.svg)
 
-> Some hand-written notes with the concepts of wobbling rotor and coupling can be found [here](Reports/Wobbling_motion_general_concepts_regarding_coupling.pdf).
+The coupling scheme for the bands TSD2 and TSD4
+
+![diagram24](Resources/Diagrams/coupling_bands24.svg)
+
+> Some hand-written notes with the concepts of wobbling rotor and coupling can be found [here](Resources/Documentation/Wobbling_motion_general_concepts_regarding_coupling.pdf)
 
 ## Preliminary results
 
@@ -152,11 +156,15 @@ E_RMS= 0.143092
 ##########################
 ```
 
-![tsd1234_bands](./Reports/2020-08-30-11-34-28.png)
+___
+>needs path
+___
+
+<!-- ![tsd1234_bands] -->
 
 ### `5-params-unified` `(V.2)` Implementation
 
-This is the latest update in the development pipeline of this project (firstly adopted within [this commit](https://github.com/basavyr/163Lu-New-TSD4-Formalism/commit/48d7bcb863ad550281b029cef2f1140e3b05b73b)), which takes advantage of the proposed (A,B)-Formalism, and tries to compute the energies and the root mean square errors for all four methods in the same application rutime. 
+This is the latest update in the development pipeline of this project (firstly adopted within [this commit](https://github.com/basavyr/163Lu-New-TSD4-Formalism/commit/48d7bcb863ad550281b029cef2f1140e3b05b73b)), which takes advantage of the proposed (A,B)-Formalism, and tries to compute the energies and the root mean square errors for all four methods in the same application runtime. 
 
 This approach seems to be the most efficient, as each analytical formula is consistently created in a well-defined class (class `A` and class `B`) and the key differences lie in the coupling scheme, wobbling excitation numbers and the difference in output regarding the parameter sets $\mathcal{P}$.
 
@@ -171,7 +179,7 @@ This approach seems to be the most efficient, as each analytical formula is cons
   * Compute the RMS for all approaches based on any parameter set and show these quantities properly.
 * A `least-squares-fit` procedure, in which the parameter set is found per each approach, such that the `RMS` between the theoretical and experimental data sets is minimal.
 
-The unified implementation stores the results in a single output file, which proves to be useful for visualizing the results and comparing the experimental and theoretical data sets. The output results can be seen [here](Reports/CPP_FIT_RESULTS.dat). 
+The unified implementation stores the results in a single output file, which proves to be useful for visualizing the results and comparing the experimental and theoretical data sets. The output results can be seen [here](Resources/Output_Data/Unified_Model/CPP_FIT_RESULTS.dat). 
 
 #### Preliminary Fit Results for the B Formalism Using `5-params-unified` Implementation
 
@@ -189,7 +197,11 @@ i1 = 73; i2 = 68; i3 = 3; v = 8.1; \[Gamma] = 15;
 Subscript[E, RMS;TSD410]=0.138381
 ```
 
-![formalismb_b2](Reports/SIGNATURE_FORMALISM/tsd4_10_gridplot.png)
+___
+>needs path
+___
+
+<!-- ![formalismb_b2](Reports/SIGNATURE_FORMALISM/tsd4_10_gridplot.png) -->
 
 ## Analysis of the potential strength parameter $V$ - `V.1`
 
@@ -197,7 +209,11 @@ In this plot, the *single particle potential strength* ($V$) is graphically repr
 
 The fourth band has two possible formalisms in the analytic calculations (namely, a ground state band given by the phonon numbers $(0,0)$ and a 1-phonon excited band built on top of the yrast band $(1,0)$).
 
-![](./Reports/V_evolution.jpeg)
+___
+>needs path
+___
+
+<!-- ![](./Reports/V_evolution.jpeg) -->
 
 
 ## Serial vs. Parallel implementation (`V.1`)
@@ -206,13 +222,13 @@ In the latest project update [](), the search function for the energy's root mea
 
 (In the figure below, the step sizes are as follow: 20, 10, 5,respectively.)
 
-![](./Reports/executionTimeOpenMP.jpeg)
+![](Resources/Output_Graphs/Signature_Formalism/executionTimeOpenMP.jpeg)
 
 ## Further Analysis With Regards to the Nuclear Stability of $^{163}$Lu
 
 The nucleus is analyzed in terms of its critical points, or the regions where the deformed shapes exhibit certain properties (e.g. different wobbling regimes, axial symmetry, forbidden states).
 This project is introduced in the following [issue](https://github.com/basavyr/163Lu-New-TSD4-Formalism/issues/5).
 
-> **More information with regards to this part of the project can be seen [here](./Reports/EnergyFunction.md).**
+> **More information with regards to this part of the project can be seen [here](EnergyFunction.md).**
 
 **Also**: More details on this [Roam document](https://roamresearch.com/#/app/basavyr/page/xf-zGkA_-).
