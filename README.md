@@ -104,7 +104,7 @@ As an alternate nomenclature, the two major formalisms are considered as follows
 
 ### Understanding the coupling scheme of both formalisms
 
-When compared to the literature, where there exist two intruders (i.e. two valence protons, one for TSD1,2,3-$=13/2$ and one for TSD4-$j=9/2$) that create an alignment with the angular momentum of a triaxially deformed even-even core, in these new formalisms (novel approaches) it is speculated the fact that TSD4 keeps the same alignment particle but the core's angular momentum ($R$). As a result, in these calculations and the overall framework, the proton $\pi_{i;j=13/2}$ is considered to be the single-particle $\vec{j}$ vector that aligns with the core $R$ (keep in mind that there are two core state sequences, namely one which corresponds to the bands TSD1&3: $R_{TSD1;3}$ and one that corresponds to the bands TSD2&4: $R_{TSD2;4}$).
+When compared to the literature, where there exist two intruders (i.e. two valence protons, one for TSD1,2,3-$=13/2$ and one for TSD4-$j=9/2$) that create an alignment with the angular momentum of a triaxially deformed even-even core, in these new formalisms (novel approaches) it is speculated the fact that TSD4 keeps the same alignment particle but the core's angular momentum ($R$) is different (in the sense that the even-odd parity of the spin sequence changes). As a result, in these calculations and the overall framework, the proton $\pi_{i;j=13/2}$ is considered to be the single-particle $\vec{j}$ vector that aligns with the core $R$ (keep in mind that there are two core state sequences, namely one which corresponds to the bands TSD1&3: $R_{TSD1;3}$ and one that corresponds to the bands TSD2&4: $R_{TSD2;4}$).
 
 Diagrams for the coupling schemes adopted in this project can be seen below.
 
@@ -143,9 +143,24 @@ This implementation (written in `C++`) is developed before the adoption of (A,B)
 
 #### `5-params V.1` Implementation - Fit Results
 
+For: TSD4: $(n_{w_1},n_{w_2})=(0,0)$
+
+```text
+##########################
+I1= 77
+I2= 47
+I3= 3
+V= 2.1
+gamma= 16
+E_RMS= 0.197384
+##########################
+```
+
+![tsd1234_bands](Resources/Output_Graphs/Signature_Formalism/tsd4_00_gridplot.png)
+
 For: TSD4: $(n_{w_1},n_{w_2})=(1,0)$
 
-```
+```text
 ##########################
 I1= 73
 I2= 3
@@ -156,11 +171,7 @@ E_RMS= 0.143092
 ##########################
 ```
 
-___
->needs path
-___
-
-<!-- ![tsd1234_bands] -->
+![tsd1234_bands](Resources/Output_Graphs/Signature_Formalism/tsd4_10_gridplot.png)
 
 ### `5-params-unified` `(V.2)` Implementation
 
@@ -209,16 +220,12 @@ In this plot, the *single particle potential strength* ($V$) is graphically repr
 
 The fourth band has two possible formalisms in the analytic calculations (namely, a ground state band given by the phonon numbers $(0,0)$ and a 1-phonon excited band built on top of the yrast band $(1,0)$).
 
-___
->needs path
-___
-
-<!-- ![](./Reports/V_evolution.jpeg) -->
+![](Resources/Output_Graphs/Signature_Formalism/V_evolution.jpeg)
 
 
 ## Serial vs. Parallel implementation (`V.1`)
 
-In the latest project update [](), the search function for the energy's root mean square error is computed in a multi-threaded approach, using the `openMP` standard for computing the RMS value for different values of the triaxiality parameter $\gamma$ at the same time. This considerably reduces the computational runtime (check image below), where the execution time increases with the decrease in the step for the moment of inertia $\mathcal{I}$.
+In the latest project update  **UPDATE LINK** [](), the search function for the energy's root mean square error is computed in a multi-threaded approach, using the `openMP` standard for computing the RMS value for different values of the triaxiality parameter $\gamma$ at the same time. This considerably reduces the computational runtime (check image below), where the execution time increases with the decrease in the step for the moment of inertia $\mathcal{I}$.
 
 (In the figure below, the step sizes are as follow: 20, 10, 5,respectively.)
 
