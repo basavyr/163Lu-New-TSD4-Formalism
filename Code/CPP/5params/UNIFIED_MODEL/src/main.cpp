@@ -703,7 +703,12 @@ template <typename Formalism>
 void MathematicaOutput(Formalism F, Params_tuple &params, std::ofstream &gout, int Approach_Selector)
 {
     // gout << params.rms << "\n";
-    gout << params.I1 << " " << params.I2 << " " << params.I3 << " " << params.V << " " << params.gm * 180.0 / F.PI << "\n";
+    // gout << params.I1 << " " << params.I2 << " " << params.I3 << " " << params.V << " " << params.gm * 180.0 / F.PI << "\n";
+    gout << params.I1 << " " << params.I2 << " " << params.I3 << " " << params.V << " " << params.gm << "\n";
+
+    //! transform in radians if gamma is taken in degree unit
+    params.gm = params.gm * F.PI / 180.0;
+
     switch (Approach_Selector)
     {
     case 1:
@@ -751,6 +756,97 @@ void MathematicaOutput(Formalism F, Params_tuple &params, std::ofstream &gout, i
     }
 }
 
+// int main()
+// {
+//     Approach_A A;
+//     Approach_B B;
+
+//     //Store the values of the parameter set
+//     Params_tuple params_A1, params_A2, params_B1, params_B2;
+//     {
+//         auto start = std::chrono::system_clock::now();
+//         Search_Minimum_RMS<Approach_A>(A, 1, params_A1);
+//         std::cout << "Finished searching for params of A1..."
+//                   << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
+
+//         start = std::chrono::system_clock::now();
+//         Search_Minimum_RMS<Approach_A>(A, 2, params_A2);
+//         std::cout << "Finished searching for params of A2..."
+//                   << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
+
+//         start = std::chrono::system_clock::now();
+//         Search_Minimum_RMS<Approach_B>(B, 1, params_B1);
+//         std::cout << "Finished searching for params of B1..."
+//                   << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
+
+//         start = std::chrono::system_clock::now();
+//         Search_Minimum_RMS<Approach_B>(B, 2, params_B2);
+//         std::cout << "Finished searching for params of B2..."
+//                   << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
+//     }
+
+//     // std::cout << "FORMALISM A \n";
+//     // std::cout << "_________________________________\n";
+//     // std::cout << "APPROACH A1 \n";
+
+//     gout << "FORMALISM A \n";
+//     gout << "_________________________________\n";
+//     gout << "APPROACH A1 \n";
+
+//     ShowResults_00(A, params_A1);
+
+//     // std::cout << "\n";
+//     // std::cout << "_________________________________\n";
+//     // std::cout << "APPROACH A2 \n";
+
+//     gout << "\n";
+//     gout << "_________________________________\n";
+//     gout << "APPROACH A2 \n";
+
+//     ShowResults_10(A, params_A2);
+
+//     // std::cout << "\n";
+
+//     gout << "\n";
+
+//     // std::cout << "FORMALISM B \n";
+//     // std::cout << "_________________________________\n";
+//     // std::cout << "APPROACH B1 \n";
+
+//     gout << "FORMALISM B \n";
+//     gout << "_________________________________\n";
+//     gout << "APPROACH B1 \n";
+
+//     ShowResults_00(B, params_B1);
+
+//     // std::cout << "\n";
+//     // std::cout << "_________________________________\n";
+//     // std::cout << "APPROACH B2 \n";
+
+//     gout << "\n";
+//     gout << "_________________________________\n";
+//     gout << "APPROACH B2 \n";
+
+//     ShowResults_10(B, params_B2);
+
+//     //* TO-DO
+//     //* Implement proper output for mathematica taking in consideration for format described below
+//     //LINE0: I1,I2,I3,V,gamma -> the fit parameters
+//     //LINE1+: I | E_exp | E_th
+
+//     std::ofstream math_file_A1("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitA1_cxx.dat");
+//     std::ofstream math_file_A2("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitA2_cxx.dat");
+//     std::ofstream math_file_B1("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitB1_cxx.dat");
+//     std::ofstream math_file_B2("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitB2_cxx.dat");
+
+//     MathematicaOutput(A, params_A1, math_file_A1, 1);
+//     MathematicaOutput(A, params_A2, math_file_A2, 2);
+//     MathematicaOutput(B, params_B1, math_file_B1, 1);
+//     MathematicaOutput(B, params_B2, math_file_B2, 2);
+// }
+
+//!Use this main function if only the mathematica output with pre-defined parameters is needed
+//!This main skips the computational part of the RMS
 int main()
 {
     Approach_A A;
@@ -758,82 +854,42 @@ int main()
 
     //Store the values of the parameter set
     Params_tuple params_A1, params_A2, params_B1, params_B2;
-    {
-        auto start = std::chrono::system_clock::now();
-        Search_Minimum_RMS<Approach_A>(A, 1, params_A1);
-        std::cout << "Finished searching for params of A1..."
-                  << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
 
-        start = std::chrono::system_clock::now();
-        Search_Minimum_RMS<Approach_A>(A, 2, params_A2);
-        std::cout << "Finished searching for params of A2..."
-                  << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
+    //* initialize the parameters with fixed values
 
-        start = std::chrono::system_clock::now();
-        Search_Minimum_RMS<Approach_B>(B, 1, params_B1);
-        std::cout << "Finished searching for params of B1..."
-                  << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
+    //A1-Approach
+    params_A1.I1 = 77;
+    params_A1.I2 = 49;
+    params_A1.I3 = 3;
+    params_A1.V = 1.8;
+    params_A1.gm = 15;
 
-        start = std::chrono::system_clock::now();
-        Search_Minimum_RMS<Approach_B>(B, 2, params_B2);
-        std::cout << "Finished searching for params of B2..."
-                  << "\nProcess took:" << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
-    }
+    //A2-Approach
+    params_A2.I1 = 73;
+    params_A2.I2 = 3;
+    params_A2.I3 = 67;
+    params_A2.V = 5.3;
+    params_A2.gm = 25;
 
-    // std::cout << "FORMALISM A \n";
-    // std::cout << "_________________________________\n";
-    // std::cout << "APPROACH A1 \n";
+    //B1-Approach
+    params_B1.I1 = 77;
+    params_B1.I2 = 15;
+    params_B1.I3 = 5;
+    params_B1.V = 1.3;
+    params_B1.gm = 22;
 
-    gout << "FORMALISM A \n";
-    gout << "_________________________________\n";
-    gout << "APPROACH A1 \n";
-
-    ShowResults_00(A, params_A1);
-
-    // std::cout << "\n";
-    // std::cout << "_________________________________\n";
-    // std::cout << "APPROACH A2 \n";
-
-    gout << "\n";
-    gout << "_________________________________\n";
-    gout << "APPROACH A2 \n";
-
-    ShowResults_10(A, params_A2);
-
-    // std::cout << "\n";
-
-    gout << "\n";
-
-    // std::cout << "FORMALISM B \n";
-    // std::cout << "_________________________________\n";
-    // std::cout << "APPROACH B1 \n";
-
-    gout << "FORMALISM B \n";
-    gout << "_________________________________\n";
-    gout << "APPROACH B1 \n";
-
-    ShowResults_00(B, params_B1);
-
-    // std::cout << "\n";
-    // std::cout << "_________________________________\n";
-    // std::cout << "APPROACH B2 \n";
-
-    gout << "\n";
-    gout << "_________________________________\n";
-    gout << "APPROACH B2 \n";
-
-    ShowResults_10(B, params_B2);
-
-    //* TO-DO
-    //* Implement proper output for mathematica taking in consideration for format described below
-    //LINE0: I1,I2,I3,V,gamma -> the fit parameters
-    //LINE1+: I | E_exp | E_th
+    //B2-Approach
+    params_B2.I1 = 73;
+    params_B2.I2 = 67;
+    params_B2.I3 = 3;
+    params_B2.V = 7.3;
+    params_B2.gm = 15;
 
     std::ofstream math_file_A1("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitA1_cxx.dat");
     std::ofstream math_file_A2("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitA2_cxx.dat");
     std::ofstream math_file_B1("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitB1_cxx.dat");
     std::ofstream math_file_B2("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitB2_cxx.dat");
-
+    //The procedure for outputing data with the correct format
     MathematicaOutput(A, params_A1, math_file_A1, 1);
     MathematicaOutput(A, params_A2, math_file_A2, 2);
     MathematicaOutput(B, params_B1, math_file_B1, 1);
