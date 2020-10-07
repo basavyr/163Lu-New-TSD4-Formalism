@@ -1,5 +1,36 @@
 # $^{163}$Lu - Wobbling Motion & Energy Spectrum
 
+- [$^{163}$Lu - Wobbling Motion & Energy Spectrum](#163lu---wobbling-motion--energy-spectrum)
+  - [Theoretical Aspects Regarding Wobbling Motion in $^{163}$Lu](#theoretical-aspects-regarding-wobbling-motion-in-163lu)
+  - [Novel Formalism in Obtaining the Wobbling Spectrum](#novel-formalism-in-obtaining-the-wobbling-spectrum)
+    - [Understanding the nature of the band structure in $^{163}Lu](#understanding-the-nature-of-the-band-structure-in-163lu)
+    - [A-Formalism](#a-formalism)
+    - [B-Formalism](#b-formalism)
+    - [Understanding the coupling scheme of both formalisms](#understanding-the-coupling-scheme-of-both-formalisms)
+  - [Preliminary results](#preliminary-results)
+    - [`5-params V.1` Implementation](#5-params-v1-implementation)
+      - [Key features of `5-params-V.1`](#key-features-of-5-params-v1)
+      - [`5-params V.1` Implementation - Fit Results](#5-params-v1-implementation---fit-results)
+    - [`5-params-unified` `(V.2)` Implementation](#5-params-unified-v2-implementation)
+      - [Key features of `5-params-unified`](#key-features-of-5-params-unified)
+      - [Fit Results Using `5-params-unified` Implementation](#fit-results-using-5-params-unified-implementation)
+      - [Numerical Results for All Four Approaches](#numerical-results-for-all-four-approaches)
+        - [A1](#a1)
+        - [A2](#a2)
+        - [B1](#b1)
+        - [B2](#b2)
+      - [Excitation Energies - Graphical Results for All Four Approaches](#excitation-energies---graphical-results-for-all-four-approaches)
+        - [A1 - Approach](#a1---approach)
+        - [A2 - Approach](#a2---approach)
+        - [B1 - Approach](#b1---approach)
+        - [B2 - Approach](#b2---approach)
+  - [Analysis of the potential strength parameter $V$](#analysis-of-the-potential-strength-parameter-v)
+    - [Evolution of V with respect to the fitting approaches](#evolution-of-v-with-respect-to-the-fitting-approaches)
+    - [Evolution of $\gamma$ with respect to the fitting approaches](#evolution-of-gamma-with-respect-to-the-fitting-approaches)
+    - [Evolution of nucleus's MOIs with respect to the fitting approaches](#evolution-of-nucleuss-mois-with-respect-to-the-fitting-approaches)
+  - [Serial vs. Parallel implementation (`V.1`)](#serial-vs-parallel-implementation-v1)
+  - [Further Analysis With Regards to the Nuclear Stability of $^{163}$Lu](#further-analysis-with-regards-to-the-nuclear-stability-of-163lu)
+
 ## Theoretical Aspects Regarding Wobbling Motion in $^{163}$Lu
 
 Wobbling motion plays an important role in determining which nuclei have stable structures with very large deformation (e.g. high degree of asymmetry in their mass/charge distribution, large quadrupole moments, rich energy spectra and increased ratios between the moments of inertia - giving triaxial parameters with interesting values).
