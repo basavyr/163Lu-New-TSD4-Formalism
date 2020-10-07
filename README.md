@@ -246,7 +246,9 @@ _________________________________
 ### RMS=0.13824 [keV] ###
 ```
 
-#### Graphical Results for All Four Approaches
+#### Excitation Energies - Graphical Results for All Four Approaches
+
+The following results are obtained for the smallest step size for the moments of inertia (`I_step=1.0`) taken in the search function procedure so far. The computational time for $I_\text{step}\leq5$ is gets very large, due to the cubic complexity in the MOI(s) search interval.
 
 ##### A1 - Approach
 
@@ -254,19 +256,11 @@ The excitation energies
 
 ![A1-ENERGIES](Resources/Output_Graphs/Unified_Model/Energies_formalism_A1.png)
 
-The contour plots for the energy function
-
-
-
 ##### A2 - Approach
 
 The excitation energies
 
 ![A2-ENERGIES](Resources/Output_Graphs/Unified_Model/Energies_formalism_A2.png)
-
-The contour plots for the energy function
-
-
 
 ##### B1 - Approach
 
@@ -274,16 +268,11 @@ The excitation energies
 
 ![B1-ENERGIES](Resources/Output_Graphs/Unified_Model/Energies_formalism_B1.png)
 
-The contour plots for the energy function
-
-
 ##### B2 - Approach
 
 The excitation energies
 
 ![B2-ENERGIES](Resources/Output_Graphs/Unified_Model/Energies_formalism_B2.png)
-
-The contour plots for the energy function
 
 
 Using the `Unified Implementation` (which contains all four approaches for fitting the excitation energies), the fitting procedures produced a series of set parameters, with respect to a pre-defined size in the step of the moments of inertia.
@@ -305,7 +294,7 @@ The fourth band has two possible formalisms in the analytic calculations (namely
 
 ## Serial vs. Parallel implementation (`V.1`)
 
-In the latest project update  **UPDATE LINK** [](), the search function for the energy's root mean square error is computed in a multi-threaded approach, using the `openMP` standard for computing the RMS value for different values of the triaxiality parameter $\gamma$ at the same time. This considerably reduces the computational runtime (check image below), where the execution time increases with the decrease in the step for the moment of inertia $\mathcal{I}$.
+In the latest project update ([see this commit](https://github.com/basavyr/163Lu-New-TSD4-Formalism/commit/9bed4fdb9f363af1e16221383aa6c6e157574495),) the search function for the energy's root mean square error is computed in a multi-threaded approach, using the `openMP` standard for computing the RMS value for different values of the triaxiality parameter $\gamma$ at the same time. This considerably reduces the computational runtime (check image below), where the execution time increases with the decrease in the step for the moment of inertia $\mathcal{I}$.
 
 (In the figure below, the step sizes are as follow: 20, 10, 5,respectively.)
 
