@@ -182,9 +182,9 @@ This approach seems to be the most efficient, as each analytical formula is cons
 #### Key features of `5-params-unified`
 
 * The source code is organized in a more robust way, self-consistent and easy to explore.
-* There are only two classes (very similar in their overall structure) within the entire implementation
+* There are only two classes (very similar in their overall structure) within the entire implementation.
 * Analytic formulas for the energies are easily adjustable.
-* Method for computing the root mean square of a data set is creating right inside the main function.
+* Method for computing the root mean square of a data set is created right inside the main function (*although, one may not consider this as a practical way from a source-code organizational standpoint*).
 * Main program also contains methods for:
   * Output the energies (wr.r.t a parameter set) to the screen and to a file
   * Compute the RMS for all approaches based on any parameter set and show these quantities properly.
@@ -192,27 +192,99 @@ This approach seems to be the most efficient, as each analytical formula is cons
 
 The unified implementation stores the results in a single output file, which proves to be useful for visualizing the results and comparing the experimental and theoretical data sets. The output results can be seen [here](Resources/Output_Data/Unified_Model/CPP_FIT_RESULTS.dat). 
 
-#### Preliminary Fit Results for the B Formalism Using `5-params-unified` Implementation
+#### Fit Results Using `5-params-unified` Implementation
+
+The `Unified` implementation done in C++ attempts at giving a least-squares-fit procedure for the *excitation energies* (discussed in detail in the cited papers from previous sections of the present document). Actual goal of the implementation is to find the best set of parameters $\mathcal{P}$ that produce the smallest deviations from the experimental values.
+
+$$\mathcal{P}=\left[\mathcal{I}_1,\mathcal{I}_2,\mathcal{I}_3,V,\gamma\right]$$
+
+Once these parameters are found (**for each approach in particular**), the process of **plotting the obtained energies** (in comparison with the experimental ones) and also the **graphical representation of the contour plots** associated to the *energy function* $\mathcal{H}$ need to be developed.
+
+#### Numerical Results for All Four Approaches
+
+##### A1
 
 ```text
-//B1
-i1 = 77; i2 = 47; i3 = 3; v = 2.1; \[Gamma] = 16;
-Subscript[E, RMS;TSD400]=0.197384
+_________________________________
+ℐ₁ : ℐ₂ : ℐ₃ | 76:52:3
+V=1.8
+𝛾=18
+_________________________________
+### RMS=0.196164 [keV] ###
 ```
 
-![formalismb_b1](Reports/SIGNATURE_FORMALISM/tsd4_00_gridplot.png)
+##### A2
 
 ```text
-//B2
-i1 = 73; i2 = 68; i3 = 3; v = 8.1; \[Gamma] = 15;
-Subscript[E, RMS;TSD410]=0.138381
+_________________________________
+ℐ₁ : ℐ₂ : ℐ₃ | 73:3:67
+V=5.3
+𝛾=25
+_________________________________
+### RMS=0.142977 [keV] ###
 ```
 
-___
->needs path
-___
+##### B1
 
-<!-- ![formalismb_b2](Reports/SIGNATURE_FORMALISM/tsd4_10_gridplot.png) -->
+```text
+_________________________________
+ℐ₁ : ℐ₂ : ℐ₃ | 78:5:14
+V=1.3
+𝛾=25
+_________________________________
+### RMS=0.197005 [keV] ###
+```
+
+##### B2
+
+```text
+_________________________________
+ℐ₁ : ℐ₂ : ℐ₃ | 73:68:3
+V=8.5
+𝛾=15
+_________________________________
+### RMS=0.13824 [keV] ###
+```
+
+#### Graphical Results for All Four Approaches
+
+##### A1 - Approach
+
+The excitation energies
+
+![A1-ENERGIES](Resources/Output_Graphs/Unified_Model/Energies_formalism_A1.png)
+
+The contour plots for the energy function
+
+
+
+##### A2 - Approach
+
+The excitation energies
+
+![A2-ENERGIES](Resources/Output_Graphs/Unified_Model/Energies_formalism_A2.png)
+
+The contour plots for the energy function
+
+
+
+##### B1 - Approach
+
+The excitation energies
+
+![B1-ENERGIES](Resources/Output_Graphs/Unified_Model/Energies_formalism_B1.png)
+
+The contour plots for the energy function
+
+
+##### B2 - Approach
+
+The excitation energies
+
+![B2-ENERGIES](Resources/Output_Graphs/Unified_Model/Energies_formalism_B2.png)
+
+The contour plots for the energy function
+
 
 Using the `Unified Implementation` (which contains all four approaches for fitting the excitation energies), the fitting procedures produced a series of set parameters, with respect to a pre-defined size in the step of the moments of inertia.
 

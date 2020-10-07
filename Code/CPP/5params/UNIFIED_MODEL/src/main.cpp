@@ -847,6 +847,7 @@ void MathematicaOutput(Formalism F, Params_tuple &params, std::ofstream &gout, i
 
 //!Use this main function if only the mathematica output with pre-defined parameters is needed
 //!This main skips the computational part of the RMS
+
 int main()
 {
     Approach_A A;
@@ -854,6 +855,18 @@ int main()
 
     //Store the values of the parameter set
     Params_tuple params_A1, params_A2, params_B1, params_B2;
+
+    //Storing constant parameters from the I=1 step size (for each approach)
+    Params_tuple step100_a1(76, 52, 3, 1.8, 18);
+    Params_tuple step100_a2(73, 3, 67, 5.3, 25);
+    Params_tuple step100_b1(78, 5, 14, 1.3, 25);
+    Params_tuple step100_b2(73, 68, 3, 8.5, 15);
+
+    //Storing constant parameters from the I=2.5 step size (for each approach)
+    Params_tuple step205_a1(76, 52, 3, 1.8, 18);
+    Params_tuple step205_a2(73, 3, 67, 5.3, 25);
+    Params_tuple step205_b1(78, 5, 14, 1.3, 25);
+    Params_tuple step205_b2(73, 68, 3, 8.5, 15);
 
     //* initialize the parameters with fixed values
 
@@ -889,9 +902,10 @@ int main()
     std::ofstream math_file_A2("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitA2_cxx.dat");
     std::ofstream math_file_B1("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitB1_cxx.dat");
     std::ofstream math_file_B2("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Unified_Model/fitB2_cxx.dat");
+
     //The procedure for outputing data with the correct format
-    MathematicaOutput(A, params_A1, math_file_A1, 1);
-    MathematicaOutput(A, params_A2, math_file_A2, 2);
-    MathematicaOutput(B, params_B1, math_file_B1, 1);
-    MathematicaOutput(B, params_B2, math_file_B2, 2);
+    MathematicaOutput(A, step100_a1, math_file_A1, 1);
+    MathematicaOutput(A, step100_a2, math_file_A2, 2);
+    MathematicaOutput(B, step100_b1, math_file_B1, 1);
+    MathematicaOutput(B, step100_b2, math_file_B2, 2);
 }
