@@ -283,14 +283,30 @@ More precisely, given that the number of possible values which one MOI can take 
 
 The parameter table for storing some of the *best results* (fiting procedures which gave the smallest values of `E_rms` per different value of `I_step`) can be seen in the [following document](Resources/Output_Data/Table_Best_Parameters.md).
 
-## Analysis of the potential strength parameter $V$ - `V.1`
+## Analysis of the potential strength parameter $V$
 
-In this plot, the *single particle potential strength* ($V$) is graphically represented with respect to the triaxiality parameter $\gamma$.
+The *single particle potential strength* $V$ is graphically represented with respect to the triaxiality parameter $\gamma$.
+Taking a fixed gamma in the fitting procedure, one finds the best set of parameters $\mathcal{I}_k,V$, for each $\gamma$ in the interval $[17,21]$.
+
+According to WANG Shou-Yu et. al. (in the work *CHIN. PHYS. LETT. Vol.26,No .5 (2009) 052102*, the source is [here](Resources/Documentation/Wang_Shou-Yu_2009_Chinese_Phys._Lett._26_052102.pdf)), the single particle potential strength is related to the quadrupole deformation term $\beta_2$, and it is responsbile for the level splitting in the deformed field.
+
+![](Resources/Documentation/V_potential_theoretical.png)
 
 The fourth band has two possible formalisms in the analytic calculations (namely, a ground state band given by the phonon numbers $(0,0)$ and a 1-phonon excited band built on top of the yrast band $(1,0)$).
 
-![](Resources/Output_Graphs/Signature_Formalism/V_evolution.jpeg)
+It is useful to show how the value of V evolves across the formalisms (namely, all four approaches).
 
+### Evolution of V with respect to the fitting approaches
+
+![v-evolution](Resources/Output_Graphs/Unified_Model/V_evolution.png)
+
+### Evolution of $\gamma$ with respect to the fitting approaches
+
+![gm-evolution](Resources/Output_Graphs/Unified_Model/gamma_evolution.png)
+
+### Evolution of nucleus's MOIs with respect to the fitting approaches
+
+![MOI-evolution](Resources/Output_Graphs/Unified_Model/MOI_evolution.png)
 
 ## Serial vs. Parallel implementation (`V.1`)
 
@@ -307,4 +323,4 @@ This project is introduced in the following [issue](https://github.com/basavyr/1
 
 > **More information with regards to this part of the project can be seen [here](EnergyFunction.md).**
 
-**Also**: More details on this [Roam document](https://roamresearch.com/#/app/basavyr/page/xf-zGkA_-).
+Additional information regarding the workflow of this project can be found on this [Roam document](https://roamresearch.com/#/app/basavyr/page/xf-zGkA_-).

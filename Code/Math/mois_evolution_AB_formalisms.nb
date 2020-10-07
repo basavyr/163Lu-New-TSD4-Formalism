@@ -1,0 +1,85 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2337,         77]
+NotebookOptionsPosition[      1622,         56]
+NotebookOutlinePosition[      2134,         73]
+CellTagsIndexPosition[      2091,         70]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["MOIs evolution across all four fitting approaches", "Chapter",
+ CellChangeTimes->{{3.811061262993802*^9, 
+  3.811061276685512*^9}},ExpressionUUID->"3e2871e9-95c8-44c7-8096-\
+d0485491423f"],
+
+Cell[CellGroupData[{
+
+Cell["Step for the MOI: 1", "Section",
+ CellChangeTimes->{{3.811061644655673*^9, 
+  3.8110616520687304`*^9}},ExpressionUUID->"2c3b5e5b-268f-43c4-9b13-\
+78d1bd944b67"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"i1values", "=", 
+   RowBox[{"{", 
+    RowBox[{"76", ",", "73", ",", "78", ",", "73"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"i2values", "=", 
+   RowBox[{"{", 
+    RowBox[{"52", ",", "3", ",", "5", ",", "68"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"i3values", "=", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "67", ",", "14", ",", "3"}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.811061455941986*^9, 3.811061456672987*^9}, {
+  3.8110618188207693`*^9, 
+  3.8110618265331163`*^9}},ExpressionUUID->"edb9ffdd-c714-4695-9e2a-\
+4502f23dafac"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{896, 1075},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Applications", 
+   "Mathematica.app", "Contents", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "Times_Basavyr_Unique.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 194, 3, 61, "Chapter",ExpressionUUID->"3e2871e9-95c8-44c7-8096-d0485491423f"],
+Cell[CellGroupData[{
+Cell[799, 29, 166, 3, 59, "Section",ExpressionUUID->"2c3b5e5b-268f-43c4-9b13-78d1bd944b67"],
+Cell[968, 34, 626, 18, 70, "Input",ExpressionUUID->"edb9ffdd-c714-4695-9e2a-4502f23dafac"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
