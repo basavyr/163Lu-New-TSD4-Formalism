@@ -214,6 +214,14 @@ ___
 
 <!-- ![formalismb_b2](Reports/SIGNATURE_FORMALISM/tsd4_10_gridplot.png) -->
 
+Using the `Unified Implementation` (which contains all four approaches for fitting the excitation energies), the fitting procedures produced a series of set parameters, with respect to a pre-defined size in the step of the moments of inertia.
+
+Since there are three moments of inertia which need to be found, the complexity of the search function has the biggest component given by the smallness of the MOIs step (denoted in the implementation by `I_step`).
+
+More precisely, given that the number of possible values which one MOI can take (say N), then the total complexity for the `rms` search function would be $\mathcal{O}(N^3)$, producing the largest component in the total computational complexity $\mathcal{O_{tot}}$, in which the possible values for $V$ and $\gamma$ enter as well.
+
+The parameter table for storing some of the *best results* (fiting procedures which gave the smallest values of `E_rms` per different value of `I_step`) can be seen in the [following document](Resources/Output_Data/Table_Best_Parameters.md).
+
 ## Analysis of the potential strength parameter $V$ - `V.1`
 
 In this plot, the *single particle potential strength* ($V$) is graphically represented with respect to the triaxiality parameter $\gamma$.
