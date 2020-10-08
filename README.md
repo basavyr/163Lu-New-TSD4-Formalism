@@ -79,6 +79,8 @@ with $E_\text{th}$ being a numerical function (which should be implemented) that
 
 *A separate section is dedicated to the study of the energy function, the numerical implementations (done with the help of Mathematica) and graphical representations which are obtained.*
 
+See the documentation related to the calculus of the energy function $\mathcal{H}$ in [here](EnergyFunction.md).
+
 ## Novel Formalism in Obtaining the Wobbling Spectrum
 
 ### Understanding the nature of the band structure in $^{163}Lu
