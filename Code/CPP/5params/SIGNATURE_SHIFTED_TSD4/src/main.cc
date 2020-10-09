@@ -25,7 +25,7 @@ const std::vector<int>
     gm = {15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
 
 //store the values of the tsd4 energy shift
-std::vector<double> tsd4_shift = {0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5};
+std::vector<double> tsd4_shift = {0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6};
 
 struct FitParameters
 {
@@ -137,23 +137,29 @@ double RMS(double i1, double i2, double i3, double v, double gm, double SHIFT)
 void Search_MIN_RMS(FitParameters &params)
 {
     double MIN_RMS = 987654321.0;
-    double I_step = 5.0;
-    double V_step = 1.0;
+
+    //! **************
+    //! Change the parameters for precision improvement (Quality-of-fit)
+    //! **************
+    double I_step = 10.0;
+    double V_step = 0.1;
+    //! **************
 
     double current_rms;
 
     for (auto i1 = 1.0; i1 <= 100.0; i1 += I_step)
     {
-        for (auto i2 = 1.0; i2 <= 100.0; i2 += I_step)
+        for (auto i2 = 1.0; i2 <= 100.0 && i2 < i1; i2 += I_step)
         {
-            if (i1 > i2)
-                for (auto i3 = 1.0; i3 <= 100.0; i3 += I_step)
+            for (auto i3 = 1.0; i3 <= 100.0 && i3 != i2; i3 += I_step)
+            {
+                for (auto V = 0.1; V <= 10.0; V += V_step)
                 {
-                    for (auto V = 0.1; V <= 10.0; V += V_step)
+                    for (auto gm = 15.0; gm <= 25.0; gm += 1.0)
                     {
-                        for (auto gm = 15.0; gm <= 25.0; gm += 1.0)
+                        for (auto &&shift : tsd4_shift)
                         {
-                            current_rms = RMS(i1, i2, i3, V, gm * Lu163.PI / 180.0, 0);
+                            current_rms = RMS(i1, i2, i3, V, gm * Lu163.PI / 180.0, shift);
                             if (Lu163.valid(current_rms) && current_rms <= MIN_RMS)
                             {
                                 MIN_RMS = current_rms;
@@ -162,12 +168,13 @@ void Search_MIN_RMS(FitParameters &params)
                                 params.I3 = i3;
                                 params.V = V;
                                 params.GAMMA = gm;
-                                params.TSD4_SHIFT = 0.0;
+                                params.TSD4_SHIFT = shift;
                                 params.RMS = MIN_RMS;
                             }
                         }
                     }
                 }
+            }
         }
     }
 }
