@@ -32,14 +32,24 @@ Since the term of *absolute energies* was mentioned, it is useful to show the ac
 
 #### The B formalism
 
+The Mathematica document which exports numerical values of the excitation energies is only using the $B$ formalism from the fitting procedures (namely the `unified-model-fit`). The four bands are computed with the experimental spin values and the best parameter set which was obtained through the C++ fitting procedure.
 
+##### TSD1
 
 ![tsd1-b1](Unified_Model/math_res_TSD1_B1.png)
 
+##### TSD2
+
 ![tsd2-b1](Unified_Model/math_res_TSD2_B1.png)
+
+##### TSD3
 
 ![tsd3-b1](Unified_Model/math_res_TSD3_B1.png)
 
-![tsd400-b1](Unified_Model/math_res_TSD400_B1.png)
+##### TSD4 (0,0) [B1-Approach]
 
-![tsd40-b1](Unified_Model/math_res_TSD410_B1.png)
+![tsd400-b1](Unified_Model/math_res_TSD4_B1.png)
+
+##### TSD4 (1,0) [B2-Approach]
+
+![tsd401-b1](Unified_Model/math_res_TSD4_B2.png)
