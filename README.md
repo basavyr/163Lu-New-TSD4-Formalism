@@ -2,6 +2,7 @@
 
 - [$^{163}$Lu - Wobbling Motion & Energy Spectrum](#163lu---wobbling-motion--energy-spectrum)
   - [Theoretical Aspects Regarding Wobbling Motion in $^{163}$Lu](#theoretical-aspects-regarding-wobbling-motion-in-163lu)
+    - [The Wobbling Spectra of $^{163}$Lu Triaxial Nucleus](#the-wobbling-spectra-of-163lu-triaxial-nucleus)
   - [Novel Formalism in Obtaining the Wobbling Spectrum](#novel-formalism-in-obtaining-the-wobbling-spectrum)
     - [Understanding the nature of the band structure in $^{163}Lu](#understanding-the-nature-of-the-band-structure-in-163lu)
     - [A-Formalism](#a-formalism)
@@ -41,7 +42,7 @@ The present project aims at developing *a new approach in describing the nuclear
 
 > Find an in-depth analysis of the project [here](Resources/Reports/Lu163_newFormalism.pdf)
 
-The wobbling spectrum of $^{163}$Lu has four known wobbling bands (w.b.) which were confirmed experimentally, with well defined spins, energies and quadrupole moments. The available data for this nucleus can be accessed [here](Resources/Documentation/experimental_data_ensdf.pdf).
+The wobbling spectrum of $^{163}$Lu has four known wobbling bands (w.b.) which were confirmed experimentally, with well defined spins, energies and quadrupole moments (see a graphical representation below, taken from [here](https://www.nndc.bnl.gov/ensdf/EnsdfDispatcherServlet)). The available data for this nucleus can be accessed [here](Resources/Documentation/experimental_data_ensdf.pdf).
 So far, the spectrum was regarded as having a standard *harmonic-like* structure, with a ground state band (a zero phonon mode of the nucleus) and three additional bands built on top of it (one, two and three-phonon modes of excitation). The nomenclature of this nucleus's wobbling structure is as follows:
 
 * TSD1 is the yrast band, ground state for the wobbling spectrum, with the phonon wobbling numbers: $(n_{w_1},n_{w_2})=(0,0)$
@@ -50,6 +51,11 @@ So far, the spectrum was regarded as having a standard *harmonic-like* structure
 * TSD4 is the third excited w.b., built on top of TSD1 with three wobbling phonons: $(n_{w_1},n_{w_2})=(3,0)$
 
 > This is the standard picture for the wobbling spectrum fo $^{163}$Lu nucleus, in which the concept of wobbling motion is described through phonon excitations that are used to build sequences of $\Delta=2\hbar$ spin states.
+
+
+### The Wobbling Spectra of $^{163}$Lu Triaxial Nucleus
+
+![wob-spectra](Resources/Reports/spectra.png)
 
 Main goals of the present project are:
 
