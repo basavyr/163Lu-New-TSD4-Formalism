@@ -141,7 +141,7 @@ void Search_MIN_RMS(FitParameters &params)
     //! **************
     //! Change the parameters for precision improvement (Quality-of-fit)
     //! **************
-    double I_step = 10.0;
+    double I_step = 30.0;
     double V_step = 0.1;
     //! **************
 
@@ -179,6 +179,23 @@ void Search_MIN_RMS(FitParameters &params)
     }
 }
 
+std::ofstream gout("shifted_tsd4.dat");
+
+void Show_Params(FitParameters &fit_params)
+{
+    std::cout << "ℐ₁ : ℐ₂ : ℐ₃ | " << fit_params.I1 << ":" << fit_params.I2 << ":" << fit_params.I3 << "\n";
+    std::cout << "V=" << fit_params.V << "\n";
+    std::cout << "𝛾=" << fit_params.GAMMA << "\n";
+    std::cout << "### RMS=" << fit_params.RMS << " [keV] ###\n";
+    std::cout << "SHIFT -> E_TSD4 = " << fit_params.TSD4_SHIFT << "\n";
+
+    gout << "ℐ₁ : ℐ₂ : ℐ₃ | " << fit_params.I1 << ":" << fit_params.I2 << ":" << fit_params.I3 << "\n";
+    gout << "V=" << fit_params.V << "\n";
+    gout << "𝛾=" << fit_params.GAMMA << "\n";
+    gout << "### RMS=" << fit_params.RMS << " [keV] ###\n";
+    gout << "SHIFT -> E_TSD4 = " << fit_params.TSD4_SHIFT << "\n";
+}
+
 int main()
 {
     double i1 = 73.0;
@@ -195,8 +212,6 @@ int main()
     Search_MIN_RMS(fit_params);
     std::cout << "Process took: " << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << "s\n";
 
-    std::cout << fit_params.I1 << " " << fit_params.I2 << " " << fit_params.I3 << "\n";
-    std::cout << fit_params.V << " " << fit_params.GAMMA << "\n";
-    std::cout << fit_params.RMS << " @shift= " << fit_params.TSD4_SHIFT << "\n";
+    Show_Params(fit_params);
     return 0;
 }
