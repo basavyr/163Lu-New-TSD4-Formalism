@@ -3,6 +3,7 @@
 - [$^{163}$Lu - Wobbling Motion & Energy Spectrum](#163lu---wobbling-motion--energy-spectrum)
   - [Theoretical Aspects Regarding Wobbling Motion in $^{163}$Lu](#theoretical-aspects-regarding-wobbling-motion-in-163lu)
     - [The Wobbling Spectra of $^{163}$Lu Triaxial Nucleus](#the-wobbling-spectra-of-163lu-triaxial-nucleus)
+    - [Excitation Energies of $^{163}Lu$](#excitation-energies-of-163lu)
   - [Novel Formalism in Obtaining the Wobbling Spectrum](#novel-formalism-in-obtaining-the-wobbling-spectrum)
     - [Understanding the nature of the band structure in $^{163}Lu](#understanding-the-nature-of-the-band-structure-in-163lu)
     - [A-Formalism](#a-formalism)
@@ -56,6 +57,10 @@ So far, the spectrum was regarded as having a standard *harmonic-like* structure
 ### The Wobbling Spectra of $^{163}$Lu Triaxial Nucleus
 
 ![wob-spectra](Resources/Reports/spectra.png)
+
+### Excitation Energies of $^{163}Lu$
+
+[This](Resources/Output_Data/ExcitationEnergies_Tabular.md) document contains a description with the overall definition, concept and workflow regarding the excitation energies that are used across the model.
 
 Main goals of the present project are:
 

@@ -32,6 +32,8 @@ Since the term of *absolute energies* was mentioned, it is useful to show the ac
 
 #### The B formalism
 
+
+
 ![tsd1-b1](Unified_Model/math_res_TSD1_B1.png)
 
 ![tsd2-b1](Unified_Model/math_res_TSD2_B1.png)

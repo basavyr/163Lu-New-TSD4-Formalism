@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    173006,       5067]
-NotebookOptionsPosition[    166281,       4949]
-NotebookOutlinePosition[    166794,       4966]
-CellTagsIndexPosition[    166751,       4963]
+NotebookDataLength[    174268,       5073]
+NotebookOptionsPosition[    167543,       4955]
+NotebookOutlinePosition[    168056,       4972]
+CellTagsIndexPosition[    168013,       4969]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -203,8 +203,7 @@ Cell[BoxData[{
   ";"}]}], "Input",
  CellChangeTimes->{{3.810105723579542*^9, 3.8101057327696133`*^9}, {
   3.811217492644973*^9, 3.811217499754771*^9}},
- CellLabel->
-  "In[166]:=",ExpressionUUID->"50ec73dd-59df-47a2-a606-fa279221f400"]
+ CellLabel->"In[39]:=",ExpressionUUID->"50ec73dd-59df-47a2-a606-fa279221f400"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -503,8 +502,7 @@ IHrJ1N9g+tbDgi3WsW8cU55XgOkb1nLHQfSSh0EnQfStgvwbIPr6FKPbILrQ
 823LhqQ3jhcuRbeC6JpP/1L3AWnBnV8yQfSZbsbl3KlA99+PXQWime89eBoI
 pL9avwbT9ZlFb0H0tCaedyAaAJZuvZ8=
   "],
- CellLabel->
-  "In[171]:=",ExpressionUUID->"4f3473c1-d025-4b18-9bcf-aaed36a996df"]
+ CellLabel->"In[44]:=",ExpressionUUID->"4f3473c1-d025-4b18-9bcf-aaed36a996df"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -561,8 +559,7 @@ Cell[BoxData[{
      "0", ",", "0", ",", "6.5", ",", "6.5", ",", "A1", ",", "A2", ",", "A3", 
       ",", "V", ",", "\[Gamma]"}], "]"}]}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.811217211264543*^9, 3.8112172237866*^9}},
- CellLabel->
-  "In[178]:=",ExpressionUUID->"c07d6dec-6c46-45cc-ad75-e12cc44f16df"]
+ CellLabel->"In[51]:=",ExpressionUUID->"c07d6dec-6c46-45cc-ad75-e12cc44f16df"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -619,8 +616,7 @@ Cell[BoxData[{
      "0", ",", "0", ",", "6.5", ",", "6.5", ",", "A1", ",", "A2", ",", "A3", 
       ",", "V", ",", "\[Gamma]"}], "]"}]}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.811217211264543*^9, 3.811217245837482*^9}},
- CellLabel->
-  "In[181]:=",ExpressionUUID->"0063e85d-846e-479f-8b8c-e223dd091106"]
+ CellLabel->"In[54]:=",ExpressionUUID->"0063e85d-846e-479f-8b8c-e223dd091106"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -650,7 +646,7 @@ Cell[BoxData[
       RowBox[{"EWobb", "[", 
        RowBox[{
        "0", ",", "0", ",", "6.5", ",", "6.5", ",", "A1", ",", "A2", ",", "A3",
-         ",", "V", ",", "\[Gamma]"}], "]"}], "+", "0.110"}]}], ";"}], " ", 
+         ",", "V", ",", "\[Gamma]"}], "]"}], "+", "0.450"}]}], ";"}], " ", 
    "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
@@ -669,12 +665,12 @@ Cell[BoxData[
       RowBox[{"EWobb", "[", 
        RowBox[{
        "0", ",", "0", ",", "6.5", ",", "6.5", ",", "A1", ",", "A2", ",", "A3",
-         ",", "V", ",", "\[Gamma]"}], "]"}], "+", "0.110"}]}], 
+         ",", "V", ",", "\[Gamma]"}], "]"}], "+", "0.450"}]}], 
     ";"}]}]}]], "Input",
  CellChangeTimes->{{3.8112172937061043`*^9, 3.811217319717825*^9}, {
-  3.811221633854245*^9, 3.811221644541025*^9}},
- CellLabel->
-  "In[184]:=",ExpressionUUID->"e52a6d7a-fdef-41cc-a537-2b81af14d972"]
+  3.811221633854245*^9, 3.811221644541025*^9}, {3.81124042994621*^9, 
+  3.8112404329234667`*^9}},ExpressionUUID->"e52a6d7a-fdef-41cc-a537-\
+2b81af14d972"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -700,11 +696,11 @@ Cell[BoxData[
     RowBox[{"(", 
      RowBox[{"2", "*", "3"}], ")"}]}]}], ";", 
   RowBox[{"v", "=", "8.1"}], ";", 
-  RowBox[{"gm", "=", "15"}], ";"}]], "Input",
+  RowBox[{"gm", "=", "18"}], ";"}]], "Input",
  CellChangeTimes->{{3.809837827625937*^9, 3.809837891660767*^9}, {
-  3.811073445545487*^9, 3.811073456939896*^9}},
- CellLabel->
-  "In[186]:=",ExpressionUUID->"d0b7fbf3-0503-454c-8c76-76887497e2c9"]
+  3.811073445545487*^9, 3.811073456939896*^9}, {3.81123998391543*^9, 
+  3.8112399843970757`*^9}},
+ CellLabel->"In[59]:=",ExpressionUUID->"d0b7fbf3-0503-454c-8c76-76887497e2c9"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -774,8 +770,7 @@ Cell[BoxData[
   3.811217341790864*^9}, {3.811217563096085*^9, 3.811217597880991*^9}, {
   3.8112182590756903`*^9, 3.811218356258943*^9}, {3.811219155388445*^9, 
   3.8112191558911867`*^9}},
- CellLabel->
-  "In[187]:=",ExpressionUUID->"46b16eff-a4dd-41e5-a37a-69c8c219cb23"]
+ CellLabel->"In[60]:=",ExpressionUUID->"46b16eff-a4dd-41e5-a37a-69c8c219cb23"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -794,13 +789,12 @@ Cell[BoxData[
  CellChangeTimes->{{3.811218230168676*^9, 3.8112182435531273`*^9}, {
   3.811218367815439*^9, 3.811218397411769*^9}, {3.8112184695807257`*^9, 
   3.811218471674098*^9}, {3.811219103794834*^9, 3.81121910455766*^9}},
- CellLabel->
-  "In[188]:=",ExpressionUUID->"c7952b78-5b7b-4ee2-8f92-ee025f642d82"],
+ CellLabel->"In[61]:=",ExpressionUUID->"c7952b78-5b7b-4ee2-8f92-ee025f642d82"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- StyleBox["\<\"8.5  0.412191  4.15425  0.255051  0.1966\"\>",
+ StyleBox["\<\"8.5  0.416351  4.52363  0.254009  0.1966\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -814,13 +808,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365319004*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987225635*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"46aa2d70-e9c0-4739-b61a-b820dbdfb023"],
+In[61]:=",ExpressionUUID->"c16d7407-deb6-4957-9500-16ff65f39b55"],
 
 Cell[BoxData[
- StyleBox["\<\"10.5  0.459744  4.20762  0.561724  0.4597\"\>",
+ StyleBox["\<\"10.5  0.465138  4.57381  0.559706  0.4597\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -834,13 +829,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365321048*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.8112399872271147`*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"1a3b896a-ec33-4efc-a7f7-01551abb2a9f"],
+In[61]:=",ExpressionUUID->"f30c3c9e-0582-40dd-96fc-195465ba7682"],
 
 Cell[BoxData[
- StyleBox["\<\"12.5  0.502969  4.26078  0.920924  0.7746\"\>",
+ StyleBox["\<\"12.5  0.509647  4.62385  0.917985  0.7746\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -854,13 +850,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365322541*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.8112399872321568`*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"5581211e-e7fb-4563-8f5f-2ede2573e8aa"],
+In[61]:=",ExpressionUUID->"35f34ec8-acbe-4d0c-80c7-6892799b7616"],
 
 Cell[BoxData[
- StyleBox["\<\"14.5  0.542958  4.31373  1.3332  1.1609\"\>",
+ StyleBox["\<\"14.5  0.550952  4.67375  1.32939  1.1609\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -874,13 +871,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365323544*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.8112399872329483`*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"cfc21a5f-3252-4948-a417-84404dd977cd"],
+In[61]:=",ExpressionUUID->"9cd65477-2a39-4484-b201-09aa69a5b48e"],
 
 Cell[BoxData[
- StyleBox["\<\"16.5  0.580429  4.36648  1.7989  1.6112\"\>",
+ StyleBox["\<\"16.5  0.589761  4.7235  1.79426  1.6112\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -894,13 +892,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.8112233653245897`*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987233889*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"ac145b70-1f3d-4871-b852-0086696d3d51"],
+In[61]:=",ExpressionUUID->"a79b4087-c7ae-4861-8c1d-ae6536624fc8"],
 
 Cell[BoxData[
- StyleBox["\<\"18.5  0.615884  4.41903  2.31829  2.1265\"\>",
+ StyleBox["\<\"18.5  0.626566  4.7731  2.31286  2.1265\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -914,13 +913,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365325622*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987234665*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"7fe83cf7-8303-45a1-8e90-938b139c8b0c"],
+In[61]:=",ExpressionUUID->"748b9a2f-cb41-48c4-bbd9-e91bea121062"],
 
 Cell[BoxData[
- StyleBox["\<\"20.5  0.649691  4.47137  2.89155  2.7051\"\>",
+ StyleBox["\<\"20.5  0.66173  4.82257  2.88535  2.7051\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -934,13 +934,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.8112233653265743`*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987235712*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"d200a9f1-8d5f-4198-8567-e919ada39ccd"],
+In[61]:=",ExpressionUUID->"c3f4eaf1-3766-43e2-8ebf-a9d7319e5e93"],
 
 Cell[BoxData[
- StyleBox["\<\"22.5  0.682129  4.52351  3.51882  3.3441\"\>",
+ StyleBox["\<\"22.5  0.695523  4.87189  3.51189  3.3441\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -954,13 +955,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365327635*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987236981*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"8c4b28a0-3e6e-469c-8414-24b09e0a10dc"],
+In[61]:=",ExpressionUUID->"d4867608-5815-4391-bf82-58b8a4ad8bb7"],
 
 Cell[BoxData[
- StyleBox["\<\"24.5  0.713414  4.57545  4.2002  4.0411\"\>",
+ StyleBox["\<\"24.5  0.728157  4.92107  4.19257  4.0411\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -974,13 +976,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.8112233653290653`*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987238084*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"1fd2c33d-b469-46ed-a0e0-aecc154b87fe"],
+In[61]:=",ExpressionUUID->"d2c8535f-a90e-4817-a9eb-a90834fe1efd"],
 
 Cell[BoxData[
- StyleBox["\<\"26.5  0.743718  4.6272  4.9358  4.7937\"\>",
+ StyleBox["\<\"26.5  0.759802  4.97011  4.92748  4.7937\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -994,13 +997,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.81122336533005*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.8112399872394114`*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"90093d25-386c-4cdf-b68a-a4691c675647"],
+In[61]:=",ExpressionUUID->"8735e06d-2cf4-4e91-adbd-c6d73c129f37"],
 
 Cell[BoxData[
- StyleBox["\<\"28.5  0.773181  4.67875  5.72567  5.5992\"\>",
+ StyleBox["\<\"28.5  0.790593  5.01901  5.71669  5.5992\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1014,13 +1018,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365331049*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987240593*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"ed37a26c-2965-40d1-bc76-6851428c21dc"],
+In[61]:=",ExpressionUUID->"9a1bea82-4af9-4c92-9df0-6bc8487cbced"],
 
 Cell[BoxData[
- StyleBox["\<\"30.5  0.801918  4.73011  6.56987  6.457\"\>",
+ StyleBox["\<\"30.5  0.820642  5.06778  6.56025  6.457\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1034,13 +1039,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365331992*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987241583*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"e057d002-756a-4867-9b2f-c58cfab5f766"],
+In[61]:=",ExpressionUUID->"09a43587-c860-404c-8219-cca288088f78"],
 
 Cell[BoxData[
- StyleBox["\<\"32.5  0.830022  4.78128  7.46846  7.3667\"\>",
+ StyleBox["\<\"32.5  0.850041  5.11641  7.45822  7.3667\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1054,13 +1060,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365332996*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.81123998724261*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"7ad70bfe-2fef-4c60-b592-d58669a27358"],
+In[61]:=",ExpressionUUID->"afce5d44-590e-4983-8cbe-11907781e810"],
 
 Cell[BoxData[
- StyleBox["\<\"34.5  0.857574  4.83227  8.42147  8.3293\"\>",
+ StyleBox["\<\"34.5  0.87887  5.16491  8.41063  8.3293\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1074,13 +1081,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365365429*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.81123998724356*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"d0e63ec2-2844-4dd0-a51a-776283387c42"],
+In[61]:=",ExpressionUUID->"97cad73b-ec47-4c8a-85da-687347b07f64"],
 
 Cell[BoxData[
- StyleBox["\<\"36.5  0.884642  4.88307  9.42895  9.3458\"\>",
+ StyleBox["\<\"36.5  0.907194  5.21328  9.41752  9.3458\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1094,13 +1102,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365366596*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987244443*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"6598e858-23ec-4cb2-afbc-57254c21cf48"],
+In[61]:=",ExpressionUUID->"b67c4012-a6de-4bbf-bbbe-d190b3e27b53"],
 
 Cell[BoxData[
- StyleBox["\<\"38.5  0.911283  4.9337  10.4909  10.4169\"\>",
+ StyleBox["\<\"38.5  0.935071  5.26151  10.4789  10.4169\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1114,13 +1123,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365367446*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987245309*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"3366c59e-6edb-4708-8506-a8c499782bf1"],
+In[61]:=",ExpressionUUID->"4fd93932-364e-41a8-bd3a-45adffc74097"],
 
 Cell[BoxData[
- StyleBox["\<\"40.5  0.937547  4.98415  11.6074  11.5431\"\>",
+ StyleBox["\<\"40.5  0.962549  5.30962  11.5948  11.5431\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1134,13 +1144,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.8112233653682947`*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.8112399872462177`*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"2091362f-64ad-4cf5-abdb-b1c8a35808ca"],
+In[61]:=",ExpressionUUID->"94978f34-1c6f-46ff-be0b-e358e7fe56ea"],
 
 Cell[BoxData[
- StyleBox["\<\"42.5  0.963478  5.03442  12.7784  12.7224\"\>",
+ StyleBox["\<\"42.5  0.989671  5.3576  12.7653  12.7224\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1154,13 +1165,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365369145*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987247403*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"35286d88-3dce-47ad-aa9b-1d1161e03547"],
+In[61]:=",ExpressionUUID->"9b75a874-8b4b-435e-bd10-11920f482896"],
 
 Cell[BoxData[
- StyleBox["\<\"44.5  0.989112  5.08452  14.004  13.9491\"\>",
+ StyleBox["\<\"44.5  1.01647  5.40546  13.9904  13.9491\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1174,13 +1186,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365370038*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987248438*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"b80f1c2d-266e-4885-8cc6-e70e885ca07c"],
+In[61]:=",ExpressionUUID->"0befe812-5a30-446c-b129-883124bede09"],
 
 Cell[BoxData[
- StyleBox["\<\"46.5  1.01448  5.13446  15.2842  15.2181\"\>",
+ StyleBox["\<\"46.5  1.04299  5.4532  15.27  15.2181\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1194,13 +1207,14 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365370948*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.811239987249449*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"9f6d4e08-9a16-42bf-a3a8-7f1450b25eb0"],
+In[61]:=",ExpressionUUID->"55668b8a-fcb9-499a-9598-e5297ad180e8"],
 
 Cell[BoxData[
- StyleBox["\<\"48.5  1.03962  5.18423  16.6189  16.5221\"\>",
+ StyleBox["\<\"48.5  1.06925  5.50081  16.6042  16.5221\"\>",
   StripOnInput->False,
   LineColor->GrayLevel[0],
   FrontFaceColor->GrayLevel[0],
@@ -1214,10 +1228,11 @@ Cell[BoxData[
    3.81121847222183*^9, 3.811219105317395*^9, {3.811219150677445*^9, 
    3.8112191590313597`*^9}, 3.811219756897849*^9, 3.811219850075863*^9, {
    3.811220352614366*^9, 3.811220382352791*^9}, 3.811221648420871*^9, {
-   3.8112233462868567`*^9, 3.811223365371904*^9}},
+   3.8112233462868567`*^9, 3.811223365319004*^9}, {3.811239963752219*^9, 
+   3.8112399872503357`*^9}},
  CellLabel->
   "During evaluation of \
-In[188]:=",ExpressionUUID->"2f2aaaf1-d2f6-4a41-bd38-6d9190f8adea"]
+In[61]:=",ExpressionUUID->"c779c173-e515-4e73-833d-72d75f002720"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1357,8 +1372,7 @@ Cell[BoxData[{
   3.8112198769518347`*^9}, {3.811219953127377*^9, 3.8112199540057592`*^9}, {
   3.811220177898775*^9, 3.81122029451658*^9}, {3.8112203290885468`*^9, 
   3.811220330009677*^9}, {3.811220376166999*^9, 3.81122037941783*^9}},
- CellLabel->
-  "In[189]:=",ExpressionUUID->"2cafc57d-4b47-493a-a2ba-0bef417fff70"]
+ CellLabel->"In[62]:=",ExpressionUUID->"2cafc57d-4b47-493a-a2ba-0bef417fff70"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1389,8 +1403,7 @@ Resources/Output_Data/Unified_Model/\>\"", ",",
   3.8112224578710423`*^9}, {3.811222608748802*^9, 3.811222662942791*^9}, {
   3.811222695296966*^9, 3.811222706817553*^9}, {3.8112228532175913`*^9, 
   3.811222860137545*^9}},
- CellLabel->
-  "In[193]:=",ExpressionUUID->"8a12fd1e-b11d-4038-8d45-0b8fe0d1859b"]
+ CellLabel->"In[66]:=",ExpressionUUID->"8a12fd1e-b11d-4038-8d45-0b8fe0d1859b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1414,8 +1427,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.811219996061027*^9, 3.811219996654778*^9}, {
   3.8112221314504642`*^9, 3.811222185973431*^9}, {3.811223009227066*^9, 
   3.811223036483341*^9}},
- CellLabel->
-  "In[194]:=",ExpressionUUID->"c6cde9f7-0585-4ba8-bbe9-56e7812bbf0f"],
+ CellLabel->"In[67]:=",ExpressionUUID->"c6cde9f7-0585-4ba8-bbe9-56e7812bbf0f"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -1479,7 +1491,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.4121907917436876`",
+     StyleBox["0.4163509646741988`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1487,7 +1499,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.154245662083838`",
+     StyleBox["4.5236285073202405`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1495,7 +1507,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["0.25505068562105127`",
+     StyleBox["0.25400896863873257`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1522,7 +1534,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.4597435844286884`",
+     StyleBox["0.46513816497894855`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1530,7 +1542,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.207616097998661`",
+     StyleBox["4.573812444308298`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1538,7 +1550,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["0.5617236885860173`",
+     StyleBox["0.5597059259501922`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1565,7 +1577,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.5029690629866046`",
+     StyleBox["0.5096465240421968`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1573,7 +1585,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.260778740665268`",
+     StyleBox["4.623851407734772`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1581,7 +1593,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["0.9209236584112785`",
+     StyleBox["0.9179854964080523`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1608,7 +1620,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.5429580533808528`",
+     StyleBox["0.5509518542342148`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1616,7 +1628,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.313734195915098`",
+     StyleBox["4.6737456016016194`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1624,7 +1636,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["1.3331963109942633`",
+     StyleBox["1.3293856881984318`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1651,7 +1663,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.5804287648953725`",
+     StyleBox["0.5897607084069576`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1659,7 +1671,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.366483511588916`",
+     StyleBox["4.723495476523204`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1667,7 +1679,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["1.7989012748973234`",
+     StyleBox["1.794260003054486`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1694,7 +1706,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.615883801952242`",
+     StyleBox["0.6265664762443418`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1702,7 +1714,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.419028110319269`",
+     StyleBox["4.773101697884678`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1710,7 +1722,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["2.3182905636477704`",
+     StyleBox["2.3128554685107505`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1737,7 +1749,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.6496909707962413`",
+     StyleBox["0.6617295929221562`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1745,7 +1757,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.471369730945301`",
+     StyleBox["4.822565117526842`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1753,7 +1765,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["2.8915489497875666`",
+     StyleBox["2.8853527280755205`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1780,7 +1792,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.6821287752212589`",
+     StyleBox["0.6955226216648835`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1788,7 +1800,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.523510377489797`",
+     StyleBox["4.871886748577654`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1796,7 +1808,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["3.51881668722505`",
+     StyleBox["3.511888569925017`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1823,7 +1835,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7134138332085209`",
+     StyleBox["0.7281573725886061`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1831,7 +1843,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.57545227475601`",
+     StyleBox["4.921067743090242`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1839,7 +1851,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.20020319735246`",
+     StyleBox["4.192569475143843`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1866,7 +1878,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7437183050338314`",
+     StyleBox["0.7598021090025812`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1874,7 +1886,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.627197829715853`",
+     StyleBox["4.970109372183244`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1882,7 +1894,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.935795763793653`",
+     StyleBox["4.927480210945949`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1909,7 +1921,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7731814603101852`",
+     StyleBox["0.7905929448955094`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1917,7 +1929,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.6787495979624865`",
+     StyleBox["5.019013008411689`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1925,7 +1937,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.725665299151708`",
+     StyleBox["5.716689520603197`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1952,7 +1964,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.801917633364112`",
+     StyleBox["0.820641667964105`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1960,7 +1972,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.730110254590162`",
+     StyleBox["5.067780110125832`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -1968,7 +1980,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["6.569870308137016`",
+     StyleBox["6.560254027139073`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -1995,7 +2007,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.830021860749233`",
+     StyleBox["0.850041272056579`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2003,7 +2015,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.781282568943321`",
+     StyleBox["5.116412207601503`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2011,7 +2023,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["7.468459693698608`",
+     StyleBox["7.458220992615598`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2038,7 +2050,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8575739792814322`",
+     StyleBox["0.8788699706262684`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2046,7 +2058,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.832269382746743`",
+     StyleBox["5.164910890749012`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2054,7 +2066,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["8.421474795106816`",
+     StyleBox["8.410630318714595`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2081,7 +2093,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8846416710808105`",
+     StyleBox["0.907194172899152`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2089,7 +2101,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.883073591189734`",
+     StyleBox["5.2132777982285825`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2097,7 +2109,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["9.428950901016345`",
+     StyleBox["9.417516029379165`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2124,7 +2136,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9112827697923703`",
+     StyleBox["0.9350707334723981`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2132,7 +2144,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.933698126591011`",
+     StyleBox["5.261514607819053`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2140,7 +2152,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["10.49091839440905`",
+     StyleBox["10.47890739079731`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2167,7 +2179,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9375470367367568`",
+     StyleBox["0.9625486815428675`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2175,7 +2187,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.984145944317927`",
+     StyleBox["5.309623027903242`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2183,7 +2195,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["11.607403633628934`",
+     StyleBox["11.594829771758873`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2210,7 +2222,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9634775492060537`",
+     StyleBox["0.9896705700580022`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2218,7 +2230,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.034420010674813`",
+     StyleBox["5.357604789948354`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2226,7 +2238,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["12.778429640474204`",
+     StyleBox["12.765305314471176`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2253,7 +2265,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9891117999586534`",
+     StyleBox["1.0164735423700058`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2261,7 +2273,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.084523292511086`",
+     StyleBox["5.405461641872985`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2269,7 +2281,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["14.004016644748765`",
+     StyleBox["13.990353464569615`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2296,7 +2308,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["1.014482578280331`",
+     StyleBox["1.0429901856148447`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2304,7 +2316,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.134458748331203`",
+     StyleBox["5.453195342204167`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2312,7 +2324,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["15.28418252034773`",
+     StyleBox["15.269991394885695`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2339,7 +2351,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["1.0396186834932881`",
+     StyleBox["1.0692492207949875`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2347,7 +2359,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.184229320715904`",
+     StyleBox["5.500807654938399`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2355,7 +2367,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["16.618943138222576`",
+     StyleBox["16.604234347918897`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2382,9 +2394,8 @@ Cell[BoxData[
   3.8112199632121058`*^9, 3.81121999705341*^9, {3.811220352731428*^9, 
    3.811220382453886*^9}, 3.8112216485427923`*^9, 3.811222186762615*^9, {
    3.811223027537984*^9, 3.811223037273815*^9}, {3.811223346388166*^9, 
-   3.811223365444756*^9}},
- CellLabel->
-  "Out[194]=",ExpressionUUID->"26137471-dfd6-430e-9ea7-566755c08ead"]
+   3.811223365444756*^9}, {3.811239963927476*^9, 3.811239987343956*^9}},
+ CellLabel->"Out[67]=",ExpressionUUID->"368a2455-0f0b-49f1-9be0-ee06cbbfaa16"]
 }, Open  ]]
 }, Open  ]],
 
@@ -2409,8 +2420,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.81122000387752*^9, 3.811220006959177*^9}, {
   3.811223044201954*^9, 3.811223044314385*^9}, {3.8112233048588123`*^9, 
   3.8112233075468397`*^9}, {3.8112233595470743`*^9, 3.811223359725094*^9}},
- CellLabel->
-  "In[196]:=",ExpressionUUID->"463b6f46-e4b2-4a93-922d-4197e38d2b47"],
+ CellLabel->"In[69]:=",ExpressionUUID->"463b6f46-e4b2-4a93-922d-4197e38d2b47"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -2474,7 +2484,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.5233168644771784`",
+     StyleBox["0.5306491074964459`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2482,7 +2492,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.28728231075417`",
+     StyleBox["4.648816578088382`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2490,7 +2500,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["1.1204002440129974`",
+     StyleBox["1.1170202731239627`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2517,7 +2527,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.5619729094097909`",
+     StyleBox["0.5706336812423949`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2525,7 +2535,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.340134540342717`",
+     StyleBox["4.698638542029623`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2533,7 +2543,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["1.5593520713084947`",
+     StyleBox["1.5551212320024757`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2560,7 +2570,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.5983827449828947`",
+     StyleBox["0.6083889787406882`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2568,7 +2578,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.392781298673251`",
+     StyleBox["4.748316494719521`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2576,7 +2586,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["2.0518725788431755`",
+     StyleBox["2.0468300676794335`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2603,7 +2613,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.632974254314989`",
+     StyleBox["0.6443346512701451`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2611,7 +2621,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.445224173308607`",
+     StyleBox["4.7978511981053655`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2619,7 +2629,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["2.598176501957711`",
+     StyleBox["2.592356986767894`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2646,7 +2656,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.666066294704904`",
+     StyleBox["0.6787829435680383`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2654,7 +2664,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.497465041623196`",
+     StyleBox["4.847243587634652`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2662,7 +2672,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["3.198424207988716`",
+     StyleBox["3.1918585793602365`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2689,7 +2699,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.6979037528530698`",
+     StyleBox["0.7119733998986356`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2697,7 +2707,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.549506023200307`",
+     StyleBox["4.896494748530048`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2705,7 +2715,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["3.8527392000780525`",
+     StyleBox["3.8454551601999323`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2732,7 +2742,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7286792741552571`",
+     StyleBox["0.7440943372706319`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2740,7 +2750,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.601349438421539`",
+     StyleBox["4.94560589471447`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2748,7 +2758,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.561218961114407`",
+     StyleBox["4.553241494752785`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2775,7 +2785,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7585473920089397`",
+     StyleBox["0.7752967813748605`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2783,7 +2793,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.6529977724721965`",
+     StyleBox["4.99457835009878`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2791,7 +2801,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.323942000389167`",
+     StyleBox["5.315293757819644`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2818,7 +2828,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7876340816607904`",
+     StyleBox["0.8057038709806452`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2826,7 +2836,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.704453644081963`",
+     StyleBox["5.043413531975262`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2834,7 +2844,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["6.14097261489051`",
+     StyleBox["6.131674227431311`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2861,7 +2871,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8160434341395127`",
+     StyleBox["0.8354174141708659`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2869,7 +2879,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.755719778404542`",
+     StyleBox["5.092112936287737`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2877,7 +2887,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["7.012364212709639`",
+     StyleBox["7.002434555601139`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2904,7 +2914,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8438624486506201`",
+     StyleBox["0.864522586614085`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2912,7 +2922,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.806798983514307`",
+     StyleBox["5.140678124573953`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2920,7 +2930,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["7.9381616974865015`",
+     StyleBox["7.927618110932283`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2947,7 +2957,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8711645560957013`",
+     StyleBox["0.8930913788583208`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2955,7 +2965,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.857694130063313`",
+     StyleBox["5.189110712398033`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2963,7 +2973,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["8.918403219997915`",
+     StyleBox["8.90726169648081`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -2990,7 +3000,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8980122631792281`",
+     StyleBox["0.9211851780572048`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -2998,7 +3008,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.908408133699425`",
+     StyleBox["5.23741235911061`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3006,7 +3016,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["9.953121491420049`",
+     StyleBox["9.941396835498855`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3033,7 +3043,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9244591723460885`",
+     StyleBox["0.9488567364099334`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3041,7 +3051,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.958943939896465`",
+     StyleBox["5.28558475879196`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3049,7 +3059,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["11.04234478571226`",
+     StyleBox["11.030050751126154`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3076,7 +3086,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9505515493461453`",
+     StyleBox["0.9761516959010519`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3084,7 +3094,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.0093045108912895`",
+     StyleBox["5.333629632249241`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3092,7 +3102,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["12.186097716867906`",
+     StyleBox["12.17324712475856`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3119,7 +3129,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9763295568053137`",
+     StyleBox["1.0031097860400722`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3127,7 +3137,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.059492814461127`",
+     StyleBox["5.381548719952962`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3135,7 +3145,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["13.384401850088562`",
+     StyleBox["13.371006691386084`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3162,7 +3172,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["1.0018282370960494`",
+     StyleBox["1.0297657765969552`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3170,7 +3180,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.109511814308044`",
+     StyleBox["5.429343775810407`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3178,7 +3188,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["14.63727618841148`",
+     StyleBox["14.623347712847341`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3203,9 +3213,9 @@ Cell[BoxData[
   "Grid"]], "Output",
  CellChangeTimes->{
   3.811220007570026*^9, {3.811220352779023*^9, 3.811220382500925*^9}, 
-   3.81122164859121*^9, {3.811223346555283*^9, 3.8112233656094522`*^9}},
- CellLabel->
-  "Out[196]=",ExpressionUUID->"b171426c-b244-46a1-b408-d174da0a3cb9"]
+   3.81122164859121*^9, {3.811223346555283*^9, 3.8112233656094522`*^9}, {
+   3.811239964634598*^9, 3.811239987527783*^9}},
+ CellLabel->"Out[69]=",ExpressionUUID->"abd1e8e9-fc04-40b1-8136-196ae48c5a39"]
 }, Open  ]]
 }, Open  ]],
 
@@ -3230,8 +3240,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.811220053682848*^9, 3.8112200554144793`*^9}, {
   3.8112230467797813`*^9, 3.811223046878941*^9}, {3.811223314825988*^9, 
   3.811223317807613*^9}, {3.8112233565880547`*^9, 3.811223356788828*^9}},
- CellLabel->
-  "In[198]:=",ExpressionUUID->"5e0ea983-34a2-45c8-a4f6-5eec561dc0d6"],
+ CellLabel->"In[71]:=",ExpressionUUID->"5e0ea983-34a2-45c8-a4f6-5eec561dc0d6"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -3295,7 +3304,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.5804287648953725`",
+     StyleBox["0.5897607084069576`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3303,7 +3312,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.366483511588916`",
+     StyleBox["4.723495476523204`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3311,7 +3320,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["2.1213249807182857`",
+     StyleBox["2.12575491324487`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3338,7 +3347,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.615883801952242`",
+     StyleBox["0.6265664762443418`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3346,7 +3355,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.419028110319269`",
+     StyleBox["4.773101697884678`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3354,7 +3363,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["2.6502553238260704`",
+     StyleBox["2.6552190464201217`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3381,7 +3390,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.6496909707962413`",
+     StyleBox["0.6617295929221562`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3389,7 +3398,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.471369730945301`",
+     StyleBox["4.822565117526842`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3397,7 +3406,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["3.2311507562726995`",
+     StyleBox["3.2366916380380384`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3424,7 +3433,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.6821287752212589`",
+     StyleBox["0.6955226216648835`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3432,7 +3441,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.523510377489797`",
+     StyleBox["4.871886748577654`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3440,7 +3449,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["3.86449050269362`",
+     StyleBox["3.8706415229282745`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3467,7 +3476,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7134138332085209`",
+     StyleBox["0.7281573725886061`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3475,7 +3484,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.57545227475601`",
+     StyleBox["4.921067743090242`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3483,7 +3492,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.550642952931122`",
+     StyleBox["4.557428560098568`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3510,7 +3519,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7437183050338314`",
+     StyleBox["0.7598021090025812`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3518,7 +3527,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.627197829715853`",
+     StyleBox["4.970109372183244`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3526,7 +3535,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.289898235269664`",
+     StyleBox["5.297335832023418`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3553,7 +3562,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7731814603101852`",
+     StyleBox["0.7905929448955094`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3561,7 +3570,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.6787495979624865`",
+     StyleBox["5.019013008411689`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3569,7 +3578,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["6.082489392398106`",
+     StyleBox["6.090590539194505`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3596,7 +3605,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.801917633364112`",
+     StyleBox["0.820641667964105`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3604,7 +3613,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.730110254590162`",
+     StyleBox["5.067780110125832`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3612,7 +3621,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["6.9286066965513`",
+     StyleBox["6.937378098411957`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3639,7 +3648,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.830021860749233`",
+     StyleBox["0.850041272056579`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3647,7 +3656,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.781282568943321`",
+     StyleBox["5.116412207601503`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3655,7 +3664,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["7.828407646849152`",
+     StyleBox["7.8378519697720055`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3682,7 +3691,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8575739792814322`",
+     StyleBox["0.8788699706262684`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3690,7 +3699,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.832269382746743`",
+     StyleBox["5.164910890749012`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3698,7 +3707,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["8.782024146137122`",
+     StyleBox["8.792140697546367`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3725,7 +3734,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8846416710808105`",
+     StyleBox["0.907194172899152`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3733,7 +3742,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.883073591189734`",
+     StyleBox["5.2132777982285825`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3741,7 +3750,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["9.789567776093616`",
+     StyleBox["9.800353075339132`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3768,7 +3777,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9112827697923703`",
+     StyleBox["0.9350707334723981`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3776,7 +3785,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.933698126591011`",
+     StyleBox["5.261514607819053`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3784,7 +3793,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["10.851133754599276`",
+     StyleBox["10.86258201355606`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3811,7 +3820,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9375470367367568`",
+     StyleBox["0.9625486815428675`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3819,7 +3828,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.984145944317927`",
+     StyleBox["5.309623027903242`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3827,7 +3836,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["11.966803958058348`",
+     StyleBox["11.978907487536087`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3854,7 +3863,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9634775492060537`",
+     StyleBox["0.9896705700580022`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3862,7 +3871,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.034420010674813`",
+     StyleBox["5.357604789948354`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3870,7 +3879,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["13.13664926621405`",
+     StyleBox["13.149398820659613`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -3895,9 +3904,9 @@ Cell[BoxData[
   "Grid"]], "Output",
  CellChangeTimes->{
   3.81122005606221*^9, {3.811220352831955*^9, 3.811220382549861*^9}, 
-   3.811221648639168*^9, {3.811223346696857*^9, 3.811223365771999*^9}},
- CellLabel->
-  "Out[198]=",ExpressionUUID->"f7e970b6-f30f-4c3c-a7e3-bef010202b79"]
+   3.811221648639168*^9, {3.811223346696857*^9, 3.811223365771999*^9}, {
+   3.811239964866919*^9, 3.811239987718313*^9}},
+ CellLabel->"Out[71]=",ExpressionUUID->"1effd5d7-c4ca-4a20-b764-ef05497c96f1"]
 }, Open  ]]
 }, Open  ]],
 
@@ -3924,8 +3933,7 @@ Cell[BoxData[{
    3.811220559308228*^9, 3.811220569466448*^9}, 3.811220992276002*^9, {
    3.8112213473224583`*^9, 3.811221347568179*^9}, {3.811223049152779*^9, 
    3.811223049274967*^9}, {3.811223328146652*^9, 3.811223354639861*^9}},
- CellLabel->
-  "In[200]:=",ExpressionUUID->"d9cc7dae-6414-4499-b5d2-fd765ea96c19"],
+ CellLabel->"In[73]:=",ExpressionUUID->"d9cc7dae-6414-4499-b5d2-fd765ea96c19"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -3989,7 +3997,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.6979037528530698`",
+     StyleBox["0.7119733998986356`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -3997,7 +4005,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.549506023200307`",
+     StyleBox["4.896494748530048`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4005,7 +4013,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["3.9627392000780524`",
+     StyleBox["3.955455160199932`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4032,7 +4040,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7286792741552571`",
+     StyleBox["0.7440943372706319`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4040,7 +4048,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.601349438421539`",
+     StyleBox["4.94560589471447`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4048,7 +4056,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.671218961114407`",
+     StyleBox["4.663241494752786`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4075,7 +4083,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7585473920089397`",
+     StyleBox["0.7752967813748605`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4083,7 +4091,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.6529977724721965`",
+     StyleBox["4.99457835009878`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4091,7 +4099,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.433942000389167`",
+     StyleBox["5.425293757819644`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4118,7 +4126,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7876340816607904`",
+     StyleBox["0.8057038709806452`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4126,7 +4134,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.704453644081963`",
+     StyleBox["5.043413531975262`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4134,7 +4142,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["6.25097261489051`",
+     StyleBox["6.241674227431312`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4161,7 +4169,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8160434341395127`",
+     StyleBox["0.8354174141708659`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4169,7 +4177,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.755719778404542`",
+     StyleBox["5.092112936287737`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4177,7 +4185,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["7.122364212709639`",
+     StyleBox["7.11243455560114`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4204,7 +4212,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8438624486506201`",
+     StyleBox["0.864522586614085`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4212,7 +4220,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.806798983514307`",
+     StyleBox["5.140678124573953`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4220,7 +4228,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["8.048161697486501`",
+     StyleBox["8.037618110932282`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4247,7 +4255,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8711645560957013`",
+     StyleBox["0.8930913788583208`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4255,7 +4263,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.857694130063313`",
+     StyleBox["5.189110712398033`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4263,7 +4271,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["9.028403219997914`",
+     StyleBox["9.017261696480809`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4290,7 +4298,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8980122631792281`",
+     StyleBox["0.9211851780572048`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4298,7 +4306,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.908408133699425`",
+     StyleBox["5.23741235911061`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4306,7 +4314,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["10.063121491420048`",
+     StyleBox["10.051396835498855`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4333,7 +4341,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9244591723460885`",
+     StyleBox["0.9488567364099334`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4341,7 +4349,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.958943939896465`",
+     StyleBox["5.28558475879196`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4349,7 +4357,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["11.152344785712259`",
+     StyleBox["11.140050751126154`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4376,7 +4384,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9505515493461453`",
+     StyleBox["0.9761516959010519`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4384,7 +4392,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.0093045108912895`",
+     StyleBox["5.333629632249241`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4392,7 +4400,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["12.296097716867905`",
+     StyleBox["12.28324712475856`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4419,9 +4427,8 @@ Cell[BoxData[
   3.811220095857786*^9, {3.811220352881361*^9, 3.811220382602647*^9}, {
    3.811220559805407*^9, 3.811220569707099*^9}, 3.8112209931380167`*^9, 
    3.811221348133902*^9, 3.811221648682519*^9, {3.811223346833379*^9, 
-   3.811223365923737*^9}},
- CellLabel->
-  "Out[200]=",ExpressionUUID->"27aa0c8a-f41d-4e1e-a358-b1dc719e0c7a"]
+   3.811223365923737*^9}, {3.8112399650681467`*^9, 3.81123998788721*^9}},
+ CellLabel->"Out[73]=",ExpressionUUID->"cc016323-bc35-4c30-97ac-9b15e654b55b"]
 }, Open  ]]
 }, Open  ]],
 
@@ -4447,8 +4454,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.811221407576867*^9, 3.8112214076442757`*^9}, {
   3.811221439721237*^9, 3.811221485261025*^9}, {3.811223051674531*^9, 
   3.8112230518070793`*^9}, {3.8112233399140778`*^9, 3.81122335238988*^9}},
- CellLabel->
-  "In[202]:=",ExpressionUUID->"042a3d3a-171f-4b4e-abde-d877a0b15d65"],
+ CellLabel->"In[75]:=",ExpressionUUID->"042a3d3a-171f-4b4e-abde-d877a0b15d65"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -4512,7 +4518,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.6979037528530698`",
+     StyleBox["0.7119733998986356`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4520,7 +4526,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.549506023200307`",
+     StyleBox["4.896494748530048`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4528,7 +4534,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.31094546244631`",
+     StyleBox["4.3174111915899`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4555,7 +4561,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7286792741552571`",
+     StyleBox["0.7440943372706319`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4563,7 +4569,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.601349438421539`",
+     StyleBox["4.94560589471447`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4571,7 +4577,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.02361703056098`",
+     StyleBox["5.03072684773245`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4598,7 +4604,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7585473920089397`",
+     StyleBox["0.7752967813748605`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4606,7 +4612,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.6529977724721965`",
+     StyleBox["4.99457835009878`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4614,7 +4620,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.789514068827485`",
+     StyleBox["5.79728231994853`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4641,7 +4647,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.7876340816607904`",
+     StyleBox["0.8057038709806452`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4649,7 +4655,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.704453644081963`",
+     StyleBox["5.043413531975262`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4657,7 +4663,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["6.608846759461893`",
+     StyleBox["6.617282465498707`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4684,7 +4690,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8160434341395127`",
+     StyleBox["0.8354174141708659`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4692,7 +4698,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.755719778404542`",
+     StyleBox["5.092112936287737`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4700,7 +4706,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["7.481787941501128`",
+     StyleBox["7.490895695103178`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4727,7 +4733,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8438624486506201`",
+     StyleBox["0.864522586614085`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4735,7 +4741,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.806798983514307`",
+     StyleBox["5.140678124573953`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4743,7 +4749,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["8.40848155444784`",
+     StyleBox["8.418262264672176`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4770,7 +4776,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8711645560957013`",
+     StyleBox["0.8930913788583208`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4778,7 +4784,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.857694130063313`",
+     StyleBox["5.189110712398033`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4786,7 +4792,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["9.389048774388247`",
+     StyleBox["9.399500289340862`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4813,7 +4819,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.8980122631792281`",
+     StyleBox["0.9211851780572048`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4821,7 +4827,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.908408133699425`",
+     StyleBox["5.23741235911061`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4829,7 +4835,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["10.423592572097153`",
+     StyleBox["10.434710202278316`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4856,7 +4862,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9244591723460885`",
+     StyleBox["0.9488567364099334`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4864,7 +4870,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["4.958943939896465`",
+     StyleBox["5.28558475879196`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4872,7 +4878,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["11.512201164201418`",
+     StyleBox["11.523978124269707`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4899,7 +4905,7 @@ Cell[BoxData[
       GraphicsColor->GrayLevel[0],
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
-     StyleBox["0.9505515493461453`",
+     StyleBox["0.9761516959010519`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4907,7 +4913,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["5.0093045108912895`",
+     StyleBox["5.333629632249241`",
       StripOnInput->False,
       LineColor->RGBColor[0, 0, 1],
       FrontFaceColor->RGBColor[0, 0, 1],
@@ -4915,7 +4921,7 @@ Cell[BoxData[
       GraphicsColor->RGBColor[0, 0, 1],
       FontWeight->Bold,
       FontColor->RGBColor[0, 0, 1]], 
-     StyleBox["12.65495067036569`",
+     StyleBox["12.66737845330174`",
       StripOnInput->False,
       LineColor->RGBColor[1, 0, 0],
       FrontFaceColor->RGBColor[1, 0, 0],
@@ -4940,9 +4946,9 @@ Cell[BoxData[
   "Grid"]], "Output",
  CellChangeTimes->{
   3.811221408558866*^9, {3.811221440239993*^9, 3.8112214862370167`*^9}, 
-   3.811221648724495*^9, {3.81122334696067*^9, 3.811223366061565*^9}},
- CellLabel->
-  "Out[202]=",ExpressionUUID->"9ff62d3b-c655-4444-b960-eaa2a367c5d6"]
+   3.811221648724495*^9, {3.81122334696067*^9, 3.811223366061565*^9}, {
+   3.81123996525476*^9, 3.811239988095154*^9}},
+ CellLabel->"Out[75]=",ExpressionUUID->"f72d9300-d039-4560-a168-3bb4adb412ad"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -4970,102 +4976,102 @@ Cell[CellGroupData[{
 Cell[980, 35, 312, 10, 55, "Chapter",ExpressionUUID->"f4a69c5e-ba00-4afe-9c3a-9394bc759a6c"],
 Cell[CellGroupData[{
 Cell[1317, 49, 164, 3, 59, "Section",ExpressionUUID->"f9a557b5-afa7-4cf3-b124-70a804eb2e3f"],
-Cell[1484, 54, 5180, 152, 130, "Input",ExpressionUUID->"50ec73dd-59df-47a2-a606-fa279221f400"]
+Cell[1484, 54, 5176, 151, 130, "Input",ExpressionUUID->"50ec73dd-59df-47a2-a606-fa279221f400"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6701, 211, 190, 3, 59, "Section",ExpressionUUID->"6d4e9496-7619-488b-bdbb-f03e6c8fd493"],
-Cell[6894, 216, 9331, 290, 392, "Input",ExpressionUUID->"4f3473c1-d025-4b18-9bcf-aaed36a996df"]
+Cell[6697, 210, 190, 3, 59, "Section",ExpressionUUID->"6d4e9496-7619-488b-bdbb-f03e6c8fd493"],
+Cell[6890, 215, 9327, 289, 392, "Input",ExpressionUUID->"4f3473c1-d025-4b18-9bcf-aaed36a996df"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16262, 511, 156, 3, 59, "Section",ExpressionUUID->"a67541f7-8f5a-4466-a1b4-bdf3d2622af4"],
-Cell[16421, 516, 1777, 48, 70, "Input",ExpressionUUID->"c07d6dec-6c46-45cc-ad75-e12cc44f16df"]
+Cell[16254, 509, 156, 3, 59, "Section",ExpressionUUID->"a67541f7-8f5a-4466-a1b4-bdf3d2622af4"],
+Cell[16413, 514, 1773, 47, 70, "Input",ExpressionUUID->"c07d6dec-6c46-45cc-ad75-e12cc44f16df"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18235, 569, 201, 3, 59, "Section",ExpressionUUID->"2a6915b7-3243-474d-a9d2-9eba170c4216"],
-Cell[18439, 574, 1758, 48, 70, "Input",ExpressionUUID->"0063e85d-846e-479f-8b8c-e223dd091106"]
+Cell[18223, 566, 201, 3, 59, "Section",ExpressionUUID->"2a6915b7-3243-474d-a9d2-9eba170c4216"],
+Cell[18427, 571, 1754, 47, 70, "Input",ExpressionUUID->"0063e85d-846e-479f-8b8c-e223dd091106"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[20234, 627, 186, 3, 59, "Section",ExpressionUUID->"f4e5a5ea-f22f-494b-b484-f17bbac537a0"],
-Cell[20423, 632, 1618, 44, 90, "Input",ExpressionUUID->"e52a6d7a-fdef-41cc-a537-2b81af14d972"]
+Cell[20218, 623, 186, 3, 59, "Section",ExpressionUUID->"f4e5a5ea-f22f-494b-b484-f17bbac537a0"],
+Cell[20407, 628, 1642, 44, 90, "Input",ExpressionUUID->"e52a6d7a-fdef-41cc-a537-2b81af14d972"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22078, 681, 212, 4, 59, "Section",ExpressionUUID->"97c9ea60-c605-4959-b347-c09da42dd48b"],
-Cell[22293, 687, 631, 19, 29, "Input",ExpressionUUID->"d0b7fbf3-0503-454c-8c76-76887497e2c9"]
+Cell[22086, 677, 212, 4, 59, "Section",ExpressionUUID->"97c9ea60-c605-4959-b347-c09da42dd48b"],
+Cell[22301, 683, 677, 19, 29, "Input",ExpressionUUID->"d0b7fbf3-0503-454c-8c76-76887497e2c9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22961, 711, 482, 13, 61, "Section",ExpressionUUID->"62c8b5ee-3980-419b-82fe-6d948d39b52d"],
-Cell[23446, 726, 2118, 51, 29, "Input",ExpressionUUID->"46b16eff-a4dd-41e5-a37a-69c8c219cb23"]
+Cell[23015, 707, 482, 13, 61, "Section",ExpressionUUID->"62c8b5ee-3980-419b-82fe-6d948d39b52d"],
+Cell[23500, 722, 2114, 50, 29, "Input",ExpressionUUID->"46b16eff-a4dd-41e5-a37a-69c8c219cb23"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25601, 782, 219, 4, 59, "Section",ExpressionUUID->"efc11418-cec1-4c4c-9965-061395c41477"],
+Cell[25651, 777, 219, 4, 59, "Section",ExpressionUUID->"efc11418-cec1-4c4c-9965-061395c41477"],
 Cell[CellGroupData[{
-Cell[25845, 790, 391, 7, 29, "Input",ExpressionUUID->"c7952b78-5b7b-4ee2-8f92-ee025f642d82"],
+Cell[25895, 785, 387, 6, 29, "Input",ExpressionUUID->"c7952b78-5b7b-4ee2-8f92-ee025f642d82"],
 Cell[CellGroupData[{
-Cell[26261, 801, 759, 18, 29, "Print",ExpressionUUID->"46aa2d70-e9c0-4739-b61a-b820dbdfb023"],
-Cell[27023, 821, 760, 18, 29, "Print",ExpressionUUID->"1a3b896a-ec33-4efc-a7f7-01551abb2a9f"],
-Cell[27786, 841, 760, 18, 29, "Print",ExpressionUUID->"5581211e-e7fb-4563-8f5f-2ede2573e8aa"],
-Cell[28549, 861, 758, 18, 29, "Print",ExpressionUUID->"cfc21a5f-3252-4948-a417-84404dd977cd"],
-Cell[29310, 881, 760, 18, 29, "Print",ExpressionUUID->"ac145b70-1f3d-4871-b852-0086696d3d51"],
-Cell[30073, 901, 759, 18, 29, "Print",ExpressionUUID->"7fe83cf7-8303-45a1-8e90-938b139c8b0c"],
-Cell[30835, 921, 761, 18, 29, "Print",ExpressionUUID->"d200a9f1-8d5f-4198-8567-e919ada39ccd"],
-Cell[31599, 941, 759, 18, 29, "Print",ExpressionUUID->"8c4b28a0-3e6e-469c-8414-24b09e0a10dc"],
-Cell[32361, 961, 760, 18, 29, "Print",ExpressionUUID->"1fd2c33d-b469-46ed-a0e0-aecc154b87fe"],
-Cell[33124, 981, 756, 18, 29, "Print",ExpressionUUID->"90093d25-386c-4cdf-b68a-a4691c675647"],
-Cell[33883, 1001, 759, 18, 29, "Print",ExpressionUUID->"ed37a26c-2965-40d1-bc76-6851428c21dc"],
-Cell[34645, 1021, 758, 18, 29, "Print",ExpressionUUID->"e057d002-756a-4867-9b2f-c58cfab5f766"],
-Cell[35406, 1041, 759, 18, 29, "Print",ExpressionUUID->"7ad70bfe-2fef-4c60-b592-d58669a27358"],
-Cell[36168, 1061, 759, 18, 29, "Print",ExpressionUUID->"d0e63ec2-2844-4dd0-a51a-776283387c42"],
-Cell[36930, 1081, 759, 18, 29, "Print",ExpressionUUID->"6598e858-23ec-4cb2-afbc-57254c21cf48"],
-Cell[37692, 1101, 759, 18, 29, "Print",ExpressionUUID->"3366c59e-6edb-4708-8506-a8c499782bf1"],
-Cell[38454, 1121, 762, 18, 29, "Print",ExpressionUUID->"2091362f-64ad-4cf5-abdb-b1c8a35808ca"],
-Cell[39219, 1141, 760, 18, 29, "Print",ExpressionUUID->"35286d88-3dce-47ad-aa9b-1d1161e03547"],
-Cell[39982, 1161, 759, 18, 29, "Print",ExpressionUUID->"b80f1c2d-266e-4885-8cc6-e70e885ca07c"],
-Cell[40744, 1181, 759, 18, 29, "Print",ExpressionUUID->"9f6d4e08-9a16-42bf-a3a8-7f1450b25eb0"],
-Cell[41506, 1201, 759, 18, 29, "Print",ExpressionUUID->"2f2aaaf1-d2f6-4a41-bd38-6d9190f8adea"]
+Cell[26307, 795, 808, 19, 29, "Print",ExpressionUUID->"c16d7407-deb6-4957-9500-16ff65f39b55"],
+Cell[27118, 816, 811, 19, 29, "Print",ExpressionUUID->"f30c3c9e-0582-40dd-96fc-195465ba7682"],
+Cell[27932, 837, 811, 19, 29, "Print",ExpressionUUID->"35f34ec8-acbe-4d0c-80c7-6892799b7616"],
+Cell[28746, 858, 810, 19, 29, "Print",ExpressionUUID->"9cd65477-2a39-4484-b201-09aa69a5b48e"],
+Cell[29559, 879, 807, 19, 29, "Print",ExpressionUUID->"a79b4087-c7ae-4861-8c1d-ae6536624fc8"],
+Cell[30369, 900, 807, 19, 29, "Print",ExpressionUUID->"748b9a2f-cb41-48c4-bbd9-e91bea121062"],
+Cell[31179, 921, 807, 19, 29, "Print",ExpressionUUID->"c3f4eaf1-3766-43e2-8ebf-a9d7319e5e93"],
+Cell[31989, 942, 808, 19, 29, "Print",ExpressionUUID->"d4867608-5815-4391-bf82-58b8a4ad8bb7"],
+Cell[32800, 963, 808, 19, 29, "Print",ExpressionUUID->"d2c8535f-a90e-4817-a9eb-a90834fe1efd"],
+Cell[33611, 984, 810, 19, 29, "Print",ExpressionUUID->"8735e06d-2cf4-4e91-adbd-c6d73c129f37"],
+Cell[34424, 1005, 808, 19, 29, "Print",ExpressionUUID->"9a1bea82-4af9-4c92-9df0-6bc8487cbced"],
+Cell[35235, 1026, 807, 19, 29, "Print",ExpressionUUID->"09a43587-c860-404c-8219-cca288088f78"],
+Cell[36045, 1047, 807, 19, 29, "Print",ExpressionUUID->"afce5d44-590e-4983-8cbe-11907781e810"],
+Cell[36855, 1068, 806, 19, 29, "Print",ExpressionUUID->"97cad73b-ec47-4c8a-85da-687347b07f64"],
+Cell[37664, 1089, 808, 19, 29, "Print",ExpressionUUID->"b67c4012-a6de-4bbf-bbbe-d190b3e27b53"],
+Cell[38475, 1110, 809, 19, 29, "Print",ExpressionUUID->"4fd93932-364e-41a8-bd3a-45adffc74097"],
+Cell[39287, 1131, 811, 19, 29, "Print",ExpressionUUID->"94978f34-1c6f-46ff-be0b-e358e7fe56ea"],
+Cell[40101, 1152, 808, 19, 29, "Print",ExpressionUUID->"9b75a874-8b4b-435e-bd10-11920f482896"],
+Cell[40912, 1173, 808, 19, 29, "Print",ExpressionUUID->"0befe812-5a30-446c-b129-883124bede09"],
+Cell[41723, 1194, 805, 19, 29, "Print",ExpressionUUID->"55668b8a-fcb9-499a-9598-e5297ad180e8"],
+Cell[42531, 1215, 810, 19, 29, "Print",ExpressionUUID->"c779c173-e515-4e73-833d-72d75f002720"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42326, 1226, 174, 3, 59, "Section",ExpressionUUID->"b77fbdf2-3397-47dd-ad39-37f4f0858c6e"],
-Cell[42503, 1231, 4823, 129, 132, "Input",ExpressionUUID->"2cafc57d-4b47-493a-a2ba-0bef417fff70"]
+Cell[43402, 1241, 174, 3, 59, "Section",ExpressionUUID->"b77fbdf2-3397-47dd-ad39-37f4f0858c6e"],
+Cell[43579, 1246, 4819, 128, 132, "Input",ExpressionUUID->"2cafc57d-4b47-493a-a2ba-0bef417fff70"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[47363, 1365, 190, 3, 59, "Section",ExpressionUUID->"449acd6a-8be1-4dd0-b10e-f0f94511e10b"],
-Cell[47556, 1370, 946, 22, 29, "Input",ExpressionUUID->"8a12fd1e-b11d-4038-8d45-0b8fe0d1859b"]
+Cell[48435, 1379, 190, 3, 59, "Section",ExpressionUUID->"449acd6a-8be1-4dd0-b10e-f0f94511e10b"],
+Cell[48628, 1384, 942, 21, 29, "Input",ExpressionUUID->"8a12fd1e-b11d-4038-8d45-0b8fe0d1859b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48539, 1397, 153, 3, 59, "Section",ExpressionUUID->"330362cf-6adb-463d-a508-6f97deebaaf7"],
+Cell[49607, 1410, 153, 3, 59, "Section",ExpressionUUID->"330362cf-6adb-463d-a508-6f97deebaaf7"],
 Cell[CellGroupData[{
-Cell[48717, 1404, 546, 13, 50, "Input",ExpressionUUID->"c6cde9f7-0585-4ba8-bbe9-56e7812bbf0f"],
-Cell[49266, 1419, 32114, 967, 621, "Output",ExpressionUUID->"26137471-dfd6-430e-9ea7-566755c08ead"]
+Cell[49785, 1417, 542, 12, 50, "Input",ExpressionUUID->"c6cde9f7-0585-4ba8-bbe9-56e7812bbf0f"],
+Cell[50330, 1431, 32163, 966, 621, "Output",ExpressionUUID->"368a2455-0f0b-49f1-9be0-ee06cbbfaa16"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[81429, 2392, 153, 3, 59, "Section",ExpressionUUID->"f44b738a-d6d2-47d9-a080-acfae0273b56"],
+Cell[82542, 2403, 153, 3, 59, "Section",ExpressionUUID->"f44b738a-d6d2-47d9-a080-acfae0273b56"],
 Cell[CellGroupData[{
-Cell[81607, 2399, 595, 13, 50, "Input",ExpressionUUID->"463b6f46-e4b2-4a93-922d-4197e38d2b47"],
-Cell[82205, 2414, 26339, 793, 513, "Output",ExpressionUUID->"b171426c-b244-46a1-b408-d174da0a3cb9"]
+Cell[82720, 2410, 591, 12, 50, "Input",ExpressionUUID->"463b6f46-e4b2-4a93-922d-4197e38d2b47"],
+Cell[83314, 2424, 26383, 793, 513, "Output",ExpressionUUID->"abd1e8e9-fc04-40b1-8136-196ae48c5a39"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[108593, 3213, 152, 3, 59, "Section",ExpressionUUID->"3974c5bc-f9d1-4d17-8a02-ae3de50fb3de"],
+Cell[109746, 3223, 152, 3, 59, "Section",ExpressionUUID->"3974c5bc-f9d1-4d17-8a02-ae3de50fb3de"],
 Cell[CellGroupData[{
-Cell[108770, 3220, 596, 13, 50, "Input",ExpressionUUID->"5e0ea983-34a2-45c8-a4f6-5eec561dc0d6"],
-Cell[109369, 3235, 22078, 664, 431, "Output",ExpressionUUID->"f7e970b6-f30f-4c3c-a7e3-bef010202b79"]
+Cell[109923, 3230, 592, 12, 50, "Input",ExpressionUUID->"5e0ea983-34a2-45c8-a4f6-5eec561dc0d6"],
+Cell[110518, 3244, 22128, 664, 431, "Output",ExpressionUUID->"1effd5d7-c4ca-4a20-b764-ef05497c96f1"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[131496, 3905, 203, 4, 59, "Section",ExpressionUUID->"bf5b1fed-80d9-4c8a-95ec-13ce878fef26"],
+Cell[132695, 3914, 203, 4, 59, "Section",ExpressionUUID->"bf5b1fed-80d9-4c8a-95ec-13ce878fef26"],
 Cell[CellGroupData[{
-Cell[131724, 3913, 668, 14, 50, "Input",ExpressionUUID->"d9cc7dae-6414-4499-b5d2-fd765ea96c19"],
-Cell[132395, 3929, 16513, 494, 323, "Output",ExpressionUUID->"27aa0c8a-f41d-4e1e-a358-b1dc719e0c7a"]
+Cell[132923, 3922, 664, 13, 50, "Input",ExpressionUUID->"d9cc7dae-6414-4499-b5d2-fd765ea96c19"],
+Cell[133590, 3937, 16547, 493, 323, "Output",ExpressionUUID->"cc016323-bc35-4c30-97ac-9b15e654b55b"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[148957, 4429, 249, 4, 59, "Section",ExpressionUUID->"e42a19aa-a85f-4034-bfdc-2ef048a72b76"],
+Cell[150186, 4436, 249, 4, 59, "Section",ExpressionUUID->"e42a19aa-a85f-4034-bfdc-2ef048a72b76"],
 Cell[CellGroupData[{
-Cell[149231, 4437, 597, 13, 50, "Input",ExpressionUUID->"042a3d3a-171f-4b4e-abde-d877a0b15d65"],
-Cell[149831, 4452, 16410, 492, 323, "Output",ExpressionUUID->"9ff62d3b-c655-4444-b960-eaa2a367c5d6"]
+Cell[150460, 4444, 593, 12, 50, "Input",ExpressionUUID->"042a3d3a-171f-4b4e-abde-d877a0b15d65"],
+Cell[151056, 4458, 16447, 492, 358, "Output",ExpressionUUID->"f72d9300-d039-4560-a168-3bb4adb412ad"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
