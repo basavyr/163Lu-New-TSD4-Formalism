@@ -138,12 +138,15 @@ public:
     //approach B1 (from the UNIFIED MODEL)
     //TSD4 is a 0-phonon excitation built on top of TSD1, being the chiral partner of TSD1
     //TSD4 is in fact a ground-state band
-    double TSD4(double I, double a1, double a2, double a3, double v, double gm)
+    double TSD4(double I, double a1, double a2, double a3, double v, double gm, double SHIFT)
     {
         double E_0 = Energy(0, 0, spin0, a1, a2, a3, v, gm);
         if (!valid(E_0))
             return error_checker;
-        double E = Energy(0, 0, I, a1, a2, a3, v, gm);
+
+        //adds the shift to the overall Absolute Energy Value (before normallizing it to the excitation value)
+        double E = Energy(0, 0, I, a1, a2, a3, v, gm) + SHIFT;
+
         if (!valid(E))
             return error_checker;
         return E - E_0;
