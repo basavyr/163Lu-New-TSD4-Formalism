@@ -328,11 +328,33 @@ void Diff_H(FitParameters &fit_params, double theta, double fi, double I)
     std::cout << "d²H/d𝜑²= " << D2H(theta, fi, I, fit_params).dH_dFi << "\n";
 }
 
+void Find_CriticalPoints_H(FitParameters &params, double I)
+{
+    std::ofstream gout("local_minimas.dat");
+    double H_En_min = 987654321.987654321;
+    double current_H_En;
+    for (auto theta = 0.0; theta <= 180.0; theta += 1)
+    {
+        for (auto fi = 0.0; fi <= 360.0; fi += 1)
+        {
+            if (Local_Minimum(params, theta, fi, I))
+            {
+                current_H_En = Lu163.H_En(theta, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+                if (current_H_En <= H_En_min)
+                {
+                    gout << theta << " " << fi << " " << current_H_En << " " << D_Operator(params, theta, fi, I) << "\n";
+                    H_En_min = current_H_En;
+                }
+            }
+        }
+    }
+}
+
 int main()
 {
     //testing values
-    double i1 = 73.0, i2 = 68.0, i3 = 3.0;
-    double v = 8.1, gm_deg = 18;
+    double i1 = 52.0, i2 = 32.0, i3 = 48.0;
+    double v = 9.1, gm_deg = 19;
     double gamma = gm_deg * Lu163.PI / 180.0;
     double SHIFT = 0.0;
 
@@ -340,10 +362,9 @@ int main()
 
     double theta = 90;
     double fi = 180;
-    double spin = 23.5;
-    std::cout << "D= " << D_Operator(fit_params, theta, fi, spin) << "\n";
+    double spin = 25.0/2.0;
 
-    std::cout << "minPoint: " << Local_Minimum(fit_params, theta, fi, spin) << "\n";
+    Find_CriticalPoints_H(fit_params, spin);
 
     return 0;
 }
