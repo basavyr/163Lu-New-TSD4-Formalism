@@ -151,4 +151,19 @@ public:
             return error_checker;
         return E - E_0;
     }
+
+    //The energy function H(theta,varphi) associated to the nucleus $^{163}$Lu.
+    //The spherical coordinates theta and fi are given in degrees in the function definition (transformed in radians inside the function scope)
+    //The triaxial parameter \gamma must be in radians!
+    double H_En(double theta, double fi, double I, double a1, double a2, double a3, double v, double gamma)
+    {
+        theta = theta * PI / 180.0;
+        fi = fi * PI / 180.0;
+
+        auto free_term = (I * 0.5 * (a1 + a2)) + a3 * pow(I, 2) + (j * 0.5 * (a2 + a3)) + a1 * pow(j, 2) - (v * (2.0 * j - 1.0) / (j + 1.0) * sin(gamma + PI / 6.0));
+        auto theta_term = -(2.0 * a1 * I * j * sin(theta));
+        auto mixed_term = I * (I - 0.5) * pow(sin(theta), 2.0) * (a1 * pow(cos(fi), 2) + a2 * pow(sin(fi), 2) - a3);
+
+        return free_term + mixed_term + theta_term;
+    }
 };

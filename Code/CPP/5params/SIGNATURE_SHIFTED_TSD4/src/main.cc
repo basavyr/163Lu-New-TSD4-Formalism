@@ -32,6 +32,15 @@ struct FitParameters
     double I1, I2, I3, V, GAMMA;
     double TSD4_SHIFT;
     double RMS;
+    FitParameters(double i1, double i2, double i3, double v, double gamma, double shift)
+    {
+        I1 = i1;
+        I2 = i2;
+        I3 = i3;
+        V = v;
+        GAMMA = gamma;
+        TSD4_SHIFT = shift;
+    }
 };
 
 double IF(double I)
@@ -196,22 +205,63 @@ void Show_Params(FitParameters &fit_params)
     gout << "SHIFT -> E_TSD4 = " << fit_params.TSD4_SHIFT << "\n";
 }
 
-int main()
+void Search_RMS(FitParameters &fit_params)
 {
-    double i1 = 73.0;
-    double i2 = 68.0;
-    double i3 = 3.0;
-    double v = 8.1;
-    double gm_deg = 18;
-    double gamma = gm_deg * Lu163.PI / 180.0;
-    double SHIFT = 0.0;
-
-    FitParameters fit_params;
 
     auto start = std::chrono::system_clock::now();
     Search_MIN_RMS(fit_params);
-    std::cout << "Process took: " << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << "s\n";
+    auto execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0;
+
+    std::cout << "Process took: " << execution_time << "s\n";
 
     Show_Params(fit_params);
+}
+
+struct PartialD
+{
+    double dH_dTheta;
+    double dH_dFi;
+};
+
+//Computes the partial derivative of H to both variables
+PartialD DH(double theta, double fi, double I, FitParameters &params)
+{
+    PartialD dh;
+
+    //the step h (from the 5-point-stencil-method)
+    double theta_step = (180.0 / 1000.0) * Lu163.PI / 180.0;
+
+    //the step h (from the 5-point-stencil-method)
+    double fi_step = (360.0 / 1000.0) * Lu163.PI / 180.0;
+
+    auto fx_2h = Lu163.H_En(theta + 2.0 * theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fx_h = Lu163.H_En(theta + theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fx_mh = Lu163.H_En(theta - theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fx_m2h = Lu163.H_En(theta - 2.0 * theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+
+    auto fy_2h = Lu163.H_En(theta, fi + 2.0 * fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fy_h = Lu163.H_En(theta, fi + fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fy_mh = Lu163.H_En(theta, fi - fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fy_m2h = Lu163.H_En(theta, fi - 2.0 * fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+
+    dh.dH_dTheta = static_cast<double>((-fx_2h + 8.0 * fx_h - 8.0 * fx_mh + fx_m2h) / (12.0 * theta_step));
+    dh.dH_dFi = static_cast<double>((-fy_2h + 8.0 * fy_h - 8.0 * fy_mh + fy_m2h) / (12.0 * fi_step));
+
+    return dh;
+}
+
+int main()
+{
+    //testing values
+    double i1 = 73.0, i2 = 68.0, i3 = 3.0;
+    double v = 8.1, gm_deg = 18;
+    double gamma = gm_deg * Lu163.PI / 180.0;
+    double SHIFT = 0.0;
+
+    FitParameters fit_params(i1, i2, i3, v, gm_deg, SHIFT);
+
+    std::cout << DH(30, 30, 13.5, fit_params).dH_dTheta << "\n";
+    std::cout << DH(30, 30, 13.5, fit_params).dH_dFi << "\n";
+
     return 0;
 }
