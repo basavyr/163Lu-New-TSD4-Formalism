@@ -291,6 +291,27 @@ double D_Operator(FitParameters &params, double theta, double fi, double I)
     return Discriminant;
 }
 
+//Compute the mixed derivative of a function of two variables
+//Having a function of two variables f(x,y), computing the mixed derivative means to compute:
+//df/dy*df/dx
+double Mixed_D(FitParameters &params, double theta, double fi, double I)
+{
+    auto df = DH(theta, fi, I, params);
+    auto df_dxdy = df.dH_dFi * df.dH_dTheta;
+    return df_dxdy;
+}
+
+bool Local_Minimum(FitParameters &params, double theta, double fi, double I)
+{
+    auto D = D_Operator(params, theta, fi, I);
+    // auto f_xy = Mixed_D(params, theta, fi, I);
+    auto D2_x = D2H(theta, fi, I, params).dH_dTheta;
+
+    if (D > 0.0 && D2_x > 0.0)
+        return true;
+    return false;
+}
+
 void Diff_H(FitParameters &fit_params, double theta, double fi, double I)
 {
     std::cout << "I= " << I << "\n";
@@ -317,7 +338,12 @@ int main()
 
     FitParameters fit_params(i1, i2, i3, v, gm_deg, SHIFT);
 
-    std::cout << D_Operator(fit_params, 90, 90, 23.5);
+    double theta = 90;
+    double fi = 180;
+    double spin = 23.5;
+    std::cout << "D= " << D_Operator(fit_params, theta, fi, spin) << "\n";
+
+    std::cout << "minPoint: " << Local_Minimum(fit_params, theta, fi, spin) << "\n";
 
     return 0;
 }

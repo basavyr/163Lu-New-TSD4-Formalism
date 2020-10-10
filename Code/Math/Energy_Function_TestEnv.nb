@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    119274,       2361]
-NotebookOptionsPosition[    117286,       2317]
-NotebookOutlinePosition[    117799,       2334]
-CellTagsIndexPosition[    117756,       2331]
+NotebookDataLength[    125118,       2521]
+NotebookOptionsPosition[    122381,       2466]
+NotebookOutlinePosition[    122894,       2483]
+CellTagsIndexPosition[    122851,       2480]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1837,8 +1837,9 @@ Rxb9epUr+lxyH2bQp98m/+nTPIVJ9OoV/uF/FSc4ng==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -1883,8 +1884,9 @@ Rxb9epUr+lxyH2bQp98m/+nTPIVJ9OoV/uF/FSc4ng==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -1928,8 +1930,9 @@ Rxb9epUr+lxyH2bQp98m/+nTPIVJ9OoV/uF/FSc4ng==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -1973,8 +1976,9 @@ Rxb9epUr+lxyH2bQp98m/+nTPIVJ9OoV/uF/FSc4ng==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -2018,8 +2022,9 @@ Rxb9epUr+lxyH2bQp98m/+nTPIVJ9OoV/uF/FSc4ng==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -2063,8 +2068,9 @@ Rxb9epUr+lxyH2bQp98m/+nTPIVJ9OoV/uF/FSc4ng==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -2108,8 +2114,9 @@ Rxb9epUr+lxyH2bQp98m/+nTPIVJ9OoV/uF/FSc4ng==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -2153,8 +2160,9 @@ Rxb9epUr+lxyH2bQp98m/+nTPIVJ9OoV/uF/FSc4ng==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -2198,8 +2206,9 @@ Rxb9epUr+lxyH2bQp98m/+nTPIVJ9OoV/uF/FSc4ng==
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -2252,21 +2261,58 @@ Rxb9epUr+lxyH2bQp98m/+nTPIVJ9OoV/uF/FSc4ng==
      RowBox[{#, ",", 
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
- CellChangeTimes->{3.811295831513235*^9},
- CellLabel->"Out[13]=",ExpressionUUID->"a2267dee-89b8-4603-bef9-6d3ffb0908eb"]
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{3.811295831513235*^9, 
+  3.8113023218861427`*^9},ExpressionUUID->"a2267dee-89b8-4603-bef9-\
+6d3ffb0908eb"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Hen", "[", 
-  RowBox[{"13.5", ",", "30", ",", "30"}], "]"}]], "Input",
- CellChangeTimes->{{3.81129583951678*^9, 3.8112958482328453`*^9}},
- CellLabel->"In[14]:=",ExpressionUUID->"ebf3a287-dc1f-4d17-b971-61df8605a49c"],
+ RowBox[{"FindMinimum", "[", 
+  RowBox[{
+   RowBox[{"Hen", "[", 
+    RowBox[{"23.5", ",", "\[Theta]", ",", "\[CurlyPhi]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", "90"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[CurlyPhi]", ",", "100"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.81129583951678*^9, 3.8112958482328453`*^9}, {
+  3.811302210044833*^9, 3.811302282123706*^9}, {3.811302324482012*^9, 
+  3.811302325583308*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"ebf3a287-dc1f-4d17-b971-61df8605a49c"],
 
-Cell[BoxData["14.08716602884225`"], "Output",
- CellChangeTimes->{3.8112958489062033`*^9},
- CellLabel->"Out[14]=",ExpressionUUID->"ba71a4e6-a078-4570-aada-cdaa342d9ac0"]
+Cell[BoxData[
+ TemplateBox[{
+  "FindMinimum","lstol",
+   "\"The line search decreased the step size to within the tolerance \
+specified by AccuracyGoal and PrecisionGoal but was unable to find a \
+sufficient decrease in the function. You may need more than \\!\\(\\*RowBox[{\
+\\\"MachinePrecision\\\"}]\\) digits of working precision to meet these \
+tolerances.\"",2,39,4,32277181241552419059,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.811302326171801*^9},
+ CellLabel->
+  "During evaluation of \
+In[39]:=",ExpressionUUID->"b5ed8092-2b0b-4d69-93aa-a70c31d6b507"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "5.041410765745454`"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Theta]", "\[Rule]", "89.99999999959556`"}], ",", 
+     RowBox[{"\[CurlyPhi]", "\[Rule]", "179.99999935052284`"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.8112958489062033`*^9, {3.811302258232933*^9, 3.811302282657003*^9}, 
+   3.811302326177415*^9},
+ CellLabel->"Out[39]=",ExpressionUUID->"5644cd48-4d1d-4a5e-9bda-cc9bc3346132"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2277,18 +2323,21 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"Hen", "[", 
      RowBox[{"13.5", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], ",", 
-    "\[Theta]"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{"\[Theta]", ",", "2"}], "}"}]}], "]"}], "/.", 
   RowBox[{"{", 
    RowBox[{
     RowBox[{"\[Theta]", "\[Rule]", "30"}], ",", 
     RowBox[{"\[Phi]", "\[Rule]", "30"}]}], "}"}]}]], "Input",
- CellChangeTimes->{{3.8112975509659986`*^9, 3.8112975876277018`*^9}},
- CellLabel->"In[17]:=",ExpressionUUID->"299fd672-5dd0-4fad-aeae-049bf9d5fd34"],
+ CellChangeTimes->{{3.8112975509659986`*^9, 3.8112975876277018`*^9}, {
+  3.811299660761245*^9, 3.811299663164854*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"299fd672-5dd0-4fad-aeae-049bf9d5fd34"],
 
 Cell[BoxData[
- RowBox[{"-", "0.4417796051083657`"}]], "Output",
- CellChangeTimes->{{3.811297567842087*^9, 3.8112975881860657`*^9}},
- CellLabel->"Out[17]=",ExpressionUUID->"58be3a94-0be8-4ec2-9f53-71ef854222a9"]
+ RowBox[{"-", "0.008354078275934113`"}]], "Output",
+ CellChangeTimes->{{3.811297567842087*^9, 3.8112975881860657`*^9}, 
+   3.8112996639614353`*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"ca1b1a52-1ef1-49e8-9195-443d0e4553fa"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2298,19 +2347,119 @@ Cell[BoxData[
   RowBox[{"D", "[", 
    RowBox[{
     RowBox[{"Hen", "[", 
-     RowBox[{"13.5", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], ",", "\[Phi]"}],
-    "]"}], "/.", 
+     RowBox[{"13.5", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Phi]", ",", "2"}], "}"}]}], "]"}], "/.", 
   RowBox[{"{", 
    RowBox[{
     RowBox[{"\[Theta]", "\[Rule]", "30"}], ",", 
     RowBox[{"\[Phi]", "\[Rule]", "30"}]}], "}"}]}]], "Input",
- CellChangeTimes->{{3.8112975975447397`*^9, 3.81129759800735*^9}},
- CellLabel->"In[18]:=",ExpressionUUID->"2b880bd0-af92-4f83-a340-5ce858693430"],
+ CellChangeTimes->{{3.8112975975447397`*^9, 3.81129759800735*^9}, {
+  3.811299669275427*^9, 3.811299670793523*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"2b880bd0-af92-4f83-a340-5ce858693430"],
 
-Cell[BoxData["0.00033398992372488714`"], "Output",
- CellChangeTimes->{3.81129759884367*^9},
- CellLabel->"Out[18]=",ExpressionUUID->"17c1aa36-0e1d-436f-b0ce-d00cbdde42a7"]
-}, Open  ]]
+Cell[BoxData["6.731007903475946`*^-6"], "Output",
+ CellChangeTimes->{3.81129759884367*^9, 3.811299672408169*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"b3eaa9fa-b102-45d7-9426-6688c5533b7a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"Hen", "[", 
+         RowBox[{"13.5", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Theta]", ",", "1"}], "}"}]}], "]"}], "*", 
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"Hen", "[", 
+         RowBox[{"13.5", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Phi]", ",", "1"}], "}"}]}], "]"}]}], ")"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\[Theta]", "\[Rule]", "90"}], ",", 
+      RowBox[{"\[Phi]", "\[Rule]", "180"}]}], "}"}]}], ")"}], "^", 
+  "2"}]], "Input",
+ CellChangeTimes->{{3.811301083657411*^9, 3.8113011466784973`*^9}, {
+  3.8113011897590303`*^9, 3.811301277518137*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"ea9f752a-fcd7-4508-972a-a4e45dd3935b"],
+
+Cell[BoxData["0.`"], "Output",
+ CellChangeTimes->{{3.811301106778768*^9, 3.811301147048615*^9}, {
+  3.811301193705206*^9, 3.811301277931094*^9}},
+ CellLabel->"Out[32]=",ExpressionUUID->"baafef35-e47c-4867-bdb9-ef5bca5b57b5"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Discr", "[", "I_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"Hen", "[", 
+        RowBox[{"I", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Theta]", ",", "2"}], "}"}]}], "]"}], "*", 
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"Hen", "[", 
+        RowBox[{"I", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Phi]", ",", "2"}], "}"}]}], "]"}]}], "-", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"Hen", "[", 
+           RowBox[{"I", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"\[Theta]", ",", "1"}], "}"}]}], "]"}], "*", 
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"Hen", "[", 
+           RowBox[{"I", ",", "\[Theta]", ",", "\[Phi]"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"\[Phi]", ",", "1"}], "}"}]}], "]"}]}], ")"}], ")"}], "^", 
+     "2"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.811301340307928*^9, 3.811301428411043*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"a0fc0ad8-bc15-4bb1-b568-dfaa42219c0e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Discr", "[", "23.5", "]"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\[Theta]", "\[Rule]", "90"}], ",", 
+    RowBox[{"\[Phi]", "\[Rule]", "180"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.8113014329082937`*^9, 3.811301448793675*^9}, {
+  3.811301484435904*^9, 3.811301484669532*^9}, {3.811302408004497*^9, 
+  3.81130240852359*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"8fe03eed-864b-4bfc-9555-c59fafff8809"],
+
+Cell[BoxData["8.83327014234006`*^-6"], "Output",
+ CellChangeTimes->{{3.811301437858713*^9, 3.8113014492632*^9}, 
+   3.811301485819551*^9, 3.811302409007897*^9},
+ CellLabel->"Out[40]=",ExpressionUUID->"05249d5e-85fb-4e73-9558-f4d4c130774f"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.811299648062661*^9, 
+  3.811299654594187*^9}},ExpressionUUID->"cc004dea-8c8f-44fa-b4ee-\
+0efe3a019d2a"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -2346,20 +2495,31 @@ Cell[4475, 147, 160, 3, 48, "Subsection",ExpressionUUID->"77fd0641-1ddb-4eb9-881
 Cell[4638, 152, 1875, 56, 50, "Input",ExpressionUUID->"7065952c-dd8e-418f-a0a7-183634e3cd83"],
 Cell[CellGroupData[{
 Cell[6538, 212, 2946, 65, 110, "Input",ExpressionUUID->"eaf18e9a-f951-4947-afd6-9826fba66096"],
-Cell[9487, 279, 105907, 1976, 451, "Output",ExpressionUUID->"a2267dee-89b8-4603-bef9-6d3ffb0908eb"]
+Cell[9487, 279, 106169, 1988, 451, "Output",ExpressionUUID->"a2267dee-89b8-4603-bef9-6d3ffb0908eb"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[115431, 2260, 240, 4, 29, "Input",ExpressionUUID->"ebf3a287-dc1f-4d17-b971-61df8605a49c"],
-Cell[115674, 2266, 168, 2, 39, "Output",ExpressionUUID->"ba71a4e6-a078-4570-aada-cdaa342d9ac0"]
+Cell[115693, 2272, 592, 14, 29, "Input",ExpressionUUID->"ebf3a287-dc1f-4d17-b971-61df8605a49c"],
+Cell[116288, 2288, 590, 12, 24, "Message",ExpressionUUID->"b5ed8092-2b0b-4d69-93aa-a70c31d6b507"],
+Cell[116881, 2302, 475, 12, 39, "Output",ExpressionUUID->"5644cd48-4d1d-4a5e-9bda-cc9bc3346132"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[115879, 2273, 469, 12, 29, "Input",ExpressionUUID->"299fd672-5dd0-4fad-aeae-049bf9d5fd34"],
-Cell[116351, 2287, 210, 3, 39, "Output",ExpressionUUID->"58be3a94-0be8-4ec2-9f53-71ef854222a9"]
+Cell[117393, 2319, 564, 14, 29, "Input",ExpressionUUID->"299fd672-5dd0-4fad-aeae-049bf9d5fd34"],
+Cell[117960, 2335, 240, 4, 39, "Output",ExpressionUUID->"ca1b1a52-1ef1-49e8-9195-443d0e4553fa"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[116598, 2295, 463, 12, 29, "Input",ExpressionUUID->"2b880bd0-af92-4f83-a340-5ce858693430"],
-Cell[117064, 2309, 170, 2, 74, "Output",ExpressionUUID->"17c1aa36-0e1d-436f-b0ce-d00cbdde42a7"]
-}, Open  ]]
+Cell[118237, 2344, 559, 14, 29, "Input",ExpressionUUID->"2b880bd0-af92-4f83-a340-5ce858693430"],
+Cell[118799, 2360, 191, 2, 40, "Output",ExpressionUUID->"b3eaa9fa-b102-45d7-9426-6688c5533b7a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119027, 2367, 913, 25, 29, "Input",ExpressionUUID->"ea9f752a-fcd7-4508-972a-a4e45dd3935b"],
+Cell[119943, 2394, 224, 3, 39, "Output",ExpressionUUID->"baafef35-e47c-4867-bdb9-ef5bca5b57b5"]
+}, Open  ]],
+Cell[120182, 2400, 1272, 36, 29, "Input",ExpressionUUID->"a0fc0ad8-bc15-4bb1-b568-dfaa42219c0e"],
+Cell[CellGroupData[{
+Cell[121479, 2440, 453, 10, 29, "Input",ExpressionUUID->"8fe03eed-864b-4bfc-9555-c59fafff8809"],
+Cell[121935, 2452, 239, 3, 75, "Output",ExpressionUUID->"05249d5e-85fb-4e73-9558-f4d4c130774f"]
+}, Open  ]],
+Cell[122189, 2458, 152, 3, 29, "Input",ExpressionUUID->"cc004dea-8c8f-44fa-b4ee-0efe3a019d2a"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
