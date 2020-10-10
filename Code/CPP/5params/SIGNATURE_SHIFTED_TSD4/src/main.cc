@@ -278,6 +278,19 @@ PartialD D2H(double theta, double fi, double I, FitParameters &params)
     return d2h;
 }
 
+//The second derivative test for a function of one variable provides a method for determining whether an extremum occurs at a critical point of a function.
+//When extending this result to a function of two variables, an issue arises related to the fact thatthere are, in fact, four different second-order partial derivatives, although equality of mixed partials reduces this to three.
+//The second derivative test for a function of two variables, stated in the following theorem, uses a discriminant D, that replaces f′′(x0) in the second derivative test for a function of one variable.
+double D_Operator(FitParameters &params, double theta, double fi, double I)
+{
+    auto f_xx = D2H(theta, fi, I, params).dH_dTheta;
+    auto f_yy = D2H(theta, fi, I, params).dH_dFi;
+    auto f_xy = DH(theta, fi, I, params).dH_dTheta * DH(theta, fi, I, params).dH_dFi;
+
+    auto Discriminant = (f_xx * f_yy) - pow(f_xy, 2);
+    return Discriminant;
+}
+
 void Diff_H(FitParameters &fit_params, double theta, double fi, double I)
 {
     std::cout << "I= " << I << "\n";
@@ -304,7 +317,7 @@ int main()
 
     FitParameters fit_params(i1, i2, i3, v, gm_deg, SHIFT);
 
-    Diff_H(fit_params, 30, 30, 13.5);
+    std::cout << D_Operator(fit_params, 90, 90, 23.5);
 
     return 0;
 }
