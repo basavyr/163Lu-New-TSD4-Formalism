@@ -250,6 +250,50 @@ PartialD DH(double theta, double fi, double I, FitParameters &params)
     return dh;
 }
 
+PartialD D2H(double theta, double fi, double I, FitParameters &params)
+{
+    PartialD d2h;
+
+    //the step h (from the 5-point-stencil-method)
+    double theta_step = (180.0 / 1000.0) * Lu163.PI / 180.0;
+
+    //the step h (from the 5-point-stencil-method)
+    double fi_step = (360.0 / 1000.0) * Lu163.PI / 180.0;
+
+    auto fx = Lu163.H_En(theta, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fx_2h = Lu163.H_En(theta + 2.0 * theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fx_h = Lu163.H_En(theta + theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fx_mh = Lu163.H_En(theta - theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fx_m2h = Lu163.H_En(theta - 2.0 * theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+
+    auto fy = Lu163.H_En(theta, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fy_2h = Lu163.H_En(theta, fi + 2.0 * fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fy_h = Lu163.H_En(theta, fi + fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fy_mh = Lu163.H_En(theta, fi - fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto fy_m2h = Lu163.H_En(theta, fi - 2.0 * fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+
+    d2h.dH_dTheta = static_cast<double>((-fx_2h + 16.0 * fx_h - 30.0 * fx + 16.0 * fx_mh - fx_m2h) / (12.0 * pow(theta_step, 2)));
+    d2h.dH_dFi = static_cast<double>((-fy_2h + 16.0 * fy_h - 30.0 * fy + 16.0 * fy_mh - fy_m2h) / (12.0 * pow(fi_step, 2)));
+
+    return d2h;
+}
+
+void Diff_H(FitParameters &fit_params, double theta, double fi, double I)
+{
+    std::cout << "I= " << I << "\n";
+    Show_Params(fit_params);
+
+    std::cout << "\n";
+
+    std::cout << "First derivative of H(𝜃,𝜑) ⇒ (" << theta << " , " << fi << ")\n";
+    std::cout << "dH/d𝜃= " << DH(theta, fi, I, fit_params).dH_dTheta << "\n";
+    std::cout << "dH/d𝜑= " << DH(theta, fi, I, fit_params).dH_dFi << "\n";
+
+    std::cout << "Second derivative of H(𝜃,𝜑) ⇒ (" << theta << ", " << fi << ")\n ";
+    std::cout << "d²H/d𝜃²= " << D2H(theta, fi, I, fit_params).dH_dTheta << "\n";
+    std::cout << "d²H/d𝜑²= " << D2H(theta, fi, I, fit_params).dH_dFi << "\n";
+}
+
 int main()
 {
     //testing values
@@ -260,8 +304,7 @@ int main()
 
     FitParameters fit_params(i1, i2, i3, v, gm_deg, SHIFT);
 
-    std::cout << DH(30, 30, 13.5, fit_params).dH_dTheta << "\n";
-    std::cout << DH(30, 30, 13.5, fit_params).dH_dFi << "\n";
+    Diff_H(fit_params, 30, 30, 13.5);
 
     return 0;
 }
