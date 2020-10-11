@@ -4,6 +4,8 @@
 #include <fstream>
 #include <chrono>
 
+#include <iomanip>
+
 //N+1 data points (subtract the band head level of TSD1)
 const double DATA_SIZE = 62 + 1;
 
@@ -333,21 +335,94 @@ void Find_CriticalPoints_H(FitParameters &params, double I)
     std::ofstream gout("local_minimas.dat");
     double H_En_min = 987654321.987654321;
     double current_H_En;
-    for (auto theta = 0.0; theta <= 180.0; theta += 1)
+
+    double ZERO = 1.0e-10;
+
+    double angle_step = 1.0;
+
+    for (auto theta = 0.0; theta <= 180.0; theta += angle_step)
     {
-        for (auto fi = 0.0; fi <= 360.0; fi += 1)
+        for (auto fi = 0.0; fi <= 360.0; fi += angle_step)
         {
-            if (Local_Minimum(params, theta, fi, I))
+            auto f = DH(theta, fi, I, params);
+            auto fx = abs(f.dH_dTheta);
+            auto fy = abs(f.dH_dFi);
+            if (fx < ZERO && fy < ZERO)
             {
-                current_H_En = Lu163.H_En(theta, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
-                if (current_H_En <= H_En_min)
+                if (Local_Minimum(params, theta, fi, I))
                 {
-                    gout << theta << " " << fi << " " << current_H_En << " " << D_Operator(params, theta, fi, I) << "\n";
-                    H_En_min = current_H_En;
+                    gout << theta << " " << fi << "\n";
+                    // current_H_En = Lu163.H_En(theta, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+                    // if (current_H_En <= H_En_min)
+                    // {
+                    //     gout << theta << " " << fi << " " << current_H_En << " " << D_Operator(params, theta, fi, I) << " " << fx << " " << fy << "\n";
+                    //     H_En_min = current_H_En;
+                    // }
                 }
             }
         }
     }
+}
+
+bool Valid_ThetaCritical(double i1, double i2, double i3, double I)
+{
+    auto j = Lu163.j;
+    auto a1 = IF(i1);
+    auto a2 = IF(i2);
+    auto a3 = IF(i3);
+    auto sin_theta = static_cast<double>((2.0 * j * a1) / ((2.0 * I - 1.0) * (a1 - a3)));
+    if (!isnan(asin(sin_theta)))
+        return true;
+    return false;
+}
+
+double ThetaCritical(double i1, double i2, double i3, double I)
+{
+    auto j = Lu163.j;
+    auto a1 = IF(i1);
+    auto a2 = IF(i2);
+    auto a3 = IF(i3);
+    auto sin_theta = static_cast<double>((2.0 * j * a1) / ((2.0 * I - 1.0) * (a1 - a3)));
+    return sin_theta;
+}
+
+//Moments of inertia which produce valid theta angle for computing the arcsin function
+struct valid_mois
+{
+    /* data */
+    double i1, i2, i3;
+    double asin;
+    valid_mois(double x, double y, double z, double spin)
+    {
+        i1 = x;
+        i2 = y;
+        i3 = z;
+        asin = ThetaCritical(i1, i2, i3, spin);
+    }
+};
+
+void Search_Valid_CriticalTheta(FitParameters &params, double I)
+{
+    std::ofstream gout("local_minimas.dat");
+    auto j = Lu163.j;
+    std::vector<valid_mois> ok_mois;
+    int count = 0;
+    for (auto i1 = 1.0; i1 <= 100.0; ++i1)
+    {
+        for (auto i2 = 1.0; i2 <= 100.0 && i2 < i1; ++i2)
+        {
+            for (auto i3 = 1.0; i3 <= 100.0 && i3 != i2; ++i3)
+            {
+                if (Valid_ThetaCritical(i1, i2, i3, I))
+                {
+                    valid_mois current_mois(i1, i2, i3, I);
+                    ok_mois.emplace_back(current_mois);
+                    gout << ok_mois.at(count).asin << "\n";
+                }
+            }
+        }
+    }
+    std::cout << ok_mois.size();
 }
 
 int main()
@@ -362,9 +437,12 @@ int main()
 
     double theta = 90;
     double fi = 180;
-    double spin = 25.0/2.0;
+    double spin = 25.0 / 2.0;
 
-    Find_CriticalPoints_H(fit_params, spin);
+    // auto start = std::chrono::system_clock::now();
+    // Find_CriticalPoints_H(fit_params, spin);
+    // std::cout << "Process took: " << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
 
+    Search_Valid_CriticalTheta(fit_params, spin);
     return 0;
 }
