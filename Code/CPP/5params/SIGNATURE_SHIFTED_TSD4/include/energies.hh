@@ -157,8 +157,8 @@ public:
     //The triaxial parameter \gamma must be in radians!
     double H_En(double theta, double fi, double I, double a1, double a2, double a3, double v, double gamma)
     {
-        theta = theta * PI / 180.0;
-        fi = fi * PI / 180.0;
+        // theta = theta * PI / 180.0;
+        // fi = fi * PI / 180.0;
 
         auto free_term = (I * 0.5 * (a1 + a2)) + a3 * pow(I, 2) + (j * 0.5 * (a2 + a3)) + a1 * pow(j, 2) - (v * (2.0 * j - 1.0) / (j + 1.0) * sin(gamma + PI / 6.0));
         auto theta_term = -(2.0 * a1 * I * j * sin(theta));

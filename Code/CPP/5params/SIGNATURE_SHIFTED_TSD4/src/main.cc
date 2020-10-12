@@ -225,6 +225,7 @@ struct PartialD
 {
     double dH_dTheta;
     double dH_dFi;
+    double mixed;
 };
 
 //Computes the partial derivative of H to both variables
@@ -233,23 +234,31 @@ PartialD DH(double theta, double fi, double I, FitParameters &params)
     PartialD dh;
 
     //the step h (from the 5-point-stencil-method)
-    double theta_step = (180.0 / 1000.0) * Lu163.PI / 180.0;
+    double theta_step = (180.0 / 20000.0);
 
     //the step h (from the 5-point-stencil-method)
-    double fi_step = (360.0 / 1000.0) * Lu163.PI / 180.0;
+    double fi_step = (360.0 / 20000.0);
 
+    //the partial derivative w.r.t. theta
     auto fx_2h = Lu163.H_En(theta + 2.0 * theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
     auto fx_h = Lu163.H_En(theta + theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
     auto fx_mh = Lu163.H_En(theta - theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
     auto fx_m2h = Lu163.H_En(theta - 2.0 * theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    dh.dH_dTheta = static_cast<double>((-fx_2h + 8.0 * fx_h - 8.0 * fx_mh + fx_m2h) / (12.0 * theta_step));
 
+    //computing the partial derivative w.r.t. fi
     auto fy_2h = Lu163.H_En(theta, fi + 2.0 * fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
     auto fy_h = Lu163.H_En(theta, fi + fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
     auto fy_mh = Lu163.H_En(theta, fi - fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
     auto fy_m2h = Lu163.H_En(theta, fi - 2.0 * fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
-
-    dh.dH_dTheta = static_cast<double>((-fx_2h + 8.0 * fx_h - 8.0 * fx_mh + fx_m2h) / (12.0 * theta_step));
     dh.dH_dFi = static_cast<double>((-fy_2h + 8.0 * fy_h - 8.0 * fy_mh + fy_m2h) / (12.0 * fi_step));
+
+    //computing the mixed derivative
+    auto f_11 = Lu163.H_En(theta + theta_step, fi + fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto f_m1m1 = Lu163.H_En(theta - theta_step, fi - fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto f_m11 = Lu163.H_En(theta - theta_step, fi + fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto f_1m1 = Lu163.H_En(theta + theta_step, fi - fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    dh.mixed = static_cast<double>((f_11 - f_1m1 - f_m11 + f_m1m1) / (4.0 * fi_step * theta_step));
 
     return dh;
 }
@@ -259,10 +268,10 @@ PartialD D2H(double theta, double fi, double I, FitParameters &params)
     PartialD d2h;
 
     //the step h (from the 5-point-stencil-method)
-    double theta_step = (180.0 / 1000.0) * Lu163.PI / 180.0;
+    double theta_step = (180.0 / 20000.0);
 
     //the step h (from the 5-point-stencil-method)
-    double fi_step = (360.0 / 1000.0) * Lu163.PI / 180.0;
+    double fi_step = (360.0 / 20000.0);
 
     auto fx = Lu163.H_En(theta, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
     auto fx_2h = Lu163.H_En(theta + 2.0 * theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
@@ -289,26 +298,15 @@ double D_Operator(FitParameters &params, double theta, double fi, double I)
 {
     auto f_xx = D2H(theta, fi, I, params).dH_dTheta;
     auto f_yy = D2H(theta, fi, I, params).dH_dFi;
-    auto f_xy = DH(theta, fi, I, params).dH_dTheta * DH(theta, fi, I, params).dH_dFi;
+    auto f_xy = DH(theta, fi, I, params).mixed;
 
     auto Discriminant = (f_xx * f_yy) - pow(f_xy, 2);
     return Discriminant;
 }
 
-//Compute the mixed derivative of a function of two variables
-//Having a function of two variables f(x,y), computing the mixed derivative means to compute:
-//df/dy*df/dx
-double Mixed_D(FitParameters &params, double theta, double fi, double I)
-{
-    auto df = DH(theta, fi, I, params);
-    auto df_dxdy = df.dH_dFi * df.dH_dTheta;
-    return df_dxdy;
-}
-
 bool Local_Minimum(FitParameters &params, double theta, double fi, double I)
 {
     auto D = D_Operator(params, theta, fi, I);
-    // auto f_xy = Mixed_D(params, theta, fi, I);
     auto D2_x = D2H(theta, fi, I, params).dH_dTheta;
 
     if (D > 0.0 && D2_x > 0.0)
@@ -436,6 +434,27 @@ std::vector<valid_mois> Search_Valid_CriticalTheta(double spin)
     return ok_mois;
 }
 
+//writing the analytical form of the first-order derivatives of H(theta,fi) (first partial deriv)
+double dH_dTheta(double I, double theta, double fi, FitParameters &params)
+{
+    // theta = theta * Lu163.PI / 180.0;
+    // fi = fi * Lu163.PI / 180.0;
+    auto a1 = IF(params.I1);
+    auto a2 = IF(params.I2);
+    auto a3 = IF(params.I3);
+    return static_cast<double>(I * (I - 0.5) * sin(2.0 * theta) * (a1 * pow(cos(fi), 2) + a2 * pow(sin(fi), 2) - a3) - 2.0 * I * a1 * Lu163.j * cos(theta));
+}
+
+//writing the analytical form of the first-order derivatives of H(theta,fi) (second partial deriv)
+double dH_dFi(double I, double theta, double fi, FitParameters &params)
+{
+    // theta = theta * Lu163.PI / 180.0;
+    // fi = fi * Lu163.PI / 180.0;
+    auto a1 = IF(params.I1);
+    auto a2 = IF(params.I2);
+    return static_cast<double>(I * (I - 0.5) * (a2 - a1) * pow(sin(theta), 2) * sin(2.0 * fi));
+}
+
 int main()
 {
     //testing values
@@ -455,7 +474,18 @@ int main()
     // std::cout << "Process took: " << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
     // std::cout << ThetaCritical(52, 32, spin);
     // std::cout << D_Operator(fit_params, 30.0, 30.0, spin);
-    std::cout << DH(30, 30, spin, fit_params).dH_dTheta << " " << DH(30, 30, spin, fit_params).dH_dFi;
+    // for (auto x = 0; x < 40; x += 10)
+    // {
+    //     for (auto y = 0; y <= 40; y += 10)
+    //     {
+    //         std::cout << DH(x, y, spin, fit_params).dH_dTheta << " " << DH(x, y, spin, fit_params).dH_dFi << " " << DH(x, y, spin, fit_params).mixed << "\n";
+    //     }
+    // }
+
     // Search_Valid_CriticalTheta(spin);
+
+    std::cout << DH(30.0 * Lu163.PI / 180.0, 30.0 * Lu163.PI / 180.0, spin, fit_params).dH_dTheta << " " << DH(30.0 * Lu163.PI / 180.0, 30.0 * Lu163.PI / 180.0, spin, fit_params).dH_dFi << " " << DH(30.0 * Lu163.PI / 180.0, 30.0 * Lu163.PI / 180.0, spin, fit_params).mixed << " " << D_Operator(fit_params, 30.0 * Lu163.PI / 180.0, 30 * Lu163.PI / 180.0, spin) << "\n";
+    std::cout << dH_dTheta(spin, 30.0 * Lu163.PI / 180.0, 30.0 * Lu163.PI / 180.0, fit_params) << " " << dH_dFi(spin, 30.0 * Lu163.PI / 180.0, 30.0 * Lu163.PI / 180.0, fit_params) << "\n";
+
     return 0;
 }
