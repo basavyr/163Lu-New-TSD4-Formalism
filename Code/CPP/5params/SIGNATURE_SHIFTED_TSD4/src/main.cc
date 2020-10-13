@@ -6,6 +6,9 @@
 
 #include <iomanip>
 
+//the size of the step for the spherical coordinates (theta, varphi)
+const double SPH_STEP = 50000.0;
+
 //N+1 data points (subtract the band head level of TSD1)
 const double DATA_SIZE = 62 + 1;
 
@@ -234,10 +237,10 @@ PartialD DH(double theta, double fi, double I, FitParameters &params)
     PartialD dh;
 
     //the step h (from the 5-point-stencil-method)
-    double theta_step = (180.0 / 20000.0);
+    double theta_step = (180.0 / SPH_STEP);
 
     //the step h (from the 5-point-stencil-method)
-    double fi_step = (360.0 / 20000.0);
+    double fi_step = (360.0 / SPH_STEP);
 
     //the partial derivative w.r.t. theta
     auto fx_2h = Lu163.H_En(theta + 2.0 * theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
@@ -268,10 +271,10 @@ PartialD D2H(double theta, double fi, double I, FitParameters &params)
     PartialD d2h;
 
     //the step h (from the 5-point-stencil-method)
-    double theta_step = (180.0 / 20000.0);
+    double theta_step = (180.0 / SPH_STEP);
 
     //the step h (from the 5-point-stencil-method)
-    double fi_step = (360.0 / 20000.0);
+    double fi_step = (360.0 / SPH_STEP);
 
     auto fx = Lu163.H_En(theta, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
     auto fx_2h = Lu163.H_En(theta + 2.0 * theta_step, fi, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
@@ -287,6 +290,13 @@ PartialD D2H(double theta, double fi, double I, FitParameters &params)
 
     d2h.dH_dTheta = static_cast<double>((-fx_2h + 16.0 * fx_h - 30.0 * fx + 16.0 * fx_mh - fx_m2h) / (12.0 * pow(theta_step, 2)));
     d2h.dH_dFi = static_cast<double>((-fy_2h + 16.0 * fy_h - 30.0 * fy + 16.0 * fy_mh - fy_m2h) / (12.0 * pow(fi_step, 2)));
+
+    //computing the mixed derivative
+    auto f_11 = Lu163.H_En(theta + theta_step, fi + fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto f_m1m1 = Lu163.H_En(theta - theta_step, fi - fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto f_m11 = Lu163.H_En(theta - theta_step, fi + fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    auto f_1m1 = Lu163.H_En(theta + theta_step, fi - fi_step, I, IF(params.I1), IF(params.I2), IF(params.I3), params.V, params.GAMMA * Lu163.PI / 180.0);
+    d2h.mixed = static_cast<double>((f_11 - f_1m1 - f_m11 + f_m1m1) / (4.0 * fi_step * theta_step));
 
     return d2h;
 }
@@ -455,11 +465,25 @@ double dH_dFi(double I, double theta, double fi, FitParameters &params)
     return static_cast<double>(I * (I - 0.5) * (a2 - a1) * pow(sin(theta), 2) * sin(2.0 * fi));
 }
 
+//Testing the computation of the partial derivatives and other relevant quantities with Mathematica
+void TestValues(double I, FitParameters &params)
+{
+    for (auto theta = 0; theta <= 40; theta += 10)
+    {
+        for (auto fi = 0; fi <= 40; fi += 10)
+        {
+            auto theta_rad = theta * Lu163.PI / 180.0;
+            auto fi_rad = fi * Lu163.PI / 180.0;
+            std::cout << theta << " " << fi << " " << D_Operator(params, theta_rad, fi_rad, I) << " " << D2H(theta_rad, fi_rad, I, params).dH_dTheta << "\n";
+        }
+    }
+}
+
 int main()
 {
     //testing values
     double i1 = 20.0, i2 = 70.0, i3 = 53.0;
-    double v = 9.1, gm_deg = 19;
+    double v = 9.1, gm_deg = 19.0;
     double gamma = gm_deg * Lu163.PI / 180.0;
     double SHIFT = 0.0;
 
@@ -484,8 +508,7 @@ int main()
 
     // Search_Valid_CriticalTheta(spin);
 
-    std::cout << DH(30.0 * Lu163.PI / 180.0, 30.0 * Lu163.PI / 180.0, spin, fit_params).dH_dTheta << " " << DH(30.0 * Lu163.PI / 180.0, 30.0 * Lu163.PI / 180.0, spin, fit_params).dH_dFi << " " << DH(30.0 * Lu163.PI / 180.0, 30.0 * Lu163.PI / 180.0, spin, fit_params).mixed << " " << D_Operator(fit_params, 30.0 * Lu163.PI / 180.0, 30 * Lu163.PI / 180.0, spin) << "\n";
-    std::cout << dH_dTheta(spin, 30.0 * Lu163.PI / 180.0, 30.0 * Lu163.PI / 180.0, fit_params) << " " << dH_dFi(spin, 30.0 * Lu163.PI / 180.0, 30.0 * Lu163.PI / 180.0, fit_params) << "\n";
+    TestValues(spin, fit_params);
 
     return 0;
 }
