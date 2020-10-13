@@ -308,7 +308,7 @@ double D_Operator(FitParameters &params, double theta, double fi, double I)
 {
     auto f_xx = D2H(theta, fi, I, params).dH_dTheta;
     auto f_yy = D2H(theta, fi, I, params).dH_dFi;
-    auto f_xy = DH(theta, fi, I, params).mixed;
+    auto f_xy = D2H(theta, fi, I, params).mixed;
 
     auto Discriminant = (f_xx * f_yy) - pow(f_xy, 2);
     return Discriminant;
@@ -374,24 +374,12 @@ void Find_CriticalPoints_H(FitParameters &params, double I)
     }
 }
 
-bool Valid_ThetaCritical(double i1, double i3, double I)
-{
-    auto j = Lu163.j;
-    auto a1 = IF(i1);
-    auto a3 = IF(i3);
-    auto sin_theta = static_cast<double>((2.0 * j * a1) / ((2.0 * I - 1.0) * (a1 - a3)));
-    if (!isnan(asin(sin_theta)))
-        return true;
-    return false;
-}
-
 double ThetaCritical(double i1, double i3, double I)
 {
     auto j = Lu163.j;
     auto a1 = IF(i1);
     auto a3 = IF(i3);
     auto sin_theta = static_cast<double>((2.0 * j * a1) / ((2.0 * I - 1.0) * (a1 - a3)));
-    std::cout << "in scope: " << sin_theta << "\n";
     if (sin_theta <= 1.0 && sin_theta >= -1.0)
         return asin(sin_theta);
     return Lu163.error_checker;
@@ -412,12 +400,15 @@ struct valid_mois
     }
 };
 
-std::vector<valid_mois> Search_Valid_CriticalTheta(double spin)
+std::vector<valid_mois> Search_Valid_CriticalTheta(double spin, double V, double gamma, double shift)
 {
-    std::ofstream gout("local_minimas.dat");
+    std::ofstream gout("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Energy_Function/local_minimas.dat");
+    std::ofstream gout_mois("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Energy_Function/valid_mois.dat");
     auto j = Lu163.j;
     std::vector<valid_mois> ok_mois;
     int count = 0;
+
+    const double ZERO = 1.0e-8;
     // for (auto id = 0; id < ALLSPINS.size(); ++id)
     // {
     // auto I = ALLSPINS.at(id);
@@ -428,8 +419,7 @@ std::vector<valid_mois> Search_Valid_CriticalTheta(double spin)
         {
             for (auto i3 = 1.0; i3 <= 100.0 && i3 != i2 && i3 < i1; ++i3)
             {
-                // if (Valid_ThetaCritical(i1, i2, i3, I) && ThetaCritical(i1, i2, i3, I) > 0.0)
-                if (Valid_ThetaCritical(i1, i3, I))
+                if (ThetaCritical(i1, i2, spin) != Lu163.error_checker)
                 {
                     valid_mois current_mois(i1, i2, i3, I);
                     ok_mois.emplace_back(current_mois);
@@ -439,6 +429,30 @@ std::vector<valid_mois> Search_Valid_CriticalTheta(double spin)
             }
         }
     }
+
+    for (auto id = 0; id < ok_mois.size(); ++id)
+    {
+        for (auto theta = 0.0; theta <= 180.0; theta += 10.0)
+        {
+            for (auto fi = 0.0; fi <= 360.0; fi += 10.0)
+            {
+                auto theta_rad = theta * Lu163.PI / 180.0;
+                auto fi_rad = fi * Lu163.PI / 180.0;
+                FitParameters current_params(ok_mois.at(id).i1, ok_mois.at(id).i2, ok_mois.at(id).i3, V, gamma, shift);
+                auto x = DH(theta_rad, fi_rad, I, current_params);
+                if (abs(x.dH_dFi) <= ZERO && abs(x.dH_dTheta) <= ZERO)
+                {
+                    auto xx = D2H(theta_rad, fi_rad, I, current_params);
+                    auto discr = D_Operator(current_params, theta_rad, fi_rad, I);
+                    if (discr > 0.0 && xx.dH_dTheta > 0)
+                    {
+                        gout_mois << ok_mois.at(id).i1 << " " << ok_mois.at(id).i2 << " " << ok_mois.at(id).i3 << " " << theta << " " << fi << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+                    }
+                }
+            }
+        }
+    }
+
     // std::cout << ok_mois.at(10).i1 << " " << ok_mois.at(10).i2 << " " << ok_mois.at(10).i3 << " " << ok_mois.at(10).asin << "\n";
     // std::cout << Lu163.H_En(ok_mois.at(10).asin, 0, spin, ok_mois.at(10).i1, ok_mois.at(10).i2, ok_mois.at(10).i3)
     //                  std::cout
@@ -497,6 +511,230 @@ void TestValues(double I, FitParameters &params)
     }
 }
 
+//checking if all the points are in fact minimum or not
+void Check_MinimalPoints(FitParameters &params, double I)
+{
+    //checking if all the points are in fact minimum or not
+    double theta, fi;
+
+    const double ZERO = 1.0e-8;
+
+    //the first point
+    {
+        fi = 0;
+        theta = ThetaCritical(params.I1, params.I3, I);
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            if (xx.dH_dTheta > 0.0 && discr > 0.0)
+                std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //the second point
+    {
+        fi = 0;
+        theta = Lu163.PI / 2.0;
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            if (xx.dH_dTheta > 0.0 && discr > 0.0)
+                std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //the third point
+    {
+        fi = Lu163.PI / 2.0;
+        theta = Lu163.PI / 2.0;
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            if (xx.dH_dTheta > 0.0 && discr > 0.0)
+                std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //the fourth point
+    {
+        fi = Lu163.PI;
+        theta = ThetaCritical(params.I1, params.I3, I);
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            if (xx.dH_dTheta > 0.0 && discr > 0.0)
+                std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //the fifth point
+    {
+        fi = Lu163.PI;
+        theta = Lu163.PI / 2.0;
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            if (xx.dH_dTheta > 0.0 && discr > 0.0)
+                std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //extra points from mathematica
+    //the sixth point
+    {
+        fi = 2.0 * Lu163.PI;
+        theta = Lu163.PI / 2.0;
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            if (xx.dH_dTheta > 0.0 && discr > 0.0)
+                std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //extra points from mathematica
+    //the seventh point
+    {
+        fi = 3.0 * Lu163.PI / 2.0;
+        theta = Lu163.PI / 2.0;
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            if (xx.dH_dTheta > 0.0 && discr > 0.0)
+                std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+}
+
+//checking if all the points are critical (null first order partial derivative)
+void Check_CriticalPoints(FitParameters &params, double I)
+{
+    double theta, fi;
+
+    const double ZERO = 1.0e-8;
+
+    //the first point
+    {
+        fi = 0;
+        theta = ThetaCritical(params.I1, params.I3, I);
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //the second point
+    {
+        fi = 0;
+        theta = Lu163.PI / 2.0;
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //the third point
+    {
+        fi = Lu163.PI / 2.0;
+        theta = Lu163.PI / 2.0;
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //the fourth point
+    {
+        fi = Lu163.PI;
+        theta = ThetaCritical(params.I1, params.I3, I);
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //the fifth point
+    {
+        fi = Lu163.PI;
+        theta = Lu163.PI / 2.0;
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //extra points from mathematica
+    //the sixth point
+    {
+        fi = 2.0 * Lu163.PI;
+        theta = Lu163.PI / 2.0;
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+
+    //extra points from mathematica
+    //the seventh point
+    {
+        fi = 3.0 * Lu163.PI / 2.0;
+        theta = Lu163.PI / 2.0;
+        auto x = DH(theta, fi, I, params);
+        auto xx = D2H(theta, fi, I, params);
+        auto discr = D_Operator(params, theta, fi, I);
+        // if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO && x.dH_dFi >= 0.0 && x.dH_dTheta >= 0.0)
+        if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
+        {
+            std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+        }
+    }
+}
+
 int main()
 {
     //testing values
@@ -511,28 +749,13 @@ int main()
     double fi = 180;
     double spin = 25.0 / 2.0;
 
-    // auto start = std::chrono::system_clock::now();
-    // Find_CriticalPoints_H(fit_params, spin);
-    // std::cout << "Process took: " << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0 << " s\n";
-    // std::cout << ThetaCritical(52, 32, spin);
-    // std::cout << D_Operator(fit_params, 30.0, 30.0, spin);
-    // for (auto x = 0; x < 40; x += 10)
-    // {
-    //     for (auto y = 0; y <= 40; y += 10)
-    //     {
-    //         std::cout << DH(x, y, spin, fit_params).dH_dTheta << " " << DH(x, y, spin, fit_params).dH_dFi << " " << DH(x, y, spin, fit_params).mixed << "\n";
-    //     }
-    // }
-
-    // Search_Valid_CriticalTheta(spin);
-
-    // TestValues(spin, fit_params);
-
-    // auto theta_special = ThetaCritical(i1, i3, spin);
-    // std::cout << theta_special << "\n";
-    // std::cout << D_Operator(fit_params, theta_special, 0, spin) << "\n";
-    // std::cout << D_Operator(fit_params, theta_special, Lu163.PI, spin) << "\n";
-    TestPartials(spin, fit_params);
+    // Search_Valid_CriticalTheta(spin, v, gamma, SHIFT);
+    std::cout << "Critical Points"
+              << "\n";
+    Check_CriticalPoints(fit_params, spin);
+    std::cout << "Minimal Points"
+              << "\n";
+    Check_MinimalPoints(fit_params, spin);
 
     return 0;
 }
