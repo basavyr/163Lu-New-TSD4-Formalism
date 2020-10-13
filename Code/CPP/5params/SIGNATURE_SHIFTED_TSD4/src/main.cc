@@ -391,7 +391,10 @@ double ThetaCritical(double i1, double i3, double I)
     auto a1 = IF(i1);
     auto a3 = IF(i3);
     auto sin_theta = static_cast<double>((2.0 * j * a1) / ((2.0 * I - 1.0) * (a1 - a3)));
-    return asin(sin_theta) * 180.0 / Lu163.PI;
+    std::cout << "in scope: " << sin_theta << "\n";
+    if (sin_theta <= 1.0 && sin_theta >= -1.0)
+        return asin(sin_theta);
+    return Lu163.error_checker;
 }
 
 //Moments of inertia which produce valid theta angle for computing the arcsin function
@@ -466,6 +469,21 @@ double dH_dFi(double I, double theta, double fi, FitParameters &params)
 }
 
 //Testing the computation of the partial derivatives and other relevant quantities with Mathematica
+void TestPartials(double I, FitParameters &params)
+{
+    std::ofstream gout("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Energy_Function/H_Partials.dat");
+    for (auto theta = 0; theta <= 180; theta += 10)
+    {
+        for (auto fi = 0; fi <= 360; fi += 10)
+        {
+            auto theta_rad = theta * Lu163.PI / 180.0;
+            auto fi_rad = fi * Lu163.PI / 180.0;
+            gout << theta << " " << fi << " " << DH(theta_rad, fi_rad, I, params).dH_dTheta << " " << DH(theta_rad, fi_rad, I, params).dH_dFi << "\n";
+        }
+    }
+}
+
+//Testing the computation of the partial discriminant and second-order partial derivatives
 void TestValues(double I, FitParameters &params)
 {
     for (auto theta = 0; theta <= 40; theta += 10)
@@ -508,7 +526,13 @@ int main()
 
     // Search_Valid_CriticalTheta(spin);
 
-    TestValues(spin, fit_params);
+    // TestValues(spin, fit_params);
+
+    // auto theta_special = ThetaCritical(i1, i3, spin);
+    // std::cout << theta_special << "\n";
+    // std::cout << D_Operator(fit_params, theta_special, 0, spin) << "\n";
+    // std::cout << D_Operator(fit_params, theta_special, Lu163.PI, spin) << "\n";
+    TestPartials(spin, fit_params);
 
     return 0;
 }
