@@ -12,6 +12,25 @@ const double PI = 3.141592654;
 const double ZERO = 1.0e-8;
 const double ERROR = 6969;
 
+//coordinates to be saved for eventual use-case
+struct coordinates
+{
+    double theta;
+    double fi;
+};
+
+struct valid_mois
+{
+    double i1, i2, i3;
+};
+
+//gives the corresponding inertia factor A_k from for the moment of inertia I_k
+double IF(double MOI)
+{
+    double A = 1.0 / (2.0 * MOI);
+    return A;
+}
+
 //gives the reduced set of parameters to be used in the procedures
 struct Parameters
 {
@@ -36,23 +55,24 @@ struct Parameters
     }
 };
 
-//coordinates to be saved for eventual use-case
-struct coordinates
+//the energy function
+//spherical coordinates are given in terms of RADIANS units
+double H_En(double theta, double fi, Parameters &params)
 {
-    double theta;
-    double fi;
-};
+    auto j = ODD_SPIN;
 
-struct valid_mois
-{
-    double i1, i2, i3;
-};
+    auto A1 = IF(params.I1);
+    auto A2 = IF(params.I2);
+    auto A3 = IF(params.I3);
 
-//gives the corresponding inertia factor A_k from for the moment of inertia I_k
-double IF(double MOI)
-{
-    double A = 1.0 / (2.0 * MOI);
-    return A;
+    auto V = params.V;
+    auto gamma = params.gamma * PI / 180.0;
+
+    auto I = params.I;
+
+    auto H = 0.5 * I * (A1 + A2) + A3 * pow(I, 2) + I * (I - 0.5) * pow(sin(theta), 2) * (A1 * pow(cos(fi), 2) + A2 * pow(sin(fi), 2) - A3) + 0.5 * j * (A2 + A3) + A1 * pow(j, 2) - 2.0 * A1 * I * j * sin(theta) - V * (2.0 * j - 1.0) / (j + 1.0) * sin(gamma + PI / 6.0);
+
+    return H;
 }
 
 //using the analytical formulas for the partial derivatives
@@ -106,6 +126,16 @@ double dH_dFi(double theta, double fi, Parameters &params)
     return static_cast<double>(I * (I - 0.5) * (a2 - a1) * pow(sin(theta), 2) * sin(2.0 * fi));
 }
 
+double d2H_theta2(double theta, double fi, Parameters &params)
+{
+    return 1;
+}
+
+double d2H_fi2(double theta, double fi, Parameters &params)
+{
+    return 1;
+}
+
 bool Has_Minima(Parameters &params)
 {
     return false;
@@ -151,7 +181,14 @@ void Search_Valid_MOIs(double I, double V, double gm)
                         //condition for critical point
                         if ((dH_dTheta(theta_rad, fi_rad, params) <= ZERO && dH_dTheta(theta_rad, fi_rad, params) >= -ZERO) && (dH_dFi(theta_rad, fi_rad, params) <= ZERO && dH_dFi(theta_rad, fi_rad, params) >= -ZERO))
                         {
-                            // std::cout << dH_dTheta(theta_rad, fi_rad, params) << " " << dH_dFi(theta_rad, fi_rad, params) << "\n";
+                            //!if the critical condition passes, the minimum condition must be also checked, so that the three moments of inertia create a VALID set
+
+                            //place for the minimum condition
+                            //IF(MINIMUM)
+                            {
+                                /* code */
+                            }
+                            //below content must be moved inside the minimum function
                             current_mois.i1 = i1;
                             current_mois.i2 = i2;
                             current_mois.i3 = i3;
