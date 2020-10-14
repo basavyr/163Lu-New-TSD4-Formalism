@@ -128,12 +128,32 @@ double dH_dFi(double theta, double fi, Parameters &params)
 
 double d2H_theta2(double theta, double fi, Parameters &params)
 {
-    return 1;
+    auto j = ODD_SPIN;
+
+    auto a1 = IF(params.I1);
+    auto a2 = IF(params.I2);
+    auto a3 = IF(params.I3);
+
+    auto I = params.I;
+
+    auto T1 = 2.0 * j * I * sin(theta) * a1;
+    auto T2 = I * (2.0 * I - 1.0) * cos(2.0 * theta) * (a1 * pow(cos(fi), 2) + a2 * pow(sin(fi), 2) - a3);
+
+    return T1 + T2;
 }
 
 double d2H_fi2(double theta, double fi, Parameters &params)
 {
-    return 1;
+    auto j = ODD_SPIN;
+
+    auto a1 = IF(params.I1);
+    auto a2 = IF(params.I2);
+
+    auto I = params.I;
+
+    auto T = -I * (2.0 * I - 1.0) * cos(2.0 * fi) * pow(sin(theta), 2) * (a1 - a2);
+
+    return T;
 }
 
 bool Has_Minima(Parameters &params)
@@ -211,9 +231,11 @@ void Search_Valid_MOIs(double I, double V, double gm)
 
 int main()
 {
-    auto start = std::chrono::system_clock::now();
-    Search_Valid_MOIs(12.5, 9.1, 19);
-    auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0;
+    // auto start = std::chrono::system_clock::now();
+    // Search_Valid_MOIs(12.5, 9.1, 19);
+    // auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0;
+    // std::cout << "Process took: " << duration_ms << " s. \n";
 
-    std::cout << "Process took: " << duration_ms << " s. \n";
+    Parameters params(75, 50, 30, 12.5, 9.1, 19.0);
+    std::cout << d2H_theta2(PI / 2.0, PI, params) << " " << d2H_fi2(PI / 2.0, PI, params) << "\n";
 }
