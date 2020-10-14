@@ -195,10 +195,9 @@ void Search_MIN_RMS(FitParameters &params)
     }
 }
 
-std::ofstream gout("shifted_tsd4.dat");
-
 void Show_Params(FitParameters &fit_params)
 {
+    std::ofstream gout("shifted_tsd4.dat");
     std::cout << "ℐ₁ : ℐ₂ : ℐ₃ | " << fit_params.I1 << ":" << fit_params.I2 << ":" << fit_params.I3 << "\n";
     std::cout << "V=" << fit_params.V << "\n";
     std::cout << "𝛾=" << fit_params.GAMMA << "\n";
@@ -511,14 +510,21 @@ void TestValues(double I, FitParameters &params)
     }
 }
 
+struct coordinates
+{
+    double theta;
+    double fi;
+};
+
 //checking if all the points are in fact minimum or not
-void Check_MinimalPoints(FitParameters &params, double I)
+void Check_MinimalPoints(FitParameters &params, double I, std::vector<coordinates> &contains_minimum_points)
 {
     //checking if all the points are in fact minimum or not
     double theta, fi;
 
     const double ZERO = 1.0e-8;
 
+    coordinates coords;
     //the first point
     {
         fi = 0;
@@ -530,7 +536,12 @@ void Check_MinimalPoints(FitParameters &params, double I)
         if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
         {
             if (xx.dH_dTheta > 0.0 && discr > 0.0)
+            {
                 std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+                coords.theta = theta;
+                coords.fi = fi;
+                contains_minimum_points.emplace_back(coords);
+            }
         }
     }
 
@@ -545,7 +556,12 @@ void Check_MinimalPoints(FitParameters &params, double I)
         if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
         {
             if (xx.dH_dTheta > 0.0 && discr > 0.0)
+            {
                 std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+                coords.theta = theta;
+                coords.fi = fi;
+                contains_minimum_points.emplace_back(coords);
+            }
         }
     }
 
@@ -560,7 +576,12 @@ void Check_MinimalPoints(FitParameters &params, double I)
         if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
         {
             if (xx.dH_dTheta > 0.0 && discr > 0.0)
+            {
                 std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+                coords.theta = theta;
+                coords.fi = fi;
+                contains_minimum_points.emplace_back(coords);
+            }
         }
     }
 
@@ -575,7 +596,12 @@ void Check_MinimalPoints(FitParameters &params, double I)
         if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
         {
             if (xx.dH_dTheta > 0.0 && discr > 0.0)
+            {
                 std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+                coords.theta = theta;
+                coords.fi = fi;
+                contains_minimum_points.emplace_back(coords);
+            }
         }
     }
 
@@ -590,7 +616,12 @@ void Check_MinimalPoints(FitParameters &params, double I)
         if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
         {
             if (xx.dH_dTheta > 0.0 && discr > 0.0)
+            {
                 std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+                coords.theta = theta;
+                coords.fi = fi;
+                contains_minimum_points.emplace_back(coords);
+            }
         }
     }
 
@@ -606,7 +637,12 @@ void Check_MinimalPoints(FitParameters &params, double I)
         if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
         {
             if (xx.dH_dTheta > 0.0 && discr > 0.0)
+            {
                 std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+                coords.theta = theta;
+                coords.fi = fi;
+                contains_minimum_points.emplace_back(coords);
+            }
         }
     }
 
@@ -622,7 +658,12 @@ void Check_MinimalPoints(FitParameters &params, double I)
         if (x.dH_dFi <= ZERO && x.dH_dTheta <= ZERO)
         {
             if (xx.dH_dTheta > 0.0 && discr > 0.0)
+            {
                 std::cout << theta * 180.0 / Lu163.PI << " " << fi * 180 / Lu163.PI << " " << x.dH_dTheta << " " << x.dH_dFi << " " << discr << " " << xx.dH_dTheta << "\n";
+                coords.theta = theta;
+                coords.fi = fi;
+                contains_minimum_points.emplace_back(coords);
+            }
         }
     }
 }
@@ -755,7 +796,10 @@ int main()
     Check_CriticalPoints(fit_params, spin);
     std::cout << "Minimal Points"
               << "\n";
-    Check_MinimalPoints(fit_params, spin);
+
+    std::vector<coordinates> has_minimum;
+    Check_MinimalPoints(fit_params, spin, has_minimum);
+    std::cout << has_minimum.size() << "\n";
 
     return 0;
 }
