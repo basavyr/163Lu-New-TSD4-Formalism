@@ -106,6 +106,16 @@ double dH_dFi(double theta, double fi, Parameters &params)
     return static_cast<double>(I * (I - 0.5) * (a2 - a1) * pow(sin(theta), 2) * sin(2.0 * fi));
 }
 
+bool Has_Minima(Parameters &params)
+{
+    return false;
+}
+
+bool Is_Critical(double theta, double fi, Parameters &params)
+{
+    return false;
+}
+
 void Search_Valid_MOIs(double I, double V, double gm)
 {
     //total spin
@@ -138,6 +148,7 @@ void Search_Valid_MOIs(double I, double V, double gm)
                     {
                         fi_rad = fi * PI / 180.0;
                         theta_rad = theta * PI / 180.0;
+                        //condition for critical point
                         if ((dH_dTheta(theta_rad, fi_rad, params) <= ZERO && dH_dTheta(theta_rad, fi_rad, params) >= -ZERO) && (dH_dFi(theta_rad, fi_rad, params) <= ZERO && dH_dFi(theta_rad, fi_rad, params) >= -ZERO))
                         {
                             // std::cout << dH_dTheta(theta_rad, fi_rad, params) << " " << dH_dFi(theta_rad, fi_rad, params) << "\n";
