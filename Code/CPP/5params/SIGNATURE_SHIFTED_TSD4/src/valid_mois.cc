@@ -197,15 +197,27 @@ double Discriminant(double theta, double fi, Parameters &params)
     return result;
 }
 
+bool IsCritical(double theta, double fi, Parameters &params)
+{
+    double dTheta = dH_dTheta(theta, fi, params);
+    double dFi = dH_dFi(theta, fi, params);
+
+    if ((dTheta >= -ZERO && dTheta <= ZERO) && (dFi >= -ZERO && dFi <= ZERO))
+        return true;
+    return false;
+}
+
 bool IsMinimum(double theta, double fi, Parameters &params)
 {
-    double DH_mixed = D2H(theta, fi, params).dMixed;
+    if (!IsCritical(theta, fi, params))
+        return false;
+    double D_tt = D2H(theta, fi, params).dTheta;
     auto D = Discriminant(theta, fi, params);
 
     // std::cout << D << " " << DH_mixed << "\n";
 
     //! if these two numbers are positive, then the point (theta,fi) is a MINIMUM
-    if (D > 0.0 && DH_mixed)
+    if (D > 0.0 && D_tt > 0.0)
         return true;
 
     return false;
@@ -248,19 +260,17 @@ void Search_Valid_MOIs(double I, double V, double gm)
                         {
                             //!if the critical condition passes, the minimum condition must be also checked, so that the three moments of inertia create a VALID set
 
-                            //place for the minimum condition
-                            //IF(MINIMUM)
+                            if (IsMinimum(theta_rad, fi_rad, params))
                             {
                                 /* code */
+                                current_mois.i1 = i1;
+                                current_mois.i2 = i2;
+                                current_mois.i3 = i3;
+                                current_coords.theta = theta;
+                                current_coords.fi = fi;
+                                ok_mois.emplace_back(current_mois);
+                                ok_coordinates.emplace_back(current_coords);
                             }
-                            //below content must be moved inside the minimum function
-                            current_mois.i1 = i1;
-                            current_mois.i2 = i2;
-                            current_mois.i3 = i3;
-                            current_coords.theta = theta;
-                            current_coords.fi = fi;
-                            ok_mois.emplace_back(current_mois);
-                            ok_coordinates.emplace_back(current_coords);
                         }
                     }
                 }
@@ -274,6 +284,26 @@ void Search_Valid_MOIs(double I, double V, double gm)
     }
 }
 
+void Output_Derivatives(Parameters &params)
+{
+    std::ofstream gout("/Users/basavyr/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/Energy_Function/partial_derivatives.dat");
+    double theta_rad;
+    double fi_rad;
+    gout << params.I << "\n";
+    gout << params.I1 << " " << params.I2 << " " << params.I3 << "\n";
+    gout << "**********************************"
+         << "\n";
+    for (double theta = 0.0; theta <= 180.0; theta += 10.0)
+    {
+        for (double fi = 0.0; fi <= 360.0; fi += 10.0)
+        {
+            theta_rad = theta * PI / 180.0;
+            fi_rad = fi * PI / 180.0;
+            gout << theta << " " << fi << " " << dH_dTheta(theta_rad, fi_rad, params) << " " << dH_dFi(theta_rad, fi_rad, params) << " " << d2H_theta2(theta_rad, fi_rad, params) << " " << d2H_fi2(theta_rad, fi_rad, params) << " " << Discriminant(theta_rad, fi_rad, params) << " " << IsCritical(theta_rad, fi_rad, params) << " " << IsMinimum(theta_rad, fi_rad, params) << "\n";
+        }
+    }
+}
+
 int main()
 {
     // auto start = std::chrono::system_clock::now();
@@ -282,4 +312,9 @@ int main()
     // std::cout << "Process took: " << duration_ms << " s. \n";
 
     Parameters params(75, 50, 30, 12.5, 9.1, 19.0);
+    Parameters params2(89, 70, 14, 12.5, 9.1, 19.0);
+    Output_Derivatives(params);
+    // std::cout << Discriminant(PI / 2.0, 3.0 * PI / 2.0, params) << " " << d2H_theta2(PI / 2.0, 3.0 * PI / 2.0, params) << "\n";
+
+    // Search_Valid_MOIs(12.5, 9.1, 19.0);
 }
