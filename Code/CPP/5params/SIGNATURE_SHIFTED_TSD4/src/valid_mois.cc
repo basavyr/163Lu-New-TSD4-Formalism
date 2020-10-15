@@ -156,6 +156,20 @@ double d2H_fi2(double theta, double fi, Parameters &params)
     return T;
 }
 
+double d2H_mixed(double theta, double fi, Parameters &params)
+{
+    auto j = ODD_SPIN;
+
+    auto a1 = IF(params.I1);
+    auto a2 = IF(params.I2);
+
+    auto I = params.I;
+
+    auto T = -2.0 * I * (2.0 * I - 1.0) * cos(theta) * cos(fi) * sin(theta) * sin(fi) * (a1 - a2);
+
+    return T;
+}
+
 bool Has_Minima(Parameters &params)
 {
     return false;
@@ -237,5 +251,5 @@ int main()
     // std::cout << "Process took: " << duration_ms << " s. \n";
 
     Parameters params(75, 50, 30, 12.5, 9.1, 19.0);
-    std::cout << d2H_theta2(PI / 2.0, PI, params) << " " << d2H_fi2(PI / 2.0, PI, params) << "\n";
+    std::cout << d2H_theta2(PI / 2.0, PI, params) << " " << d2H_fi2(PI / 4.0, PI / 4.0, params) << " " << d2H_mixed(PI / 4.0, PI / 4.0, params) << "\n";
 }
