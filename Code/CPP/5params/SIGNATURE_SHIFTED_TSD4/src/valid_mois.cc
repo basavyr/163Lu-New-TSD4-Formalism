@@ -17,6 +17,14 @@ struct coordinates
 {
     double theta;
     double fi;
+    coordinates()
+    {
+    }
+    coordinates(double x, double y)
+    {
+        theta = x;
+        fi = y;
+    }
 };
 
 struct valid_mois
@@ -244,7 +252,7 @@ void Search_Valid_MOIs(double I, double V, double gm)
     {
         for (auto i2 = 1.0; i2 < 90.0 && i2 < i1; i2 += 1.0)
         {
-            for (auto i3 = 1.0; i3 < 90.0 && i3 != i2 && i3 < i1; i3 += 1.0)
+            for (auto i3 = 1.0; i3 < 90.0 && i3 < i1; i3 += 1.0)
             {
                 params.I1 = i1;
                 params.I2 = i2;
@@ -304,17 +312,39 @@ void Output_Derivatives(Parameters &params)
     }
 }
 
+void Search_Minimum_Points(Parameters &params, std::vector<coordinates> &minimum_points)
+{
+    double theta_rad;
+    double fi_rad;
+    for (auto theta = 0.0; theta <= 180.0; theta += 10.0)
+    {
+        for (auto fi = 0.0; fi <= 360.0; fi += 10.0)
+        {
+            theta_rad = theta * PI / 180.0;
+            fi_rad = fi * PI / 180.0;
+            if (IsMinimum(theta_rad, fi_rad, params))
+            {
+                coordinates coords(theta, fi);
+                minimum_points.emplace_back(coords);
+            }
+        }
+    }
+}
+
 int main()
 {
+    Parameters params(20, 70, 53, 12.5, 9.1, 19.0);
+
     // auto start = std::chrono::system_clock::now();
     // Search_Valid_MOIs(12.5, 9.1, 19);
     // auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() / 1000.0;
     // std::cout << "Process took: " << duration_ms << " s. \n";
 
-    Parameters params(75, 50, 30, 12.5, 9.1, 19.0);
-    Parameters params2(89, 70, 14, 12.5, 9.1, 19.0);
-    Output_Derivatives(params);
-    // std::cout << Discriminant(PI / 2.0, 3.0 * PI / 2.0, params) << " " << d2H_theta2(PI / 2.0, 3.0 * PI / 2.0, params) << "\n";
+    std::vector<coordinates> min_points;
+    Search_Minimum_Points(params, min_points);
 
-    // Search_Valid_MOIs(12.5, 9.1, 19.0);
+    for (auto &&coords : min_points)
+    {
+        std::cout << coords.theta << " " << coords.fi << "\n";
+    }
 }
