@@ -96,6 +96,14 @@ double Theta_Critical(Parameters &params)
     return ERROR;
 }
 
+//the partial derivatives
+struct partials
+{
+    double dTheta;
+    double dFi;
+    double dMixed;
+};
+
 //writing the analytical form of the first-order derivatives of H(theta,fi) (first partial deriv)
 double dH_dTheta(double theta, double fi, Parameters &params)
 {
@@ -170,13 +178,36 @@ double d2H_mixed(double theta, double fi, Parameters &params)
     return T;
 }
 
-bool Has_Minima(Parameters &params)
+partials D2H(double theta, double fi, Parameters &params)
 {
-    return false;
+    partials SecondOrder_PartialDerivative;
+    SecondOrder_PartialDerivative.dTheta = d2H_theta2(theta, fi, params);
+    SecondOrder_PartialDerivative.dFi = d2H_fi2(theta, fi, params);
+    SecondOrder_PartialDerivative.dMixed = d2H_mixed(theta, fi, params);
+
+    return SecondOrder_PartialDerivative;
 }
 
-bool Is_Critical(double theta, double fi, Parameters &params)
+double Discriminant(double theta, double fi, Parameters &params)
 {
+    auto x = D2H(theta, fi, params);
+
+    auto result = static_cast<double>((x.dTheta * x.dFi) - pow(x.dMixed, 2));
+
+    return result;
+}
+
+bool IsMinimum(double theta, double fi, Parameters &params)
+{
+    double DH_mixed = D2H(theta, fi, params).dMixed;
+    auto D = Discriminant(theta, fi, params);
+
+    // std::cout << D << " " << DH_mixed << "\n";
+
+    //! if these two numbers are positive, then the point (theta,fi) is a MINIMUM
+    if (D > 0.0 && DH_mixed)
+        return true;
+
     return false;
 }
 
@@ -251,5 +282,4 @@ int main()
     // std::cout << "Process took: " << duration_ms << " s. \n";
 
     Parameters params(75, 50, 30, 12.5, 9.1, 19.0);
-    std::cout << d2H_theta2(PI / 2.0, PI, params) << " " << d2H_fi2(PI / 4.0, PI / 4.0, params) << " " << d2H_mixed(PI / 4.0, PI / 4.0, params) << "\n";
 }
