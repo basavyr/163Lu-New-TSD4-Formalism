@@ -1,0 +1,274 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9930,        266]
+NotebookOptionsPosition[      8954,        240]
+NotebookOutlinePosition[      9498,        258]
+CellTagsIndexPosition[      9455,        255]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Study the evolution of H(\[Theta],\[CurlyPhi];\[ScriptCapitalP]) w.r.t \
+change of MOIs", "Chapter",
+ CellChangeTimes->{
+  3.811822184106803*^9, {3.8118222817708063`*^9, 
+   3.811822316467897*^9}},ExpressionUUID->"5b91b495-e3e2-45ab-9adc-\
+23ad811dc54e"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\[ScriptCapitalP] is the parameter set (V,\[Gamma], ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalI]", "1"], ",", 
+     SubscriptBox["\[ScriptCapitalI]", "2"], ",", 
+     SubscriptBox["\[ScriptCapitalI]", "3"]}], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "520184e3-cf5f-4a09-a0fe-4a15c91d138b"]
+}], "Section",
+ CellChangeTimes->{{3.8118223206632757`*^9, 3.811822329376095*^9}, {
+  3.8118224971806793`*^9, 
+  3.8118225181627502`*^9}},ExpressionUUID->"38e0b4cd-301c-42a9-8313-\
+58f6e6f30ecc"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"IF", "[", "X_", "]"}], ":=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "X"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"H", "[", 
+    RowBox[{
+    "I_", ",", "\[Theta]_", ",", "\[CurlyPhi]_", ",", "A1_", ",", "A2_", ",", 
+     "A3_", ",", "V_", ",", "\[Gamma]_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["I", "2"], 
+     RowBox[{"(", 
+      RowBox[{"A1", "+", "A2"}], ")"}]}], "+", 
+    RowBox[{"A3", "*", 
+     SuperscriptBox["I", "2"]}], "+", 
+    RowBox[{"I", 
+     RowBox[{"(", 
+      RowBox[{"I", "-", 
+       FractionBox["1", "2"]}], ")"}], 
+     SuperscriptBox[
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"A1", "*", 
+        SuperscriptBox[
+         RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}], "2"]}], "+", 
+       RowBox[{"A2", "*", 
+        SuperscriptBox[
+         RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}], "2"]}], "-", "A3"}], 
+      ")"}]}], "+", 
+    RowBox[{
+     FractionBox["j", "2"], 
+     RowBox[{"(", 
+      RowBox[{"A2", "+", "A3"}], ")"}]}], "+", 
+    RowBox[{"A1", "*", 
+     SuperscriptBox["j", "2"]}], "-", 
+    RowBox[{"2", "A1", "*", "I", "*", "j", "*", 
+     RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "-", 
+    RowBox[{"V", "*", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"2", "j"}], "-", "1"}], 
+      RowBox[{"j", "+", "1"}]], 
+     RowBox[{"Sin", "[", 
+      RowBox[{"\[Gamma]", "+", 
+       FractionBox["\[Pi]", "6"]}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CPH", "[", 
+   RowBox[{
+   "spin_", ",", "I1_", ",", "I2_", ",", "I3_", ",", "V_", ",", "\[Gamma]_"}],
+    "]"}], ":=", 
+  RowBox[{"ContourPlot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"H", "[", 
+      RowBox[{"spin", ",", "\[Theta]", ",", "\[CurlyPhi]", ",", 
+       RowBox[{"IF", "[", "I1", "]"}], ",", 
+       RowBox[{"IF", "[", "I2", "]"}], ",", 
+       RowBox[{"IF", "[", "I3", "]"}], ",", "V", ",", 
+       RowBox[{"\[Gamma]", "*", 
+        RowBox[{"\[Pi]", "/", "180"}]}]}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"j", "\[Rule]", 
+       RowBox[{"13", "/", "2"}]}], "}"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Theta]", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[CurlyPhi]", ",", "0", ",", 
+      RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"Contours", "\[Rule]", "18"}], ",", 
+    RowBox[{"ColorFunction", "\[Rule]", "\"\<BlueGreenYellow\>\""}], ",", 
+    RowBox[{"ContourStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "Black", "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Black", ",", "Dashed"}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "Medium"}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+    RowBox[{"FrameStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{"Thick", ",", "Black"}], "]"}]}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<\[Theta] [rad]\>\"", ",", "\"\<\[CurlyPhi] [rad]\>\""}], 
+      "}"}]}], ",", 
+    RowBox[{"PlotLabel", "\[Rule]", 
+     RowBox[{"Text", "[", 
+      RowBox[{"Style", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "StringTemplate", "[", 
+          "\"\<                  \
+\[ScriptCapitalH](\[Theta],\[Phi])\\n\!\(\*SubscriptBox[\(\[ScriptCapitalI]\),\
+ \(1\)]\):\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \
+\(2\)]\):\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(3\)]\)=``:``:`` | I=``\>\
+\"", "]"}], "[", 
+         RowBox[{"I1", ",", "I2", ",", "I3", ",", "spin"}], "]"}], ",", 
+        "Black", ",", 
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Times New Roman\>\""}], ",", 
+        "18"}], "]"}], "]"}]}], ",", 
+    RowBox[{"PlotLegends", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"LabelStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Black", ",", "17", ",", 
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times New Roman\>\""}]}], 
+      "}"}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.811822656169895*^9, 3.811822656340601*^9}, {
+   3.811822724965831*^9, 3.811822729142174*^9}, {3.811822849136676*^9, 
+   3.811822856212315*^9}, {3.8118229119691877`*^9, 3.8118229673862123`*^9}, {
+   3.8118230768524857`*^9, 3.8118231251840878`*^9}, 3.81182374541047*^9},
+ CellLabel->"In[6]:=",ExpressionUUID->"1a2990a6-d55e-4e23-b392-abb0ef766681"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{"CPH", "[", 
+     RowBox[{"12.5", ",", "I1", ",", "I2", ",", "I3", ",", "8.1", ",", "19"}],
+      "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"I1", ",", "1", ",", "90"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"I2", ",", "1", ",", "90"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"I3", ",", "1", ",", "90"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.811823696369429*^9, 3.81182374132362*^9}, {
+  3.8118238765428*^9, 3.811823902484376*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"298a6c3c-5227-491d-bb33-d06c7013efd6"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`I1$$ = 73, $CellContext`I2$$ = 
+    40, $CellContext`I3$$ = 40, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`I1$$], 1, 90}, {
+      Hold[$CellContext`I2$$], 1, 90}, {
+      Hold[$CellContext`I3$$], 1, 90}}, Typeset`size$$ = {378., {265., 275.}},
+     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`I1$6468$$ = 0, $CellContext`I2$6473$$ = 
+    0, $CellContext`I3$6474$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`I1$$ = 1, $CellContext`I2$$ = 
+        1, $CellContext`I3$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`I1$$, $CellContext`I1$6468$$, 0], 
+        Hold[$CellContext`I2$$, $CellContext`I2$6473$$, 0], 
+        Hold[$CellContext`I3$$, $CellContext`I3$6474$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`CPH[
+        12.5, $CellContext`I1$$, $CellContext`I2$$, $CellContext`I3$$, 8.1, 
+         19]], "Specifications" :> {{$CellContext`I1$$, 1, 
+         90}, {$CellContext`I2$$, 1, 90}, {$CellContext`I3$$, 1, 90}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{437., {405., 416.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.811823712727458*^9, 3.811823749599628*^9}, 
+   3.811823904246806*^9, {3.8118239691599627`*^9, 3.811823971870948*^9}, 
+   3.811824022446714*^9},ExpressionUUID->"26da1c86-7540-4665-9f8e-\
+3a18734d796f"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1720, 1395},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Applications", 
+   "Mathematica.app", "Contents", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "Times_Basavyr_Unique.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 260, 5, 78, "Chapter",ExpressionUUID->"5b91b495-e3e2-45ab-9adc-23ad811dc54e"],
+Cell[CellGroupData[{
+Cell[865, 31, 585, 15, 76, "Section",ExpressionUUID->"38e0b4cd-301c-42a9-8313-58f6e6f30ecc"],
+Cell[1453, 48, 4488, 119, 191, "Input",ExpressionUUID->"1a2990a6-d55e-4e23-b392-abb0ef766681"],
+Cell[CellGroupData[{
+Cell[5966, 171, 625, 15, 38, "Input",ExpressionUUID->"298a6c3c-5227-491d-bb33-d06c7013efd6"],
+Cell[6594, 188, 2320, 47, 844, "Output",ExpressionUUID->"26da1c86-7540-4665-9f8e-3a18734d796f"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
