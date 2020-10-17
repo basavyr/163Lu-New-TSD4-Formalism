@@ -49,15 +49,22 @@ Evolution of the 3-axis w.r..t other two
 
 ![cp-2-example](Resources/Output_Data/Energy_Function/CP_animation_I3change.gif)
 
+> It is worth mentioning that the parameters chosen in the above contour plots were fixed from calculations performed by Raduta's method ***double-energy-shift-fit***
+
 ## Study of the energy function with respect to the spherical variables
 
 * The energy $\mathcal{H}$ is evaluated with respect to a change in both the coordinates $(\theta,\varphi)$, but also to a change in the fit parameters (*deformation parameters*).
 * This function has free terms, one mixed coordinate term (function of both $\theta$ and $\varphi$) and one which solely depends on $\theta$.
 * Evolution of the energy function with a change in the *free terms* magnitude might indicate the absolute minimum value that the nuclear system can have.
-* Understanding the smallness of the mixed terms could indicate if the function has stable points (or trajectories) around global minima (m) or maxima (M).
+* Understanding the smallness of the mixed terms could indicate if the function has stable points (or trajectories)      around global minima (m) or maxima (M).
 * The terms are denoted as in the diagram shown below.
 
 ![evolution_study](Resources/Diagrams/energy_function_free_terms.svg)
+
+> ⚠️ **Observation**: In the following section, the calculations were performed in the so-called *minimum points* of the energy function, namely, those points $p_k=(\theta_k,\varphi_k)$ which minimize the value of $\mathcal{H}$ for a particular set of deformation parameters $\mathcal{P}$.
+
+The numerical values for the parameter set was obtained from Raduta's calculations which implied fitting the excitation energies of all four TSD bands, but with two *energetic shifts* in the TSD2 and TSD4 (i.e. the excitation energies in these two bands were shifted upwards by some fixed values that arise from theoretical aspects regarding the signature/chiral concepts).
+Discussion about minimizing the energy function, finding its critical points, and extreme points will be done within the following sections.
 
 ### Evolution of the free term $T_0$
 
@@ -75,25 +82,25 @@ The triaxiality parameter $\gamma$ and the single-particle potential strength $V
 
 The inertial parameters are fixed, together with $V$. These values are obtained from the fitting procedure part. In this study, $\gamma$ varies inside: $[0,\frac{\pi}{6}]$.
 
-![evolution with gamma](T0_gm.jpeg)
+![evolution with gamma](Resources/Output_Graphs/Energy_Function/T0_gm.jpeg)
 
 #### Free term - evolution with $V$
 
 The inertial parameters are fixed, together with $\gamma$. These values are obtained from the fitting procedure part. In this study, $V$ varies inside: $[0,10]$.
 
-![evolution with gamma](T0_V.jpeg)
+![evolution with gamma](Resources/Output_Graphs/Energy_Function/T0_V.jpeg)
 
 ### Evolution of $T_1$
 
-This is a mixed term. Depends on both coordinates.
+This is a mixed term. Depends on both coordinates. The minimum point has been chosen $p_0=(\pi/2,2\pi)$.
 
 #### $T_1$ as a function of $\theta$
 
-![](T1_th.jpeg)
+![](Resources/Output_Graphs/Energy_Function/T1_th.jpeg)
 
 #### $T_1$ as a function of $\varphi$
 
-![](T1_fi.jpeg)
+![](Resources/Output_Graphs/Energy_Function/T1_fi.jpeg)
 
 ### Evolution of $T_2$
 
@@ -101,17 +108,17 @@ This term only contains the $\theta$ coordinate.
 
 #### $T_2$ evolution with $\theta$
 
-![](T2_th.jpeg)
+![](Resources/Output_Graphs/Energy_Function/T2_th.jpeg)
 
 ## Python vs. Mathematica
 
-There is a consistency between both implementations.
+A `python` implementation was also made for testing the correctness of the Mathematica developed algorithm. There is a consistency between both implementations.
 
+```Mathematica
+Do[Print[th, " ", Hen[spinTSD1, \[Pi]/2, th, A1, A2, A3, V, \[Gamma]]], {th, {0, \[Pi]/4, \[Pi]/2, \[Pi]}}]
 ```
-Do[Print[th, " ", 
-  Hen[spinTSD1, \[Pi]/2, th, A1, A2, A3, 
-   V, \[Gamma]]], {th, {0, \[Pi]/4, \[Pi]/2, \[Pi]}}]
 
+```text
 0 -5.57223
 
 \[Pi]/4 6.41407
@@ -123,7 +130,7 @@ Do[Print[th, " ",
 
 These values correspond to the numerical results printed via python within this segment of [py3-impl](Code/Python/EnergyFunction.py).
 
-```
+```py
 phi_test_values=[0,np.pi/4.0,np.pi/2.0,np.pi]
 for fi in phi_test_values:
     print(H_En(SPINS[0],CONSTANTS[0],CONSTANTS[1],CONSTANTS[2],CONSTANTS[3],CONSTANTS[4],np.pi/2,fi))
