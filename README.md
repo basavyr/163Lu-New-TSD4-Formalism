@@ -365,9 +365,15 @@ In the latest project update ([see this commit](https://github.com/basavyr/163Lu
 
 ## Further Analysis With Regards to the Nuclear Stability of $^{163}$Lu
 
-The nucleus is analyzed in terms of its critical points, or the regions where the deformed shapes exhibit certain properties (e.g. different wobbling regimes, axial symmetry, forbidden states).
-This project is introduced in the following [issue](https://github.com/basavyr/163Lu-New-TSD4-Formalism/issues/5).
+The nucleus is analyzed in terms of its critical points, or the regions where the deformed shapes exhibit certain properties (e.g. different wobbling regimes, axial symmetry, forbidden states). This addition is introduced in the following [issue](https://github.com/basavyr/163Lu-New-TSD4-Formalism/issues/5).
+
+Some key concepts which are of interest for the overall topic are:
+
+1. $\mathcal{H}(\theta,\varphi)$: The energy function of $^{163}$Lu - providing the classical energy expression for the isotope, approximated in the minimum points.
+2. The critical points of the energy function
+3. The extreme (**minimum**) points of the energy function across the $\theta - \varphi$ intervals.
+4. Graphical representations with the evolution of the energy function w.r.t. a set of deformation parameters.
 
 > **More information with regards to this part of the project can be seen [here](EnergyFunction.md).**
-
+> 
 Additional information regarding the workflow of this project can be found on this [Roam document](https://roamresearch.com/#/app/basavyr/page/xf-zGkA_-).

@@ -49,7 +49,7 @@ Evolution of the 3-axis w.r..t other two
 
 ![cp-2-example](Resources/Output_Data/Energy_Function/CP_animation_I3change.gif)
 
-> It is worth mentioning that the parameters chosen in the above contour plots were fixed from calculations performed by Raduta's method ***double-energy-shift-fit***
+> It is worth mentioning that the parameters chosen in the above contour plots were fixed from calculations performed by Raduta's method ***double-energy-shift-fit*** which will be described in detail in one of the following sections. The fit parameters used in this calculations provide the best results which confirm the wobbling spectrum of the isotope.
 
 ## Study of the energy function with respect to the spherical variables
 
@@ -135,3 +135,6 @@ phi_test_values=[0,np.pi/4.0,np.pi/2.0,np.pi]
 for fi in phi_test_values:
     print(H_En(SPINS[0],CONSTANTS[0],CONSTANTS[1],CONSTANTS[2],CONSTANTS[3],CONSTANTS[4],np.pi/2,fi))
 ```
+
+## Minimizing the energy function  - Contour plot with minimum points
+
