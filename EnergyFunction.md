@@ -186,8 +186,25 @@ Such a workflow is shown in the diagram below.
 
 ### Tabular form with the minimum points
 
-Below there is a table with all the minimum points found by the algorithm, using a predefined set of MOIs and fit parameters.
-![table-form-minPoints](Resources/Output_Graphs/Unified_Model/min_points_tabular.png)
+Below there are tables with all the minimum points found by the algorithm, using a predefined set of MOIs and spin values that correspond to the first level of each triaxial band (namely, TSD1, 2, 3, 4).
+
+> In the results obtained below, the fit parameters were obtained by using the ***B1*** formalism, that is completely described in the main project doc-file.
+
+#### TSD1(0,0)
+
+![table-form-minPoints1](Resources/Output_Graphs/Unified_Model/min_points_tabular_1.png)
+
+#### TSD2(0,0)
+
+![table-form-minPoints2](Resources/Output_Graphs/Unified_Model/min_points_tabular_2.png)
+
+#### TSD3(1,0)
+
+![table-form-minPoints3](Resources/Output_Graphs/Unified_Model/min_points_tabular_3.png)
+
+#### TSD4(0,0)
+
+![table-form-minPoints4](Resources/Output_Graphs/Unified_Model/min_points_tabular_4.png)
 
 There is also a table with all the partial derivatives for a given set of parameters and spin. File can be accessed [here](Resources/Output_Data/Energy_Function/H_Partials.pdf).
 
