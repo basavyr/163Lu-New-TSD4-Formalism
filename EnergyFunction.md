@@ -182,4 +182,13 @@ The Mathematica implementation (finished within [this project commit](https://gi
 
 Such a workflow is shown in the diagram below.
 
+![min-points](Resources/Diagrams/minimum_points_EnergyFunction_workflow.svg)
+
+### Tabular form with the minimum points
+
+Below there is a table with all the minimum points found by the algorithm, using a predefined set of MOIs and fit parameters.
+![table-form-minPoints](Resources/Output_Graphs/Unified_Model/min_points_tabular.png)
+
+There is also a table with all the partial derivatives for a given set of parameters and spin. File can be accessed [here](Resources/Output_Data/Energy_Function/H_Partials.pdf).
+
 [^1]: Frauendorf, S., & Dönau, F. (2014). Transverse wobbling: A collective mode in odd-<span class="aps-inline-formula"><math><mi>A</mi></math></span> triaxial nuclei. Phys. Rev. C. https://doi.org/10.1103/PhysRevC.89.014322
