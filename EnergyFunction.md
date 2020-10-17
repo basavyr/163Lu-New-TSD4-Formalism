@@ -148,12 +148,12 @@ It is well-known from the work of Frauendorf et al [^1] that there can be two ty
 
 > It is important to notice that for a triaxial rigid rotator, the intermediate axis has the largest moment of inertia.
 
-[^1]: Frauendorf, S., & Dönau, F. (2014). Transverse wobbling: A collective mode in odd-<span class="aps-inline-formula"><math><mi>A</mi></math></span> triaxial nuclei. Phys. Rev. C. https://doi.org/10.1103/PhysRevC.89.014322
-
 By obtaining a consistent graphical representation with the change in the energy of the nuclear surface (by surface, one considers the fact that the classical energy function obtained by expanding the Hamiltonian around the stability points, thus obtaining the classical equation that dictates the possible states of nuclear stability/existence), it is possible to give a conclusion on wether the isotope is of transverse type or longitudinal type.
 
 There is a [Mathematica implementation](Code/Math/Energy_Function_MOI_Evolution.nb) which focuses on computing the numerical values for the energy function (function arguments being the spherical coordinates) for a given set of deformation parameters, and then perform the contour plots. Proper workflow is given in the diagram attached below.
 
 
 **The general workflow of the Mathematica implementation for obtaining a graphical representation with the *energy surface***
-![contours-workflow](Resources/Diagrams/transversalWobbling.svg)
+![contours-workflow](Resources/Diagrams/contour_plot_workflow.svg)
+
+[^1]: Frauendorf, S., & Dönau, F. (2014). Transverse wobbling: A collective mode in odd-<span class="aps-inline-formula"><math><mi>A</mi></math></span> triaxial nuclei. Phys. Rev. C. https://doi.org/10.1103/PhysRevC.89.014322
