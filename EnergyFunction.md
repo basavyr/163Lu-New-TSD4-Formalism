@@ -136,7 +136,7 @@ for fi in phi_test_values:
     print(H_En(SPINS[0],CONSTANTS[0],CONSTANTS[1],CONSTANTS[2],CONSTANTS[3],CONSTANTS[4],np.pi/2,fi))
 ```
 
-## Minimizing the energy function  - Contour plot with minimum points
+## Contour plot of the energy function
 
 The contour plot for the energy function, which represents its numerical change with respect the the spherical coordinates $\theta, \varphi$ is a critical part of this work, since it might provide information with nuclear shape transitions (when the angular momentum changes its value), the wobbling regime (wether it is *longitudinal* or *transverse*).
 
@@ -152,8 +152,34 @@ By obtaining a consistent graphical representation with the change in the energy
 
 There is a [Mathematica implementation](Code/Math/Energy_Function_MOI_Evolution.nb) which focuses on computing the numerical values for the energy function (function arguments being the spherical coordinates) for a given set of deformation parameters, and then perform the contour plots. Proper workflow is given in the diagram attached below.
 
-
 **The general workflow of the Mathematica implementation for obtaining a graphical representation with the *energy surface***
+
 ![contours-workflow](Resources/Diagrams/contour_plot_workflow.svg)
+
+## Analysis of the energy surface of $^{163}$Lu
+
+The $\mathcal{H}$ quantity can show the stability regions where transverse/longitudinal wobbling might take place, at different spin values $I$. It is also necessary to study which of the regions across the $\theta-varphi$ plane have trajectories around **minimum points**, since those trajectories represent in fact the possible rotational states of the nucleus at different spins and deformation parameters.
+
+As a result, on this section, a complete description on how the minimum points $p^\text{min}_k$ are computed and also graphically represented alongside the contours. In addition, table views with the minimum points for each spin value are exported from Mathematica. Having the numerical values for a direct comparison with C++ numerical implementations is a useful procedure.
+
+**Goals**:
+
+1. Find the **critical points** of $\mathcal{H}$:
+   1. Find (analytical) expressions for the 1st order partial derivatives of $\mathcal{H}$, namely:
+   $$\left(\frac{\partial \mathcal{H}}{\partial \theta}\ ,\ \frac{\partial \mathcal{H}}{\partial \varphi}\right)$$
+   2. Find (analytical) expressions for the 2nd order partial derivatives of $\mathcal{H}$, namely:
+   $$\left(\frac{\partial^2 \mathcal{H}}{\partial \theta^2}\ ,\ \frac{\partial^2 \mathcal{H}}{\partial \varphi^2}\right)$$
+   3. Construct the mixed derivative of $\mathcal{H}$.
+   4. Construct the **discriminant operator**: $$\Delta(\mathcal{H})=\text{(product 2nd order p.d.s)}-(\text{mixed derivative of H})^2$$
+
+ℹ️ These steps are required in order to find the possible candidates for minimum points of the energy function. More information on how one can compute/find the critical points of a multi-variable function (points in which the function itself has a null first-order partial) can be found in [this 📝 document](Resources/Documentation/13.7__Extreme_Values_and_Saddle_Points.pdf). 
+
+2. Find the **minimum points** of $\mathcal{H}$: Once the critical points have been identified (for the entire interval of values $\theta$ and $\varphi$), there are just two straightforward conditions which need ot be checked by the point $p_\text{critical}=(\theta_c,\varphi_c)$. According to the cited document above, the conditions are:
+   1. **Positive** *discriminant* of $\mathcal{H}$ in that point.
+   2. **Positive** 2nd order partial derivative w.r.t. $\theta$.
+
+The Mathematica implementation (finished within [this project commit](https://github.com/basavyr/163Lu-New-TSD4-Formalism/commit/60f747b5d241cf2406d5876ec83ad94ed3a5d215)) attempts at checking the necessary conditions for critical and then minimal points by taking values of $\theta$ and $\varphi$ with a step of 10$^o$ on each iteration. The valid points are saved into a list, then exported into a tabular form, but also as `Graphics` objects which will be represented together with the contour plot, in order to have a proper identification of the trajectories around the marked points.
+
+Such a workflow is shown in the diagram below.
 
 [^1]: Frauendorf, S., & Dönau, F. (2014). Transverse wobbling: A collective mode in odd-<span class="aps-inline-formula"><math><mi>A</mi></math></span> triaxial nuclei. Phys. Rev. C. https://doi.org/10.1103/PhysRevC.89.014322
