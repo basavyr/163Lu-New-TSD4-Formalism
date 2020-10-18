@@ -165,20 +165,27 @@ void Search_RMS(FitParameters &fit_params)
 
     //Steps for controlling the algorithm's precision
     //!In principle, smaller steps should result in smaller RMS values
-    double V_step = 1.0;
+    double V_step = 1.00;
     double Gamma_step = 1.0;
     double I_step = 1.0;
 
     //Store the minimum rms value after each iteration
     double min_rms = 9.0e11;
 
+    //Store the current rms under evaluation
+    double current_rms;
+
     //the intervals for the values of Class-A MOIs
-    double I1_left = 55.0, I1_right = 85.0;
-    double I2_left = 10.0, I2_right = 50.0;
-    double I3_left = 10.0, I3_right = 50.0;
+    double I1_left = 60.0, I1_right = 80.0;
+    double I2_left = 1.0, I2_right = 20.0;
+    double I3_left = 1.0, I3_right = 20.0;
+
+    auto complex = static_cast<double>(pow((I2_right - I2_left) / I_step, 2) * (10 / V_step) * 11 * pow(SHIFTS.size(), 2));
+    std::cout << "Complexity: O(" << complex << ")\n";
 
     //the search-complex-loop
-    for (auto I1 = I1_left; I1 <= I1_right; I1 += I_step)
+    // for (auto I1 = I1_left; I1 <= I1_right; I1 += I_step)
+    auto I1 = 75.0;
     {
         for (auto I2 = I2_left; I2 <= I2_right && I2 < I1; I2 += I_step)
         {
@@ -190,7 +197,23 @@ void Search_RMS(FitParameters &fit_params)
                     {
                         for (auto Gamma = 15.0; Gamma <= 25.0; Gamma += Gamma_step)
                         {
-                            gout << 1 << "\n";
+                            for (auto i = 0; i < SHIFTS.size(); ++i)
+                            {
+                                for (auto j = 0; j < SHIFTS.size(); ++j)
+                                {
+                                    current_rms = RMS(IF(I1), IF(I2), IF(I3), V, Gamma * PI / 180.0, SHIFTS.at(i), SHIFTS.at(j));
+                                    if (Lu163.valid(current_rms) && current_rms< min_rms)
+                                    {
+                                        min_rms = current_rms;
+                                        fit_params.I1 = I1;
+                                        fit_params.I2 = I2;
+                                        fit_params.I3 = I3;
+                                        fit_params.RMS = current_rms;
+                                        fit_params.V = V;
+                                        fit_params.Gamma = Gamma;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -208,5 +231,7 @@ int main()
     auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count() / 1000.0;
 
     std::cout << "Process took: " << duration_ms << " s\n";
+    std::cout << "RMS= " << fit_params.RMS << "\n";
+    std::cout << fit_params.I1 << " " << fit_params.I2 << " " << fit_params.I3 << " " << fit_params.V << " " << fit_params.Gamma << "\n";
     return 0;
 }
