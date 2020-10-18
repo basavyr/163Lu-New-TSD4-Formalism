@@ -6,6 +6,7 @@
 #include <cmath>
 #include <algorithm>
 #include <vector>
+#include <chrono>
 
 //constants for easy-access
 const double PI = 3.141592654;
@@ -147,7 +148,65 @@ double RMS(double A1, double A2, double A3, double V, double Gamma, double TSD2_
     return static_cast<double>(sqrt(rms / Lu163.DATA_SIZE));
 }
 
+struct FitParameters
+{
+    double I1;
+    double I2;
+    double I3;
+    double V;
+    double Gamma;
+    double RMS;
+};
+
+void Search_RMS(FitParameters &fit_params)
+{
+
+    std::ofstream gout("class-mois.dat");
+
+    //Steps for controlling the algorithm's precision
+    //!In principle, smaller steps should result in smaller RMS values
+    double V_step = 1.0;
+    double Gamma_step = 1.0;
+    double I_step = 1.0;
+
+    //Store the minimum rms value after each iteration
+    double min_rms = 9.0e11;
+
+    //the intervals for the values of Class-A MOIs
+    double I1_left = 55.0, I1_right = 85.0;
+    double I2_left = 10.0, I2_right = 50.0;
+    double I3_left = 10.0, I3_right = 50.0;
+
+    //the search-complex-loop
+    for (auto I1 = I1_left; I1 <= I1_right; I1 += I_step)
+    {
+        for (auto I2 = I2_left; I2 <= I2_right && I2 < I1; I2 += I_step)
+        {
+            for (auto I3 = I3_left; I3 <= I3_right && I3 < I1; I3 += I_step)
+            {
+                if (I2 != I3)
+                {
+                    for (auto V = 0.0; V <= 10.1; V += V_step)
+                    {
+                        for (auto Gamma = 15.0; Gamma <= 25.0; Gamma += Gamma_step)
+                        {
+                            gout << 1 << "\n";
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 int main()
 {
+    FitParameters fit_params;
+
+    auto start = std::chrono::high_resolution_clock::now();
+    Search_RMS(fit_params);
+    auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count() / 1000.0;
+
+    std::cout << "Process took: " << duration_ms << " s\n";
     return 0;
 }
