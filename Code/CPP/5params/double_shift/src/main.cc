@@ -182,7 +182,7 @@ void Search_RMS(FitParameters &fit_params)
     double I2_left = 1.0, I2_right = 20.0;
     double I3_left = 1.0, I3_right = 20.0;
 
-    auto complex = static_cast<double>(pow((I2_right - I2_left) / I_step, 2) * (10 / V_step) * 6 * pow(SHIFTS.size(), 2));
+    auto complex = static_cast<double>(pow((I2_right - I2_left) / I_step, 3) * (10 / V_step) * 6 * pow(SHIFTS.size(), 2));
     std::cout << "Complexity: O(" << complex << ")\n";
 
     //! *********************
@@ -191,8 +191,8 @@ void Search_RMS(FitParameters &fit_params)
     //! *********************
     //! *********************
 
-    // for (auto I1 = I1_left; I1 <= I1_right; I1 += I_step)
-    auto I1 = 75.0;
+    // auto I1 = 75.0;
+    for (auto I1 = I1_left; I1 <= I1_right; I1 += I_step)
     {
         for (auto I2 = I2_left; I2 <= I2_right && I2 < I1; I2 += I_step)
         {
