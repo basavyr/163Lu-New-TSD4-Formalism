@@ -13,10 +13,12 @@ public:
     const double YRAST_SPIN = 6.5;
     const double j = 6.5;
     const double ERROR = 6969;
-    
+
     //N+1 data points (subtract the band-head state from TSD1)
     const double DATA_SIZE = 62 + 1;
 
+    //This function return TRUE if the argument is a real(physical) number
+    //and only if the argument is different from an invalid(unwanted) quantity which is explicitely given for invalid results in any of the previous computations
     int valid(double number)
     {
         if (!isnan(number) && number != ERROR)

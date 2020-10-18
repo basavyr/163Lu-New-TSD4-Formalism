@@ -156,6 +156,8 @@ struct FitParameters
     double V;
     double Gamma;
     double RMS;
+    double TSD2_SHIFT;
+    double TSD4_SHIFT;
 };
 
 void Search_RMS(FitParameters &fit_params)
@@ -165,9 +167,9 @@ void Search_RMS(FitParameters &fit_params)
 
     //Steps for controlling the algorithm's precision
     //!In principle, smaller steps should result in smaller RMS values
-    double V_step = 1.00;
+    double V_step = 1.0;
     double Gamma_step = 1.0;
-    double I_step = 1.0;
+    double I_step = 5.0;
 
     //Store the minimum rms value after each iteration
     double min_rms = 9.0e11;
@@ -176,14 +178,19 @@ void Search_RMS(FitParameters &fit_params)
     double current_rms;
 
     //the intervals for the values of Class-A MOIs
-    double I1_left = 60.0, I1_right = 80.0;
+    double I1_left = 65.0, I1_right = 75.0;
     double I2_left = 1.0, I2_right = 20.0;
     double I3_left = 1.0, I3_right = 20.0;
 
-    auto complex = static_cast<double>(pow((I2_right - I2_left) / I_step, 2) * (10 / V_step) * 11 * pow(SHIFTS.size(), 2));
+    auto complex = static_cast<double>(pow((I2_right - I2_left) / I_step, 2) * (10 / V_step) * 6 * pow(SHIFTS.size(), 2));
     std::cout << "Complexity: O(" << complex << ")\n";
 
-    //the search-complex-loop
+    //! *********************
+    //! *********************
+    //!the search procedure
+    //! *********************
+    //! *********************
+
     // for (auto I1 = I1_left; I1 <= I1_right; I1 += I_step)
     auto I1 = 75.0;
     {
@@ -193,16 +200,16 @@ void Search_RMS(FitParameters &fit_params)
             {
                 if (I2 != I3)
                 {
-                    for (auto V = 0.0; V <= 10.1; V += V_step)
+                    for (auto V = 0.1; V <= 10.1; V += V_step)
                     {
-                        for (auto Gamma = 15.0; Gamma <= 25.0; Gamma += Gamma_step)
+                        for (auto Gamma = 16.0; Gamma <= 22.0; Gamma += Gamma_step)
                         {
                             for (auto i = 0; i < SHIFTS.size(); ++i)
                             {
                                 for (auto j = 0; j < SHIFTS.size(); ++j)
                                 {
                                     current_rms = RMS(IF(I1), IF(I2), IF(I3), V, Gamma * PI / 180.0, SHIFTS.at(i), SHIFTS.at(j));
-                                    if (Lu163.valid(current_rms) && current_rms< min_rms)
+                                    if (Lu163.valid(current_rms) && current_rms < min_rms)
                                     {
                                         min_rms = current_rms;
                                         fit_params.I1 = I1;
@@ -211,6 +218,8 @@ void Search_RMS(FitParameters &fit_params)
                                         fit_params.RMS = current_rms;
                                         fit_params.V = V;
                                         fit_params.Gamma = Gamma;
+                                        fit_params.TSD2_SHIFT = SHIFTS.at(i);
+                                        fit_params.TSD4_SHIFT = SHIFTS.at(j);
                                     }
                                 }
                             }
@@ -232,6 +241,10 @@ int main()
 
     std::cout << "Process took: " << duration_ms << " s\n";
     std::cout << "RMS= " << fit_params.RMS << "\n";
+    std::cout << "Parameters:\n";
     std::cout << fit_params.I1 << " " << fit_params.I2 << " " << fit_params.I3 << " " << fit_params.V << " " << fit_params.Gamma << "\n";
+    std::cout << "Shifts:\n";
+    std::cout << fit_params.TSD2_SHIFT << " " << fit_params.TSD4_SHIFT << "\n";
+
     return 0;
 }
