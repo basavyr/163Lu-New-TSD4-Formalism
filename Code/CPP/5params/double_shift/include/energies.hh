@@ -13,6 +13,9 @@ public:
     const double YRAST_SPIN = 6.5;
     const double j = 6.5;
     const double ERROR = 6969;
+    
+    //N+1 data points (subtract the band-head state from TSD1)
+    const double DATA_SIZE = 62 + 1;
 
     int valid(double number)
     {
@@ -115,11 +118,11 @@ public:
         if (!valid(Om_2))
             return ERROR;
 
-        double E = H_min(I, A1, A2, A3, V, Gamma) + Om_1 * (nw_1 + 0.5) + Om_2 * (nw_2 + 0.5);
-        if (!valid(E))
+        double E_Wob = H_min(I, A1, A2, A3, V, Gamma) + Om_1 * (nw_1 + 0.5) + Om_2 * (nw_2 + 0.5);
+        if (!valid(E_Wob))
             return ERROR;
 
-        return E;
+        return E_Wob;
     }
 
     double TSD1(double I, double A1, double A2, double A3, double V, double Gamma)
