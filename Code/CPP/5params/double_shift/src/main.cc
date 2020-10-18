@@ -233,6 +233,7 @@ void Search_RMS(FitParameters &fit_params)
 
 int main()
 {
+    std::ofstream gout("double_shift_fit_params.dat");
     FitParameters fit_params;
 
     auto start = std::chrono::high_resolution_clock::now();
@@ -245,6 +246,14 @@ int main()
     std::cout << fit_params.I1 << " " << fit_params.I2 << " " << fit_params.I3 << " " << fit_params.V << " " << fit_params.Gamma << "\n";
     std::cout << "Shifts:\n";
     std::cout << fit_params.TSD2_SHIFT << " " << fit_params.TSD4_SHIFT << "\n";
+
+    //Write to a file
+    gout << "Process took: " << duration_ms << " s\n";
+    gout << "RMS= " << fit_params.RMS << "\n";
+    gout << "Parameters:\n";
+    gout << fit_params.I1 << " " << fit_params.I2 << " " << fit_params.I3 << " " << fit_params.V << " " << fit_params.Gamma << "\n";
+    gout << "Shifts:\n";
+    gout << fit_params.TSD2_SHIFT << " " << fit_params.TSD4_SHIFT << "\n";
 
     return 0;
 }
