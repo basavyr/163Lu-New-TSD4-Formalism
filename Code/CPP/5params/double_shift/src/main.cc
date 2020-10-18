@@ -167,9 +167,9 @@ void Search_RMS(FitParameters &fit_params)
 
     //Steps for controlling the algorithm's precision
     //!In principle, smaller steps should result in smaller RMS values
-    double V_step = 1.0;
+    double V_step = 0.10;
     double Gamma_step = 1.0;
-    double I_step = 5.0;
+    double I_step = 1.0;
 
     //Store the minimum rms value after each iteration
     double min_rms = 9.0e11;
