@@ -33,6 +33,7 @@
     - [Evolution of nucleus's MOIs with respect to the fitting approaches](#evolution-of-nucleuss-mois-with-respect-to-the-fitting-approaches)
   - [Serial vs. Parallel implementation (`V.1`)](#serial-vs-parallel-implementation-v1)
   - [Further Analysis With Regards to the Nuclear Stability of $^{163}$Lu](#further-analysis-with-regards-to-the-nuclear-stability-of-163lu)
+  - [Implementation of a Novel Approach Regarding TSD2 & TSD4 + `Class-A` Contour Plots](#implementation-of-a-novel-approach-regarding-tsd2--tsd4--class-a-contour-plots)
 
 ## Theoretical Aspects Regarding Wobbling Motion in $^{163}$Lu
 
@@ -377,3 +378,12 @@ Some key concepts which are of interest for the overall topic are:
 > **More information with regards to this part of the project can be seen [here](EnergyFunction.md).**
 > 
 Additional information regarding the workflow of this project can be found on this [Roam document](https://roamresearch.com/#/app/basavyr/page/xf-zGkA_-).
+
+## Implementation of a Novel Approach Regarding TSD2 & TSD4 + `Class-A` Contour Plots
+
+This latest updated (introduced with the creation of [a new branch](https://github.com/basavyr/163Lu-New-TSD4-Formalism/tree/double-shift)) will focus on obtaining a new set of parameters that have two objectives:
+
+- [ ] Provide a good agreement with the experimental data concerning the *excitation energies* of the wobbling spectrum in $^{163}$Lu
+- [ ] Provide a realistic picture of the energy surface/stability of the nuclear states at different angular momenta (so-called `Class-A` contour plots/energy functions).
+
+> A dedicated document with the workflow of this numerical implementation can be found [here](Code/CPP/5params/double_shift/description.md).
