@@ -68,3 +68,4 @@ The values for the free parameters, as well as the `E_rms` can be seen in the ta
 
 The results for the contour plots can be seen in the graphical representations shown below, for each of the four spins that correspond to the bands 1,2,3, and 4, respectively.
 
+![contours-svg](../../../../Resources/Output_Graphs/double-shift/Contour-Grid_doubleShift.svg)
