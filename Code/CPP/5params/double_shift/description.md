@@ -61,3 +61,10 @@ The theoretical values for the excitation energies are in agreement with the exp
 The values for the free parameters, as well as the `E_rms` can be seen in the table below.
 
 ![params-double-shift](../../../../Resources/Output_Graphs/double-shift/double-shift_parameters.png)
+
+> ⚠️  The shift in energy for the 2nd band is smaller than the one used for TSD4. This can lead to the speculation/conclusion that a signature partner has smaller effects into the wobbling spectrum of a triaxial nucleus, rather then the chiral partners.
+
+## Double-$\epsilon$-shift results: `Class-A` contour plots
+
+The results for the contour plots can be seen in the graphical representations shown below, for each of the four spins that correspond to the bands 1,2,3, and 4, respectively.
+
