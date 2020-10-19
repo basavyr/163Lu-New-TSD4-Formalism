@@ -54,3 +54,10 @@ The C++ implementation ran successfully on the ELK virtual machine 💻 (details
 
 > ℹ️  Improvement on the `rms` value was achieved, with `Class-A` moments of inertia 🌟
 
+The theoretical values for the excitation energies are in agreement with the experimental data.
+
+![svg-wobbling-energies](../../../../Resources/Output_Graphs/double-shift/DoubleShift_energiesGrid.png).
+
+The values for the free parameters, as well as the `E_rms` can be seen in the table below.
+
+![params-double-shift](../../../../Resources/Output_Graphs/double-shift/double-shift_parameters.png)
