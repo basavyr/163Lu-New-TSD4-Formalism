@@ -47,3 +47,10 @@ Example of a `Class-A` energy function/contour-plot:
 ***The quality of the excited spectrum must not be affected by the `class-A`+`double-shift` (combined) approaches.***
 
 After the newly determined class-A MOIs are found, the straightforward implementation of the fit can be performed.
+
+## Results of the double-$\epsilon$-shift fitting procedure ✅
+
+The C++ implementation ran successfully on the ELK virtual machine 💻 (details about the environment can be seen [here](https://www.notion.so/robertphd/Virtual-Machine-35554fa329aa4e8489cdadd640a1ea55))
+
+> ℹ️  Improvement on the `rms` value was achieved, with `Class-A` moments of inertia 🌟
+
