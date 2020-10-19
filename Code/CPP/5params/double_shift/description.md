@@ -66,6 +66,8 @@ The values for the free parameters, as well as the `E_rms` can be seen in the ta
 
 ## Double-$\epsilon$-shift results: `Class-A` contour plots
 
-The results for the contour plots can be seen in the graphical representations shown below, for each of the four spins that correspond to the bands 1,2,3, and 4, respectively.
+🌟 The results for the contour plots can be seen in the graphical representations shown below, for each of the four spins that correspond to the bands 1,2,3, and 4, respectively.
 
-![contours-svg](../../../../Resources/Output_Graphs/double-shift/Contour-Grid_doubleShift.svg)
+📉 The contour plots were evaluated for spins that belong to each band, and the 2nd spin of each band (from the band-head upwards) is considered for evaluation.
+
+![contours-svg](../../../../Resources/Output_Graphs/double-shift/Contour-Grid_doubleShift.png)
