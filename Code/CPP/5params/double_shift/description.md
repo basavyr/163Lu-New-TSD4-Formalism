@@ -1,5 +1,11 @@
 # Double Energy Shift - TSD2 & TSD4
 
+- [Double Energy Shift - TSD2 & TSD4](#double-energy-shift---tsd2--tsd4)
+  - [Shifting the bands TSD2-4](#shifting-the-bands-tsd2-4)
+  - [`Class-A` Contour Plots for $\mathcal{H}(\theta,\varphi)$](#class-a-contour-plots-for-mathcalhthetavarphi)
+  - [Results of the double-$\epsilon$-shift fitting procedure ✅](#results-of-the-double-epsilon-shift-fitting-procedure-)
+  - [Double-$\epsilon$-shift results: `Class-A` contour plots](#double-epsilon-shift-results-class-a-contour-plots)
+
 *Double-$\epsilon$-shift*
 
 This C++ implementation attempts at finding the best parameter set ($\mathcal{P}=[\mathcal{I}_1,\mathcal{I}_2,\mathcal{I}_3,V,\gamma]$) that minimize the root mean square error of the wobbling energies in $^{163}$Lu.

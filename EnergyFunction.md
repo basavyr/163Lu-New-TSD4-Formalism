@@ -1,5 +1,31 @@
 # The energy function of $^{163}$Lu
 
+- [The energy function of $^{163}$Lu](#the-energy-function-of-163lu)
+  - [Classical equations](#classical-equations)
+  - [Spherical coordinates $\theta$, $\varphi$](#spherical-coordinates-theta-varphi)
+  - [Contour Plot](#contour-plot)
+  - [Evolution with respect to the overall triaxiality effect in $^{163}$Lu](#evolution-with-respect-to-the-overall-triaxiality-effect-in-163lu)
+  - [Study of the energy function with respect to the spherical variables](#study-of-the-energy-function-with-respect-to-the-spherical-variables)
+    - [Evolution of the free term $T_0$](#evolution-of-the-free-term-t_0)
+      - [Free term - evolution with $\gamma$](#free-term---evolution-with-gamma)
+      - [Free term - evolution with $V$](#free-term---evolution-with-v)
+    - [Evolution of $T_1$](#evolution-of-t_1)
+      - [$T_1$ as a function of $\theta$](#t_1-as-a-function-of-theta)
+      - [$T_1$ as a function of $\varphi$](#t_1-as-a-function-of-varphi)
+    - [Evolution of $T_2$](#evolution-of-t_2)
+      - [$T_2$ evolution with $\theta$](#t_2-evolution-with-theta)
+  - [Python vs. Mathematica](#python-vs-mathematica)
+  - [Contour plot of the energy function](#contour-plot-of-the-energy-function)
+    - [Wobbling regimes in nuclei](#wobbling-regimes-in-nuclei)
+  - [Analysis of the energy surface of $^{163}$Lu](#analysis-of-the-energy-surface-of-163lu)
+    - [Tabular form with the minimum points](#tabular-form-with-the-minimum-points)
+      - [TSD1(0,0)](#tsd100)
+      - [TSD2(0,0)](#tsd200)
+      - [TSD3(1,0)](#tsd310)
+      - [TSD4(0,0)](#tsd400)
+  - [⚙️ Double-energy-shift fit](#️-double-energy-shift-fit)
+
+
 Another focus of this project is to find the energy function associated with the triaxial nucleus, function which describes the rotational behavior or can even indicate shape transitions and speculate on the actual wobbling regime that takes place in the nucleus at a given spin value.
 
 ## Classical equations
@@ -49,7 +75,7 @@ Evolution of the 3-axis w.r..t other two
 
 ![cp-2-example](Resources/Output_Data/Energy_Function/CP_animation_I3change.gif)
 
-> It is worth mentioning that the parameters chosen in the above contour plots were fixed from calculations performed by Raduta's method ***double-energy-shift-fit*** which will be described in detail in one of the following sections. The fit parameters used in this calculations provide the best results which confirm the wobbling spectrum of the isotope.
+> ⚠️ℹ️  It is worth mentioning that the parameters chosen in the above contour plots were fixed from calculations performed by Raduta's method [***double-energy-shift-fit***](Code/CPP/5params/double_shift/description.md) which will be described in detail in one of the following sections. The fit parameters used in this calculations provide the best results which confirm the wobbling spectrum of the isotope.
 
 ## Study of the energy function with respect to the spherical variables
 
@@ -146,7 +172,7 @@ It is well-known from the work of Frauendorf et al [^1] that there can be two ty
 
 ![wobbling-regime](Resources/Diagrams/transversalWobbling.svg)
 
-> It is important to notice that for a triaxial rigid rotator, the intermediate axis has the largest moment of inertia.
+> ⚠️ It is important to notice that for a triaxial rigid rotator, the intermediate axis has the largest moment of inertia.
 
 By obtaining a consistent graphical representation with the change in the energy of the nuclear surface (by surface, one considers the fact that the classical energy function obtained by expanding the Hamiltonian around the stability points, thus obtaining the classical equation that dictates the possible states of nuclear stability/existence), it is possible to give a conclusion on wether the isotope is of transverse type or longitudinal type.
 
@@ -188,7 +214,7 @@ Such a workflow is shown in the diagram below.
 
 Below there are tables with all the minimum points found by the algorithm, using a predefined set of MOIs and spin values that correspond to the first level of each triaxial band (namely, TSD1, 2, 3, 4).
 
-> In the results obtained below, the fit parameters were obtained by using the ***B1*** formalism, that is completely described in the main project doc-file.
+> ⚠️ ⚠️ In the results obtained below, the fit parameters were obtained by using the ***B1*** formalism, that is completely described in the main project doc-file. The formalism was adjusted with the double-energy-shift fitting procedure, described [below and in a sperate file 📝 ➡️ here](Code/CPP/5params/double_shift/description.md).
 
 #### TSD1(0,0)
 
@@ -207,5 +233,21 @@ Below there are tables with all the minimum points found by the algorithm, using
 ![table-form-minPoints4](Resources/Output_Graphs/Unified_Model/min_points_tabular_4.png)
 
 There is also a table with all the partial derivatives for a given set of parameters and spin. File can be accessed [here](Resources/Output_Data/Energy_Function/H_Partials.pdf).
+
+## ⚙️ Double-energy-shift fit
+
+Developed by 💪  Raduta, this approach aims at describing the wobbling spectrum of $^{163}$Lu using the following arguments:
+
+* ⚠️ The signature nature of TSD1 and TSD2 imply a difference between the two bands, constant in its numerical value, denoted by $\epsilon_1$ or $\epsilon_\text{TSD2}$, which will always remain present into the numerical implementation, even after the subtraction for getting the *excitation energies* has been performed.
+
+* ⚠️The chiral nature of TSD1 and TSD4 also implies a difference between the two bands (an energetic type of difference) which will be present when also working within the *excitation energy* calculations: $\epsilon_2$ or $\epsilon_\text{TSD4}$.
+
+* 🌟  These are considered *free-parameters* into the problem, since one cannot know with certainty what the actual values for the two shifts might be (due to the unknown quantitative effects of both *chirality* and also *parity* in triaxial nuclei).
+
+* 🔧   Implementing this into the numerical algorithm means that in both analytical expressions of `TSD2` and `TSD4`, an additional argument needs to be created, namely `double energy_shift`. This will take care of the upward shift in energy for the theoretical expression of $E_{exc}$.
+
+*❓ The current fitting results produce different values for the two energetic shifts. One can see in the fit results ([[here](Code/CPP/5params/double_shift/description.md)) that the value of $\epsilon_2$ is bigger than the one associated to TSD2. This might lead to the conclusion that the chiral effects are much stronger than the signature effects in this nucleus.
+
+> 📁 More details [➡️ here](Code/CPP/5params/double_shift/description.md).
 
 [^1]: Frauendorf, S., & Dönau, F. (2014). Transverse wobbling: A collective mode in odd-<span class="aps-inline-formula"><math><mi>A</mi></math></span> triaxial nuclei. Phys. Rev. C. https://doi.org/10.1103/PhysRevC.89.014322
