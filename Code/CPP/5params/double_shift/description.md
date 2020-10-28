@@ -1,7 +1,7 @@
 # Double Energy Shift - TSD2 & TSD4
 
 - [Double Energy Shift - TSD2 & TSD4](#double-energy-shift---tsd2--tsd4)
-  - [Shifting the bands TSD2-4](#shifting-the-bands-tsd2-4)
+  - [Shifting the bands TSD2 and TSD4](#shifting-the-bands-tsd2-and-tsd4)
   - [`Class-A` Contour Plots for $\mathcal{H}(\theta,\varphi)$](#class-a-contour-plots-for-mathcalhthetavarphi)
   - [Results of the double-$\epsilon$-shift fitting procedure ✅](#results-of-the-double-epsilon-shift-fitting-procedure-)
   - [Double-$\epsilon$-shift results: `Class-A` contour plots](#double-epsilon-shift-results-class-a-contour-plots)
@@ -10,7 +10,7 @@
 
 This C++ implementation attempts at finding the best parameter set ($\mathcal{P}=[\mathcal{I}_1,\mathcal{I}_2,\mathcal{I}_3,V,\gamma]$) that minimize the root mean square error of the wobbling energies in $^{163}$Lu.
 
-## Shifting the bands TSD2-4
+## Shifting the bands TSD2 and TSD4
 
 Compared to the formalisms that considered the different configurations for the TSD1,2,3,4 triaxial bands (i.e. A-B formalisms), and the one that makes an upward shift in energy just for the fourth wobbling band (TSD4), in this current implementation, there will be two different upward shifts in the excitation energies for both TSD2 and TSD4.
 
@@ -62,7 +62,7 @@ The C++ implementation ran successfully on the ELK virtual machine 💻 (details
 
 The theoretical values for the excitation energies are in agreement with the experimental data.
 
-![svg-wobbling-energies](../../../../Resources/Output_Graphs/double-shift/DoubleShift_energiesGrid.png).
+![svg-wobbling-energies](../../../../Resources/Output_Graphs/double-shift/DoubleShift_energiesGrid.png)
 
 The values for the free parameters, as well as the `E_rms` can be seen in the table below.
 
@@ -74,6 +74,6 @@ The values for the free parameters, as well as the `E_rms` can be seen in the ta
 
 🌟 The results for the contour plots can be seen in the graphical representations shown below, for each of the four spins that correspond to the bands 1,2,3, and 4, respectively.
 
-📉 The contour plots were evaluated for spins that belong to each band, and the 2nd spin of each band (from the band-head upwards) is considered for evaluation.
+📉 The contour plots were evaluated for the 2nd spin of each band (from the band-head upwards).
 
 ![contours-svg](../../../../Resources/Output_Graphs/double-shift/Contour-Grid_doubleShift.png)
