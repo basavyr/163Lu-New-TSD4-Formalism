@@ -84,7 +84,7 @@ The odd-particle movement in the nucleus is influenced by the core (quadrupole d
 
 The diagram below explains the novel formalism that considers the concepts of parity symmetry breaking within TSD2&4 and also signature partner bands within TSD1&2.
 
-![diagram](Resources/Diagrams/DOUBLE_SHIFT_APPROACH.png).
+![diagram](Resources/Diagrams/DOUBLE_SHIFT_APPROACH.png)
 
 ### Understanding the coupling scheme of an even-odd triaxial nucleus
 
@@ -92,7 +92,7 @@ When compared to the literature, where there exist two intruders (i.e. two valen
 
 Diagrams for the coupling schemes adopted in this project can be seen below.
 
-#### The coupling scheme for the bands TSD1 and TSD3.
+#### The coupling scheme for the bands TSD1 and TSD3
 
 ![diagram13](Resources/Diagrams/coupling_bands13.svg)
 
@@ -125,15 +125,18 @@ Some key concepts which are of interest for the overall topic are:
 3. The extreme (**minimum**) points of the energy function across the $\theta - \varphi$ intervals.
 4. Graphical representations with the evolution of the energy function w.r.t. a set of deformation parameters.
 
-
 ## Results
 
 ![params](Resources/Output_Graphs/Double_Shift_Formalism/double-shift_parameters.png)
 
-<!-- ### Triaxial wobbling energies
+The following diagram gives an overview of the novel approach, and the concepts involved between each triaxial band in the $^{163}$Lu isotope.
 
-![energies]
+![workflow](Resources/Diagrams/double_shift_fit_workflow.png)
 
 ### Contour plots with stable states (nuclear wobbling regimes)
 
-### Energy ellipsoids (trajectories of the rotational states) -->
+A scheme for the algorithm for obtaining the contour plots for the triaxial isotope can be seen below.
+
+![contour-workflow](Resources/Diagrams/contour_plot_workflow.svg)
+
+<!-- ### Energy ellipsoids (trajectories of the rotational states) --> -->
