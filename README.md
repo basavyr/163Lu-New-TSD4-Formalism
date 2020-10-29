@@ -82,6 +82,10 @@ In the present case, TSD2 and TSD4 have indeed the same spin sequence, however t
 
 The odd-particle movement in the nucleus is influenced by the core (quadrupole deformation and charge distribution). In the case of this nucleus, the even-even core has no spatial inversion invariance (no parity symmetry). This results in existence within the mean-field of both negative and positive parity states. The ground state $I=13/2$ level from the yrast band has a positive parity (since the TSD1 is a positive parity band) but due to the non-invariance of the core to the spatial inversion, there will be a difference in the energetic value of the excitation energy, when subtracting the band-head of TSD1 from any other states from the superior bands.
 
+The diagram below explains the novel formalism that considers the concepts of parity symmetry breaking within TSD2&4 and also signature partner bands within TSD1&2.
+
+![diagram](Resources/Diagrams/DOUBLE_SHIFT_APPROACH.png).
+
 ### Understanding the coupling scheme of an even-odd triaxial nucleus
 
 When compared to the literature, where there exist two intruders (i.e. two valence protons, one for TSD1,2,3 $=13/2$ and one for TSD4 $j=9/2$) that create an alignment with the angular momentum of a triaxially deformed even-even core, in this new formalism (novel approaches) it is speculated the fact that TSD4 keeps the same alignment particle but the core's angular momentum ($R$) is different (in the sense that the even-odd parity of the spin sequence changes). As a result, in these calculations and the overall framework, the proton $\pi_{i;j=13/2}$ is considered to be the single-particle $\vec{j}$ vector that aligns with the core $R$ (keep in mind that there are two core state sequences, namely one which corresponds to the bands TSD1&3: $R_{TSD1;3}$ and one that corresponds to the bands TSD2&4: $R_{TSD2;4}$).
