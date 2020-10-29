@@ -124,3 +124,16 @@ Some key concepts which are of interest for the overall topic are:
 2. The critical points of the energy function
 3. The extreme (**minimum**) points of the energy function across the $\theta - \varphi$ intervals.
 4. Graphical representations with the evolution of the energy function w.r.t. a set of deformation parameters.
+
+
+## Results
+
+![params](Resources/Output_Graphs/Double_Shift_Formalism/double-shift_parameters.png)
+
+<!-- ### Triaxial wobbling energies
+
+![energies]
+
+### Contour plots with stable states (nuclear wobbling regimes)
+
+### Energy ellipsoids (trajectories of the rotational states) -->
