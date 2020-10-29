@@ -139,4 +139,4 @@ A scheme for the algorithm for obtaining the contour plots for the triaxial isot
 
 ![contour-workflow](Resources/Diagrams/contour_plot_workflow.svg)
 
-<!-- ### Energy ellipsoids (trajectories of the rotational states) --> -->
+<!-- ### Energy ellipsoids (trajectories of the rotational states) -->
