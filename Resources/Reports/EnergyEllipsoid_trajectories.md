@@ -25,6 +25,11 @@ In terms of the energy, one can have:
 #### TSD1
 
 * Energy at which the ellipsoid touches the sphere from the inside out -> 1.3399 (e1=-0.4) MeV
-* Energy at which the ellipsoid touches the sphere from the outside (poles) -> 12.2899 (e1=10.55) MeV
+* Energy at which the ellipsoid touches the sphere from the outside (poles) -> 12.3299 (e1=10.59) MeV
 * Energy at which the ellipsoid has the trajectories very close to each other (almost tangent), intersection taking place near the equator -> 5.5899 (e1=3.85) MeV
 * Energy at which the the intersections are tangent (but rotation is changed to the $x_3$ axis) -> 5.6159 (e1=3.876) MeV
+
+
+Constructed the geometry for a triaxial ellipsoid
+
+The ellipsoid is parametrized by $a,b,c$. Using the value of $a$ with the same length as the radius of the angular momentum sphere, one can determine the energy of the ellipsoid itself.
