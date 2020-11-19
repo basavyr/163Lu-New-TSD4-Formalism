@@ -22,5 +22,9 @@ In terms of the energy, one can have:
  - [ ] Find the energy at which the system is rotating very close to the pole of the angular momentum sphere (a closed trajectory around $x_3$.)
  - [ ] Find the energy for a trajectory that is tangent with itself.
 
-Energy at which the ellipsoid touches the sphere from the inside out -> 1.3399 (e1=-0.4) MeV
-Energy at which the ellipsoid touches the sphere from the outside (poles) -> 12.2899 (e1=10.55) MeV
+#### TSD1
+
+* Energy at which the ellipsoid touches the sphere from the inside out -> 1.3399 (e1=-0.4) MeV
+* Energy at which the ellipsoid touches the sphere from the outside (poles) -> 12.2899 (e1=10.55) MeV
+* Energy at which the ellipsoid has the trajectories very close to each other (almost tangent), intersection taking place near the equator -> 5.5899 (e1=3.85) MeV
+* Energy at which the the intersections are tangent (but rotation is changed to the $x_3$ axis) -> 5.6159 (e1=3.876) MeV
