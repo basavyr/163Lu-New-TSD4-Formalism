@@ -10,21 +10,207 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1031,         38]
-NotebookOptionsPosition[       741,         25]
-NotebookOutlinePosition[      1079,         40]
-CellTagsIndexPosition[      1036,         37]
+NotebookDataLength[      8286,        234]
+NotebookOptionsPosition[      7519,        211]
+NotebookOutlinePosition[      7855,        226]
+CellTagsIndexPosition[      7812,        223]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell["Geometry of a triaxial ellipsoid", "Chapter",
  CellChangeTimes->{{3.814767314902224*^9, 
   3.8147673209387493`*^9}},ExpressionUUID->"e0aa1290-58de-4174-be18-\
-387cde9aa1b7"]
+387cde9aa1b7"],
+
+Cell[CellGroupData[{
+
+Cell["Constants", "Subsection",
+ CellChangeTimes->{{3.814856587913494*^9, 
+  3.81485659095934*^9}},ExpressionUUID->"b0b88a17-6d86-45d8-ad03-\
+e4af6ed322e1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"j", "=", 
+   RowBox[{"13", "/", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A1Fit", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "72"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A2Fit", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "15"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A3Fit", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "7"}], ")"}]}]}], ";"}]}], "Input",
+ CellLabel->"In[86]:=",ExpressionUUID->"5cca6942-dd8a-47cb-98bc-9f6928771b61"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"sphere", "[", "r_", "]"}], ":=", 
+   RowBox[{"ContourPlot3D", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["x", "2"], "+", 
+       SuperscriptBox["y", "2"], "+", 
+       SuperscriptBox["z", "2"]}], "\[Equal]", 
+      RowBox[{"r", 
+       RowBox[{"(", 
+        RowBox[{"r", "+", "1"}], ")"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{
+        RowBox[{"-", "2"}], "r"}], ",", 
+       RowBox[{"2", "r"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{
+        RowBox[{"-", "2"}], "r"}], ",", 
+       RowBox[{"2", "r"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{
+        RowBox[{"-", "2"}], "r"}], ",", 
+       RowBox[{"2", "r"}]}], "}"}], ",", 
+     RowBox[{"ContourStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Opacity", "[", "0.6", "]"}]}], "}"}]}], ",", 
+     RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+     RowBox[{"PlotPoints", "\[Rule]", "30"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ellispoid", "[", 
+    RowBox[{"a1_", ",", "a2_", ",", "a3_", ",", "e_", ",", "scale_"}], "]"}], 
+   ":=", 
+   RowBox[{"ContourPlot3D", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"a1", "*", 
+        SuperscriptBox["x", "2"]}], "+", 
+       RowBox[{"a2", "*", 
+        SuperscriptBox["y", "2"]}], "+", 
+       RowBox[{"a3", "*", 
+        SuperscriptBox["z", "2"]}]}], "\[Equal]", "e"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{
+        RowBox[{"-", "scale"}], "*", "e"}], ",", 
+       RowBox[{"scale", "*", "e"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{
+        RowBox[{"-", "scale"}], "*", "e"}], ",", 
+       RowBox[{"scale", "*", "e"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{
+        RowBox[{"-", "scale"}], "*", "e"}], ",", 
+       RowBox[{"scale", "*", "e"}]}], "}"}], ",", 
+     RowBox[{"ContourStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Opacity", "[", "0.4", "]"}], ",", "Gray"}], "}"}]}], ",", 
+     RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+     RowBox[{"PlotPoints", "\[Rule]", "30"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"ellispoid", "[", 
+      RowBox[{"A1Fit", ",", "A2Fit", ",", "A3Fit", ",", "e", ",", "scale"}], 
+      "]"}], ",", 
+     RowBox[{"sphere", "[", "r", "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"e", ",", "2", ",", "20"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "1", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"scale", ",", "1", ",", "10"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQB2IQ7fF6TpFNzhvHkN7nNSD6/OnvHSD67nm2ThDtsL6c
+0Q5I3zzgKgmiXVZUXAfRTpeP3wLR2xhzv4NoFpvCHyD6vc5hZnsgLblaiQVE
+r1r3VQRE++8zUAPRN2T5tUD0m/eFuiB67W0GCxB9NdoWTE+1eK7gAHLHen91
+EH28OWICiK78VjIZRO/a5/bZCWRuz3cw/fla0S8Q3bBQgMEZSPOpPGUB0Q2R
+09hA9KWD6dwges39wwIguuZz1WoQ7XV0Mph+8vzbRhC9XKlgE4g+JHzvkCuQ
+7rO8eQxEb0k6dQ1EW2zcdQNEJwltzXIH0iWG1XkgWurcqUoQ3SA9rRpEr666
++wlEf5J4DKb/Bbxn8gDSQgcV2UA0AEOduH0=
+  "],
+ CellLabel->
+  "In[154]:=",ExpressionUUID->"066f5f61-90f6-46ae-a68d-86c52e209333"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`e$$ = 2.5, $CellContext`r$$ = 
+    5.22, $CellContext`scale$$ = 7.98, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`e$$], 2, 20}, {
+      Hold[$CellContext`r$$], 1, 10}, {
+      Hold[$CellContext`scale$$], 1, 10}}, Typeset`size$$ = {
+    359., {182., 186.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`e$60117$$ = 
+    0, $CellContext`r$60118$$ = 0, $CellContext`scale$60119$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`e$$ = 2, $CellContext`r$$ = 
+        1, $CellContext`scale$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`e$$, $CellContext`e$60117$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$60118$$, 0], 
+        Hold[$CellContext`scale$$, $CellContext`scale$60119$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`ellispoid[$CellContext`A1Fit, $CellContext`A2Fit, \
+$CellContext`A3Fit, $CellContext`e$$, $CellContext`scale$$], 
+        $CellContext`sphere[$CellContext`r$$]], 
+      "Specifications" :> {{$CellContext`e$$, 2, 20}, {$CellContext`r$$, 1, 
+         10}, {$CellContext`scale$$, 1, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{404., {282., 288.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.814856838545515*^9, 3.814858076932975*^9, 3.814858132670944*^9, {
+   3.8148623713933372`*^9, 3.814862391081977*^9}, {3.814862519056941*^9, 
+   3.814862534204693*^9}, {3.8148658605364122`*^9, 3.814865884941256*^9}, {
+   3.814866839447537*^9, 3.81486685745061*^9}, {3.8148669679720087`*^9, 
+   3.814867004185237*^9}},
+ CellLabel->
+  "Out[156]=",ExpressionUUID->"622502be-1544-4430-add0-dad560a84ca9"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 },
-WindowSize->{808, 911},
-WindowMargins->{{175, Automatic}, {Automatic, 39}},
+WindowSize->{960, 1027},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
 StyleDefinitions->"Default.nb"
 ]
@@ -39,7 +225,17 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 179, 3, 69, "Chapter",ExpressionUUID->"e0aa1290-58de-4174-be18-387cde9aa1b7"]
+Cell[CellGroupData[{
+Cell[580, 22, 179, 3, 69, "Chapter",ExpressionUUID->"e0aa1290-58de-4174-be18-387cde9aa1b7"],
+Cell[CellGroupData[{
+Cell[784, 29, 156, 3, 54, "Subsection",ExpressionUUID->"b0b88a17-6d86-45d8-ad03-e4af6ed322e1"],
+Cell[943, 34, 616, 19, 94, "Input",ExpressionUUID->"5cca6942-dd8a-47cb-98bc-9f6928771b61"],
+Cell[CellGroupData[{
+Cell[1584, 57, 3332, 97, 165, "Input",ExpressionUUID->"066f5f61-90f6-46ae-a68d-86c52e209333"],
+Cell[4919, 156, 2560, 50, 589, "Output",ExpressionUUID->"622502be-1544-4430-add0-dad560a84ca9"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
