@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     17822,        514]
-NotebookOptionsPosition[     16193,        477]
-NotebookOutlinePosition[     16529,        492]
-CellTagsIndexPosition[     16486,        489]
+NotebookDataLength[     37247,       1114]
+NotebookOptionsPosition[     34939,       1065]
+NotebookOutlinePosition[     35275,       1080]
+CellTagsIndexPosition[     35232,       1077]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -117,7 +117,56 @@ Cell[BoxData[{
  CellChangeTimes->{{3.814870419534874*^9, 3.814870445025281*^9}, {
   3.8148705274569893`*^9, 3.814870558224208*^9}, {3.814870928475666*^9, 
   3.8148709313897467`*^9}},
- CellLabel->"In[17]:=",ExpressionUUID->"5e9e33e0-a69b-4222-9289-172b6026a0ae"]
+ CellLabel->"In[1]:=",ExpressionUUID->"5e9e33e0-a69b-4222-9289-172b6026a0ae"],
+
+Cell[CellGroupData[{
+
+Cell["Experimental data", "Subsection",
+ CellChangeTimes->{{3.814874484994419*^9, 3.814874487759255*^9}, {
+  3.814874680237762*^9, 
+  3.814874691184743*^9}},ExpressionUUID->"53ad1252-82f8-4ab7-8a6a-\
+3be5ecbde8ae"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"spin1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"8.5", "+", 
+      RowBox[{"2", "*", "i"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", "20"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spin2", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"13.5", "+", 
+      RowBox[{"2", "*", "i"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", "16"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spin3", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"16.5", "+", 
+      RowBox[{"2", "*", "i"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", "13"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spin4", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"23.5", "+", 
+      RowBox[{"2", "*", "i"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", "9"}], "}"}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.814874473323284*^9, 3.8148744749180183`*^9}, {
+  3.814874702792716*^9, 3.814874761013751*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"046c08fe-ed0f-4bb2-87a2-cfab4d7a5707"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -138,7 +187,7 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"H", "[", 
          RowBox[{
-         "spin1", ",", "x", ",", "y", ",", "A1", ",", "A2", ",", "A3", ",", 
+         "spin", ",", "x", ",", "y", ",", "A1", ",", "A2", ",", "A3", ",", 
           "V", ",", "\[Gamma]"}], "]"}], ",", 
         RowBox[{
          RowBox[{"x", "\[GreaterEqual]", "0"}], "&&", 
@@ -159,7 +208,7 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"H", "[", 
          RowBox[{
-         "spin1", ",", "x", ",", "y", ",", "A1", ",", "A2", ",", "A3", ",", 
+         "spin", ",", "x", ",", "y", ",", "A1", ",", "A2", ",", "A3", ",", 
           "V", ",", "\[Gamma]"}], "]"}], ",", 
         RowBox[{
          RowBox[{"x", "\[GreaterEqual]", "0"}], "&&", 
@@ -181,8 +230,8 @@ Cell[BoxData[{
   3.8148709115668783`*^9, 3.814871037150764*^9}, {3.814871076178894*^9, 
   3.814871076403647*^9}, {3.8148711625593777`*^9, 3.814871187994253*^9}, {
   3.814871219690325*^9, 3.8148712220148067`*^9}, {3.814871328027301*^9, 
-  3.8148713281940002`*^9}},ExpressionUUID->"cbc60196-784a-4f30-9d18-\
-4c5ea5aa3ffe"],
+  3.8148713281940002`*^9}, {3.81487404348547*^9, 3.81487404454036*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"cbc60196-784a-4f30-9d18-4c5ea5aa3ffe"],
 
 Cell[CellGroupData[{
 
@@ -200,54 +249,81 @@ Cell[BoxData[
      RowBox[{"FontFamily", "\[Rule]", "\"\<Times New Roman\>\""}]}], "]"}]}], 
   ";"}]], "Input",
  CellChangeTimes->{{3.8148722486165524`*^9, 3.814872248738715*^9}},
- CellLabel->"In[71]:=",ExpressionUUID->"1686b2a4-bbcd-4e3c-96e5-ce83438b0d5d"],
+ CellLabel->"In[12]:=",ExpressionUUID->"1686b2a4-bbcd-4e3c-96e5-ce83438b0d5d"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"customize", "[", 
+       RowBox[{
+        RowBox[{
+        "StringTemplate", "[", "\"\<\!\(\*SubscriptBox[\(V\), \(min\)]\)\>\"",
+          "]"}], "[", "]"}], "]"}], ",", 
+      RowBox[{"customize", "[", 
+       RowBox[{
+        RowBox[{
+        "StringTemplate", "[", "\"\<\!\(\*SubscriptBox[\(V\), \(max\)]\)\>\"",
+          "]"}], "[", "]"}], "]"}]}], "}"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
-   RowBox[{"table", "[", "spin_", "]"}], ":=", 
-   RowBox[{"Grid", "[", 
+   RowBox[{"procedure", "[", "spin_", "]"}], ":=", 
+   RowBox[{"Do", "[", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"list", ",", 
        RowBox[{"{", 
         RowBox[{
          RowBox[{"customize", "[", 
           RowBox[{
-           RowBox[{
-           "StringTemplate", "[", 
-            "\"\<\!\(\*SubscriptBox[\(V\), \(min\)]\)\>\"", "]"}], "[", "]"}],
-           "]"}], ",", 
-         RowBox[{"customize", "[", 
-          RowBox[{
-           RowBox[{
-           "StringTemplate", "[", 
-            "\"\<\!\(\*SubscriptBox[\(V\), \(max\)]\)\>\"", "]"}], "[", "]"}],
-           "]"}]}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"customize", "[", 
-          RowBox[{
-           RowBox[{"MINMAX", "[", "spin", "]"}], "[", 
+           RowBox[{"MINMAX", "[", 
+            RowBox[{"spin", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "]"}], "[", 
            RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", 
          RowBox[{"customize", "[", 
           RowBox[{
-           RowBox[{"MINMAX", "[", "spin", "]"}], "[", 
-           RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "}"}]}], "}"}], ",", 
-     RowBox[{"Frame", "\[Rule]", "All"}], ",", 
+           RowBox[{"MINMAX", "[", 
+            RowBox[{"spin", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "spin", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"table", ":=", 
+   RowBox[{"Grid", "[", 
+    RowBox[{"list", ",", 
+     RowBox[{"Frame", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
      RowBox[{"Background", "\[Rule]", 
       RowBox[{"{", 
        RowBox[{"None", ",", 
         RowBox[{"{", 
-         RowBox[{"LightBlue", ",", "LightGreen"}], "}"}]}], "}"}]}]}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"table", "[", "12.5", "]"}]}], "Input",
+         RowBox[{"LightBlue", ",", 
+          RowBox[{"{", "LightGreen", "}"}]}], "}"}]}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"procedure", "[", "spin1", 
+  "]"}], "\[IndentingNewLine]", "table"}], "Input",
  CellChangeTimes->{{3.814871578993928*^9, 3.814871581446837*^9}, {
-  3.814871659693452*^9, 3.814871937313313*^9}, {3.814872212742115*^9, 
-  3.8148722189835663`*^9}, {3.81487225481778*^9, 3.8148722892058*^9}},
- CellLabel->"In[78]:=",ExpressionUUID->"193eecbc-5d22-4906-9fb7-e4bf6fa7ee79"],
+   3.814871659693452*^9, 3.814871937313313*^9}, {3.814872212742115*^9, 
+   3.8148722189835663`*^9}, {3.81487225481778*^9, 3.8148722892058*^9}, {
+   3.814874000971285*^9, 3.8148740014087048`*^9}, {3.814874130122862*^9, 
+   3.814874134104929*^9}, {3.814874395035544*^9, 3.8148743961136513`*^9}, {
+   3.8148749276768627`*^9, 3.8148749371464777`*^9}, {3.814875236149301*^9, 
+   3.814875242707738*^9}, {3.8148753515487843`*^9, 3.8148753630647707`*^9}, {
+   3.814875409936453*^9, 3.814875415133531*^9}, {3.814875451099132*^9, 
+   3.8148756251410303`*^9}, {3.8148756917342653`*^9, 
+   3.8148757231736794`*^9}, {3.814875765400388*^9, 3.8148758592038193`*^9}, 
+   3.814876016406725*^9, {3.814876058612499*^9, 3.8148760792759047`*^9}, {
+   3.814877480599959*^9, 3.8148775236098623`*^9}, {3.8148775789496603`*^9, 
+   3.8148775923254538`*^9}},
+ CellLabel->
+  "In[133]:=",ExpressionUUID->"193eecbc-5d22-4906-9fb7-e4bf6fa7ee79"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -263,6 +339,50 @@ Cell[BoxData[
       FontWeight->Bold,
       FontColor->GrayLevel[0]], 
      StyleBox["\<\"\\!\\(\\*SubscriptBox[\\(V\\), \\(max\\)]\\)\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox[
+      RowBox[{"-", "1.8342237573151552`"}],
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["3.3180575941016683`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox[
+      RowBox[{"-", "1.6461285796002398`"}],
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["6.072621087969053`",
       StripOnInput->False,
       LineColor->GrayLevel[0],
       FrontFaceColor->GrayLevel[0],
@@ -293,18 +413,488 @@ Cell[BoxData[
       FontFamily->"Times New Roman",
       FontSize->19,
       FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox[
+      RowBox[{"-", "1.10327145543698`"}],
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["13.296033789993512`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox[
+      RowBox[{"-", "0.7485096321731106`"}],
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["17.764882998149265`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox[
+      RowBox[{"-", "0.3381918496781644`"}],
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["22.80516077773729`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["0.12768109281193318`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["28.416867128738748`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["0.649109675883544`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["34.60000205120305`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["1.2260936275485363`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["41.3545655450523`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["1.8586332272018495`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["48.68055761034742`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["2.5467285610036683`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["56.5779782470768`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["3.2903792639269938`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["65.04682745523185`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["4.089585604186439`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["74.0871052348152`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["4.944347522724399`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["83.69881158582696`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["5.854665061928458`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["93.88194650826664`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["6.820538327245558`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["104.63651000205125`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["7.841966676814707`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["115.96250206742815`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["8.918950789651618`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["127.8599227040968`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["10.051490550392742`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["140.32877191227112`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["11.239585773430719`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["153.36904969189598`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]]},
+    {
+     StyleBox["12.48323666435067`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
+      FontColor->GrayLevel[0]], 
+     StyleBox["166.9807560428593`",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontFamily->"Times New Roman",
+      FontSize->19,
+      FontWeight->Bold,
       FontColor->GrayLevel[0]]}
    },
    AutoDelete->False,
    GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {
-       RGBColor[0.87, 0.94, 1], 
-       RGBColor[0.88, 1, 0.88]}},
+       RGBColor[0.87, 0.94, 1], {
+        RGBColor[0.88, 1, 0.88]}}},
    GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Grid"]], "Output",
- CellChangeTimes->{{3.814871866275835*^9, 3.814871938390485*^9}, 
-   3.814872219788115*^9, {3.814872252134437*^9, 3.81487229020881*^9}},
- CellLabel->"Out[79]=",ExpressionUUID->"301a75e5-1b48-4bc3-884a-3e271c9478bb"]
+ CellChangeTimes->{
+  3.814877529798106*^9, {3.814877582614091*^9, 3.814877594053954*^9}},
+ CellLabel->
+  "Out[137]=",ExpressionUUID->"2602bcb3-e28e-4cc6-8437-6498cd2b5b53"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Maximum energy for each spin state", "Section",
+ CellChangeTimes->{{3.814874804765667*^9, 
+  3.814874815025268*^9}},ExpressionUUID->"f7bbec6d-1bc5-43b8-a378-\
+023bac703ba6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"lp", "[", "band_", "]"}], ":=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"band", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"MINMAX", "[", 
+          RowBox[{"band", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", 
+        RowBox[{"Length", "[", "band", "]"}]}], "}"}]}], "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.814874816825588*^9, 3.814874895589094*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"246a8661-ad9a-4e63-8f6b-6777f51f9228"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lp", "[", "spin1", "]"}]], "Input",
+ CellChangeTimes->{{3.814874898188257*^9, 3.814874900628283*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"818e0be5-678f-47b2-9f85-cefe569301e2"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQDQGKDp89lx9P7OZygPBVHe77bdeL9ZKA8jUd/gp/
+YhU/owTl6zq8E1i7d+J0LQi/wcDBM9At/vxhQyjfyCEw3YNF/pwZlG/icHPr
+nbPbs2ygfDOHWTsZ753xcYTyLRzuq8SlJ611gfKtHCz2MTfLhHtA+TYOLvWf
+DH57+kD5dg5LDada/HcKgPAdHBzubb2qOLk1CMp3dAg9YxWy800IlO/k8Lzk
+yPnCinAo39nh6IyiKXs0oqB8F4c31a6LZv6NgfJdHQ6etvnJ8T0eyndz6Ehc
+49PalQjluztErvRxPK+dDOV7OLzRrY9Kup/iAAAe819S
+      "]]}, {
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6]}, {}}, {
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6]}, {}}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{7.666666666666668, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{7.666666666666668, 48.5}, {0, 166.9807560428593}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.81487490171989*^9, 3.814875400308435*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"7b9b17ab-3df3-4452-a8ce-b0c29e6b65db"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -337,8 +927,7 @@ Cell[BoxData[{
        "]"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"diff", "[", "12.5", "]"}]}], "Input",
  CellChangeTimes->{{3.814872322743273*^9, 3.8148725199326067`*^9}},
- CellLabel->
-  "In[110]:=",ExpressionUUID->"9ce1a044-821b-4718-88d6-afef2465b163"],
+ CellLabel->"In[22]:=",ExpressionUUID->"9ce1a044-821b-4718-88d6-afef2465b163"],
 
 Cell[BoxData[
  GraphicsBox[{
@@ -462,16 +1051,15 @@ Cell[BoxData[
      Scaled[0.05], 
      Scaled[0.05]}},
   Ticks->{None, Automatic}]], "Output",
- CellChangeTimes->{{3.814872454519801*^9, 3.814872520226488*^9}},
- CellLabel->
-  "Out[111]=",ExpressionUUID->"ee2bce13-1713-4868-a8c6-8cf5203c5ec7"]
+ CellChangeTimes->{{3.814872454519801*^9, 3.814872520226488*^9}, 
+   3.814873940184701*^9, {3.814874038828043*^9, 3.814874051901732*^9}, 
+   3.814875400549258*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"aaf4d0ea-007d-4b86-8800-6a5b5ae22186"]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.8148716949161587`*^9, 
-  3.8148716966595287`*^9}},ExpressionUUID->"e87a6ba5-2e9c-4261-8c9b-\
-2d73e3badf7c"]
-}, Open  ]]
+ CellChangeTimes->{{3.8148716949161587`*^9, 3.8148716966595287`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"e87a6ba5-2e9c-4261-8c9b-2d73e3badf7c"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -496,24 +1084,36 @@ Cell[580, 22, 204, 3, 69, "Chapter",ExpressionUUID->"115e7cf4-4e4f-4345-85ab-8a3
 Cell[787, 27, 344, 11, 35, "Text",ExpressionUUID->"86270e48-74fb-4fa9-a0ea-9a551d8d6b23"],
 Cell[CellGroupData[{
 Cell[1156, 42, 180, 3, 67, "Section",ExpressionUUID->"09620ac1-0e13-453c-9a6c-77232a0404fe"],
-Cell[1339, 47, 2400, 72, 274, "Input",ExpressionUUID->"5e9e33e0-a69b-4222-9289-172b6026a0ae"]
-}, Open  ]],
+Cell[1339, 47, 2399, 72, 274, "Input",ExpressionUUID->"5e9e33e0-a69b-4222-9289-172b6026a0ae"],
 Cell[CellGroupData[{
-Cell[3776, 124, 171, 3, 67, "Section",ExpressionUUID->"6ddcdf07-9d61-489e-a68d-27a19c2d0504"],
-Cell[3950, 129, 2102, 55, 73, "Input",ExpressionUUID->"cbc60196-784a-4f30-9d18-4c5ea5aa3ffe"],
-Cell[CellGroupData[{
-Cell[6077, 188, 168, 3, 54, "Subsection",ExpressionUUID->"7b246c03-9125-4f9e-a7f4-f52ba43326ab"],
-Cell[6248, 193, 421, 9, 30, "Input",ExpressionUUID->"1686b2a4-bbcd-4e3c-96e5-ce83438b0d5d"],
-Cell[CellGroupData[{
-Cell[6694, 206, 1627, 43, 115, "Input",ExpressionUUID->"193eecbc-5d22-4906-9fb7-e4bf6fa7ee79"],
-Cell[8324, 251, 1917, 55, 101, "Output",ExpressionUUID->"301a75e5-1b48-4bc3-884a-3e271c9478bb"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[10278, 311, 1131, 29, 94, "Input",ExpressionUUID->"9ce1a044-821b-4718-88d6-afef2465b163"],
-Cell[11412, 342, 4570, 124, 421, "Output",ExpressionUUID->"ee2bce13-1713-4868-a8c6-8cf5203c5ec7"]
-}, Open  ]],
-Cell[15997, 469, 156, 3, 30, "Input",ExpressionUUID->"e87a6ba5-2e9c-4261-8c9b-2d73e3badf7c"]
+Cell[3763, 123, 214, 4, 54, "Subsection",ExpressionUUID->"53ad1252-82f8-4ab7-8a6a-3be5ecbde8ae"],
+Cell[3980, 129, 1204, 38, 94, "Input",ExpressionUUID->"046c08fe-ed0f-4bb2-87a2-cfab4d7a5707"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5233, 173, 171, 3, 67, "Section",ExpressionUUID->"6ddcdf07-9d61-489e-a68d-27a19c2d0504"],
+Cell[5407, 178, 2165, 55, 73, "Input",ExpressionUUID->"cbc60196-784a-4f30-9d18-4c5ea5aa3ffe"],
+Cell[CellGroupData[{
+Cell[7597, 237, 168, 3, 54, "Subsection",ExpressionUUID->"7b246c03-9125-4f9e-a7f4-f52ba43326ab"],
+Cell[7768, 242, 421, 9, 30, "Input",ExpressionUUID->"1686b2a4-bbcd-4e3c-96e5-ce83438b0d5d"],
+Cell[CellGroupData[{
+Cell[8214, 255, 2854, 70, 178, "Input",ExpressionUUID->"193eecbc-5d22-4906-9fb7-e4bf6fa7ee79"],
+Cell[11071, 327, 14684, 481, 565, "Output",ExpressionUUID->"2602bcb3-e28e-4cc6-8437-6498cd2b5b53"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25816, 815, 179, 3, 67, "Section",ExpressionUUID->"f7bbec6d-1bc5-43b8-a378-023bac703ba6"],
+Cell[25998, 820, 750, 21, 30, "Input",ExpressionUUID->"246a8661-ad9a-4e63-8f6b-6777f51f9228"],
+Cell[CellGroupData[{
+Cell[26773, 845, 204, 3, 30, "Input",ExpressionUUID->"818e0be5-678f-47b2-9f85-cefe569301e2"],
+Cell[26980, 850, 1910, 46, 244, "Output",ExpressionUUID->"7b9b17ab-3df3-4452-a8ce-b0c29e6b65db"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28927, 901, 1127, 28, 94, "Input",ExpressionUUID->"9ce1a044-821b-4718-88d6-afef2465b163"],
+Cell[30057, 931, 4664, 125, 421, "Output",ExpressionUUID->"aaf4d0ea-007d-4b86-8800-6a5b5ae22186"]
+}, Open  ]],
+Cell[34736, 1059, 175, 2, 30, "Input",ExpressionUUID->"e87a6ba5-2e9c-4261-8c9b-2d73e3badf7c"]
 }, Open  ]]
 }, Open  ]]
 }
