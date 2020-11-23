@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    257068,       4399]
-NotebookOptionsPosition[    255969,       4371]
-NotebookOutlinePosition[    256305,       4386]
-CellTagsIndexPosition[    256262,       4383]
+NotebookDataLength[    257142,       4400]
+NotebookOptionsPosition[    256043,       4372]
+NotebookOutlinePosition[    256379,       4387]
+CellTagsIndexPosition[    256336,       4384]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2192,7 +2192,7 @@ Cell[BoxData[{
    RowBox[{"Graphics3D", "[", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"Thick", ",", "Black", ",", 
+      RowBox[{"Thick", ",", "Red", ",", 
        RowBox[{"Arrow", "[", 
         RowBox[{"{", 
          RowBox[{
@@ -2317,12 +2317,13 @@ Cell[BoxData[{
    3.815118859974743*^9, 3.815118895589532*^9}, {3.815118942706233*^9, 
    3.815119239907569*^9}, {3.8151192835229673`*^9, 3.8151193168765287`*^9}, {
    3.815119826332671*^9, 3.815120004307357*^9}, {3.815120218043077*^9, 
-   3.815120543105042*^9}, {3.815120597365797*^9, 3.815120656976366*^9}},
- CellLabel->"In[48]:=",ExpressionUUID->"749dc303-54ea-4f2f-969e-4f1adc8b6690"],
+   3.815120543105042*^9}, {3.815120597365797*^9, 3.815120656976366*^9}, {
+   3.815129179346796*^9, 3.815129182346161*^9}},
+ CellLabel->"In[53]:=",ExpressionUUID->"749dc303-54ea-4f2f-969e-4f1adc8b6690"],
 
 Cell[BoxData[
  Graphics3DBox[{
-   {GrayLevel[0], Thickness[Large], Arrow3DBox[{{0, 0, 0}, {10, 0, 0}}], 
+   {RGBColor[1, 0, 0], Thickness[Large], Arrow3DBox[{{0, 0, 0}, {10, 0, 0}}], 
     Inset3DBox[
      StyleBox["\<\"\\!\\(\\*SubscriptBox[\\(x\\), \\(1\\)]\\)\"\>",
       StripOnInput->False,
@@ -4352,19 +4353,19 @@ H8Ynb54/arUdAXFJLV7lJiqGye8qjHKZxK9dlYL8ljTg0ffUPv4fFc3OrzeU
 0hhHuWdCHXcVhuDwdaObmuP//2dt2pN8ZAgh2NUgQnwc/geC+2my
       "]], {}}},
   Boxed->False,
-  ImageSize->{372.006659774086, 330.38381385353887`},
+  ImageSize->{385.2385608759545, 361.6891778769681},
   ImageSizeRaw->Automatic,
   PlotLabel->FormBox[
     StyleBox["\"I=22/2 \[HBar] ; E=11 MeV\"", Bold, Italic, 
      GrayLevel[0], FontSize -> 24, FontFamily -> "Times New Roman", 
      StripOnInput -> False], TraditionalForm],
-  ViewPoint->{2.171226456947999, 2.3367022374743227`, 1.1294238912080496`},
-  ViewVertical->{0.06513072085200615, 0.18179201136638395`, 
-   0.9811776871722383}]], "Output",
+  ViewPoint->{1.9464952579823804`, 2.1575102355306544`, 1.7338701780215744`},
+  ViewVertical->{-0.0133510875106535, 0.08415943566727667, 
+   0.9963628545115722}]], "Output",
  CellChangeTimes->{{3.815120198709855*^9, 3.815120272619997*^9}, {
    3.8151203849003067`*^9, 3.8151204551587563`*^9}, 3.815120544440995*^9, {
-   3.815120584147517*^9, 3.815120657191732*^9}},
- CellLabel->"Out[52]=",ExpressionUUID->"8b67f6eb-d7b7-4b86-89ad-ea596c22dbbf"]
+   3.815120584147517*^9, 3.815120657191732*^9}, 3.81512918267944*^9},
+ CellLabel->"Out[57]=",ExpressionUUID->"294cb616-0014-4599-abaf-9061ff1017e3"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -4396,8 +4397,8 @@ Cell[4567, 140, 203, 3, 30, "Input",ExpressionUUID->"6348b526-6a7b-438b-9b86-738
 Cell[4773, 145, 122654, 2036, 381, "Output",ExpressionUUID->"b7535e27-bf16-4876-a59f-3167cc47b42a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[127464, 2186, 5218, 134, 346, "Input",ExpressionUUID->"749dc303-54ea-4f2f-969e-4f1adc8b6690"],
-Cell[132685, 2322, 123244, 2044, 347, "Output",ExpressionUUID->"8b67f6eb-d7b7-4b86-89ad-ea596c22dbbf"]
+Cell[127464, 2186, 5266, 135, 346, "Input",ExpressionUUID->"749dc303-54ea-4f2f-969e-4f1adc8b6690"],
+Cell[132733, 2323, 123270, 2044, 379, "Output",ExpressionUUID->"294cb616-0014-4599-abaf-9061ff1017e3"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
