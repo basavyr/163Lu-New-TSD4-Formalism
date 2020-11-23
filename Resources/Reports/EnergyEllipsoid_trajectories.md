@@ -30,6 +30,12 @@ In terms of the energy, one can have:
 * Energy at which the the intersections are tangent (but rotation is changed to the $x_3$ axis) -> 5.6159 (e1=3.876) MeV
 
 
-Constructed the geometry for a triaxial ellipsoid
+### Construct the geometry for a triaxial ellipsoid
 
-The ellipsoid is parametrized by $a,b,c$. Using the value of $a$ with the same length as the radius of the angular momentum sphere, one can determine the energy of the ellipsoid itself.
+The rotational nucleus will have trajectories given by the intersection between the angular momentum sphere and the energy ellipsoid. A point of interest is that where the system changes its rotational axis (e.g. the nucleus is doing a precession motion around $x_1$, then it changes to $x_3$ with increase in $E$ - for the same spin state). The energy at which a change in the rotational axis takes places is called the *shape-transition energy*. Its value can be analytically given if the equation $\frac{1}{c^2}=\sqrt{I(I+1)}$ (where $c$ is the semi-axis length of the energy ellipsoid).
+
+Other points of interest (in terms of trajectories) are the ones that give the transition between the two wobbling states (i.e. 1-axis wobbling and 2-axis wobbling), and the ones that are near the two axes.
+
+The table below shows the ellipsoid-sphere intersection, evaluated at two energies: the absolute energy corresponding to the spin-state within a TSD band, and the energy at which shape-transition takes place.
+
+![](shape_transitionEnergies.png)
