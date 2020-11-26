@@ -1,0 +1,109 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2908,         99]
+NotebookOptionsPosition[      2147,         76]
+NotebookOutlinePosition[      2485,         91]
+CellTagsIndexPosition[      2442,         88]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["163Lu - Ellipsoid Projection", "Chapter",
+ CellChangeTimes->{{3.81538169709898*^9, 
+  3.8153817115890093`*^9}},ExpressionUUID->"9aa5de92-940e-47ab-a3b6-\
+987514301c2b"],
+
+Cell[CellGroupData[{
+
+Cell["Constants", "Section",
+ CellChangeTimes->{{3.815381738510448*^9, 
+  3.815381739759863*^9}},ExpressionUUID->"286fac16-f457-4b86-b2b7-\
+674229c02b41"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"j", "=", 
+   RowBox[{"13", "/", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A1Fit", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "72"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A2Fit", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "15"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A3Fit", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "7"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"IF", "[", "X_", "]"}], ":=", "X"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8153817338767557`*^9, 
+  3.815381735181147*^9}},ExpressionUUID->"ada9a1f4-a89b-4e1f-b639-\
+19daad2bb85e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ellipsoid formula", "Section",
+ CellChangeTimes->{{3.815381743146144*^9, 
+  3.8153817458799343`*^9}},ExpressionUUID->"049286ff-6ed5-483c-a0d2-\
+ceb87cfe9ed4"],
+
+Cell[BoxData["ImplicitRegion"], "Input",
+ CellChangeTimes->{{3.815382358725636*^9, 3.815382360780023*^9}, {
+  3.81539178762823*^9, 
+  3.815391788787212*^9}},ExpressionUUID->"8d2d4264-812e-4ebb-970b-\
+a7bcc7c5a524"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{105, Automatic}, {48, Automatic}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 174, 3, 69, "Chapter",ExpressionUUID->"9aa5de92-940e-47ab-a3b6-987514301c2b"],
+Cell[CellGroupData[{
+Cell[779, 29, 154, 3, 67, "Section",ExpressionUUID->"286fac16-f457-4b86-b2b7-674229c02b41"],
+Cell[936, 34, 765, 24, 115, "Input",ExpressionUUID->"ada9a1f4-a89b-4e1f-b639-19daad2bb85e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1738, 63, 164, 3, 67, "Section",ExpressionUUID->"049286ff-6ed5-483c-a0d2-ceb87cfe9ed4"],
+Cell[1905, 68, 214, 4, 30, "Input",ExpressionUUID->"8d2d4264-812e-4ebb-970b-a7bcc7c5a524"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
