@@ -32,6 +32,10 @@ spins=np.arange(8.5,48.5,2.0)
 thetas=[theta for theta in np.arange(0.0,np.pi+np.pi/180,np.pi/180.0)]
 phis=[phi for phi in np.arange(0.0,2.0*np.pi+np.pi/180,np.pi/180.0)]
 
+def Rad(angle):
+	ret_val=angle*np.pi/180.0
+	return np.round(ret_val,2)
+
 def Deg(angle):
 	ret_val=angle*180.0/np.pi
 	return np.round(ret_val)
