@@ -25,5 +25,24 @@ def H_min(spin, odd_spin,moi_1, moi_2, moi_3, v, gamma, theta, varphi):
 	return H
 
 spins=np.arange(8.5,48.5,2.0)
-for spin in spins:
-	print(H_min(spin,6.5,72,15,7,2.1,19,np.pi,np.pi))
+#for spin in spins:
+#	print(H_min(spin,6.5,72,15,7,2.1,19,np.pi,np.pi))
+
+
+thetas=[theta for theta in np.arange(0.0,np.pi+np.pi/180,np.pi/180.0)]
+phis=[phi for phi in np.arange(0.0,2.0*np.pi+np.pi/180,np.pi/180.0)]
+
+def Deg(angle):
+	ret_val=angle*180.0/np.pi
+	return np.round(ret_val)
+
+#print(list(map(Deg,thetas)))
+#print(list(map(Deg,phis)))
+
+
+# CONSTANTS = [ j, I1, I2, I3, V, gm]
+CT=[6.5,72,15,7,2.1,22]
+
+mt=[(x,y) for x in thetas for y in phis]
+
+#print(len(thetas),len(phis),len(mt))
