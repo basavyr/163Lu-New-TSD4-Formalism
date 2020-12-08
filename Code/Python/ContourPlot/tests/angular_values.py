@@ -21,7 +21,7 @@ def TestThetaEvolution(spin,varphi):
 	ret_list=[]
 	for id in range(len(cp.thetas)):
 		if(id % 10 ==0):
-			q=(cp.thetas[id],varphi,H(spin,[cp.thetas[id],varphi]))
+			q=(cp.Deg(cp.thetas[id]),cp.Deg(varphi),H(spin,[cp.thetas[id],varphi]))
 #			print(cp.thetas[id],varphi)
 			ret_list.append(q)
 	return ret_list		
@@ -30,7 +30,7 @@ def TestPhiEvolution(spin,theta):
 	for id in range(len(cp.phis)):
 		if(id % 10 ==0):
 			# q=(theta,cp.phis[id])
-			q=(theta,cp.phis[id],H(spin,[theta,cp.phis[id]]))
+			q=(cp.Deg(theta),cp.Deg(cp.phis[id]),H(spin,[theta,cp.phis[id]]))
 #			print(theta,cp.phis[id])
 			ret_list.append(q)
 	return ret_list		
@@ -47,8 +47,8 @@ def WriteData(out_file,data):
 	f.close()
 
 I=8.5	
-WriteData(theta_file,TestThetaEvolution(I,cp.phis[1]))
-WriteData(varphi_file,TestPhiEvolution(I,cp.thetas[1]))
+WriteData(theta_file,TestThetaEvolution(I,cp.phis[60]))
+WriteData(varphi_file,TestPhiEvolution(I,cp.thetas[60]))
 
 # Opening the test files for saving the data
 # f1=open(theta_file,'w')
