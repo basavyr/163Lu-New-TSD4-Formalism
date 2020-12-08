@@ -43,6 +43,7 @@ def WriteData(out_file,data):
 WriteData(theta_file,TestThetaEvolution(cp.phis[1]))
 WriteData(varphi_file,TestPhiEvolution(cp.thetas[1]))
 
+print(cp.SimplifiedH(8.5,cp.CT,[cp.thetas[1],cp.phis[1]]))
 
 # Opening the test files for saving the data
 # f1=open(theta_file,'w')

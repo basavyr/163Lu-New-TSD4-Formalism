@@ -49,4 +49,9 @@ CT=[6.5,72,15,7,2.1,22]
 
 mt=[(x,y) for x in thetas for y in phis]
 
+def SimplifiedH(spin,CT,q):
+	return H_min(spin,CT[0],CT[1],CT[2],CT[3],CT[4],CT[5],q[0],q[1])
+
+
+
 #print(len(thetas),len(phis),len(mt))
