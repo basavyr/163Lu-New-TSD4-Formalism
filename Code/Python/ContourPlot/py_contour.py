@@ -56,19 +56,27 @@ def SimplifiedH(spin,CT,q1,q2):
 	return H_min(spin,CT[0],CT[1],CT[2],CT[3],CT[4],CT[5],q1,q2)
 
 
-mesh_theta,mesh_phi=np.meshgrid(thetas,phis)	
-h_map=SimplifiedH(12.5,CT,mesh_theta,mesh_phi)
-h_map1=SimplifiedH(22.5,CT,mesh_theta,mesh_phi)
-h_map2=SimplifiedH(35.5,CT,mesh_theta,mesh_phi)
-
-plt.contourf(thetas,phis,h_map)
-plt.savefig('fig1.pdf',dpi=300,bbox_inches='tight')
-plt.close()
-
-plt.contourf(thetas,phis,h_map1)
-plt.savefig('fig2.pdf',dpi=300,bbox_inches='tight')
-plt.close()
-
-plt.contourf(thetas,phis,h_map2)
-plt.savefig('fig3.pdf',dpi=300,bbox_inches='tight')
-plt.close()
+minimal=[SimplifiedH(spin,CT,np.pi/2.0,np.pi) for spin in np.arange(8.5,48.5,2.0)]
+plt.plot(np.arange(8.5,48.5,2.0),minimal,'-r')
+plt.xlabel("I")
+plt.ylabel(r'$\mathcal{H}_{min}$ $(\theta=\frac{\pi}{2},\varphi=\pi )$')
+plt.savefig('min_h_evolution.pdf',dpi=300,bbox_inches='tight')
+#plt.show()
+# print(minimal)
+# 
+# mesh_theta,mesh_phi=np.meshgrid(thetas,phis)	
+# h_map=SimplifiedH(12.5,CT,mesh_theta,mesh_phi)
+# h_map1=SimplifiedH(22.5,CT,mesh_theta,mesh_phi)
+# h_map2=SimplifiedH(35.5,CT,mesh_theta,mesh_phi)
+# 
+# plt.contourf(thetas,phis,h_map)
+# plt.savefig('fig1.pdf',dpi=300,bbox_inches='tight')
+# plt.close()
+# 
+# plt.contourf(thetas,phis,h_map1)
+# plt.savefig('fig2.pdf',dpi=300,bbox_inches='tight')
+# plt.close()
+# 
+# plt.contourf(thetas,phis,h_map2)
+# plt.savefig('fig3.pdf',dpi=300,bbox_inches='tight')
+# plt.close()
