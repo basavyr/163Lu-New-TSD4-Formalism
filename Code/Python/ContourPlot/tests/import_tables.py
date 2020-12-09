@@ -27,5 +27,7 @@ def MathematicaImport(file_path):
 #theta evolution
 py_theta_values=ImportFunction(av.py_theta_file)
 math_theta_values=MathematicaImport(av.math_theta_file)
-print(len(py_theta_values))
-print(len(math_theta_values))
+#print(len(py_theta_values))
+#print(len(math_theta_values))
+py_phi_values=ImportFunction(av.py_varphi_file)
+math_varphi_values=MathematicaImport(av.math_varphi_file)
