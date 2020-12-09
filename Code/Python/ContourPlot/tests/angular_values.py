@@ -1,4 +1,5 @@
 import sys
+import os
 
 sys.path.append('../')
 
@@ -35,18 +36,22 @@ def TestPhiEvolution(spin,theta):
 			ret_list.append(q)
 	return ret_list		
 
-theta_file='theta_evolution.dat'
-varphi_file='phi_evolution.dat'
+# files from python
+py_files_path="/Users/robertpoenaru/Library/Mobile Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/ContourPlots/py/"
+math_files_path="/Users/robertpoenaru/Library/Mobile\ Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Resources/Output_Data/ContourPlots/math/"
+theta_file=py_files_path+'theta_evolution.dat'
+varphi_file=py_files_path+'phi_evolution.dat'
 
-
+# os.system(f'ls {py_files_path}')
+# os.system(f'ls {math_files_path}')
 def WriteData(out_file,data):
 	f=open(out_file,'w')
 	for x_id in data:
-		f.write(str(x_id[0])+' , '+str(x_id[1])+' , '+str(x_id[2]))
+		f.write(str(x_id[0])+' '+str(x_id[1])+' '+str(x_id[2]))
 		f.write('\n')
 	f.close()
 
-I=8.5	
+I=12.5
 WriteData(theta_file,TestThetaEvolution(I,cp.phis[60]))
 WriteData(varphi_file,TestPhiEvolution(I,cp.thetas[60]))
 
