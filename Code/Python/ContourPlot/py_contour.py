@@ -58,5 +58,17 @@ def SimplifiedH(spin,CT,q1,q2):
 
 mesh_theta,mesh_phi=np.meshgrid(thetas,phis)	
 h_map=SimplifiedH(12.5,CT,mesh_theta,mesh_phi)
+h_map1=SimplifiedH(22.5,CT,mesh_theta,mesh_phi)
+h_map2=SimplifiedH(35.5,CT,mesh_theta,mesh_phi)
+
 plt.contourf(thetas,phis,h_map)
-plt.show()
+plt.savefig('fig1.pdf',dpi=300,bbox_inches='tight')
+plt.close()
+
+plt.contourf(thetas,phis,h_map1)
+plt.savefig('fig2.pdf',dpi=300,bbox_inches='tight')
+plt.close()
+
+plt.contourf(thetas,phis,h_map2)
+plt.savefig('fig3.pdf',dpi=300,bbox_inches='tight')
+plt.close()
