@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import time
-
+import os
 
 def IF(I):
     return 1.0/(2*I)
