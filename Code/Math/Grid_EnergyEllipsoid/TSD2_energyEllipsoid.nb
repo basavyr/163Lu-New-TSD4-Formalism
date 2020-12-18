@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     32319,        827]
-NotebookOptionsPosition[     30368,        785]
-NotebookOutlinePosition[     30704,        800]
-CellTagsIndexPosition[     30661,        797]
+NotebookDataLength[     32136,        820]
+NotebookOptionsPosition[     30185,        778]
+NotebookOutlinePosition[     30521,        793]
+CellTagsIndexPosition[     30478,        790]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -718,28 +718,21 @@ Generate each ellipsoid as a figure, evaluated at a defined energy and spin\
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"spin1", "=", "12.5"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"spin1", "="}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"spin2", "=", "16.5"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"spin2", "="}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"enTuple1", "=", 
-   RowBox[{"{", 
-    RowBox[{"2.597", ",", "5.603", ",", "6"}], "}"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"enTuple2", "=", 
-   RowBox[{"{", 
-    RowBox[{"3.782", ",", "9.399", ",", "12"}], "}"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"axTuple1", "=", 
-   RowBox[{"{", 
-    RowBox[{"25", ",", "35", ",", "35"}], "}"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"axTuple2", "=", 
-   RowBox[{"{", 
-    RowBox[{"30", ",", "45", ",", "50"}], "}"}]}], ";"}]}], "Input",
+   RowBox[{"{", "}"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.816061482905243*^9, 3.816061490129703*^9}, {
   3.8160615581153183`*^9, 3.8160616581123247`*^9}, {3.8160617624011717`*^9, 
   3.81606176756793*^9}, {3.816061829374022*^9, 3.816061838369269*^9}, {
@@ -747,9 +740,9 @@ Cell[BoxData[{
   3.8160682332031612`*^9}, {3.816078671163048*^9, 3.81607868275274*^9}, {
   3.817192930912877*^9, 3.817192931260232*^9}, {3.817208675119722*^9, 
   3.817208675189587*^9}, {3.8172089126767273`*^9, 3.8172089127918053`*^9}, {
-  3.817209012330611*^9, 3.817209012555173*^9}},
- CellLabel->
-  "In[234]:=",ExpressionUUID->"9893bd21-dbfc-4cb5-ac26-b85cdb487af8"]
+  3.817209012330611*^9, 3.817209012555173*^9}, {3.817277768814053*^9, 
+  3.8172777793344603`*^9}},ExpressionUUID->"9893bd21-dbfc-4cb5-ac26-\
+b85cdb487af8"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -820,15 +813,15 @@ Cell[21610, 556, 6235, 150, 388, "Input",ExpressionUUID->"1ef1a3b3-bfec-4052-922
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[27882, 711, 230, 5, 105, "Section",ExpressionUUID->"6cf358bc-f537-4b4c-bd64-7e07743645d4"],
-Cell[28115, 718, 1363, 33, 136, "Input",ExpressionUUID->"9893bd21-dbfc-4cb5-ac26-b85cdb487af8"]
+Cell[28115, 718, 1180, 26, 136, "Input",ExpressionUUID->"9893bd21-dbfc-4cb5-ac26-b85cdb487af8"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29515, 756, 160, 3, 67, "Section",ExpressionUUID->"b4d129b9-2beb-455f-ac7a-8a479cf081a0"],
-Cell[29678, 761, 305, 9, 35, "Text",ExpressionUUID->"92a4f914-33c6-407f-967a-0303580db878"]
+Cell[29332, 749, 160, 3, 67, "Section",ExpressionUUID->"b4d129b9-2beb-455f-ac7a-8a479cf081a0"],
+Cell[29495, 754, 305, 9, 35, "Text",ExpressionUUID->"92a4f914-33c6-407f-967a-0303580db878"]
 }, Open  ]]
 }, Open  ]],
-Cell[30010, 774, 150, 3, 69, "Chapter",ExpressionUUID->"24d9eafc-7267-40b3-bca2-fc11ad99f26e"],
-Cell[30163, 779, 201, 4, 58, "Chapter",ExpressionUUID->"78043b15-4304-4a99-b2bf-2704d2acd11f"]
+Cell[29827, 767, 150, 3, 69, "Chapter",ExpressionUUID->"24d9eafc-7267-40b3-bca2-fc11ad99f26e"],
+Cell[29980, 772, 201, 4, 58, "Chapter",ExpressionUUID->"78043b15-4304-4a99-b2bf-2704d2acd11f"]
 }
 ]
 *)
