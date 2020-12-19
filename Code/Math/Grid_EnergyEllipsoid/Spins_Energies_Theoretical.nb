@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7397,        221]
-NotebookOptionsPosition[      6094,        189]
-NotebookOutlinePosition[      6430,        204]
-CellTagsIndexPosition[      6387,        201]
+NotebookDataLength[      8297,        244]
+NotebookOptionsPosition[      6993,        212]
+NotebookOutlinePosition[      7329,        227]
+CellTagsIndexPosition[      7286,        224]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -95,13 +95,20 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"ExpEnergies1", "=", 
    RowBox[{"{", 
-    RowBox[{"2.514", ",", "2.900", ",", "3.351"}], "}"}]}], ";"}]}], "Input",
+    RowBox[{"2.514", ",", "2.900", ",", "3.351"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"shape1", "=", 
+   RowBox[{"{", 
+    RowBox[{"5.60357", ",", "7.36806", ",", "9.39921"}], "}"}]}], 
+  ";"}]}], "Input",
  CellChangeTimes->{{3.81729276286207*^9, 3.81729279782662*^9}, {
   3.817294048838951*^9, 3.817294054219612*^9}, {3.81729435117515*^9, 
   3.817294355232687*^9}, {3.817294531225828*^9, 3.817294536250432*^9}, {
   3.817295080702033*^9, 3.817295089527295*^9}, {3.817295124359764*^9, 
-  3.817295124684811*^9}, {3.817306048213747*^9, 
-  3.817306057909397*^9}},ExpressionUUID->"bb67f816-b4de-4352-9e86-\
+  3.817295124684811*^9}, {3.817306048213747*^9, 3.817306057909397*^9}, {
+  3.8173426887527227`*^9, 3.817342692770402*^9}, {3.817342771734126*^9, 
+  3.817342794016939*^9}},ExpressionUUID->"bb67f816-b4de-4352-9e86-\
 5071a47f9e5b"]
 }, Open  ]],
 
@@ -124,12 +131,17 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"ExpEnergies2", "=", 
    RowBox[{"{", 
-    RowBox[{"3.079", ",", "3.486"}], "}"}]}], ";"}]}], "Input",
+    RowBox[{"3.079", ",", "3.486"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"shape2", "=", 
+   RowBox[{"{", 
+    RowBox[{"6.45248", ",", "8.3503"}], "}"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.817292799566214*^9, 3.817292801566484*^9}, {
   3.817294372104137*^9, 3.817294373680127*^9}, {3.817294468283391*^9, 
   3.817294471978135*^9}, {3.8172951302717123`*^9, 3.817295143017712*^9}, {
   3.817295184098468*^9, 3.817295185145438*^9}, {3.817306087887755*^9, 
-  3.817306088218383*^9}},ExpressionUUID->"1c1c6ad3-a051-4960-aee6-\
+  3.817306088218383*^9}, {3.817342616169145*^9, 
+  3.817342659775983*^9}},ExpressionUUID->"1c1c6ad3-a051-4960-aee6-\
 05838cda1cd7"]
 }, Open  ]],
 
@@ -152,11 +164,17 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"ExpEnergies3", "=", 
    RowBox[{"{", 
-    RowBox[{"3.8636", ",", "4.3692"}], "}"}]}], ";"}]}], "Input",
+    RowBox[{"3.8636", ",", "4.3692"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"shape3", "=", 
+   RowBox[{"{", 
+    RowBox[{"9.39921", ",", "11.697"}], "}"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.817292803621141*^9, 3.817292805706078*^9}, {
   3.817294487573735*^9, 3.817294492364799*^9}, {3.817295162147138*^9, 
-  3.817295178717916*^9}, {3.8173061176286383`*^9, 
-  3.8173061179224567`*^9}},ExpressionUUID->"2a52c8a5-eeae-41c0-a2ca-\
+  3.817295178717916*^9}, {3.8173061176286383`*^9, 3.8173061179224567`*^9}, {
+  3.817342627867344*^9, 3.817342631474928*^9}, {3.817342695809044*^9, 
+  3.8173427239449453`*^9}},ExpressionUUID->"2a52c8a5-eeae-41c0-a2ca-\
 ef04b94ffbb6"]
 }, Open  ]],
 
@@ -179,16 +197,21 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"ExpEnergies4", "=", 
    RowBox[{"{", 
-    RowBox[{"6.3199", ",", "6.965"}], "}"}]}], ";"}]}], "Input",
+    RowBox[{"6.3199", ",", "6.965"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"shape4", "=", 
+   RowBox[{"{", 
+    RowBox[{"18.6082", ",", "21.8394"}], "}"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.817292807476334*^9, 3.817292809846694*^9}, {
   3.817294498363347*^9, 3.817294501446004*^9}, {3.817295209101536*^9, 
-  3.817295209429112*^9}, {3.8173061435692663`*^9, 
-  3.8173061563973207`*^9}},ExpressionUUID->"8a0e92cc-06b4-4e80-9ebc-\
+  3.817295209429112*^9}, {3.8173061435692663`*^9, 3.8173061563973207`*^9}, {
+  3.817342699424101*^9, 3.8173427011177187`*^9}, {3.817342733806899*^9, 
+  3.817342748229495*^9}},ExpressionUUID->"8a0e92cc-06b4-4e80-9ebc-\
 c4692c3a315d"]
 }, Open  ]]
 },
 WindowSize->{896, 1067},
-WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
 StyleDefinitions->"Default.nb"
 ]
@@ -209,19 +232,19 @@ Cell[1164, 42, 1172, 31, 73, "Input",ExpressionUUID->"6a839765-4b01-402d-8249-9a
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[2373, 78, 153, 3, 69, "Chapter",ExpressionUUID->"3703ee3b-27e6-4fea-8d27-662eaad1cd4b"],
-Cell[2529, 83, 858, 21, 73, "Input",ExpressionUUID->"bb67f816-b4de-4352-9e86-5071a47f9e5b"]
+Cell[2529, 83, 1111, 28, 94, "Input",ExpressionUUID->"bb67f816-b4de-4352-9e86-5071a47f9e5b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3424, 109, 151, 3, 69, "Chapter",ExpressionUUID->"d00d0c8c-e0e3-4818-aa4a-85d66534359b"],
-Cell[3578, 114, 767, 18, 73, "Input",ExpressionUUID->"1c1c6ad3-a051-4960-aee6-05838cda1cd7"]
+Cell[3677, 116, 151, 3, 69, "Chapter",ExpressionUUID->"d00d0c8c-e0e3-4818-aa4a-85d66534359b"],
+Cell[3831, 121, 949, 23, 94, "Input",ExpressionUUID->"1c1c6ad3-a051-4960-aee6-05838cda1cd7"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4382, 137, 149, 3, 69, "Chapter",ExpressionUUID->"2333dc18-7db8-46a8-ad06-7a47facb169e"],
-Cell[4534, 142, 676, 17, 73, "Input",ExpressionUUID->"2a52c8a5-eeae-41c0-a2ca-ef04b94ffbb6"]
+Cell[4817, 149, 149, 3, 69, "Chapter",ExpressionUUID->"2333dc18-7db8-46a8-ad06-7a47facb169e"],
+Cell[4969, 154, 909, 23, 94, "Input",ExpressionUUID->"2a52c8a5-eeae-41c0-a2ca-ef04b94ffbb6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5247, 164, 153, 3, 69, "Chapter",ExpressionUUID->"4fadd64e-8440-4df9-aceb-23aeccafd88a"],
-Cell[5403, 169, 675, 17, 73, "Input",ExpressionUUID->"8a0e92cc-06b4-4e80-9ebc-c4692c3a315d"]
+Cell[5915, 182, 153, 3, 69, "Chapter",ExpressionUUID->"4fadd64e-8440-4df9-aceb-23aeccafd88a"],
+Cell[6071, 187, 906, 22, 94, "Input",ExpressionUUID->"8a0e92cc-06b4-4e80-9ebc-c4692c3a315d"]
 }, Open  ]]
 }
 ]
