@@ -131,7 +131,7 @@ Some key concepts which are of interest for the overall topic are:
 
 The following diagram gives an overview of the novel approach, and the concepts involved between each triaxial band in the $^{163}$Lu isotope.
 
-![workflow](Resources/Diagrams/double_shift_fit_workflow.png)
+![workflow](Resources/Diagrams/lu163_novelApproach.png)
 
 ### Contour plots with stable states (nuclear wobbling regimes)
 
