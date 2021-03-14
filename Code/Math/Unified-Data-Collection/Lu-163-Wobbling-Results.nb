@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13366,        365]
-NotebookOptionsPosition[     11583,        328]
-NotebookOutlinePosition[     11922,        343]
-CellTagsIndexPosition[     11879,        340]
+NotebookDataLength[     30077,        795]
+NotebookOptionsPosition[     27783,        751]
+NotebookOutlinePosition[     28122,        766]
+CellTagsIndexPosition[     28079,        763]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -219,14 +219,16 @@ Cell[BoxData[{
    RowBox[{
    "\"\</Users/robertpoenaru/Library/Mobile \
 Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Code/\
-Math/Unified-Data-Collection/Experimental-Data-Lu163.pdf\>\"", ",", 
+Math/Unified-Data-Collection/Data/Experimental-Data-Lu163.pdf\>\"", ",", 
     "expdatagrid"}], "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.8246980202029943`*^9, 3.824698048471878*^9}, {
   3.824698131181148*^9, 3.82469813456616*^9}, {3.824698184407509*^9, 
   3.8246981960401983`*^9}, {3.8246982310172653`*^9, 3.824698273957129*^9}, {
   3.824698348055958*^9, 3.824698449547049*^9}, {3.824698483193507*^9, 
-  3.8246986977600327`*^9}, {3.824699109569261*^9, 3.8246991222039433`*^9}},
- CellLabel->"In[15]:=",ExpressionUUID->"a5ce8510-6e81-4cf8-98b2-eea5a2b24474"]
+  3.8246986977600327`*^9}, {3.824699109569261*^9, 3.8246991222039433`*^9}, {
+  3.8247016308728657`*^9, 
+  3.824701632746984*^9}},ExpressionUUID->"a5ce8510-6e81-4cf8-98b2-\
+eea5a2b24474"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -323,6 +325,427 @@ Cell[BoxData[{
  CellChangeTimes->{{3.824700041368209*^9, 3.824700063327574*^9}},
  CellLabel->"In[21]:=",ExpressionUUID->"64e26f77-1b7d-4778-9ebe-ade69412786e"]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Graphical representation of the absolute energies ",
+ StyleBox["[Wobbling Spectrum]",
+  FontWeight->"Bold"]
+}], "Section",
+ CellChangeTimes->{{3.824700184142968*^9, 
+  3.8247001994880238`*^9}},ExpressionUUID->"0ee2aa8b-0ef7-4eb4-94d9-\
+d677ab3a2554"],
+
+Cell["TSD1,2", "Item",
+ CellChangeTimes->{{3.824701415811225*^9, 
+  3.824701419377935*^9}},ExpressionUUID->"81d4d990-7382-4db0-b5c5-\
+450e03ce8980"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"expLines1", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"tsd1Exp", "[", 
+        RowBox[{"[", "y", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"Length", "[", "tsd1Exp", "]"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "0.4"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Black", ",", 
+        RowBox[{"Thickness", "[", "0.004", "]"}]}], "]"}]}], ",", 
+     RowBox[{"Epilog", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Exp.\>\"", ",", "Black", ",", "Bold", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0.2", ",", "1"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Th.\>\"", ",", "Red", ",", "Bold", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "1"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Exp.\>\"", ",", "Black", ",", "Bold", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"2.25", ",", "2.2"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Th.\>\"", ",", "Red", ",", "Bold", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"3", ",", "2.2"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<TSD2\>\"", ",", "Black", ",", "Italic", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"2.6", ",", "17.2"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<TSD1\>\"", ",", "Black", ",", "Italic", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0.6", ",", "19.2"}], "}"}]}], "]"}]}], "}"}]}]}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"expLines2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"tsd2Exp", "[", 
+        RowBox[{"[", "y", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"Length", "[", "tsd2Exp", "]"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "2", ",", "2.4"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Black", ",", 
+        RowBox[{"Thickness", "[", "0.004", "]"}]}], "]"}]}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"thLines1", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"tsd1Th", "[", 
+        RowBox[{"[", "y", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"Length", "[", "tsd1Th", "]"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0.8", ",", "1.2"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Thickness", "[", "0.005", "]"}]}], "]"}]}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"thLines2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"tsd2Th", "[", 
+        RowBox[{"[", "y", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"Length", "[", "tsd2Th", "]"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "2.8", ",", "3.2"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Thickness", "[", "0.005", "]"}]}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"energyLines12", "=", 
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "expLines1", ",", "thLines1", ",", "expLines2", ",", "thLines2"}], 
+      "}"}], ",", 
+     RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.7"}], ",", "3.35"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "19"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"Frame", "\[Rule]", " ", "True"}], ",", 
+     RowBox[{"Axes", "->", "False"}], ",", 
+     RowBox[{"FrameStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "Normal", "}"}], ",", 
+        RowBox[{"{", "Normal", "}"}], ",", 
+        RowBox[{"{", "Normal", "}"}], ",", 
+        RowBox[{"{", "Normal", "}"}]}], "}"}]}], ",", 
+     RowBox[{"FrameLabel", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\"\<Energy [Mev]\>\"", ",", "\"\<\>\""}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<\>\"", ",", "\"\<\>\""}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Black", ",", "Bold", ",", 
+        RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "}"}]}], ",", 
+     RowBox[{"FrameTicksStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", "Black", "}"}], ",", 
+          RowBox[{"{", "Black", "}"}]}], "}"}], ",", 
+        RowBox[{"{", "}"}]}], "}"}]}], ",", 
+     RowBox[{"FrameTicks", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"None", ",", 
+        RowBox[{"{", 
+         RowBox[{
+         "2", ",", "4", ",", "6", ",", "8", ",", "10", ",", "12", ",", "14", 
+          ",", "16"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"AspectRatio", "\[Rule]", "1.3"}], ",", 
+     RowBox[{"ImageSize", "->", "Large"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+   "\"\</Users/robertpoenaru/Library/Mobile \
+Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Code/\
+Math/Unified-Data-Collection/Plots/TSD-12.pdf\>\"", ",", "energyLines12", ",", 
+    RowBox[{"ImageResolution", "\[Rule]", "1200"}]}], "]"}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.8247002225777407`*^9, 3.8247002318091707`*^9}, {
+   3.824700305558215*^9, 3.824700375226677*^9}, {3.824700422814567*^9, 
+   3.824700666278014*^9}, {3.82470076231651*^9, 3.8247008709055653`*^9}, {
+   3.824700909776873*^9, 3.824701057818673*^9}, {3.824701098868175*^9, 
+   3.824701112207686*^9}, {3.824701145215382*^9, 3.824701163272153*^9}, {
+   3.824701254446519*^9, 3.824701392526334*^9}, {3.824701425849187*^9, 
+   3.824701449719613*^9}, {3.824701638770952*^9, 3.8247016656619053`*^9}, 
+   3.824701700653183*^9},
+ CellLabel->
+  "In[107]:=",ExpressionUUID->"4f660688-3465-4673-81dc-a1844b525ecb"],
+
+Cell["TSD3,4", "Item",
+ CellChangeTimes->{{3.824701415811225*^9, 3.824701419377935*^9}, {
+  3.8247016930770693`*^9, 
+  3.824701694606102*^9}},ExpressionUUID->"46d8c8c5-d567-4e50-bbd1-\
+91373046c25b"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"expLines3", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"tsd3Exp", "[", 
+        RowBox[{"[", "y", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"Length", "[", "tsd3Exp", "]"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "0.4"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Black", ",", 
+        RowBox[{"Thickness", "[", "0.004", "]"}]}], "]"}]}], ",", 
+     RowBox[{"Epilog", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Exp.\>\"", ",", "Black", ",", "Bold", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0.2", ",", "2.6"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Th.\>\"", ",", "Red", ",", "Bold", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "2.6"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Exp.\>\"", ",", "Black", ",", "Bold", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"2.25", ",", "5.2"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Th.\>\"", ",", "Red", ",", "Bold", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"3", ",", "5.2"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<TSD4\>\"", ",", "Black", ",", "Italic", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"2.6", ",", "16.2"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Inset", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<TSD3\>\"", ",", "Black", ",", "Italic", ",", 
+            RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+            RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0.6", ",", "16.2"}], "}"}]}], "]"}]}], "}"}]}]}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"expLines4", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"tsd4Exp", "[", 
+        RowBox[{"[", "y", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"Length", "[", "tsd4Exp", "]"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "2", ",", "2.4"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Black", ",", 
+        RowBox[{"Thickness", "[", "0.004", "]"}]}], "]"}]}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"thLines3", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"tsd3Th", "[", 
+        RowBox[{"[", "y", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"Length", "[", "tsd3Th", "]"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0.8", ",", "1.2"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Thickness", "[", "0.005", "]"}]}], "]"}]}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"thLines4", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"tsd4Th", "[", 
+        RowBox[{"[", "y", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"Length", "[", "tsd4Th", "]"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "2.8", ",", "3.2"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Thickness", "[", "0.005", "]"}]}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"energyLines34", "=", 
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "expLines3", ",", "thLines3", ",", "expLines4", ",", "thLines4"}], 
+      "}"}], ",", 
+     RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.7"}], ",", "3.35"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"2.2", ",", "16.5"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"Frame", "\[Rule]", " ", "True"}], ",", 
+     RowBox[{"Axes", "->", "False"}], ",", 
+     RowBox[{"FrameStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "Normal", "}"}], ",", 
+        RowBox[{"{", "Normal", "}"}], ",", 
+        RowBox[{"{", "Normal", "}"}], ",", 
+        RowBox[{"{", "Normal", "}"}]}], "}"}]}], ",", 
+     RowBox[{"FrameLabel", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\"\<Energy [Mev]\>\"", ",", "\"\<\>\""}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<\>\"", ",", "\"\<\>\""}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Black", ",", "Bold", ",", 
+        RowBox[{"FontFamily", "->", "\"\<Times New Roman\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", " ", "22"}]}], "}"}]}], ",", 
+     RowBox[{"FrameTicksStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", "Black", "}"}], ",", 
+          RowBox[{"{", "Black", "}"}]}], "}"}], ",", 
+        RowBox[{"{", "}"}]}], "}"}]}], ",", 
+     RowBox[{"FrameTicks", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"None", ",", 
+        RowBox[{"{", 
+         RowBox[{
+         "2", ",", "4", ",", "6", ",", "8", ",", "10", ",", "12", ",", "14", 
+          ",", "16"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"AspectRatio", "\[Rule]", "1.3"}], ",", 
+     RowBox[{"ImageSize", "->", "Large"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+   "\"\</Users/robertpoenaru/Library/Mobile \
+Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/Code/\
+Math/Unified-Data-Collection/Plots/TSD-34.pdf\>\"", ",", "energyLines34", ",", 
+    RowBox[{"ImageResolution", "\[Rule]", "1200"}]}], "]"}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.8247002225777407`*^9, 3.8247002318091707`*^9}, {
+  3.824700305558215*^9, 3.824700375226677*^9}, {3.824700422814567*^9, 
+  3.824700666278014*^9}, {3.82470076231651*^9, 3.8247008709055653`*^9}, {
+  3.824700909776873*^9, 3.824701057818673*^9}, {3.824701098868175*^9, 
+  3.824701112207686*^9}, {3.824701145215382*^9, 3.824701163272153*^9}, {
+  3.824701254446519*^9, 3.824701392526334*^9}, {3.824701425849187*^9, 
+  3.824701449719613*^9}, {3.824701638770952*^9, 3.8247016656619053`*^9}, {
+  3.8247016971169147`*^9, 3.824701897842581*^9}},
+ CellLabel->
+  "In[167]:=",ExpressionUUID->"a91d50a8-4171-408f-816e-0bbdd547e6b1"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -356,15 +779,22 @@ Cell[4616, 136, 1406, 41, 94, "Input",ExpressionUUID->"5e70bc5c-37d0-40e4-a4ee-d
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[6059, 182, 182, 3, 54, "Subsection",ExpressionUUID->"82c40ca0-3379-4633-9195-1369778c6c8e"],
-Cell[6244, 187, 1811, 41, 178, "Input",ExpressionUUID->"a5ce8510-6e81-4cf8-98b2-eea5a2b24474"]
+Cell[6244, 187, 1848, 43, 157, "Input",ExpressionUUID->"a5ce8510-6e81-4cf8-98b2-eea5a2b24474"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8092, 233, 168, 3, 54, "Subsection",ExpressionUUID->"2ebe6f8c-fdf1-4689-b9fb-f1aed309118e"],
-Cell[8263, 238, 451, 14, 36, "Item",ExpressionUUID->"d5c85d16-c874-42d7-b144-712c504ac97e"],
-Cell[8717, 254, 1792, 39, 157, "Input",ExpressionUUID->"c69ceb8d-66cc-46c2-894e-bcdde40efac7"],
-Cell[10512, 295, 161, 3, 32, "Item",ExpressionUUID->"080f90f7-fd8a-41ba-9587-67f45577537d"],
-Cell[10676, 300, 867, 23, 115, "Input",ExpressionUUID->"64e26f77-1b7d-4778-9ebe-ade69412786e"]
+Cell[8129, 235, 168, 3, 54, "Subsection",ExpressionUUID->"2ebe6f8c-fdf1-4689-b9fb-f1aed309118e"],
+Cell[8300, 240, 451, 14, 36, "Item",ExpressionUUID->"d5c85d16-c874-42d7-b144-712c504ac97e"],
+Cell[8754, 256, 1792, 39, 157, "Input",ExpressionUUID->"c69ceb8d-66cc-46c2-894e-bcdde40efac7"],
+Cell[10549, 297, 161, 3, 32, "Item",ExpressionUUID->"080f90f7-fd8a-41ba-9587-67f45577537d"],
+Cell[10713, 302, 867, 23, 115, "Input",ExpressionUUID->"64e26f77-1b7d-4778-9ebe-ade69412786e"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11629, 331, 268, 7, 67, "Section",ExpressionUUID->"0ee2aa8b-0ef7-4eb4-94d9-d677ab3a2554"],
+Cell[11900, 340, 148, 3, 32, "Item",ExpressionUUID->"81d4d990-7382-4db0-b5c5-450e03ce8980"],
+Cell[12051, 345, 7736, 197, 493, "Input",ExpressionUUID->"4f660688-3465-4673-81dc-a1844b525ecb"],
+Cell[19790, 544, 199, 4, 32, "Item",ExpressionUUID->"46d8c8c5-d567-4e50-bbd1-91373046c25b"],
+Cell[19992, 550, 7763, 197, 493, "Input",ExpressionUUID->"a91d50a8-4171-408f-816e-0bbdd547e6b1"]
 }, Open  ]]
 }, Open  ]]
 }
