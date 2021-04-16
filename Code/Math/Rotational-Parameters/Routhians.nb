@@ -1,0 +1,81 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2136,         73]
+NotebookOptionsPosition[      1595,         54]
+NotebookOutlinePosition[      1935,         69]
+CellTagsIndexPosition[      1892,         66]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Routhians E\[CloseCurlyQuote](\[Omega])", "Title",
+ CellChangeTimes->{{3.827551600008438*^9, 3.827551602653728*^9}, {
+  3.827551634708433*^9, 
+  3.8275516376667013`*^9}},ExpressionUUID->"cf7aa1ee-6b1c-417f-b649-\
+009a8b34b919"],
+
+Cell[CellGroupData[{
+
+Cell["The energy in the rotating frame", "Section",
+ CellChangeTimes->{{3.827551605306919*^9, 
+  3.82755161722393*^9}},ExpressionUUID->"9afa664b-7a97-4949-b388-\
+2569a97e1691"],
+
+Cell[TextData[{
+ "Calculating the experimental and theoretical Routhians E\[CloseCurlyQuote](\
+\[Omega]) for ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["", "163"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b1a304fd-6732-4e9f-920b-be2c5df43cbe"],
+ "Lu\nThe Routhian: ",
+ StyleBox["energy of a state I with given \[Omega] in the rotating frame of \
+reference",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.827551648866671*^9, 
+  3.82755172345848*^9}},ExpressionUUID->"7c70b142-6215-4125-9318-\
+aebbf4c326af"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1161, 1206},
+WindowMargins->{{652, Automatic}, {23, Automatic}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 233, 4, 98, "Title",ExpressionUUID->"cf7aa1ee-6b1c-417f-b649-009a8b34b919"],
+Cell[CellGroupData[{
+Cell[838, 30, 176, 3, 67, "Section",ExpressionUUID->"9afa664b-7a97-4949-b388-2569a97e1691"],
+Cell[1017, 35, 550, 15, 58, "Text",ExpressionUUID->"7c70b142-6215-4125-9318-aebbf4c326af"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
