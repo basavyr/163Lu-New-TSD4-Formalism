@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     48035,       1343]
-NotebookOptionsPosition[     45192,       1287]
-NotebookOutlinePosition[     45532,       1302]
-CellTagsIndexPosition[     45489,       1299]
+NotebookDataLength[     48102,       1341]
+NotebookOptionsPosition[     45549,       1288]
+NotebookOutlinePosition[     45889,       1303]
+CellTagsIndexPosition[     45846,       1300]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -60,7 +60,7 @@ Cell[BoxData[
  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.827712084504229*^9, 3.827712094368671*^9}},
  CellLabel->
-  "In[133]:=",ExpressionUUID->"3208192a-0925-4716-8ab4-71a08e5e4bde"],
+  "In[196]:=",ExpressionUUID->"3208192a-0925-4716-8ab4-71a08e5e4bde"],
 
 Cell[CellGroupData[{
 
@@ -306,7 +306,7 @@ Cell[BoxData[{
   3.827549601150873*^9, 3.8275496431349077`*^9}, {3.8277322099737797`*^9, 
   3.827732210700142*^9}},
  CellLabel->
-  "In[134]:=",ExpressionUUID->"b4b55f88-443c-432d-83e3-2d1e8cc29675"]
+  "In[197]:=",ExpressionUUID->"b4b55f88-443c-432d-83e3-2d1e8cc29675"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -797,7 +797,7 @@ XHDAVpD/R9khZD3EkwPEL+FbXoNKm4KbxtI0TLLNxmkTI8os9s3DonP3DRR8
 WwOw7Sx76yUe8coi8Jmln70mdiyVz8F/iqbg2Q==
   "],
  CellLabel->
-  "In[147]:=",ExpressionUUID->"e514e8f7-19a6-4efc-b78b-4437f197fccc"]
+  "In[210]:=",ExpressionUUID->"e514e8f7-19a6-4efc-b78b-4437f197fccc"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -830,7 +830,7 @@ Resources/Output_Graphs/Double_Shift_Formalism/Rotational_Quantities/``.pdf\>\
   3.827551238171035*^9, 3.827551287491734*^9}, {3.827551355311082*^9, 
   3.827551356771089*^9}},
  CellLabel->
-  "In[167]:=",ExpressionUUID->"d1aca018-8992-416e-8ded-81453589b5af"]
+  "In[230]:=",ExpressionUUID->"d1aca018-8992-416e-8ded-81453589b5af"]
 }, Open  ]]
 }, Open  ]],
 
@@ -908,7 +908,7 @@ Cell[BoxData[
   3.827733652315988*^9, 3.8277336920166807`*^9}, {3.827733940581921*^9, 
   3.827733948680469*^9}},
  CellLabel->
-  "In[169]:=",ExpressionUUID->"cf049eb9-7918-4a87-a80c-fbca3846a97d"]
+  "In[232]:=",ExpressionUUID->"cf049eb9-7918-4a87-a80c-fbca3846a97d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -947,7 +947,7 @@ Cell[BoxData[{
   3.8277332635448523`*^9, 3.8277332751035643`*^9}, {3.827734043894257*^9, 
   3.827734057458877*^9}},
  CellLabel->
-  "In[171]:=",ExpressionUUID->"56f790de-818f-4623-96ef-299212505c01"],
+  "In[234]:=",ExpressionUUID->"56f790de-818f-4623-96ef-299212505c01"],
 
 Cell[CellGroupData[{
 
@@ -1056,7 +1056,7 @@ Cell[BoxData[
    3.827733913310383*^9}, {3.827733963845162*^9, 3.827734001196643*^9}, {
    3.8277363594519463`*^9, 3.8277363632092524`*^9}},
  CellLabel->
-  "In[173]:=",ExpressionUUID->"16862e8f-1a46-4d9c-a8ec-de7709dbe141"]
+  "In[236]:=",ExpressionUUID->"16862e8f-1a46-4d9c-a8ec-de7709dbe141"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1137,7 +1137,56 @@ Cell[BoxData[{
       RowBox[{"{", 
        RowBox[{"18", ",", "Black", ",", 
         RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}]}], "}"}]}]}], 
-    "]"}]}], ";"}]}], "Input",
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"plotMaker", "[", 
+    RowBox[{
+    "band1Exp_", ",", "band2Exp_", ",", "band1Th_", ",", "band2Th_", ",", 
+     "labels_"}], "]"}], ":=", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Grid", "[", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"routhPlot", "[", 
+          RowBox[{"band1Exp", ",", "band2Exp", ",", "a", ",", "0", ",", 
+           RowBox[{"labels", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"labels", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], "]"}], ",", 
+         RowBox[{"routhPlot", "[", 
+          RowBox[{"band1Th", ",", "band2Th", ",", "b", ",", "s", ",", 
+           RowBox[{"labels", "[", 
+            RowBox[{"[", "3", "]"}], "]"}], ",", 
+           RowBox[{"labels", "[", 
+            RowBox[{"[", "4", "]"}], "]"}]}], "]"}]}], "}"}], "}"}], "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "20", ",", "45", ",", "0.1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"b", ",", "0", ",", "45", ",", "0.1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"s", ",", "0", ",", "4", ",", "0.05"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"plotMaker", "[", 
+     RowBox[{
+     "routh1Exp", ",", "routh2Exp", ",", "routh1Th", ",", "routh2Th", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<TSD1;Exp\>\"", ",", "\"\<TSD2;Exp\>\"", ",", "\"\<TSD1;Th\>\"", 
+        ",", "\"\<TSD2;Th\>\""}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+    RowBox[{"plotMaker", "[", 
+     RowBox[{
+     "routh3Exp", ",", "routh4Exp", ",", "routh3Th", ",", "routh4Th", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<TSD3;Exp\>\"", ",", "\"\<TSD4;Exp\>\"", ",", "\"\<TSD3;Th\>\"", 
+        ",", "\"\<TSD4;Th\>\""}], "}"}]}], "]"}]}], "*)"}]}]}], "Input",
  CellChangeTimes->{{3.827565774492742*^9, 3.827565810144595*^9}, {
    3.827565880693664*^9, 3.82756591680508*^9}, {3.827565962381448*^9, 
    3.827566006860821*^9}, {3.827566125364787*^9, 3.8275661254408484`*^9}, {
@@ -1161,126 +1210,78 @@ Cell[BoxData[{
    3.827622182204295*^9, 3.827622196770294*^9}, {3.8276222305209637`*^9, 
    3.827622240092362*^9}, {3.827622362100897*^9, 3.827622484611485*^9}, {
    3.827622517968405*^9, 3.827622558458818*^9}, {3.82762269560667*^9, 
-   3.827622720648033*^9}, {3.827734133544064*^9, 3.827734321006117*^9}},
+   3.827622720648033*^9}, {3.827734133544064*^9, 3.827734321006117*^9}, {
+   3.8277370216411963`*^9, 3.827737096938406*^9}, {3.827737173610095*^9, 
+   3.827737176297386*^9}, {3.8277381352247133`*^9, 3.827738135415782*^9}},
  CellLabel->
-  "In[182]:=",ExpressionUUID->"5206e891-5cb7-4424-b872-3c5ac87f2a95"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{"plotMaker", "[", 
-    RowBox[{"band1Exp_", ",", "band2Exp_", ",", "band1Th_", ",", "band2Th_"}],
-     "]"}], ":=", 
-   RowBox[{"Manipulate", "[", 
-    RowBox[{
-     RowBox[{"Grid", "[", 
-      RowBox[{"{", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"routhPlot", "[", 
-          RowBox[{
-          "band1Exp", ",", "band2Exp", ",", "a", ",", "0", ",", 
-           "\"\<TSD1;Exp\>\"", ",", "\"\<TSD2;Exp\>\""}], "]"}], ",", 
-         RowBox[{"routhPlot", "[", 
-          RowBox[{
-          "band1Th", ",", "band2Th", ",", "b", ",", "s", ",", 
-           "\"\<TSD1;Th\>\"", ",", "\"\<TSD2;Th\>\""}], "]"}]}], "}"}], "}"}],
-       "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"a", ",", "20", ",", "45", ",", "0.1"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"b", ",", "0", ",", "45", ",", "0.1"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"s", ",", "0.1", ",", "4", ",", "0.05"}], "}"}]}], "]"}]}], 
-  ";"}]], "Input",
- CellChangeTimes->{{3.827622284183496*^9, 3.8276222938783903`*^9}, {
-  3.8276225653097973`*^9, 3.827622668177328*^9}, {3.827622802795602*^9, 
-  3.8276228256434193`*^9}, {3.8276229047429647`*^9, 3.827622938280571*^9}, {
-  3.827734295486803*^9, 3.827734297411213*^9}, {3.827734361491703*^9, 
-  3.827734450591796*^9}},
- CellLabel->
-  "In[184]:=",ExpressionUUID->"b3c751bf-ceb1-4798-80db-d1efef52b51c"],
-
-Cell[BoxData[{
- RowBox[{"plotMaker", "[", 
-  RowBox[{"routh1Exp", ",", "routh2Exp", ",", "routh1Th", ",", "routh2Th"}], 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{"plotMaker", "[", 
-  RowBox[{"routh3Exp", ",", "routh4Exp", ",", "routh3Th", ",", "routh4Th"}], 
-  "]"}]}], "Input",
- CellChangeTimes->{{3.8277344576039953`*^9, 3.827734467884858*^9}, {
-  3.8277345285706987`*^9, 3.827734545287115*^9}, {3.827734594845051*^9, 
-  3.827734603426375*^9}},
- CellLabel->
-  "In[190]:=",ExpressionUUID->"29d1ec69-c4d2-4586-b58d-19118e6e1525"],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"s1", "=", "1.75"}], ";", 
-   RowBox[{"s2", "=", "1.9"}], ";", 
-   RowBox[{"paramQ", "=", "34.5"}], ";"}], "*)"}]], "Input",
- CellChangeTimes->{{3.827623262649968*^9, 3.8276232890285463`*^9}},
- CellLabel->
-  "In[187]:=",ExpressionUUID->"21a67dee-1bcc-43de-bb2c-ea9a897e34b9"],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"grid1", "=", 
-     RowBox[{"Grid", "[", 
-      RowBox[{"{", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"routhPlot", "[", 
-          RowBox[{
-          "frout1", ",", "frout2", ",", "paramQ", ",", "0", ",", 
-           "\"\<TSD1;Exp\>\"", ",", "\"\<TSD2;Exp\>\""}], "]"}], ",", 
-         RowBox[{"routhPlot", "[", 
-          RowBox[{
-          "frout11", ",", "frout22", ",", "paramQ", ",", "s1", ",", 
-           "\"\<TSD1;Th\>\"", ",", "\"\<TSD2;Th\>\""}], "]"}]}], "}"}], "}"}],
-       "]"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"grid2", "=", 
-     RowBox[{"Grid", "[", 
-      RowBox[{"{", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"routhPlot", "[", 
-          RowBox[{
-          "frout3", ",", "frout4", ",", "paramQ", ",", "0", ",", 
-           "\"\<TSD3;Exp\>\"", ",", "\"\<TSD4;Exp\>\""}], "]"}], ",", 
-         RowBox[{"routhPlot", "[", 
-          RowBox[{
-          "frout33", ",", "frout44", ",", "paramQ", ",", "s2", ",", 
-           "\"\<TSD3;Th\>\"", ",", "\"\<TSD4;Th\>\""}], "]"}]}], "}"}], "}"}],
-       "]"}]}], ";"}]}], "*)"}]], "Input",
- CellChangeTimes->{{3.827623307073168*^9, 3.827623378453734*^9}},
- CellLabel->
-  "In[188]:=",ExpressionUUID->"e9471bb5-8add-47e9-a78e-d8744b842ef3"]
-}, Open  ]],
+  "In[245]:=",ExpressionUUID->"5206e891-5cb7-4424-b872-3c5ac87f2a95"],
 
 Cell[CellGroupData[{
 
-Cell["Create exporter function", "Subsection",
- CellChangeTimes->{{3.8275510867709913`*^9, 
-  3.827551090951076*^9}},ExpressionUUID->"f60fa628-e5c8-417f-9391-\
-ad070c08ec50"],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"exporter", "[", 
-    RowBox[{"grid1", ",", "\"\<routhians12\>\""}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"exporter", "[", 
-    RowBox[{"grid2", ",", "\"\<routhians34\>\""}], "]"}]}], "*)"}]], "Input",
- CellChangeTimes->{{3.82762341897863*^9, 3.8276234256582527`*^9}, {
-  3.827623469376234*^9, 3.827623486322035*^9}},
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"s1", "=", "0"}], ";", 
+  RowBox[{"s2", "=", "0.0"}], ";", 
+  RowBox[{"paramQ", "=", "31.7"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"grid1", "=", 
+   RowBox[{"Grid", "[", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"routhPlot", "[", 
+        RowBox[{
+        "routh1Exp", ",", "routh2Exp", ",", "paramQ", ",", "0", ",", 
+         "\"\<TSD1;Exp\>\"", ",", "\"\<TSD2;Exp\>\""}], "]"}], ",", 
+       RowBox[{"routhPlot", "[", 
+        RowBox[{
+        "routh1Th", ",", "routh2Th", ",", "paramQ", ",", "s1", ",", 
+         "\"\<TSD1;Th\>\"", ",", "\"\<TSD2;Th\>\""}], "]"}]}], "}"}], "}"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"grid2", "=", 
+   RowBox[{"Grid", "[", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"routhPlot", "[", 
+        RowBox[{
+        "routh3Exp", ",", "routh4Exp", ",", "paramQ", ",", "0", ",", 
+         "\"\<TSD3;Exp\>\"", ",", "\"\<TSD4;Exp\>\""}], "]"}], ",", 
+       RowBox[{"routhPlot", "[", 
+        RowBox[{
+        "routh3Th", ",", "routh4Th", ",", "paramQ", ",", "s2", ",", 
+         "\"\<TSD3;Th\>\"", ",", "\"\<TSD4;Th\>\""}], "]"}]}], "}"}], "}"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"exporter", "[", 
+  RowBox[{"grid1", ",", 
+   RowBox[{"prepath", "[", "\"\<routhians12\>\"", "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"exporter", "[", 
+  RowBox[{"grid2", ",", 
+   RowBox[{"prepath", "[", "\"\<routhians34\>\"", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.827623262649968*^9, 3.8276232890285463`*^9}, {
+  3.827737724444425*^9, 3.8277377454812803`*^9}, {3.827738083890914*^9, 
+  3.827738108503264*^9}, {3.827738144146564*^9, 3.8277381442921257`*^9}},
  CellLabel->
-  "In[189]:=",ExpressionUUID->"e36800e8-5e4c-49c7-9f37-2ce6ccbecb90"]
+  "In[248]:=",ExpressionUUID->"21a67dee-1bcc-43de-bb2c-ea9a897e34b9"],
+
+Cell[BoxData["\<\"/Users/robertpoenaru/Library/Mobile \
+Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/\
+Resources/Output_Graphs/Double_Shift_Formalism/Rotational_Quantities/\
+routhians12.pdf\"\>"], "Output",
+ CellChangeTimes->{3.8277381518412457`*^9},
+ CellLabel->
+  "Out[251]=",ExpressionUUID->"f6a530df-81d5-491b-a13f-cec8a1986007"],
+
+Cell[BoxData["\<\"/Users/robertpoenaru/Library/Mobile \
+Documents/com~apple~CloudDocs/Work/Pipeline/DFT/163Lu-New-TSD4-Formalism/\
+Resources/Output_Graphs/Double_Shift_Formalism/Rotational_Quantities/\
+routhians34.pdf\"\>"], "Output",
+ CellChangeTimes->{3.827738152130938*^9},
+ CellLabel->
+  "Out[252]=",ExpressionUUID->"f0b50c1e-11b4-40e4-990d-69e78e21b676"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -1333,15 +1334,12 @@ Cell[32773, 969, 3493, 89, 262, "Input",ExpressionUUID->"16862e8f-1a46-4d9c-a8ec
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[36303, 1063, 199, 3, 54, "Subsection",ExpressionUUID->"996bb688-6d25-4999-9754-da4c597476f9"],
-Cell[36505, 1068, 4402, 97, 138, "Input",ExpressionUUID->"5206e891-5cb7-4424-b872-3c5ac87f2a95"],
-Cell[40910, 1167, 1384, 34, 94, "Input",ExpressionUUID->"b3c751bf-ceb1-4798-80db-d1efef52b51c"],
-Cell[42297, 1203, 530, 11, 52, "Input",ExpressionUUID->"29d1ec69-c4d2-4586-b58d-19118e6e1525"],
-Cell[42830, 1216, 327, 8, 30, "Input",ExpressionUUID->"21a67dee-1bcc-43de-bb2c-ea9a897e34b9"],
-Cell[43160, 1226, 1317, 35, 94, "Input",ExpressionUUID->"e9471bb5-8add-47e9-a78e-d8744b842ef3"]
-}, Open  ]],
+Cell[36505, 1068, 6420, 148, 264, "Input",ExpressionUUID->"5206e891-5cb7-4424-b872-3c5ac87f2a95"],
 Cell[CellGroupData[{
-Cell[44514, 1266, 174, 3, 54, "Subsection",ExpressionUUID->"f60fa628-e5c8-417f-9391-ad070c08ec50"],
-Cell[44691, 1271, 461, 11, 52, "Input",ExpressionUUID->"e36800e8-5e4c-49c7-9f37-2ce6ccbecb90"]
+Cell[42950, 1220, 1821, 46, 199, "Input",ExpressionUUID->"21a67dee-1bcc-43de-bb2c-ea9a897e34b9"],
+Cell[44774, 1268, 361, 6, 77, "Output",ExpressionUUID->"f6a530df-81d5-491b-a13f-cec8a1986007"],
+Cell[45138, 1276, 359, 6, 77, "Output",ExpressionUUID->"f0b50c1e-11b4-40e4-990d-69e78e21b676"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
