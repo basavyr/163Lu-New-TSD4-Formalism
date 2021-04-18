@@ -73,5 +73,9 @@
         "markdown",
         "latex",
         "plaintext"
+    ],
+    "cSpell.ignoreWords": [
+        "function",
+        "hrot"
     ]
 }
