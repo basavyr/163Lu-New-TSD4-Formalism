@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     11931,        374]
-NotebookOptionsPosition[     11010,        349]
-NotebookOutlinePosition[     11408,        365]
-CellTagsIndexPosition[     11365,        362]
+NotebookDataLength[     12810,        394]
+NotebookOptionsPosition[     11795,        368]
+NotebookOutlinePosition[     12193,        384]
+CellTagsIndexPosition[     12150,        381]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,9 +29,29 @@ Wobbling Frequencies for 163Lu using the Parity-Partner procedure\
 
 Cell[BoxData[
  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.8660097648576097`*^9, 
-  3.866009773843976*^9}},ExpressionUUID->"a12ccca8-0418-4dc0-a7cb-\
-c39d339ae83d"],
+ CellChangeTimes->{{3.8660097648576097`*^9, 3.866009773843976*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"a12ccca8-0418-4dc0-a7cb-c39d339ae83d"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"path", "[", "filename_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+    "StringTemplate", "[", 
+     "\"\</Users/basavyr/Documents/Work/PhD/163Lu-New-TSD4-Formalism/Code/\
+Update-July-2022/plots/``\>\"", "]"}], "[", "filename", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"export", "[", 
+    RowBox[{"filename_", ",", "obj_"}], "]"}], ":=", 
+   RowBox[{"Export", "[", 
+    RowBox[{
+     RowBox[{"path", "[", "filename", "]"}], ",", 
+     RowBox[{"Show", "[", "obj", "]"}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8660099245543137`*^9, 3.866010013637824*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"93e35b03-b23f-4ef0-a2de-1bb7ce670cf6"],
 
 Cell[CellGroupData[{
 
@@ -301,8 +321,8 @@ IHrJ1N9g+tbDgi3WsW8cU55XgOkb1nLHQfSSh0EnQfStgvwbIPr6FKPbILrQ
 823LhqQ3jhcuRbeC6JpP/1L3AWnBnV8yQfSZbsbl3KlA99+PXQWime89eBoI
 pL9avwbT9ZlFb0H0tCaedyA67tmubyfPvnH0Mpb7AaIfZDqzngLSl+1PgGmX
 R5wiV4D01B1y4iAaAOOI2Qg=
-  
-  "],ExpressionUUID->"8a141d4f-13d6-4b13-bf81-dfc11d8e158a"]
+  "],
+ CellLabel->"In[14]:=",ExpressionUUID->"8a141d4f-13d6-4b13-bf81-dfc11d8e158a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -341,9 +361,8 @@ Cell[BoxData[
   RowBox[{"shiftTSD4", "=", "0.6"}], ";"}]], "Input",
  CellChangeTimes->{{3.8120662846305227`*^9, 3.812066339325386*^9}, {
   3.812066405118434*^9, 3.812066405329926*^9}, {3.81206643745133*^9, 
-  3.812066437708013*^9}, {3.866009841332748*^9, 
-  3.866009849805346*^9}},ExpressionUUID->"658ddbdd-9a39-4c51-8124-\
-234a364886ad"]
+  3.812066437708013*^9}, {3.866009841332748*^9, 3.866009849805346*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"658ddbdd-9a39-4c51-8124-234a364886ad"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -366,14 +385,15 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 218, 5, 69, "Chapter",ExpressionUUID->"c17617f0-b313-46f9-8fdd-543079eed091"],
-Cell[801, 29, 204, 4, 30, "Input",ExpressionUUID->"a12ccca8-0418-4dc0-a7cb-c39d339ae83d"],
+Cell[801, 29, 223, 3, 30, "Input",ExpressionUUID->"a12ccca8-0418-4dc0-a7cb-c39d339ae83d"],
+Cell[1027, 34, 723, 19, 52, "Input",ExpressionUUID->"93e35b03-b23f-4ef0-a2de-1bb7ce670cf6"],
 Cell[CellGroupData[{
-Cell[1030, 37, 211, 4, 67, "Section",ExpressionUUID->"32ac7f90-2f8c-4bb9-a5c1-3bb85d06c816"],
-Cell[1244, 43, 8474, 261, 368, "Input",ExpressionUUID->"8a141d4f-13d6-4b13-bf81-dfc11d8e158a"]
+Cell[1775, 57, 211, 4, 67, "Section",ExpressionUUID->"32ac7f90-2f8c-4bb9-a5c1-3bb85d06c816"],
+Cell[1989, 63, 8495, 261, 368, "Input",ExpressionUUID->"8a141d4f-13d6-4b13-bf81-dfc11d8e158a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9755, 309, 434, 12, 68, "Section",ExpressionUUID->"712a650e-907f-4475-a0da-8f7809a9adcb"],
-Cell[10192, 323, 790, 22, 30, "Input",ExpressionUUID->"658ddbdd-9a39-4c51-8124-234a364886ad"]
+Cell[10521, 329, 434, 12, 68, "Section",ExpressionUUID->"712a650e-907f-4475-a0da-8f7809a9adcb"],
+Cell[10958, 343, 809, 21, 85, "Input",ExpressionUUID->"658ddbdd-9a39-4c51-8124-234a364886ad"]
 }, Open  ]]
 }, Open  ]]
 }
