@@ -1,0 +1,154 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4613,        146]
+NotebookOptionsPosition[      3950,        127]
+NotebookOutlinePosition[      4348,        143]
+CellTagsIndexPosition[      4305,        140]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Evaluating the components of the Energy Function", "Chapter",
+ CellChangeTimes->{{3.866108796744403*^9, 
+  3.866108805872077*^9}},ExpressionUUID->"c77f26cb-63e4-4c54-a7b6-\
+8d032758ae0b"],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8661091649353027`*^9, 3.866109168677205*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"a261ccf5-1106-459f-be07-05654d0dbdcb"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tcore", "[", 
+    RowBox[{"I_", ",", "A1_", ",", "A2_", ",", "A3_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["I", "2"], 
+     RowBox[{"(", 
+      RowBox[{"A1", "+", "A2"}], ")"}]}], "+", 
+    RowBox[{"A3", "*", 
+     SuperscriptBox["I", "2"]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tsp", "[", 
+    RowBox[{"j_", ",", "A1_", ",", "A2_", ",", "A3_", ",", "V_", ",", "gm_"}],
+     "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["j", "2"], 
+     RowBox[{"(", 
+      RowBox[{"A2", "+", "A3"}], ")"}]}], "+", 
+    RowBox[{"A1", "*", 
+     SuperscriptBox["j", "2"]}], "-", 
+    RowBox[{"V", "*", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"2", "j"}], "-", "1"}], 
+      RowBox[{"j", "+", "1"}]], 
+     RowBox[{"Sin", "[", 
+      RowBox[{
+       RowBox[{"gm", "*", 
+        FractionBox["\[Pi]", "180"]}], "+", 
+       FractionBox["\[Pi]", "6"]}], "]"}]}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8661088331053*^9, 3.866108880200007*^9}, {
+  3.866109121226882*^9, 3.866109161559239*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"8e6abf25-84f5-43e3-8ecb-8d2c095734ea"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A11", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "10"}], ")"}]}]}], ";", 
+  RowBox[{"A21", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "20"}], ")"}]}]}], ";", 
+  RowBox[{"A31", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "45"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A12", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "45"}], ")"}]}]}], ";", 
+  RowBox[{"A22", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "10"}], ")"}]}]}], ";", 
+  RowBox[{"A32", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A13", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "45"}], ")"}]}]}], ";", 
+  RowBox[{"A23", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "20"}], ")"}]}]}], ";", 
+  RowBox[{"A33", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "10"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"j1", "=", 
+   RowBox[{"13", "/", "2"}]}], ";", 
+  RowBox[{"j2", "=", 
+   RowBox[{"11", "/", "2"}]}], ";", 
+  RowBox[{"j3", "=", 
+   RowBox[{"9", "/", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Vfit", "=", "2.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gmfit", "=", "22"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8661094075692463`*^9, 3.866109420673313*^9}, {
+  3.866109522738329*^9, 3.866109561837811*^9}, {3.8661098461358967`*^9, 
+  3.866109897952197*^9}, {3.866109965306085*^9, 3.8661100310508137`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"10ef092f-5f53-4219-965d-fd5f1a28751c"]
+}, Open  ]]
+},
+WindowSize->{861, 911},
+WindowMargins->{{Automatic, 141}, {Automatic, 182}},
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6a4f7625-a952-45ca-8255-7924dee5e447"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 193, 3, 69, "Chapter",ExpressionUUID->"c77f26cb-63e4-4c54-a7b6-8d032758ae0b"],
+Cell[776, 27, 223, 3, 30, "Input",ExpressionUUID->"a261ccf5-1106-459f-be07-05654d0dbdcb"],
+Cell[1002, 32, 1172, 36, 92, "Input",ExpressionUUID->"8e6abf25-84f5-43e3-8ecb-8d2c095734ea"],
+Cell[2177, 70, 1757, 54, 136, "Input",ExpressionUUID->"10ef092f-5f53-4219-965d-fd5f1a28751c"]
+}, Open  ]]
+}
+]
+*)
+
