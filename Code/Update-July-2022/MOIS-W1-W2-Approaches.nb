@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     43587,       1104]
-NotebookOptionsPosition[     41842,       1067]
-NotebookOutlinePosition[     42241,       1083]
-CellTagsIndexPosition[     42198,       1080]
+NotebookDataLength[     44521,       1132]
+NotebookOptionsPosition[     42773,       1095]
+NotebookOutlinePosition[     43172,       1111]
+CellTagsIndexPosition[     43129,       1108]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -30,7 +30,7 @@ Cell[BoxData[
  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.8660716202285223`*^9, 3.866071628261856*^9}},
  CellLabel->
-  "In[1112]:=",ExpressionUUID->"57bd484a-c0c4-45e5-bba5-64715bb42a77"],
+  "In[888]:=",ExpressionUUID->"57bd484a-c0c4-45e5-bba5-64715bb42a77"],
 
 Cell[BoxData[{
  RowBox[{
@@ -49,10 +49,19 @@ Update-July-2022/plots/``.pdf\>\"", "]"}], "[", "filename", "]"}]}],
    RowBox[{"Export", "[", 
     RowBox[{
      RowBox[{"path", "[", "filename", "]"}], ",", 
-     RowBox[{"Show", "[", "obj", "]"}]}], "]"}]}], ";"}]}], "Input",
- CellChangeTimes->{{3.866074125441517*^9, 3.866074187326762*^9}},
+     RowBox[{"Show", "[", "obj", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"texStyle", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"FontFamily", "->", "\"\<Latin Modern Roman\>\""}], ",", 
+     RowBox[{"FontSize", "->", "22"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.866074125441517*^9, 3.866074187326762*^9}, {
+  3.8661633574405613`*^9, 3.866163357586183*^9}, {3.866163427019534*^9, 
+  3.8661634275221443`*^9}},
  CellLabel->
-  "In[1113]:=",ExpressionUUID->"37119552-6d2a-40fc-b37d-7e6d66000598"],
+  "In[889]:=",ExpressionUUID->"37119552-6d2a-40fc-b37d-7e6d66000598"],
 
 Cell[BoxData[{
  RowBox[{
@@ -85,7 +94,7 @@ Cell[BoxData[{
   3.866071784930768*^9}, {3.866072245739834*^9, 3.866072272164722*^9}, {
   3.866075291882689*^9, 3.866075291936728*^9}},
  CellLabel->
-  "In[2060]:=",ExpressionUUID->"f5971e56-d843-4542-8514-d07e7974ac0b"]
+  "In[892]:=",ExpressionUUID->"f5971e56-d843-4542-8514-d07e7974ac0b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -129,27 +138,35 @@ Cell[BoxData[{
  CellChangeTimes->{{3.866090664899942*^9, 3.866090666948827*^9}, {
   3.8660907037910423`*^9, 3.866090754686034*^9}},
  CellLabel->
-  "In[2072]:=",ExpressionUUID->"862c2675-c159-48dc-a0cf-cb93304501f8"],
+  "In[900]:=",ExpressionUUID->"862c2675-c159-48dc-a0cf-cb93304501f8"],
 
 Cell[BoxData["4.8`"], "Output",
- CellChangeTimes->{{3.866090720177409*^9, 3.866090755455223*^9}},
+ CellChangeTimes->{{3.866090720177409*^9, 3.866090755455223*^9}, 
+   3.866163388348528*^9, 3.8661634279775753`*^9, {3.866163627160676*^9, 
+   3.8661636422132*^9}},
  CellLabel->
-  "Out[2072]=",ExpressionUUID->"de4f86ff-685a-4683-8101-68114659207f"],
+  "Out[900]=",ExpressionUUID->"51122f24-3842-4e6a-b316-fa2a5bed263b"],
 
 Cell[BoxData["10.285714285714286`"], "Output",
- CellChangeTimes->{{3.866090720177409*^9, 3.866090755457079*^9}},
+ CellChangeTimes->{{3.866090720177409*^9, 3.866090755455223*^9}, 
+   3.866163388348528*^9, 3.8661634279775753`*^9, {3.866163627160676*^9, 
+   3.866163642214486*^9}},
  CellLabel->
-  "Out[2073]=",ExpressionUUID->"8bae897c-6d2a-4dc0-9e69-5ad06af366d8"],
+  "Out[901]=",ExpressionUUID->"55393a94-2311-4e47-b06b-aee616924684"],
 
 Cell[BoxData["3.16`"], "Output",
- CellChangeTimes->{{3.866090720177409*^9, 3.866090755458946*^9}},
+ CellChangeTimes->{{3.866090720177409*^9, 3.866090755455223*^9}, 
+   3.866163388348528*^9, 3.8661634279775753`*^9, {3.866163627160676*^9, 
+   3.866163642215613*^9}},
  CellLabel->
-  "Out[2074]=",ExpressionUUID->"687b06a4-3fce-4960-b268-a62167c08728"],
+  "Out[902]=",ExpressionUUID->"73e536d4-083e-4098-9387-9182c7484651"],
 
 Cell[BoxData["6.32`"], "Output",
- CellChangeTimes->{{3.866090720177409*^9, 3.866090755460555*^9}},
+ CellChangeTimes->{{3.866090720177409*^9, 3.866090755455223*^9}, 
+   3.866163388348528*^9, 3.8661634279775753`*^9, {3.866163627160676*^9, 
+   3.866163642216667*^9}},
  CellLabel->
-  "Out[2075]=",ExpressionUUID->"264e0e7f-56da-4dea-88f0-b23e6a7eb8cc"]
+  "Out[903]=",ExpressionUUID->"6c33798b-2e62-4e9e-a819-9302af839e4d"]
 }, Open  ]]
 }, Open  ]],
 
@@ -193,6 +210,7 @@ Cell[BoxData[{
           RowBox[{"[", "3", "]"}], "]"}], ",", 
          RowBox[{"moiW1tsd4", "[", 
           RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], "}"}], ",", 
+     RowBox[{"BaseStyle", "->", "texStyle"}], ",", 
      RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", 
      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
      RowBox[{"Axes", "\[Rule]", "False"}], ",", 
@@ -207,10 +225,6 @@ Cell[BoxData[{
        "None", ",", 
         "\"\<\[ScriptCapitalI] [\!\(\*SuperscriptBox[\(\[HBar]\), \
 \(2\)]\)\!\(\*SuperscriptBox[\(MeV\), \(-1\)]\)]\>\""}], "}"}]}], ",", 
-     RowBox[{"LabelStyle", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"22", ",", "Black", ",", 
-        RowBox[{"FontFamily", "->", "\"\<Times\>\""}]}], "}"}]}], ",", 
      RowBox[{"BarSpacing", "\[Rule]", "Automatic"}], ",", 
      RowBox[{"ChartLegends", "\[Rule]", 
       RowBox[{"Placed", "[", 
@@ -236,7 +250,8 @@ Cell[BoxData[{
          "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(1\)]\)\>\"", ",", 
           "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(2\)]\)\>\"", ",", 
           "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(3\)]\)\>\""}], 
-         "}"}], ",", "None"}], "}"}]}]}], "]"}]}], 
+         "}"}], ",", "None"}], "}"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", "texStyle"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Show", "[", "mois", "]"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -250,9 +265,11 @@ Cell[BoxData[{
   3.8660737189139013`*^9, 3.866073851308344*^9}, {3.866074073976108*^9, 
   3.866074074478446*^9}, {3.866074196296743*^9, 3.866074212864991*^9}, {
   3.866074270699954*^9, 3.866074271653749*^9}, {3.8660743109998713`*^9, 
-  3.866074314754533*^9}, {3.866074445805942*^9, 3.866074550665345*^9}},
+  3.866074314754533*^9}, {3.866074445805942*^9, 3.866074550665345*^9}, {
+  3.86616336841693*^9, 3.866163385966826*^9}, {3.866163620759851*^9, 
+  3.86616364178262*^9}},
  CellLabel->
-  "In[1123]:=",ExpressionUUID->"73c1fd1f-6967-4cad-8e1a-a8591a91776d"],
+  "In[904]:=",ExpressionUUID->"73c1fd1f-6967-4cad-8e1a-a8591a91776d"],
 
 Cell[BoxData[
  TagBox[
@@ -277,17 +294,18 @@ Cell[BoxData[
                  RectangleBox[{0.7439912600145666, 0.}, {1.64639475600874, 
                   72.}, "RoundingRadius" -> 0]},
                 
-                ImageSizeCache->{{71.72647058823529, 
-                 104.4520292695262}, {-177.25000000000003`, 
-                 165.25000000000009`}}],
+                ImageSizeCache->{{76.53235294117647, 
+                 108.81033441856056`}, {-179.49999999999997`, 
+                 158.25000000000009`}}],
                "DelayedMouseEffectStyle"],
               StatusArea[#, 72]& ,
               TagBoxNote->"72"],
-             StyleBox["72", {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}, StripOnInput -> False]],
+             StyleBox[
+             "72", {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+              StripOnInput -> False]],
             Annotation[#, 
-             Style[72, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}], "Tooltip"]& ]}, 
+             Style[72, {FontFamily -> "Latin Modern Roman", FontSize -> 22}], 
+             "Tooltip"]& ]}, 
           {RGBColor[0.909499, 0.613916, 0.204196], EdgeForm[{Opacity[0.637], 
            Thickness[Small]}], 
            TagBox[
@@ -305,17 +323,19 @@ Cell[BoxData[
                  RectangleBox[{1.7439912600145666`, 0.}, {2.64639475600874, 
                   63.2}, "RoundingRadius" -> 0]},
                 
-                ImageSizeCache->{{107.43727936096525`, 
-                 140.16283804225614`}, {-135.45000000000002`, 
-                 165.25000000000009`}}],
+                ImageSizeCache->{{111.7471782587296, 
+                 144.0251597361137}, {-138.28055555555554`, 
+                 158.25000000000009`}}],
                "DelayedMouseEffectStyle"],
               StatusArea[#, 63.2]& ,
               TagBoxNote->"63.2"],
-             StyleBox["63.2`", {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}, StripOnInput -> False]],
+             StyleBox[
+             "63.2`", {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+              StripOnInput -> False]],
             Annotation[#, 
-             Style[63.2, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}], "Tooltip"]& ]}, 
+             Style[
+             63.2, {FontFamily -> "Latin Modern Roman", FontSize -> 22}], 
+             "Tooltip"]& ]}, 
           {RGBColor[0.806577, 0.385397, 0.762768], EdgeForm[{Opacity[0.637], 
            Thickness[Small]}], 
            TagBox[
@@ -333,17 +353,17 @@ Cell[BoxData[
                  RectangleBox[{2.7439912600145666`, 0.}, {3.64639475600874, 
                   67.}, "RoundingRadius" -> 0]},
                 
-                ImageSizeCache->{{143.14808813369518`, 
-                 175.8736468149861}, {-153.50000000000003`, 
-                 165.25000000000009`}}],
+                ImageSizeCache->{{146.96200357628277`, 
+                 179.23998505366683`}, {-156.07986111111106`, 
+                 158.25000000000009`}}],
                "DelayedMouseEffectStyle"],
               StatusArea[#, 67]& ,
               TagBoxNote->"67"],
-             StyleBox["67", {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}, StripOnInput -> False]],
+             StyleBox[
+             "67", {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+              StripOnInput -> False]],
             Annotation[#, 
-             Style[67, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}], 
+             Style[67, {FontFamily -> "Latin Modern Roman", FontSize -> 22}], 
              "Tooltip"]& ]}}}, {}, {}}, {{}, {{}, {
           {RGBColor[0.782803, 0.164904, 0.400458], EdgeForm[{Opacity[0.637], 
            Thickness[Small]}], 
@@ -362,16 +382,17 @@ Cell[BoxData[
                  RectangleBox[{4.0367807720320465`, 0.}, {4.93918426802622, 
                   15.}, "RoundingRadius" -> 0]},
                 
-                ImageSizeCache->{{189.31464718074227`, 222.0402058620332}, {
-                 93.50000000000006, 165.25000000000009`}}],
+                ImageSizeCache->{{192.48736041434307`, 224.76534189172716`}, {
+                 87.4895833333334, 158.25000000000009`}}],
                "DelayedMouseEffectStyle"],
               StatusArea[#, 15]& ,
               TagBoxNote->"15"],
-             StyleBox["15", {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}, StripOnInput -> False]],
+             StyleBox[
+             "15", {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+              StripOnInput -> False]],
             Annotation[#, 
-             Style[15, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}], "Tooltip"]& ]}, 
+             Style[15, {FontFamily -> "Latin Modern Roman", FontSize -> 22}], 
+             "Tooltip"]& ]}, 
           {RGBColor[0.909499, 0.613916, 0.204196], EdgeForm[{Opacity[0.637], 
            Thickness[Small]}], 
            TagBox[
@@ -389,16 +410,17 @@ Cell[BoxData[
                  RectangleBox[{5.0367807720320465`, 0.}, {5.93918426802622, 
                   20.}, "RoundingRadius" -> 0]},
                 
-                ImageSizeCache->{{225.02545595347223`, 257.7510146347631}, {
-                 69.75000000000006, 165.25000000000009`}}],
+                ImageSizeCache->{{227.7021857318962, 259.9801672092803}, {
+                 64.06944444444451, 158.25000000000009`}}],
                "DelayedMouseEffectStyle"],
               StatusArea[#, 20]& ,
               TagBoxNote->"20"],
-             StyleBox["20", {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}, StripOnInput -> False]],
+             StyleBox[
+             "20", {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+              StripOnInput -> False]],
             Annotation[#, 
-             Style[20, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}], "Tooltip"]& ]}, 
+             Style[20, {FontFamily -> "Latin Modern Roman", FontSize -> 22}], 
+             "Tooltip"]& ]}, 
           {RGBColor[0.806577, 0.385397, 0.762768], EdgeForm[{Opacity[0.637], 
            Thickness[Small]}], 
            TagBox[
@@ -416,16 +438,18 @@ Cell[BoxData[
                  RectangleBox[{6.0367807720320465`, 0.}, {6.93918426802622, 
                   34.5}, "RoundingRadius" -> 0]},
                 
-                ImageSizeCache->{{260.7362647262022, 293.46182340749306`}, {
-                 0.8750000000000284, 165.25000000000009`}}],
+                ImageSizeCache->{{262.9170110494494, 
+                 295.19499252683346`}, {-3.848958333333286, 
+                 158.25000000000009`}}],
                "DelayedMouseEffectStyle"],
               StatusArea[#, 34.5]& ,
               TagBoxNote->"34.5"],
-             StyleBox["34.5`", {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}, StripOnInput -> False]],
+             StyleBox[
+             "34.5`", {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+              StripOnInput -> False]],
             Annotation[#, 
-             Style[34.5, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}], 
+             Style[
+             34.5, {FontFamily -> "Latin Modern Roman", FontSize -> 22}], 
              "Tooltip"]& ]}}}, {}, {}}, {{}, {{}, {
           {RGBColor[0.782803, 0.164904, 0.400458], EdgeForm[{Opacity[0.637], 
            Thickness[Small]}], 
@@ -444,16 +468,17 @@ Cell[BoxData[
                  RectangleBox[{7.3295702840495265`, 0.}, {8.231973780043699, 
                   7.}, "RoundingRadius" -> 0]},
                 
-                ImageSizeCache->{{306.9028237732492, 339.6283824545401}, {
-                 131.50000000000006`, 165.25000000000009`}}],
+                ImageSizeCache->{{308.4423678875097, 340.72034936489376`}, {
+                 124.96180555555563`, 158.25000000000009`}}],
                "DelayedMouseEffectStyle"],
               StatusArea[#, 7]& ,
               TagBoxNote->"7"],
-             StyleBox["7", {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}, StripOnInput -> False]],
+             StyleBox[
+             "7", {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+              StripOnInput -> False]],
             Annotation[#, 
-             Style[7, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}], "Tooltip"]& ]}, 
+             Style[7, {FontFamily -> "Latin Modern Roman", FontSize -> 22}], 
+             "Tooltip"]& ]}, 
           {RGBColor[0.909499, 0.613916, 0.204196], EdgeForm[{Opacity[0.637], 
            Thickness[Small]}], 
            TagBox[
@@ -471,16 +496,17 @@ Cell[BoxData[
                  RectangleBox[{8.329570284049526, 0.}, {9.231973780043699, 
                   10.}, "RoundingRadius" -> 0]},
                 
-                ImageSizeCache->{{342.61363254597916`, 375.33919122727013`}, {
-                 117.25000000000007`, 165.25000000000009`}}],
+                ImageSizeCache->{{343.6571932050628, 375.9351746824469}, {
+                 110.9097222222223, 158.25000000000009`}}],
                "DelayedMouseEffectStyle"],
               StatusArea[#, 10]& ,
               TagBoxNote->"10"],
-             StyleBox["10", {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}, StripOnInput -> False]],
+             StyleBox[
+             "10", {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+              StripOnInput -> False]],
             Annotation[#, 
-             Style[10, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}], "Tooltip"]& ]}, 
+             Style[10, {FontFamily -> "Latin Modern Roman", FontSize -> 22}], 
+             "Tooltip"]& ]}, 
           {RGBColor[0.806577, 0.385397, 0.762768], EdgeForm[{Opacity[0.637], 
            Thickness[Small]}], 
            TagBox[
@@ -498,16 +524,17 @@ Cell[BoxData[
                  RectangleBox[{9.329570284049526, 0.}, {10.231973780043699`, 
                   50.}, "RoundingRadius" -> 0]},
                 
-                ImageSizeCache->{{378.3244413187091, 
-                 411.05000000000007`}, {-72.75, 165.25000000000009`}}],
+                ImageSizeCache->{{378.872018522616, 
+                 411.15000000000003`}, {-76.45138888888883, 
+                 158.25000000000009`}}],
                "DelayedMouseEffectStyle"],
               StatusArea[#, 50]& ,
               TagBoxNote->"50"],
-             StyleBox["50", {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}, StripOnInput -> False]],
+             StyleBox[
+             "50", {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+              StripOnInput -> False]],
             Annotation[#, 
-             Style[50, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}], 
+             Style[50, {FontFamily -> "Latin Modern Roman", FontSize -> 22}], 
              "Tooltip"]& ]}}}, {}, {}}}, {}, {}}, {}, {}, {}, {}, {}}, 
     InsetBox[
      TemplateBox[{"\"W2\"", "\"W1\"", "\"W1;TSD4\""},
@@ -578,9 +605,8 @@ Cell[BoxData[
             "Grid"], Alignment -> Left, AppearanceElements -> None, 
            ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
            "ResizeToFit"], LineIndent -> 0, StripOnInput -> False], {
-         FontSize -> 22, 
-          GrayLevel[0], FontFamily -> "Times"}, Background -> Automatic, 
-         StripOnInput -> False], TraditionalForm]& ),
+         FontFamily -> "Latin Modern Roman", FontSize -> 22}, Background -> 
+         Automatic, StripOnInput -> False], TraditionalForm]& ),
       Editable->True,
       InterpretationFunction:>(RowBox[{"SwatchLegend", "[", 
          RowBox[{
@@ -676,20 +702,19 @@ Cell[BoxData[
                RowBox[{
                  RowBox[{"{", 
                    RowBox[{
-                    RowBox[{"FontSize", "\[Rule]", "22"}], ",", 
                     
-                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
-                    "GrayLevelColorSwatchTemplate"], ",", 
-                    RowBox[{"FontFamily", "\[Rule]", "\"Times\""}]}], "}"}], 
-                 ",", 
+                    RowBox[{
+                    "FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], ",", 
+                    
+                    RowBox[{"FontSize", "\[Rule]", "22"}]}], "}"}], ",", 
                  RowBox[{"{", 
                    RowBox[{
-                    RowBox[{"FontSize", "\[Rule]", "22"}], ",", 
                     
-                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
-                    "GrayLevelColorSwatchTemplate"], ",", 
-                    RowBox[{"FontFamily", "\[Rule]", "\"Times\""}]}], "}"}]}],
-                "}"}]}], ",", 
+                    RowBox[{
+                    "FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], ",", 
+                    
+                    RowBox[{"FontSize", "\[Rule]", "22"}]}], "}"}]}], "}"}]}],
+            ",", 
            RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& )], 
      Scaled[{0.7, 0.8}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
@@ -698,6 +723,7 @@ Cell[BoxData[
    Axes->{False, False},
    AxesLabel->{None, None},
    AxesOrigin->{0.554231609613984, 0.},
+   BaseStyle->{FontFamily -> "Latin Modern Roman", FontSize -> 22},
    CoordinatesToolOptions:>{"DisplayFunction" -> ({
        Identity[
         Part[#, 1]], 
@@ -764,8 +790,7 @@ Cell[BoxData[
    GridLinesStyle->Directive[
      GrayLevel[0.5, 0.4]],
    ImageSize->420,
-   LabelStyle->{22, 
-     GrayLevel[0], FontFamily -> "Times"},
+   LabelStyle->{FontFamily -> "Latin Modern Roman", FontSize -> 22},
    PlotRange->{{Full, Full}, {Full, Full}},
    PlotRangePadding->{{
       Scaled[0.02], 
@@ -793,8 +818,8 @@ Cell[BoxData[
                   GrayLevel[0.5], 
                   AbsoluteThickness[1.5], 
                   Opacity[0.66]}]}], 72], 
-             Style[72, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}]]}, {
+             Style[
+             72, {FontFamily -> "Latin Modern Roman", FontSize -> 22}]]}, {
             Directive[
              EdgeForm[
               Directive[
@@ -811,8 +836,8 @@ Cell[BoxData[
                   GrayLevel[0.5], 
                   AbsoluteThickness[1.5], 
                   Opacity[0.66]}]}], 63.2], 
-             Style[63.2, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}]]}, {
+             Style[
+             63.2, {FontFamily -> "Latin Modern Roman", FontSize -> 22}]]}, {
             Directive[
              EdgeForm[
               Directive[
@@ -829,8 +854,9 @@ Cell[BoxData[
                   GrayLevel[0.5], 
                   AbsoluteThickness[1.5], 
                   Opacity[0.66]}]}], 67], 
-             Style[67, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}]]}}}, {}, {}}, {{}, {{}, {{
+             Style[
+             67, {FontFamily -> "Latin Modern Roman", FontSize -> 
+               22}]]}}}, {}, {}}, {{}, {{}, {{
             Directive[
              EdgeForm[
               Directive[
@@ -847,8 +873,8 @@ Cell[BoxData[
                   GrayLevel[0.5], 
                   AbsoluteThickness[1.5], 
                   Opacity[0.66]}]}], 15], 
-             Style[15, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}]]}, {
+             Style[
+             15, {FontFamily -> "Latin Modern Roman", FontSize -> 22}]]}, {
             Directive[
              EdgeForm[
               Directive[
@@ -865,8 +891,8 @@ Cell[BoxData[
                   GrayLevel[0.5], 
                   AbsoluteThickness[1.5], 
                   Opacity[0.66]}]}], 20], 
-             Style[20, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}]]}, {
+             Style[
+             20, {FontFamily -> "Latin Modern Roman", FontSize -> 22}]]}, {
             Directive[
              EdgeForm[
               Directive[
@@ -883,8 +909,9 @@ Cell[BoxData[
                   GrayLevel[0.5], 
                   AbsoluteThickness[1.5], 
                   Opacity[0.66]}]}], 34.5], 
-             Style[34.5, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}]]}}}, {}, {}}, {{}, {{}, {{
+             Style[
+             34.5, {FontFamily -> "Latin Modern Roman", FontSize -> 
+               22}]]}}}, {}, {}}, {{}, {{}, {{
             Directive[
              EdgeForm[
               Directive[
@@ -901,8 +928,8 @@ Cell[BoxData[
                   GrayLevel[0.5], 
                   AbsoluteThickness[1.5], 
                   Opacity[0.66]}]}], 7], 
-             Style[7, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}]]}, {
+             Style[
+             7, {FontFamily -> "Latin Modern Roman", FontSize -> 22}]]}, {
             Directive[
              EdgeForm[
               Directive[
@@ -919,8 +946,8 @@ Cell[BoxData[
                   GrayLevel[0.5], 
                   AbsoluteThickness[1.5], 
                   Opacity[0.66]}]}], 10], 
-             Style[10, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> "Times"}]]}, {
+             Style[
+             10, {FontFamily -> "Latin Modern Roman", FontSize -> 22}]]}, {
             Directive[
              EdgeForm[
               Directive[
@@ -937,11 +964,12 @@ Cell[BoxData[
                   GrayLevel[0.5], 
                   AbsoluteThickness[1.5], 
                   Opacity[0.66]}]}], 50], 
-             Style[50, {FontSize -> 22, 
-               GrayLevel[0], FontFamily -> 
-               "Times"}]]}}}, {}, {}}}, {}, {}}, {}, {}, {}, {}, {}}, {
+             Style[
+             50, {FontFamily -> "Latin Modern Roman", FontSize -> 
+               22}]]}}}, {}, {}}}, {}, {}}, {}, {}, {}, {}, {}}, {
      DisplayFunction -> Identity, AspectRatio -> 1, Axes -> {False, False}, 
       AxesLabel -> {None, None}, AxesOrigin -> {0.554231609613984, 0.}, 
+      BaseStyle -> {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
       CoordinatesToolOptions -> {"DisplayFunction" -> ({
           Identity[
            Part[#, 1]], 
@@ -978,8 +1006,8 @@ Cell[BoxData[
           8.780772032046613, 
            "\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(3\)]\)", {0, 0}}}, 
          None}}, GridLines -> {None, None}, GridLinesStyle -> Directive[
-        GrayLevel[0.5, 0.4]], ImageSize -> 420, LabelStyle -> {22, 
-        GrayLevel[0], FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], ImageSize -> 420, 
+      LabelStyle -> {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
       PlotRange -> {{Full, Full}, {Full, Full}}, PlotRangePadding -> {{
          Scaled[0.02], 
          Scaled[0.02]}, {None, 
@@ -1024,19 +1052,19 @@ Cell[BoxData[
           RGBColor[0.806577, 0.385397, 0.762768]]}}, {{}, {
         "W2", "W1", "W1;TSD4"}}, 
        LegendMarkers -> {{None}, {Automatic, Automatic, Automatic}}, 
-       LabelStyle -> {{FontSize -> 22, 
-          GrayLevel[0], FontFamily -> "Times"}, {FontSize -> 22, 
-          GrayLevel[0], FontFamily -> "Times"}}, LegendLayout -> "Column"], {
-      0.7, 0.8}, Identity]}]& ],
+       LabelStyle -> {{FontFamily -> "Latin Modern Roman", FontSize -> 22}, {
+         FontFamily -> "Latin Modern Roman", FontSize -> 22}}, LegendLayout -> 
+       "Column"], {0.7, 0.8}, Identity]}]& ],
   AutoDelete->True,
   Editable->True,
   SelectWithContents->False,
   Selectable->True]], "Output",
  CellChangeTimes->{
   3.866074315217197*^9, {3.866074446631609*^9, 3.866074551327056*^9}, 
-   3.866075296521729*^9},
+   3.866075296521729*^9, 3.866163388555212*^9, 3.866163428064056*^9, {
+   3.866163627247303*^9, 3.866163642304509*^9}},
  CellLabel->
-  "Out[1124]=",ExpressionUUID->"4d716856-2e90-4f0b-8050-93f2c1aa1d6c"]
+  "Out[905]=",ExpressionUUID->"4e3435f2-ef80-416d-8e17-f39277261d27"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1062,7 +1090,7 @@ Cell[BoxData[
      "]"}], "}"}]}], "*)"}]], "Input",
  CellChangeTimes->{{3.866073422590785*^9, 3.866073425498623*^9}},
  CellLabel->
-  "In[1126]:=",ExpressionUUID->"0459565e-725c-47e3-9b9a-5f640041e397"]
+  "In[907]:=",ExpressionUUID->"0459565e-725c-47e3-9b9a-5f640041e397"]
 }, Open  ]]
 },
 WindowSize->{1200, 1182},
@@ -1084,27 +1112,27 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 240, 4, 67, "Section",ExpressionUUID->"ae6e93d1-fc37-440a-ae28-f156a7447e32"],
-Cell[823, 28, 228, 4, 30, "Input",ExpressionUUID->"57bd484a-c0c4-45e5-bba5-64715bb42a77"],
-Cell[1054, 34, 730, 20, 73, "Input",ExpressionUUID->"37119552-6d2a-40fc-b37d-7e6d66000598"],
-Cell[1787, 56, 1126, 31, 178, "Input",ExpressionUUID->"f5971e56-d843-4542-8514-d07e7974ac0b"]
+Cell[823, 28, 227, 4, 30, "Input",ExpressionUUID->"57bd484a-c0c4-45e5-bba5-64715bb42a77"],
+Cell[1053, 34, 1054, 29, 94, "Input",ExpressionUUID->"37119552-6d2a-40fc-b37d-7e6d66000598"],
+Cell[2110, 65, 1125, 31, 178, "Input",ExpressionUUID->"f5971e56-d843-4542-8514-d07e7974ac0b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2950, 92, 159, 3, 67, "Section",ExpressionUUID->"df122ebe-a928-4db5-b8c2-17d3f0cadb72"],
+Cell[3272, 101, 159, 3, 67, "Section",ExpressionUUID->"df122ebe-a928-4db5-b8c2-17d3f0cadb72"],
 Cell[CellGroupData[{
-Cell[3134, 99, 1106, 32, 94, "Input",ExpressionUUID->"862c2675-c159-48dc-a0cf-cb93304501f8"],
-Cell[4243, 133, 181, 3, 34, "Output",ExpressionUUID->"de4f86ff-685a-4683-8101-68114659207f"],
-Cell[4427, 138, 196, 3, 34, "Output",ExpressionUUID->"8bae897c-6d2a-4dc0-9e69-5ad06af366d8"],
-Cell[4626, 143, 182, 3, 34, "Output",ExpressionUUID->"687b06a4-3fce-4960-b268-a62167c08728"],
-Cell[4811, 148, 182, 3, 57, "Output",ExpressionUUID->"264e0e7f-56da-4dea-88f0-b23e6a7eb8cc"]
+Cell[3456, 108, 1105, 32, 94, "Input",ExpressionUUID->"862c2675-c159-48dc-a0cf-cb93304501f8"],
+Cell[4564, 142, 278, 5, 34, "Output",ExpressionUUID->"51122f24-3842-4e6a-b316-fa2a5bed263b"],
+Cell[4845, 149, 295, 5, 57, "Output",ExpressionUUID->"55393a94-2311-4e47-b06b-aee616924684"],
+Cell[5143, 156, 281, 5, 34, "Output",ExpressionUUID->"73e536d4-083e-4098-9387-9182c7484651"],
+Cell[5427, 163, 281, 5, 34, "Output",ExpressionUUID->"6c33798b-2e62-4e9e-a819-9302af839e4d"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5042, 157, 156, 3, 67, "Section",ExpressionUUID->"08cbdb8f-fba4-4c6c-b770-9417254a7def"],
+Cell[5757, 174, 156, 3, 67, "Section",ExpressionUUID->"08cbdb8f-fba4-4c6c-b770-9417254a7def"],
 Cell[CellGroupData[{
-Cell[5223, 164, 3784, 90, 163, "Input",ExpressionUUID->"73c1fd1f-6967-4cad-8e1a-a8591a91776d"],
-Cell[9010, 256, 31878, 782, 404, "Output",ExpressionUUID->"4d716856-2e90-4f0b-8050-93f2c1aa1d6c"]
+Cell[5938, 181, 3817, 90, 142, "Input",ExpressionUUID->"73c1fd1f-6967-4cad-8e1a-a8591a91776d"],
+Cell[9758, 273, 32062, 793, 409, "Output",ExpressionUUID->"4e3435f2-ef80-416d-8e17-f39277261d27"]
 }, Open  ]],
-Cell[40903, 1041, 923, 23, 30, "Input",ExpressionUUID->"0459565e-725c-47e3-9b9a-5f640041e397"]
+Cell[41835, 1069, 922, 23, 30, "Input",ExpressionUUID->"0459565e-725c-47e3-9b9a-5f640041e397"]
 }, Open  ]]
 }
 ]
