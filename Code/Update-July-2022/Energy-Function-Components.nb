@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     79030,       1679]
-NotebookOptionsPosition[     78036,       1655]
-NotebookOutlinePosition[     78434,       1671]
-CellTagsIndexPosition[     78391,       1668]
+NotebookDataLength[     82556,       1734]
+NotebookOptionsPosition[     81470,       1709]
+NotebookOutlinePosition[     81868,       1725]
+CellTagsIndexPosition[     81825,       1722]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,7 +29,17 @@ Cell[BoxData[
  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.8661091649353027`*^9, 3.866109168677205*^9}},
  CellLabel->
-  "In[219]:=",ExpressionUUID->"a261ccf5-1106-459f-be07-05654d0dbdcb"],
+  "In[1236]:=",ExpressionUUID->"a261ccf5-1106-459f-be07-05654d0dbdcb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"texStyle", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"FontFamily", "->", "\"\<Latin Modern Roman\>\""}], ",", 
+     RowBox[{"FontSize", "->", "22"}]}], "}"}]}], ";"}]], "Input",
+ CellLabel->
+  "In[1237]:=",ExpressionUUID->"8b52c2d7-ac87-4f48-a40b-17746642f37d"],
 
 Cell[BoxData[{
  RowBox[{
@@ -68,7 +78,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.8661088331053*^9, 3.866108880200007*^9}, {
   3.866109121226882*^9, 3.866109161559239*^9}},
  CellLabel->
-  "In[220]:=",ExpressionUUID->"8e6abf25-84f5-43e3-8ecb-8d2c095734ea"],
+  "In[1238]:=",ExpressionUUID->"8e6abf25-84f5-43e3-8ecb-8d2c095734ea"],
 
 Cell[BoxData[{
  RowBox[{
@@ -150,12 +160,12 @@ Cell[BoxData[{
       RowBox[{"moiW2", "[", 
        RowBox[{"[", "3", "]"}], "]"}]}], ")"}]}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.8661094075692463`*^9, 3.866109420673313*^9}, {
-  3.866109522738329*^9, 3.866109561837811*^9}, {3.8661098461358967`*^9, 
-  3.866109897952197*^9}, {3.866109965306085*^9, 3.8661100310508137`*^9}, {
-  3.866110137409684*^9, 3.86611018295037*^9}, {3.866110741034134*^9, 
-  3.866110772762553*^9}},
+   3.866109522738329*^9, 3.866109561837811*^9}, {3.8661098461358967`*^9, 
+   3.866109897952197*^9}, {3.866109965306085*^9, 3.8661100310508137`*^9}, {
+   3.866110137409684*^9, 3.86611018295037*^9}, {3.866110741034134*^9, 
+   3.866110772762553*^9}, 3.8661642291245203`*^9},
  CellLabel->
-  "In[222]:=",ExpressionUUID->"10ef092f-5f53-4219-965d-fd5f1a28751c"],
+  "In[1240]:=",ExpressionUUID->"10ef092f-5f53-4219-965d-fd5f1a28751c"],
 
 Cell[CellGroupData[{
 
@@ -180,8 +190,7 @@ Cell[BoxData[{
      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
      RowBox[{"Axes", "\[Rule]", "False"}], ",", 
      RowBox[{"FrameStyle", "\[Rule]", 
-      RowBox[{"Directive", "[", 
-       RowBox[{"Black", ",", "Thick"}], "]"}]}], ",", 
+      RowBox[{"Directive", "[", "Black", "]"}]}], ",", 
      RowBox[{"ImageSize", "\[Rule]", "380"}], ",", 
      RowBox[{"AspectRatio", "\[Rule]", "0.8"}], ",", 
      RowBox[{"PlotRange", "\[Rule]", "Full"}], ",", 
@@ -190,10 +199,8 @@ Cell[BoxData[{
        RowBox[{
        "\"\<I [\[HBar]]\>\"", ",", 
         "\"\<\!\(\*SubscriptBox[\(T\), \(core\)]\) [MeV]\>\""}], "}"}]}], ",", 
-     RowBox[{"LabelStyle", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"20", ",", "Bold", ",", "Black", ",", 
-        RowBox[{"FontFamily", "->", "\"\<Arial\>\""}]}], "}"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", "texStyle"}], ",", 
+     RowBox[{"BaseStyle", "\[Rule]", "texStyle"}], ",", 
      RowBox[{"PlotStyle", "\[Rule]", 
       RowBox[{"{", 
        RowBox[{
@@ -212,6 +219,7 @@ Cell[BoxData[{
          RowBox[{
          "\"\<\!\(\*SubscriptBox[\(A\), \(1\)]\)>\!\(\*SubscriptBox[\(A\), \
 \(2\)]\)>\!\(\*SubscriptBox[\(A\), \(3\)]\)\>\"", ",", 
+          
           "\"\<\!\(\*SubscriptBox[\(A\), \(2\)]\)>\!\(\*SubscriptBox[\(A\), \
 \(3\)]\)>\!\(\*SubscriptBox[\(A\), \(1\)]\)\>\"", ",", 
           "\"\<\!\(\*SubscriptBox[\(A\), \(3\)]\)>\!\(\*SubscriptBox[\(A\), \
@@ -226,7 +234,8 @@ Cell[BoxData[{
    RowBox[{
    "\"\</Users/basavyr/Documents/Work/PhD/163Lu-New-TSD4-Formalism/Code/\
 Update-July-2022/plots/t-core.pdf\>\"", ",", 
-    RowBox[{"Show", "[", "coreplot", "]"}]}], "]"}], 
+    RowBox[{"Show", "[", "coreplot", "]"}], ",", 
+    RowBox[{"ImageResolution", "->", "1200"}]}], "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"spplot", "=", 
@@ -252,8 +261,7 @@ Update-July-2022/plots/t-core.pdf\>\"", ",",
      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
      RowBox[{"Axes", "\[Rule]", "False"}], ",", 
      RowBox[{"FrameStyle", "\[Rule]", 
-      RowBox[{"Directive", "[", 
-       RowBox[{"Black", ",", "Thick"}], "]"}]}], ",", 
+      RowBox[{"Directive", "[", "Black", "]"}]}], ",", 
      RowBox[{"ImageSize", "\[Rule]", "380"}], ",", 
      RowBox[{"AspectRatio", "\[Rule]", "0.8"}], ",", 
      RowBox[{"PlotRange", "\[Rule]", "Full"}], ",", 
@@ -262,10 +270,8 @@ Update-July-2022/plots/t-core.pdf\>\"", ",",
        RowBox[{
        "\"\<\[Gamma] [deg]\>\"", ",", 
         "\"\<\!\(\*SubscriptBox[\(T\), \(sp\)]\) [MeV]\>\""}], "}"}]}], ",", 
-     RowBox[{"LabelStyle", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"20", ",", "Bold", ",", "Black", ",", 
-        RowBox[{"FontFamily", "->", "\"\<Arial\>\""}]}], "}"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", "texStyle"}], ",", 
+     RowBox[{"BaseStyle", "\[Rule]", "texStyle"}], ",", 
      RowBox[{"PlotStyle", "\[Rule]", 
       RowBox[{"{", 
        RowBox[{
@@ -288,16 +294,18 @@ Update-July-2022/plots/t-core.pdf\>\"", ",",
    RowBox[{
    "\"\</Users/basavyr/Documents/Work/PhD/163Lu-New-TSD4-Formalism/Code/\
 Update-July-2022/plots/t-sp.pdf\>\"", ",", 
-    RowBox[{"Show", "[", "spplot", "]"}]}], "]"}], ";"}]}], "Input",
+    RowBox[{"Show", "[", "spplot", "]"}], ",", 
+    RowBox[{"ImageResolution", "->", "1200"}]}], "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.866110082861102*^9, 3.866110106817466*^9}, {
   3.866110186211833*^9, 3.8661101941990013`*^9}, {3.866110234534338*^9, 
   3.8661103043285*^9}, {3.8661103428682013`*^9, 3.8661104014344397`*^9}, {
   3.8661105528517*^9, 3.866110646795826*^9}, {3.86611070062877*^9, 
   3.866110709828217*^9}, {3.866110784316832*^9, 3.8661111300838757`*^9}, {
   3.866148990814507*^9, 3.866148995429636*^9}, {3.866149467947629*^9, 
-  3.8661495914465847`*^9}},
+  3.8661495914465847`*^9}, {3.8661638239849987`*^9, 3.8661638426283283`*^9}, {
+  3.866164237061018*^9, 3.866164271011025*^9}},
  CellLabel->
-  "In[232]:=",ExpressionUUID->"1df3471e-85dc-42aa-b185-f1d464fb6354"],
+  "In[1250]:=",ExpressionUUID->"1df3471e-85dc-42aa-b185-f1d464fb6354"],
 
 Cell[BoxData[
  TagBox[
@@ -338,7 +346,7 @@ gW6FQf18CA4naA2V18Z2vIlDl3PCd/5iJlXH3+94Ui5I/8KOz2J8kZ7CICgj
 eigqGodsIjGx7NOO15NeIhuLw9PTI499FzBI+Vrk3xGHQ1pfqR22jIGk8X2d
 0wk4vKNdJC2yMSgP71j/kYjD4xUXh6Z1DP4Dy4F8uw==
          "]]},
-       Annotation[#, "Charting`Private`Tag$9682#1"]& ], 
+       Annotation[#, "Charting`Private`Tag$70841#1"]& ], 
       TagBox[
        {RGBColor[1, 0, 0], Thickness[Large], Opacity[1.], 
         LineBox[CompressedData["
@@ -381,7 +389,7 @@ seJ0tJH4DvQDSXwHnlX3pOj4Q3xoX0goiQSv+m+dSnRcaYnLlgoncSzhKt8n
 FTrGbmZ61EeQqPahsHdTnY6iRg91LkSSeGi6c0Vch445AfWre1EkZr0YDdKl
 0vFvpDwJ+Q==
          "]]},
-       Annotation[#, "Charting`Private`Tag$9682#2"]& ], 
+       Annotation[#, "Charting`Private`Tag$70841#2"]& ], 
       TagBox[
        {RGBColor[0.6, 0.4, 0.2], Thickness[Large], Opacity[1.], 
         LineBox[CompressedData["
@@ -427,7 +435,7 @@ WAiBo+selnODl7wep2Pp4QRe9I2wbwtd8pR2gkkUge07VTV7IhkYlBrXdjSO
 QKfLtl8n4pe8+pQbKgkEhneVdIuPM/DMv5n+jxMJtB1Q1JROZqC85d0N+04Q
 eOdB8OPlZxl4K/yxaPEUgQ+xuFw5jYH/A438Tw8=
          "]]},
-       Annotation[#, "Charting`Private`Tag$9682#3"]& ], 
+       Annotation[#, "Charting`Private`Tag$70841#3"]& ], 
       TagBox[
        {RGBColor[1, 0, 1], Thickness[Large], Opacity[1.], 
         LineBox[CompressedData["
@@ -473,7 +481,7 @@ mMWg57e/e1KnY2l8AsmmHyYelHz3lu8EsyMEmmhmNArvkrg/NbrtaDSB+/+N
 Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
 1pGYy6+cXkwgsJM38GagkcT/AZrZSNw=
          "]]},
-       Annotation[#, "Charting`Private`Tag$9682#4"]& ]}, {}}, InsetBox[
+       Annotation[#, "Charting`Private`Tag$70841#4"]& ]}, {}}, InsetBox[
      TemplateBox[{
       "\"\\!\\(\\*SubscriptBox[\\(A\\), \
 \\(1\\)]\\)>\\!\\(\\*SubscriptBox[\\(A\\), \\(2\\)]\\)>\\!\\(\\*SubscriptBox[\
@@ -500,7 +508,8 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[0, 0, 1], 
@@ -511,21 +520,23 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[0, 0, 1], 
                     Thickness[Large]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
-                    BaselinePosition -> (Scaled[-0.21] -> Baseline)], #}, {
+                    BaselinePosition -> (Scaled[-0.272] -> Baseline)], #}, {
                    GraphicsBox[{{
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[1, 0, 0], 
@@ -536,21 +547,23 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[1, 0, 0], 
                     Thickness[Large]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
-                    BaselinePosition -> (Scaled[-0.21] -> Baseline)], #2}, {
+                    BaselinePosition -> (Scaled[-0.272] -> Baseline)], #2}, {
                    GraphicsBox[{{
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[0.6, 0.4, 0.2], 
@@ -561,21 +574,23 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[0.6, 0.4, 0.2], 
                     Thickness[Large]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
-                    BaselinePosition -> (Scaled[-0.21] -> Baseline)], #3}, {
+                    BaselinePosition -> (Scaled[-0.272] -> Baseline)], #3}, {
                    GraphicsBox[{{
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[1, 0, 1], 
@@ -586,14 +601,15 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[1, 0, 1], 
                     Thickness[Large]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
-                    BaselinePosition -> (Scaled[-0.21] -> Baseline)], #4}}, 
+                    BaselinePosition -> (Scaled[-0.272] -> Baseline)], #4}}, 
                  GridBoxAlignment -> {
                   "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
                  AutoDelete -> False, 
@@ -610,9 +626,8 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
             "Grid"], Alignment -> Left, AppearanceElements -> None, 
            ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
            "ResizeToFit"], LineIndent -> 0, StripOnInput -> False], {
-         FontSize -> 20, FontWeight -> Bold, 
-          GrayLevel[0], FontFamily -> "Arial"}, Background -> Automatic, 
-         StripOnInput -> False], TraditionalForm]& ),
+         FontFamily -> "Latin Modern Roman", FontSize -> 22}, Background -> 
+         Automatic, StripOnInput -> False], TraditionalForm]& ),
       Editable->True,
       InterpretationFunction:>(RowBox[{"LineLegend", "[", 
          RowBox[{
@@ -620,6 +635,11 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
              RowBox[{
                RowBox[{"Directive", "[", 
                  RowBox[{
+                   
+                   RowBox[{
+                    "FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], ",", 
+                   
+                   RowBox[{"FontSize", "\[Rule]", "22"}], ",", 
                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
@@ -628,6 +648,11 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
                    RowBox[{"Thickness", "[", "Large", "]"}]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
+                   
+                   RowBox[{
+                    "FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], ",", 
+                   
+                   RowBox[{"FontSize", "\[Rule]", "22"}], ",", 
                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
@@ -636,6 +661,11 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
                    RowBox[{"Thickness", "[", "Large", "]"}]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
+                   
+                   RowBox[{
+                    "FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], ",", 
+                   
+                   RowBox[{"FontSize", "\[Rule]", "22"}], ",", 
                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
@@ -644,6 +674,11 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
                    RowBox[{"Thickness", "[", "Large", "]"}]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
+                   
+                   RowBox[{
+                    "FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], ",", 
+                   
+                   RowBox[{"FontSize", "\[Rule]", "22"}], ",", 
                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
@@ -656,12 +691,10 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
            RowBox[{"LegendMarkers", "\[Rule]", "None"}], ",", 
            RowBox[{"LabelStyle", "\[Rule]", 
              RowBox[{"{", 
-               RowBox[{"20", ",", "Bold", ",", 
-                 
-                 TemplateBox[<|"color" -> GrayLevel[0]|>, 
-                  "GrayLevelColorSwatchTemplate"], ",", 
-                 RowBox[{"FontFamily", "\[Rule]", "\"Arial\""}]}], "}"}]}], 
-           ",", 
+               RowBox[{
+                 RowBox[{"FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], 
+                 ",", 
+                 RowBox[{"FontSize", "\[Rule]", "22"}]}], "}"}]}], ",", 
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Column\"", ",", 
@@ -674,6 +707,7 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
    Axes->{False, False},
    AxesLabel->{None, None},
    AxesOrigin->{0, 0},
+   BaseStyle->{FontFamily -> "Latin Modern Roman", FontSize -> 22},
    DisplayFunction->Identity,
    Frame->{{True, True}, {True, True}},
    FrameLabel->{{
@@ -682,16 +716,14 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
        TraditionalForm], None}, {
       FormBox["\"I [\[HBar]]\"", TraditionalForm], None}},
    FrameStyle->Directive[
-     GrayLevel[0], 
-     Thickness[Large]],
+     GrayLevel[0]],
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{None, None},
    GridLinesStyle->Directive[
      GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->380,
-   LabelStyle->{20, Bold, 
-     GrayLevel[0], FontFamily -> "Arial"},
+   LabelStyle->{FontFamily -> "Latin Modern Roman", FontSize -> 22},
    Method->{
     "DefaultBoundaryStyle" -> Automatic, 
      "DefaultGraphicsInteraction" -> {
@@ -761,7 +793,7 @@ gW6FQf18CA4naA2V18Z2vIlDl3PCd/5iJlXH3+94Ui5I/8KOz2J8kZ7CICgj
 eigqGodsIjGx7NOO15NeIhuLw9PTI499FzBI+Vrk3xGHQ1pfqR22jIGk8X2d
 0wk4vKNdJC2yMSgP71j/kYjD4xUXh6Z1DP4Dy4F8uw==
            "]]}, 
-         "Charting`Private`Tag$9682#1"], 
+         "Charting`Private`Tag$70841#1"], 
         Annotation[{
           Directive[
            Opacity[1.], 
@@ -807,7 +839,7 @@ feESuFI/l3DxMomNvjfDxPYI1M2nPp7xJXHhN1dzPxE6NoxY3EgOIFHkHzO2
 seJ0tJH4DvQDSXwHnlX3pOj4Q3xoX0goiQSv+m+dSnRcaYnLlgoncSzhKt8n
 FTrGbmZ61EeQqPahsHdTnY6iRg91LkSSeGi6c0Vch445AfWre1EkZr0YDdKl
 0vFvpDwJ+Q==
-           "]]}, "Charting`Private`Tag$9682#2"], 
+           "]]}, "Charting`Private`Tag$70841#2"], 
         Annotation[{
           Directive[
            Opacity[1.], 
@@ -857,7 +889,7 @@ WAiBo+selnODl7wep2Pp4QRe9I2wbwtd8pR2gkkUge07VTV7IhkYlBrXdjSO
 QKfLtl8n4pe8+pQbKgkEhneVdIuPM/DMv5n+jxMJtB1Q1JROZqC85d0N+04Q
 eOdB8OPlZxl4K/yxaPEUgQ+xuFw5jYH/A438Tw8=
            "]]}, 
-         "Charting`Private`Tag$9682#3"], 
+         "Charting`Private`Tag$70841#3"], 
         Annotation[{
           Directive[
            Opacity[1.], 
@@ -907,7 +939,7 @@ mMWg57e/e1KnY2l8AsmmHyYelHz3lu8EsyMEmmhmNArvkrg/NbrtaDSB+/+N
 Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
 1pGYy6+cXkwgsJM38GagkcT/AZrZSNw=
            "]]}, 
-         "Charting`Private`Tag$9682#4"]}}, {}}, {
+         "Charting`Private`Tag$70841#4"]}}, {}}, {
      DisplayFunction -> Identity, Ticks -> {Automatic, Automatic}, 
       AxesOrigin -> {0, 0}, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
@@ -918,16 +950,16 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
          Scaled[0.05], 
          Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
       DisplayFunction -> Identity, AspectRatio -> 0.8, Axes -> {False, False},
-       AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, DisplayFunction :> 
-      Identity, Frame -> {{True, True}, {True, True}}, 
+       AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, 
+      BaseStyle -> {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+      DisplayFunction :> Identity, Frame -> {{True, True}, {True, True}}, 
       FrameLabel -> {{"\!\(\*SubscriptBox[\(T\), \(core\)]\) [MeV]", None}, {
         "I [\[HBar]]", None}}, FrameStyle -> Directive[
-        GrayLevel[0], 
-        Thickness[Large]], 
+        GrayLevel[0]], 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {None, None}, GridLinesStyle -> Directive[
-        GrayLevel[0.5, 0.4]], ImageSize -> 380, LabelStyle -> {20, Bold, 
-        GrayLevel[0], FontFamily -> "Arial"}, 
+        GrayLevel[0.5, 0.4]], ImageSize -> 380, 
+      LabelStyle -> {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -956,22 +988,22 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
     Placed[
      Unevaluated[
       LineLegend[{
-        Directive[
+        Directive[FontFamily -> "Latin Modern Roman", FontSize -> 22, 
          Opacity[1.], 
          AbsoluteThickness[1.6], 
          RGBColor[0, 0, 1], 
          Thickness[Large]], 
-        Directive[
+        Directive[FontFamily -> "Latin Modern Roman", FontSize -> 22, 
          Opacity[1.], 
          AbsoluteThickness[1.6], 
          RGBColor[1, 0, 0], 
          Thickness[Large]], 
-        Directive[
+        Directive[FontFamily -> "Latin Modern Roman", FontSize -> 22, 
          Opacity[1.], 
          AbsoluteThickness[1.6], 
          RGBColor[0.6, 0.4, 0.2], 
          Thickness[Large]], 
-        Directive[
+        Directive[FontFamily -> "Latin Modern Roman", FontSize -> 22, 
          Opacity[1.], 
          AbsoluteThickness[1.6], 
          RGBColor[1, 0, 1], 
@@ -983,8 +1015,8 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
         "\!\(\*SubscriptBox[\(A\), \(3\)]\)>\!\(\*SubscriptBox[\(A\), \
 \(2\)]\)>\!\(\*SubscriptBox[\(A\), \(1\)]\)", 
         "\!\(\*SubsuperscriptBox[\(A\), \(k\), \(fit\)]\)"}, LegendMarkers -> 
-       None, LabelStyle -> {20, Bold, 
-         GrayLevel[0], FontFamily -> "Arial"}, 
+       None, LabelStyle -> {
+        FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
        LegendLayout -> {"Column", {Automatic, 5}}]], {0.3, 0.65}, 
      Identity]]& ],
   AutoDelete->True,
@@ -998,9 +1030,11 @@ Rv7l3726lGztWAIbm4JKOVUkJn0R7q2MJ5A3q5zMrCGRZn1zY+AJAr8YmGcs
    3.8661105763624067`*^9}, {3.866110705578524*^9, 3.866110710046442*^9}, {
    3.866110741311222*^9, 3.8661108146186743`*^9}, 3.866110868302165*^9, {
    3.866110903963626*^9, 3.8661110723130703`*^9}, 3.866111132458518*^9, 
-   3.866148999501894*^9, {3.866149482151108*^9, 3.866149604610291*^9}},
+   3.866148999501894*^9, {3.866149482151108*^9, 3.866149604610291*^9}, 
+   3.866163850942719*^9, {3.866164254164897*^9, 3.8661642713066387`*^9}, 
+   3.866164318925095*^9},
  CellLabel->
-  "Out[232]=",ExpressionUUID->"262d8abf-735c-47df-bef7-b3a4563cc3b0"],
+  "Out[1250]=",ExpressionUUID->"e7328a3b-0a47-4fb7-a2a2-f4354f50caa7"],
 
 Cell[BoxData[
  TagBox[
@@ -1063,7 +1097,7 @@ GQ6JEvTgAcLKXEUDRhMO36/9EB4lbNZq9uJyG3Ge/t2iGcL7LZz3d3TiwCo6
 jZKjt4ZHcDgtNWyxhvBQuIS+9iQOMtwzJ9cSJs9pP/efw+HVYUqlLGEl912O
 j5ZwWFqdJksl/P/5DR6ylS/+5/8BRxCxtw==
          "]]},
-       Annotation[#, "Charting`Private`Tag$9836#1"]& ], 
+       Annotation[#, "Charting`Private`Tag$70995#1"]& ], 
       TagBox[
        {GrayLevel[0], Thickness[Large], Opacity[1.], Dashing[{Small, Small}], 
         LineBox[CompressedData["
@@ -1122,7 +1156,7 @@ DR+X7aPAMMx/H4s4Xi072LmfAlXvXmFr4gdp9VKZQxSI9Gh27SNulBz7c2SU
 gi3x/rUHiYfDJPQ0P1NgF/ig61diwVnNl76zFIj6vkbOxAputg5/LVLwi9fU
 /sPE//+/QdXhb7X/+n/PLsEV
          "]]},
-       Annotation[#, "Charting`Private`Tag$9836#2"]& ], 
+       Annotation[#, "Charting`Private`Tag$70995#2"]& ], 
       TagBox[
        {RGBColor[1, 0, 0], AbsoluteThickness[1.6], Opacity[1.], 
         LineBox[CompressedData["
@@ -1181,7 +1215,7 @@ lzhBfUtCyFGh9UPYGVqFMV4DJHzun4scwb5zpVmu4BMJq0HyopPYrbLjN0fH
 SFCd9qibwR6OlzHWnyGB4LTemMMWWdBviljA5x06eHcBWzXQZc9DPglT+tqz
 i9j//7+BZS513xfs/wA09KMt
          "]]},
-       Annotation[#, "Charting`Private`Tag$9836#3"]& ]}, {}}, InsetBox[
+       Annotation[#, "Charting`Private`Tag$70995#3"]& ]}, {}}, InsetBox[
      TemplateBox[{"\"j=13/2\"", "\"j=11/2\"", "\"j=9/2\""},
       "LineLegend",
       DisplayFunction->(FormBox[
@@ -1198,7 +1232,8 @@ i9j//7+BZS513xfs/wA09KMt
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[0, 0, 1]], {
@@ -1208,20 +1243,22 @@ i9j//7+BZS513xfs/wA09KMt
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[0, 0, 1]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {40, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
-                    BaselinePosition -> (Scaled[-0.21] -> Baseline)], #}, {
+                    BaselinePosition -> (Scaled[-0.272] -> Baseline)], #}, {
                    GraphicsBox[{{
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     GrayLevel[0], 
@@ -1233,7 +1270,8 @@ i9j//7+BZS513xfs/wA09KMt
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     GrayLevel[0], 
@@ -1241,14 +1279,15 @@ i9j//7+BZS513xfs/wA09KMt
                     Dashing[{Small, Small}]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {40, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
-                    BaselinePosition -> (Scaled[-0.21] -> Baseline)], #2}, {
+                    BaselinePosition -> (Scaled[-0.272] -> Baseline)], #2}, {
                    GraphicsBox[{{
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[1, 0, 0]], {
@@ -1258,13 +1297,14 @@ i9j//7+BZS513xfs/wA09KMt
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.5], 
+                    PointSize[0.5], FontFamily -> "Latin Modern Roman", 
+                    FontSize -> 22, 
                     Opacity[1.], 
                     AbsoluteThickness[1.6], 
                     RGBColor[1, 0, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {40, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
-                    BaselinePosition -> (Scaled[-0.21] -> Baseline)], #3}}, 
+                    BaselinePosition -> (Scaled[-0.272] -> Baseline)], #3}}, 
                  GridBoxAlignment -> {
                   "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
                  AutoDelete -> False, 
@@ -1281,9 +1321,8 @@ i9j//7+BZS513xfs/wA09KMt
             "Grid"], Alignment -> Left, AppearanceElements -> None, 
            ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
            "ResizeToFit"], LineIndent -> 0, StripOnInput -> False], {
-         FontSize -> 20, FontWeight -> Bold, 
-          GrayLevel[0], FontFamily -> "Arial"}, Background -> Automatic, 
-         StripOnInput -> False], TraditionalForm]& ),
+         FontFamily -> "Latin Modern Roman", FontSize -> 22}, Background -> 
+         Automatic, StripOnInput -> False], TraditionalForm]& ),
       Editable->True,
       InterpretationFunction:>(RowBox[{"LineLegend", "[", 
          RowBox[{
@@ -1291,6 +1330,11 @@ i9j//7+BZS513xfs/wA09KMt
              RowBox[{
                RowBox[{"Directive", "[", 
                  RowBox[{
+                   
+                   RowBox[{
+                    "FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], ",", 
+                   
+                   RowBox[{"FontSize", "\[Rule]", "22"}], ",", 
                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
@@ -1298,8 +1342,14 @@ i9j//7+BZS513xfs/wA09KMt
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
+                   
+                   RowBox[{
+                    "FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], ",", 
+                   
+                   RowBox[{"FontSize", "\[Rule]", "22"}], ",", 
                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
+                   
                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
                     "GrayLevelColorSwatchTemplate"], ",", 
                    RowBox[{"Thickness", "[", "Large", "]"}], ",", 
@@ -1309,6 +1359,11 @@ i9j//7+BZS513xfs/wA09KMt
                ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
+                   
+                   RowBox[{
+                    "FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], ",", 
+                   
+                   RowBox[{"FontSize", "\[Rule]", "22"}], ",", 
                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
@@ -1319,12 +1374,10 @@ i9j//7+BZS513xfs/wA09KMt
            RowBox[{"LegendMarkers", "\[Rule]", "None"}], ",", 
            RowBox[{"LabelStyle", "\[Rule]", 
              RowBox[{"{", 
-               RowBox[{"20", ",", "Bold", ",", 
-                 
-                 TemplateBox[<|"color" -> GrayLevel[0]|>, 
-                  "GrayLevelColorSwatchTemplate"], ",", 
-                 RowBox[{"FontFamily", "\[Rule]", "\"Arial\""}]}], "}"}]}], 
-           ",", 
+               RowBox[{
+                 RowBox[{"FontFamily", "\[Rule]", "\"Latin Modern Roman\""}], 
+                 ",", 
+                 RowBox[{"FontSize", "\[Rule]", "22"}]}], "}"}]}], ",", 
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Column\"", ",", 
@@ -1337,6 +1390,7 @@ i9j//7+BZS513xfs/wA09KMt
    Axes->{False, False},
    AxesLabel->{None, None},
    AxesOrigin->{0, 0},
+   BaseStyle->{FontFamily -> "Latin Modern Roman", FontSize -> 22},
    DisplayFunction->Identity,
    Frame->{{True, True}, {True, True}},
    FrameLabel->{{
@@ -1345,16 +1399,14 @@ i9j//7+BZS513xfs/wA09KMt
        TraditionalForm], None}, {
       FormBox["\"\[Gamma] [deg]\"", TraditionalForm], None}},
    FrameStyle->Directive[
-     GrayLevel[0], 
-     Thickness[Large]],
+     GrayLevel[0]],
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{None, None},
    GridLinesStyle->Directive[
      GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->380,
-   LabelStyle->{20, Bold, 
-     GrayLevel[0], FontFamily -> "Arial"},
+   LabelStyle->{FontFamily -> "Latin Modern Roman", FontSize -> 22},
    Method->{
     "DefaultBoundaryStyle" -> Automatic, 
      "DefaultGraphicsInteraction" -> {
@@ -1445,7 +1497,7 @@ GQ6JEvTgAcLKXEUDRhMO36/9EB4lbNZq9uJyG3Ge/t2iGcL7LZz3d3TiwCo6
 jZKjt4ZHcDgtNWyxhvBQuIS+9iQOMtwzJ9cSJs9pP/efw+HVYUqlLGEl912O
 j5ZwWFqdJksl/P/5DR6ylS/+5/8BRxCxtw==
            "]]}, 
-         "Charting`Private`Tag$9836#1"], 
+         "Charting`Private`Tag$70995#1"], 
         Annotation[{
           Directive[
            Opacity[1.], 
@@ -1508,7 +1560,7 @@ dGwj3uwkt4vRRAE7Y1ZQl9ikzaT+Oo8CWX64nRGxo+lRx84uCuKNhV+YEfs/
 DR+X7aPAMMx/H4s4Xi072LmfAlXvXmFr4gdp9VKZQxSI9Gh27SNulBz7c2SU
 gi3x/rUHiYfDJPQ0P1NgF/ig61diwVnNl76zFIj6vkbOxAputg5/LVLwi9fU
 /sPE//+/QdXhb7X/+n/PLsEV
-           "]]}, "Charting`Private`Tag$9836#2"], 
+           "]]}, "Charting`Private`Tag$70995#2"], 
         Annotation[{
           Directive[
            Opacity[1.], 
@@ -1570,7 +1622,7 @@ lzhBfUtCyFGh9UPYGVqFMV4DJHzun4scwb5zpVmu4BMJq0HyopPYrbLjN0fH
 SFCd9qibwR6OlzHWnyGB4LTemMMWWdBviljA5x06eHcBWzXQZc9DPglT+tqz
 i9j//7+BZS513xfs/wA09KMt
            "]]}, 
-         "Charting`Private`Tag$9836#3"]}}, {}}, {
+         "Charting`Private`Tag$70995#3"]}}, {}}, {
      DisplayFunction -> Identity, Ticks -> {Automatic, Automatic}, 
       AxesOrigin -> {0, 0}, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
@@ -1581,16 +1633,16 @@ i9j//7+BZS513xfs/wA09KMt
          Scaled[0.05], 
          Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
       DisplayFunction -> Identity, AspectRatio -> 0.8, Axes -> {False, False},
-       AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, DisplayFunction :> 
-      Identity, Frame -> {{True, True}, {True, True}}, 
+       AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, 
+      BaseStyle -> {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
+      DisplayFunction :> Identity, Frame -> {{True, True}, {True, True}}, 
       FrameLabel -> {{"\!\(\*SubscriptBox[\(T\), \(sp\)]\) [MeV]", None}, {
         "\[Gamma] [deg]", None}}, FrameStyle -> Directive[
-        GrayLevel[0], 
-        Thickness[Large]], 
+        GrayLevel[0]], 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {None, None}, GridLinesStyle -> Directive[
-        GrayLevel[0.5, 0.4]], ImageSize -> 380, LabelStyle -> {20, Bold, 
-        GrayLevel[0], FontFamily -> "Arial"}, 
+        GrayLevel[0.5, 0.4]], ImageSize -> 380, 
+      LabelStyle -> {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -1619,22 +1671,22 @@ i9j//7+BZS513xfs/wA09KMt
     Placed[
      Unevaluated[
       LineLegend[{
-        Directive[
+        Directive[FontFamily -> "Latin Modern Roman", FontSize -> 22, 
          Opacity[1.], 
          AbsoluteThickness[1.6], 
          RGBColor[0, 0, 1]], 
-        Directive[
+        Directive[FontFamily -> "Latin Modern Roman", FontSize -> 22, 
          Opacity[1.], 
          AbsoluteThickness[1.6], 
          GrayLevel[0], 
          Thickness[Large], 
          Dashing[{Small, Small}]], 
-        Directive[
+        Directive[FontFamily -> "Latin Modern Roman", FontSize -> 22, 
          Opacity[1.], 
          AbsoluteThickness[1.6], 
          RGBColor[1, 0, 0]]}, {"j=13/2", "j=11/2", "j=9/2"}, LegendMarkers -> 
-       None, LabelStyle -> {20, Bold, 
-         GrayLevel[0], FontFamily -> "Arial"}, 
+       None, 
+       LabelStyle -> {FontFamily -> "Latin Modern Roman", FontSize -> 22}, 
        LegendLayout -> {"Column", {Automatic, 5}}]], {0.7, 0.7}, Identity]]& ],
   AutoDelete->True,
   Editable->True,
@@ -1647,9 +1699,11 @@ i9j//7+BZS513xfs/wA09KMt
    3.8661105763624067`*^9}, {3.866110705578524*^9, 3.866110710046442*^9}, {
    3.866110741311222*^9, 3.8661108146186743`*^9}, 3.866110868302165*^9, {
    3.866110903963626*^9, 3.8661110723130703`*^9}, 3.866111132458518*^9, 
-   3.866148999501894*^9, {3.866149482151108*^9, 3.86614960476788*^9}},
+   3.866148999501894*^9, {3.866149482151108*^9, 3.866149604610291*^9}, 
+   3.866163850942719*^9, {3.866164254164897*^9, 3.8661642713066387`*^9}, 
+   3.8661643191002083`*^9},
  CellLabel->
-  "Out[234]=",ExpressionUUID->"4c5a3fb7-dda6-45e3-bd7a-908cdfcf10e6"]
+  "Out[1252]=",ExpressionUUID->"1e14a839-b8ce-411b-b5b2-6556e2b343ba"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -1672,13 +1726,14 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 193, 3, 69, "Chapter",ExpressionUUID->"c77f26cb-63e4-4c54-a7b6-8d032758ae0b"],
-Cell[776, 27, 227, 4, 30, "Input",ExpressionUUID->"a261ccf5-1106-459f-be07-05654d0dbdcb"],
-Cell[1006, 33, 1176, 37, 92, "Input",ExpressionUUID->"8e6abf25-84f5-43e3-8ecb-8d2c095734ea"],
-Cell[2185, 72, 2630, 85, 220, "Input",ExpressionUUID->"10ef092f-5f53-4219-965d-fd5f1a28751c"],
+Cell[776, 27, 228, 4, 30, "Input",ExpressionUUID->"a261ccf5-1106-459f-be07-05654d0dbdcb"],
+Cell[1007, 33, 303, 8, 30, "Input",ExpressionUUID->"8b52c2d7-ac87-4f48-a40b-17746642f37d"],
+Cell[1313, 43, 1177, 37, 92, "Input",ExpressionUUID->"8e6abf25-84f5-43e3-8ecb-8d2c095734ea"],
+Cell[2493, 82, 2659, 85, 220, "Input",ExpressionUUID->"10ef092f-5f53-4219-965d-fd5f1a28751c"],
 Cell[CellGroupData[{
-Cell[4840, 161, 5650, 138, 461, "Input",ExpressionUUID->"1df3471e-85dc-42aa-b185-f1d464fb6354"],
-Cell[10493, 301, 34652, 701, 342, "Output",ExpressionUUID->"262d8abf-735c-47df-bef7-b3a4563cc3b0"],
-Cell[45148, 1004, 32860, 647, 352, "Output",ExpressionUUID->"4c5a3fb7-dda6-45e3-bd7a-908cdfcf10e6"]
+Cell[5177, 171, 5663, 136, 461, "Input",ExpressionUUID->"1df3471e-85dc-42aa-b185-f1d464fb6354"],
+Cell[10843, 309, 36389, 727, 357, "Output",ExpressionUUID->"e7328a3b-0a47-4fb7-a2a2-f4354f50caa7"],
+Cell[47235, 1038, 34207, 667, 359, "Output",ExpressionUUID->"1e14a839-b8ce-411b-b5b2-6556e2b343ba"]
 }, Open  ]]
 }, Open  ]]
 }
