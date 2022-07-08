@@ -1,0 +1,199 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6144,        191]
+NotebookOptionsPosition[      5483,        172]
+NotebookOutlinePosition[      5877,        188]
+CellTagsIndexPosition[      5834,        185]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Numerical implementation of the classical energy function", "Chapter",
+ CellChangeTimes->{{3.866273322278717*^9, 
+  3.866273332663993*^9}},ExpressionUUID->"969aa42f-bd62-44ef-a49a-\
+97efed15b43f"],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.866156306153466*^9, 3.866156310914815*^9}},
+ CellLabel->
+  "In[1533]:=",ExpressionUUID->"ed3ce2cb-04d1-4763-83a5-b7aa11afe765"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Tcore", "[", 
+    RowBox[{"I_", ",", "A1_", ",", "A2_", ",", "A3_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["I", "2"], 
+     RowBox[{"(", 
+      RowBox[{"A1", "+", "A2"}], ")"}]}], "+", 
+    RowBox[{"A3", "*", 
+     SuperscriptBox["I", "2"]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Tsp", "[", 
+    RowBox[{"j_", ",", "A1_", ",", "A2_", ",", "A3_", ",", "V_", ",", "gm_"}],
+     "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["j", "2"], 
+     RowBox[{"(", 
+      RowBox[{"A2", "+", "A3"}], ")"}]}], "+", 
+    RowBox[{"A1", "*", 
+     SuperscriptBox["j", "2"]}], "-", 
+    RowBox[{"V", "*", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"2", "j"}], "-", "1"}], 
+      RowBox[{"j", "+", "1"}]], 
+     RowBox[{"Sin", "[", 
+      RowBox[{
+       RowBox[{"gm", "*", 
+        FractionBox["\[Pi]", "180"]}], "+", 
+       FractionBox["\[Pi]", "6"]}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Aphi", "[", 
+    RowBox[{"phi_", ",", "A1_", ",", "A2_", ",", "A3_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"A1", "*", 
+     SuperscriptBox[
+      RowBox[{"Cos", "[", "phi", "]"}], "2"]}], "+", 
+    RowBox[{"A2", "*", 
+     SuperscriptBox[
+      RowBox[{"Sin", "[", "phi", "]"}], "2"]}], "-", "A3"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Hmin", "[", 
+    RowBox[{
+    "theta_", ",", "phi_", ",", "I_", ",", "j_", ",", "A1_", ",", "A2_", ",", 
+     "A3_", ",", "V_", ",", "gm_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"I", 
+     RowBox[{"(", 
+      RowBox[{"I", "-", 
+       FractionBox["1", "2"]}], ")"}], 
+     SuperscriptBox[
+      RowBox[{"Sin", "[", "theta", "]"}], "2"], "*", 
+     RowBox[{"Aphi", "[", 
+      RowBox[{"phi", ",", "A1", ",", "A2", ",", "A3"}], "]"}]}], "-", 
+    RowBox[{"2", "*", "A1", "*", "I", "*", "j", "*", 
+     RowBox[{"Sin", "[", "theta", "]"}]}], "+", 
+    RowBox[{"Tcore", "[", 
+     RowBox[{"I", ",", "A1", ",", "A2", ",", "A3"}], "]"}], "+", 
+    RowBox[{"Tsp", "[", 
+     RowBox[{"j", ",", "A1", ",", "A2", ",", "A3", ",", "V", ",", "gm"}], 
+     "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ak", "[", "moi_", "]"}], ":=", 
+   FractionBox["1", 
+    RowBox[{"2", "*", "moi"}]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"I1fit", "=", "72"}], ";", 
+  RowBox[{"I2fit", "=", "15"}], ";", 
+  RowBox[{"I3fit", "=", "7"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Vfit", "=", "2.1"}], ";", 
+  RowBox[{"gmfit", "=", "22"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"j1", "=", 
+   RowBox[{"13", "/", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A1fit", "=", 
+   RowBox[{"Ak", "[", "I1fit", "]"}]}], ";", 
+  RowBox[{"A2fit", "=", 
+   RowBox[{"Ak", "[", "I2fit", "]"}]}], ";", 
+  RowBox[{"A3fit", "=", 
+   RowBox[{"Ak", "[", "I3fit", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Hpolar", "[", 
+    RowBox[{"theta_", ",", "phi_", ",", "I_"}], "]"}], ":=", 
+   RowBox[{"Hmin", "[", 
+    RowBox[{
+    "theta", ",", "phi", ",", "I", ",", "j1", ",", "A1fit", ",", "A2fit", ",",
+      "A3fit", ",", "Vfit", ",", "gmfit"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spin1", "=", 
+   RowBox[{"25", "/", "2"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8662733847762537`*^9, 3.866273384927805*^9}, {
+  3.866273509176702*^9, 3.8662735125974083`*^9}},
+ CellLabel->
+  "In[1534]:=",ExpressionUUID->"2fc95932-3cc2-46c8-88b7-e3393188f283"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"m", " ", "=", " ", 
+    RowBox[{"(", 
+     RowBox[{"\[Theta]", " ", ",", " ", "\[CurlyPhi]"}], ")"}]}], " ", "*)"}],
+   "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"m1", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[Pi]", "/", "2"}], ",", "0"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"m2", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[Pi]", "/", "2"}], ",", "\[Pi]"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"m3", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[Pi]", "/", "2"}], ",", 
+       RowBox[{"2", "\[Pi]"}]}], "}"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.866273397218589*^9, 3.866273466750928*^9}, {
+  3.866273519916267*^9, 3.866273538484263*^9}},
+ CellLabel->
+  "In[1545]:=",ExpressionUUID->"200e2b14-fa28-4a44-8e72-7e707bb69b5f"]
+}, Open  ]]
+},
+WindowSize->{815, 997},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a04290e8-079c-42e1-b5f5-06087c7110fc"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 202, 3, 117, "Chapter",ExpressionUUID->"969aa42f-bd62-44ef-a49a-97efed15b43f"],
+Cell[785, 27, 226, 4, 30, "Input",ExpressionUUID->"ed3ce2cb-04d1-4763-83a5-b7aa11afe765"],
+Cell[1014, 33, 3536, 105, 365, "Input",ExpressionUUID->"2fc95932-3cc2-46c8-88b7-e3393188f283"],
+Cell[4553, 140, 914, 29, 94, "Input",ExpressionUUID->"200e2b14-fa28-4a44-8e72-7e707bb69b5f"]
+}, Open  ]]
+}
+]
+*)
+
