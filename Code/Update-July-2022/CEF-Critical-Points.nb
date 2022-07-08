@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6144,        191]
-NotebookOptionsPosition[      5483,        172]
-NotebookOutlinePosition[      5877,        188]
-CellTagsIndexPosition[      5834,        185]
+NotebookDataLength[     10226,        309]
+NotebookOptionsPosition[      8902,        278]
+NotebookOutlinePosition[      9299,        294]
+CellTagsIndexPosition[      9256,        291]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,11 +25,57 @@ Cell["Numerical implementation of the classical energy function", "Chapter",
   3.866273332663993*^9}},ExpressionUUID->"969aa42f-bd62-44ef-a49a-\
 97efed15b43f"],
 
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Evaluate the critical point ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "max"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7c2208bc-566e-4587-86a5-71ce153b781c"],
+ " after which no stable trajectory can occur "
+}], "Subsection",
+ CellChangeTimes->{{3.8662750046800222`*^9, 
+  3.866275025069709*^9}},ExpressionUUID->"164ecc6a-8410-4725-a24d-\
+9fb596af10a6"],
+
+Cell["The nucleus has a defined spin state with a.m. I", "Item",
+ CellChangeTimes->{{3.866275027804667*^9, 
+  3.866275039445704*^9}},ExpressionUUID->"bff3f586-3d01-4b3c-837d-\
+98e6943ffb92"],
+
+Cell["At the fixed I, the CEF is given in the polar plane", "Item",
+ CellChangeTimes->{{3.866275027804667*^9, 
+  3.866275065865831*^9}},ExpressionUUID->"1dc8ead8-5026-4b06-8eff-\
+8befbf61a76e"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "CEF is evaluated for fixed ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "m"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "78628d3d-a0c1-4a6a-bf5b-a6490a475ee7"],
+ " (the point ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "m"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f16c928b-4e16-4f4a-b162-0816990950f2"],
+ " is chosen as the coordinate of one of the minimum points (m1,m2,m3)"
+}], "Item",
+ CellChangeTimes->{{3.866275027804667*^9, 
+  3.8662751043665447`*^9}},ExpressionUUID->"8b814eb1-20ed-4de7-8302-\
+658b8062bfd9"],
+
 Cell[BoxData[
  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.866156306153466*^9, 3.866156310914815*^9}},
  CellLabel->
-  "In[1533]:=",ExpressionUUID->"ed3ce2cb-04d1-4763-83a5-b7aa11afe765"],
+  "In[1709]:=",ExpressionUUID->"ed3ce2cb-04d1-4763-83a5-b7aa11afe765"],
 
 Cell[BoxData[{
  RowBox[{
@@ -136,7 +182,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.8662733847762537`*^9, 3.866273384927805*^9}, {
   3.866273509176702*^9, 3.8662735125974083`*^9}},
  CellLabel->
-  "In[1534]:=",ExpressionUUID->"2fc95932-3cc2-46c8-88b7-e3393188f283"],
+  "In[1710]:=",ExpressionUUID->"2fc95932-3cc2-46c8-88b7-e3393188f283"],
 
 Cell[BoxData[
  RowBox[{
@@ -167,11 +213,71 @@ Cell[BoxData[
  CellChangeTimes->{{3.866273397218589*^9, 3.866273466750928*^9}, {
   3.866273519916267*^9, 3.866273538484263*^9}},
  CellLabel->
-  "In[1545]:=",ExpressionUUID->"200e2b14-fa28-4a44-8e72-7e707bb69b5f"]
+  "In[1721]:=",ExpressionUUID->"200e2b14-fa28-4a44-8e72-7e707bb69b5f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Hmax", "[", 
+    RowBox[{"thetam_", ",", "I_"}], "]"}], ":=", 
+   RowBox[{"Max", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Hpolar", "[", 
+       RowBox[{"thetam", ",", "x", ",", "I"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", 
+        RowBox[{"2", "\[Pi]"}], ",", "0.001"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{
+  "\"\<Critical Point \!\(\*SubscriptBox[\(H\), \(\(max\)\(\\\ \
+\)\)]\)\\n\>\"", ",", "\"\<P=\>\"", ",", 
+   RowBox[{"Style", "[", 
+    RowBox[{
+     RowBox[{"Hmax", "[", 
+      RowBox[{
+       RowBox[{"m1", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", 
+       RowBox[{"25", "/", "2"}]}], "]"}], ",", "Red", ",", "Bold"}], "]"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.8662748261344423`*^9, 3.866274994500648*^9}, {
+  3.86627511576066*^9, 3.8662751157943983`*^9}},
+ CellLabel->
+  "In[1724]:=",ExpressionUUID->"a9bd1b88-ecb2-40cc-9a11-51fb132244d3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Critical Point \\!\\(\\*SubscriptBox[\\(H\\), \
+\\(\\(max\\)\\(\\\\ \\)\\)]\\)\\n\"\>", "\[InvisibleSpace]", "\<\"P=\"\>", 
+   "\[InvisibleSpace]", 
+   StyleBox["2.5558551322501986`",
+    StripOnInput->False,
+    LineColor->RGBColor[1, 0, 0],
+    FrontFaceColor->RGBColor[1, 0, 0],
+    BackFaceColor->RGBColor[1, 0, 0],
+    GraphicsColor->RGBColor[1, 0, 0],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 0, 0]]}],
+  SequenceForm[
+  "Critical Point \!\(\*SubscriptBox[\(H\), \(\(max\)\(\\ \)\)]\)\n", "P=", 
+   Style[2.5558551322501986`, 
+    RGBColor[1, 0, 0], Bold]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.866274968853175*^9, 3.866274994990563*^9}, {
+  3.86627510770858*^9, 3.866275116387685*^9}},
+ CellLabel->
+  "During evaluation of \
+In[1724]:=",ExpressionUUID->"fc11881d-dc7f-4f51-b530-b365e476a88a"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 },
-WindowSize->{815, 997},
-WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowSize->{808, 897},
+WindowMargins->{{213, Automatic}, {44, Automatic}},
 FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (February 4, 2022)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"a04290e8-079c-42e1-b5f5-06087c7110fc"
@@ -189,9 +295,21 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 202, 3, 117, "Chapter",ExpressionUUID->"969aa42f-bd62-44ef-a49a-97efed15b43f"],
-Cell[785, 27, 226, 4, 30, "Input",ExpressionUUID->"ed3ce2cb-04d1-4763-83a5-b7aa11afe765"],
-Cell[1014, 33, 3536, 105, 365, "Input",ExpressionUUID->"2fc95932-3cc2-46c8-88b7-e3393188f283"],
-Cell[4553, 140, 914, 29, 94, "Input",ExpressionUUID->"200e2b14-fa28-4a44-8e72-7e707bb69b5f"]
+Cell[CellGroupData[{
+Cell[807, 29, 406, 11, 54, "Subsection",ExpressionUUID->"164ecc6a-8410-4725-a24d-9fb596af10a6"],
+Cell[1216, 42, 190, 3, 32, "Item",ExpressionUUID->"bff3f586-3d01-4b3c-837d-98e6943ffb92"],
+Cell[1409, 47, 193, 3, 32, "Item",ExpressionUUID->"1dc8ead8-5026-4b06-8eff-8befbf61a76e"],
+Cell[CellGroupData[{
+Cell[1627, 54, 614, 17, 53, "Item",ExpressionUUID->"8b814eb1-20ed-4de7-8302-658b8062bfd9"],
+Cell[2244, 73, 226, 4, 30, "Input",ExpressionUUID->"ed3ce2cb-04d1-4763-83a5-b7aa11afe765"],
+Cell[2473, 79, 3536, 105, 365, "Input",ExpressionUUID->"2fc95932-3cc2-46c8-88b7-e3393188f283"],
+Cell[6012, 186, 914, 29, 94, "Input",ExpressionUUID->"200e2b14-fa28-4a44-8e72-7e707bb69b5f"],
+Cell[CellGroupData[{
+Cell[6951, 219, 1025, 29, 52, "Input",ExpressionUUID->"a9bd1b88-ecb2-40cc-9a11-51fb132244d3"],
+Cell[7979, 250, 871, 22, 44, "Print",ExpressionUUID->"fc11881d-dc7f-4f51-b530-b365e476a88a"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }
 ]
